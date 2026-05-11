@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Homes for Sale in Ripon, CA | Ripon Real Estate | Taylor Thompson Home Group</title>
+<meta name="description" content="Looking for homes in Ripon, CA? The Taylor Thompson Home Group are your local San Joaquin County real estate experts. Top-producing Keller Williams Realty agents serving Ripon and surrounding areas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tan:        #a68068;
+    --tan-mid:    #b5927f;
+    --tan-light:  #c2a894;
+    --tan-pale:   #ddcebe;
+    --cream:      #faf6f1;
+    --white:      #ffffff;
+    --dark:       #000000;
+    --mid:        #5a4a40;
+    --shadow:     rgba(0,0,0,0.08);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,246,241,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,128,104,0.2);}
+  .nav-logo{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .nav-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:400;color:var(--tan);}
+  .nav-logo-sub{font-size:9px;font-weight:600;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:22px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.11em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--tan);}
+
+  /* UNIFIED BUTTONS - solid tan-pale, black text, hover tan-light */
+  .btn{background:var(--tan-pale);color:var(--dark);padding:14px 28px;font-family:'Jost',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;display:inline-block;transition:background 0.2s;white-space:nowrap;}
+  .btn:hover{background:var(--tan-light);}
+  .btn-sm{padding:10px 18px;font-size:11px;}
+  .btn-block{display:block;width:100%;text-align:center;}
+  .btn-center{display:block;width:fit-content;margin:0 auto;text-align:center;padding:16px 40px;font-size:12px;letter-spacing:0.16em;}
+
+  /* HERO */
+  .hero{padding-top:72px;min-height:72vh;background:var(--cream);display:flex;align-items:center;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 80% 50%,rgba(166,128,104,0.08),transparent 60%);pointer-events:none;}
+  .hero-content{position:relative;z-index:1;padding:72px 80px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;width:100%;}
+  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:14px;}
+  .hero-city{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,80px);font-weight:300;color:var(--dark);line-height:1;margin-bottom:10px;}
+  .hero-county{font-size:13px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);margin-bottom:24px;}
+  .hero-tagline{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:300;color:var(--tan);margin-bottom:20px;}
+  .hero-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:36px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-stats{background:var(--white);border:1px solid rgba(166,128,104,0.25);padding:32px;}
+  .stats-title{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin-bottom:20px;}
+  .stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-num{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--dark);line-height:1;}
+  .stat-label{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-top:4px;}
+  .stat-divider{height:1px;background:rgba(166,128,104,0.18);grid-column:span 2;}
+  .stat-trend{display:flex;align-items:center;gap:8px;grid-column:span 2;}
+  .trend-dot{width:8px;height:8px;border-radius:50%;background:var(--tan);flex-shrink:0;}
+  .trend-text{font-size:12px;color:var(--mid);font-weight:500;}
+  .stats-note{font-size:10px;color:var(--mid);opacity:0.7;margin-top:16px;font-style:italic;}
+
+  /* WHY */
+  .why-section{padding:100px 80px;background:var(--white);}
+  .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:16px;}
+  .section-title em{font-style:italic;color:var(--tan);}
+  .section-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);}
+  .why-header{text-align:center;margin-bottom:64px;}
+  .why-header .section-body{max-width:540px;margin:0 auto;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(166,128,104,0.12);}
+  .why-card{background:var(--white);padding:44px 32px;transition:background 0.3s;}
+  .why-card:hover{background:var(--cream);}
+  .why-icon{font-size:32px;margin-bottom:16px;display:block;}
+  .why-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--dark);margin-bottom:10px;}
+  .why-desc{font-size:13px;font-weight:300;line-height:1.8;color:var(--mid);}
+
+  /* LISTINGS */
+  .listings-section{padding:80px;background:var(--cream);}
+  .listings-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px;flex-wrap:wrap;gap:16px;}
+  .listings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:40px;}
+  .listing-ph{background:var(--white);overflow:hidden;}
+  .listing-img-ph{aspect-ratio:4/3;background:var(--tan-pale);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+  .listing-img-ph-icon{font-size:36px;opacity:0.3;}
+  .listing-img-ph-text{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);opacity:0.6;}
+  .listing-body-ph{padding:20px 18px 24px;}
+  .listing-status-ph{display:inline-block;background:var(--tan);color:var(--white);font-size:9px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:4px 10px;margin-bottom:10px;}
+  .listing-price-ph{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--dark);margin-bottom:4px;}
+  .listing-addr-ph{font-size:13px;color:var(--mid);margin-bottom:14px;}
+  .listing-specs-ph{display:flex;border-top:1px solid var(--tan-pale);padding-top:12px;}
+  .listing-spec-ph{flex:1;text-align:center;font-size:11px;color:var(--mid);border-right:1px solid var(--tan-pale);padding:0 6px;}
+  .listing-spec-ph:last-child{border-right:none;}
+  .listing-spec-ph strong{display:block;font-size:14px;font-weight:600;color:var(--dark);margin-bottom:1px;}
+
+  /* TESTIMONIAL */
+  .testimonial-section{padding:80px;background:var(--tan);}
+  .testimonial-inner{max-width:760px;margin:0 auto;text-align:center;}
+  .testimonial-stars{font-size:20px;color:var(--white);letter-spacing:3px;margin-bottom:24px;}
+  .testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,28px);font-weight:300;font-style:italic;color:var(--white);line-height:1.65;margin-bottom:28px;}
+  .testimonial-author{font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--white);margin-bottom:6px;}
+  .testimonial-source{font-size:10px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.78);}
+
+  /* CTA */
+  .cta-section{display:grid;grid-template-columns:1fr 1fr;}
+  .cta-left{background:var(--tan-pale);padding:72px;display:flex;flex-direction:column;justify-content:center;}
+  .cta-form{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .cta-input{padding:14px 16px;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark);border:1.5px solid rgba(166,128,104,0.4);outline:none;background:var(--white);}
+  .cta-input:focus{border-color:var(--tan);}
+  .cta-input::placeholder{color:#b0a09a;}
+  .cta-right{background:var(--tan);padding:72px;display:flex;flex-direction:column;justify-content:center;}
+  .cta-right .section-title{color:var(--white);}
+  .cta-right .section-title em{color:var(--tan-pale);}
+  .links-list{display:flex;flex-direction:column;gap:12px;margin-top:20px;}
+  .links-list a{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--white);text-decoration:none;transition:color 0.2s;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.2);}
+  .links-list a:hover{color:var(--tan-pale);}
+  .links-list a::after{content:'→';margin-left:auto;color:var(--tan-pale);}
+
+  /* OTHER AREAS */
+  .other-section{padding:72px 80px;background:var(--white);}
+  .other-header{text-align:center;margin-bottom:40px;}
+  .other-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+  .other-card{background:var(--cream);padding:24px 16px;text-align:center;text-decoration:none;transition:background 0.2s;display:block;}
+  .other-card:hover{background:var(--tan-pale);}
+  .other-card-name{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--dark);margin-bottom:4px;}
+  .other-card-county{font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);}
+
+  /* FOOTER */
+  footer{background:var(--tan);padding:64px 80px 32px;color:var(--white);}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.2);margin-bottom:32px;}
+  .footer-logo{text-decoration:none;display:block;margin-bottom:16px;line-height:1.1;}
+  .footer-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;font-weight:400;color:var(--white);display:block;}
+  .footer-logo-sub{font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-top:4px;display:block;}
+  .footer-tagline{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.85);max-width:280px;}
+  .footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--white);margin-bottom:20px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--tan-pale);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-legal{font-size:12px;color:rgba(255,255,255,0.78);line-height:1.6;}
+
+  /* ANIM */
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    nav{padding:0 24px;}
+    .nav-links{display:none;}
+    .hero-content{padding:60px 32px;grid-template-columns:1fr;gap:40px;}
+    .why-section,.listings-section,.testimonial-section,.other-section{padding:64px 32px;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    .listings-grid{grid-template-columns:1fr;}
+    .cta-section{grid-template-columns:1fr;}
+    .cta-left,.cta-right{padding:56px 32px;}
+    .other-grid{grid-template-columns:repeat(3,1fr);}
+    .footer-top{grid-template-columns:1fr 1fr;}
+    footer{padding:48px 32px 24px;}
+  }
+  @media(max-width:600px){
+    .why-grid{grid-template-columns:1fr;}
+    .other-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-script">Taylor Thompson Home Group</span>
+    <span class="nav-logo-sub">Keller Williams Realty</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html">About</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="taylorthompson_neighborhoods.html" class="active">Areas</a></li>
+    <li><a href="taylorthompson_listings.html">Properties</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="taylorthompson_home_valuation.html" class="btn btn-sm">Free Home Value</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <div>
+      <p class="hero-eyebrow">Homes for Sale in San Joaquin County</p>
+      <h1 class="hero-city">Ripon</h1>
+      <p class="hero-county">San Joaquin County &nbsp;·&nbsp; Zip 95366</p>
+      <p class="hero-tagline">Small Town Feel, Big-Time Value</p>
+      <p class="hero-body">Ripon is one of San Joaquin County's best-kept secrets - a charming, well-established community with excellent schools, a genuine small-town character, and home prices that represent outstanding value. Known as "The Almond Capital of the World," Ripon offers a quality of life that's hard to match anywhere in the region.</p>
+      <div class="hero-actions">
+        <a href="taylorthompson_listings.html" class="btn">View Ripon Listings</a>
+        <a href="contact.html" class="btn">Talk to a Ripon Expert</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stats-title">📊 Ripon Market Snapshot · 2025</div>
+      <div class="stats-grid">
+        <div><div class="stat-num">$500K-$680K</div><div class="stat-label">Median Home Price</div></div>
+        <div><div class="stat-num">14-22 days</div><div class="stat-label">Avg Days on Market</div></div>
+        <div class="stat-divider"></div>
+        <div><div class="stat-num">$275-$345</div><div class="stat-label">Price Per Sq Ft</div></div>
+        <div><div class="stat-num">Competitive Seller's Market</div><div class="stat-label">Current Conditions</div></div>
+        <div class="stat-trend"><div class="trend-dot"></div><div class="trend-text">Contact us for current listings and a live CMA</div></div>
+      </div>
+      <p class="stats-note">Market data is approximate and updated regularly. Contact us for a precise analysis.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="why-header">
+    <p class="section-eyebrow fade-up">Why Ripon?</p>
+    <h2 class="section-title fade-up">6 Reasons Buyers <em>Love</em> Ripon</h2>
+    <p class="section-body fade-up">Here's what makes Ripon stand out as one of the Central Valley's best communities for buyers, sellers, and investors alike.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-up">
+      <span class="why-icon">🏫</span>
+      <div class="why-title">Award-Winning Schools</div>
+      <p class="why-desc">Ripon Unified School District is consistently rated among the best in San Joaquin County - a primary reason families specifically seek out Ripon.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">🌳</span>
+      <div class="why-title">Small Town Character</div>
+      <p class="why-desc">Ripon has a genuine small-town feel with active community events, a walkable downtown, and the kind of neighbor-knows-neighbor atmosphere that's rare in California.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">💰</span>
+      <div class="why-title">Exceptional Value</div>
+      <p class="why-desc">Ripon's home prices represent outstanding value relative to its school quality and community character - a combination that drives consistent demand.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">📍</span>
+      <div class="why-title">Commuter Friendly</div>
+      <p class="why-desc">Located just off Hwy 99 between Modesto and Stockton, Ripon offers easy commutes to both major employment centers.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">🌾</span>
+      <div class="why-title">Agricultural Beauty</div>
+      <p class="why-desc">Surrounded by almond orchards and farmland, Ripon sits in the heart of Central Valley agricultural country - with all the charm that comes with it.</p>
+    </div>
+    <div class="why-card fade-up">
+      <span class="why-icon">📈</span>
+      <div class="why-title">Strong Appreciation</div>
+      <p class="why-desc">Ripon's desirability - particularly among families - has driven consistent and reliable home value appreciation over time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="listings-section">
+  <div class="listings-header">
+    <div><p class="section-eyebrow">Listings in This Area</p><h2 class="section-title" style="font-size:28px;">Homes for Sale in <em>Ripon</em></h2></div>
+    <div style="font-size:13px;color:var(--mid);font-weight:300;">We may not always have active listings in every area. Contact us and we will find current options for you.</div>
+  </div>
+  <div class="listings-grid">
+    <div class="listing-ph fade-up"><div class="listing-img-ph"><div class="listing-img-ph-icon">🏡</div><div class="listing-img-ph-text">Add Listing Photo</div></div><div class="listing-body-ph"><span class="listing-status-ph">Active</span><div class="listing-price-ph">$XXX,000</div><div class="listing-addr-ph">Ripon, CA</div><div class="listing-specs-ph"><div class="listing-spec-ph"><strong>X</strong>Beds</div><div class="listing-spec-ph"><strong>X</strong>Bath</div><div class="listing-spec-ph"><strong>X,XXX</strong>Sq Ft</div></div></div></div>
+    <div class="listing-ph fade-up"><div class="listing-img-ph"><div class="listing-img-ph-icon">🏡</div><div class="listing-img-ph-text">Add Listing Photo</div></div><div class="listing-body-ph"><span class="listing-status-ph">Active</span><div class="listing-price-ph">$XXX,000</div><div class="listing-addr-ph">Ripon, CA</div><div class="listing-specs-ph"><div class="listing-spec-ph"><strong>X</strong>Beds</div><div class="listing-spec-ph"><strong>X</strong>Bath</div><div class="listing-spec-ph"><strong>X,XXX</strong>Sq Ft</div></div></div></div>
+    <div class="listing-ph fade-up"><div class="listing-img-ph"><div class="listing-img-ph-icon">🏡</div><div class="listing-img-ph-text">Add Listing Photo</div></div><div class="listing-body-ph"><span class="listing-status-ph">Contact Us</span><div class="listing-price-ph">$XXX,000</div><div class="listing-addr-ph">Ripon, CA</div><div class="listing-specs-ph"><div class="listing-spec-ph"><strong>X</strong>Beds</div><div class="listing-spec-ph"><strong>X</strong>Bath</div><div class="listing-spec-ph"><strong>X,XXX</strong>Sq Ft</div></div></div></div>
+  </div>
+  <a href="contact.html" class="btn btn-center">Contact Us for Current Ripon Listings →</a>
+</section>
+
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="testimonial-stars">★★★★★</div>
+    <p class="testimonial-quote">"Taylor is very kind and patient. She did an excellent job guiding me through the home buying process. I would recommend her to anyone buying or selling a home."</p>
+    <div class="testimonial-author">Lindsey Gonsales · Modesto, CA · April 2025</div>
+    <div class="testimonial-source">Verified Zillow Review</div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-left">
+    <p class="section-eyebrow fade-up">Selling in Ripon?</p>
+    <h2 class="section-title fade-up" style="font-size:30px;">What Is Your<br><em>Ripon Home</em> Worth?</h2>
+    <p class="section-body fade-up">Get a free, no-obligation valuation from agents who know the Ripon market. We analyze recent comparable sales in your specific neighborhood.</p>
+    <div class="cta-form fade-up">
+      <input class="cta-input" type="text" placeholder="Your Ripon property address">
+      <input class="cta-input" type="tel" placeholder="Your phone number">
+      <input class="cta-input" type="email" placeholder="Your email address">
+      <button class="btn btn-block">Get My Free Ripon Home Value →</button>
+    </div>
+  </div>
+  <div class="cta-right">
+    <h2 class="section-title fade-up" style="font-size:28px;">More Ways We Can <em>Help</em></h2>
+    <div class="links-list fade-up">
+      <a href="buy.html">Buy a Home in Ripon</a>
+      <a href="sell.html">Sell Your Ripon Home</a>
+      <a href="taylorthompson_home_valuation.html">Free Home Valuation</a>
+      <a href="taylorthompson_listings.html">Browse All Listings</a>
+      <a href="taylorthompson_refer.html">Refer a Friend</a>
+      <a href="contact.html">Talk to Taylor or Dave</a>
+    </div>
+  </div>
+</section>
+
+<section class="other-section">
+  <div class="other-header">
+    <p class="section-eyebrow fade-up">Explore More Areas</p>
+    <h2 class="section-title fade-up" style="font-size:28px;">We Serve Every Corner of the <em>Central Valley</em></h2>
+  </div>
+  <div class="other-grid">
+    <a href="taylorthompson_neighborhood_turlock.html" class="other-card"><div class="other-card-name">Turlock</div><div class="other-card-county">Stanislaus County</div></a>
+    <a href="taylorthompson_neighborhood_modesto.html" class="other-card"><div class="other-card-name">Modesto</div><div class="other-card-county">Stanislaus County</div></a>
+    <a href="taylorthompson_neighborhood_manteca.html" class="other-card"><div class="other-card-name">Manteca</div><div class="other-card-county">San Joaquin County</div></a>
+    <a href="taylorthompson_neighborhood_ceres.html" class="other-card"><div class="other-card-name">Ceres</div><div class="other-card-county">Stanislaus County</div></a>
+    <a href="taylorthompson_neighborhood_riverbank.html" class="other-card"><div class="other-card-name">Riverbank</div><div class="other-card-county">Stanislaus County</div></a>
+    <a href="taylorthompson_neighborhood_stockton.html" class="other-card"><div class="other-card-name">Stockton</div><div class="other-card-county">San Joaquin County</div></a>
+    <a href="taylorthompson_neighborhood_tracy.html" class="other-card"><div class="other-card-name">Tracy</div><div class="other-card-county">San Joaquin County</div></a>
+    <a href="taylorthompson_neighborhood_lodi.html" class="other-card"><div class="other-card-name">Lodi</div><div class="other-card-county">San Joaquin County</div></a>
+    <a href="taylorthompson_neighborhood_merced.html" class="other-card"><div class="other-card-name">Merced</div><div class="other-card-county">Merced County</div></a>
+  </div>
+  <div style="text-align:center;margin-top:24px;"><a href="taylorthompson_all_areas.html" style="font-size:13px;color:var(--tan);text-decoration:none;font-weight:600;">View All Cities & Towns We Serve →</a></div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo">
+        <span class="footer-logo-script">Taylor Thompson Home Group</span>
+        <span class="footer-logo-sub">Keller Williams Realty</span>
+      </a>
+      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="taylorthompson_home_valuation.html">Free Home Value</a></li>
+        <li><a href="taylorthompson_refer.html">Refer a Friend</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Main Cities</div>
+      <ul class="footer-links">
+        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
+        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
+        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
+        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
+        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
+        <li><a href="taylorthompson_neighborhood_riverbank.html">Riverbank</a></li>
+        <li><a href="taylorthompson_neighborhood_stockton.html">Stockton</a></li>
+        <li><a href="taylorthompson_neighborhood_tracy.html">Tracy</a></li>
+        <li><a href="taylorthompson_neighborhood_lodi.html">Lodi</a></li>
+        <li><a href="taylorthompson_neighborhood_merced.html">Merced</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/soldby.taylor" target="_blank">@soldby.taylor</a></li>
+        <li><a href="https://instagram.com/soldby.dave" target="_blank">@soldby.dave</a></li>
+        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
+        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2025 Taylor Thompson Home Group · Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
+    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>
