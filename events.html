@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Events | Taylor Thompson Home Group | Central Valley Real Estate</title>
+<meta name="description" content="The Taylor Thompson Home Group hosts exclusive client events throughout the year - because real estate is about more than transactions. It's about community.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tan:        #a68068;
+    --tan-mid:    #b5927f;
+    --tan-light:  #c2a894;
+    --tan-pale:   #ddcebe;
+    --cream:      #faf6f1;
+    --white:      #ffffff;
+    --dark:       #000000;
+    --brown:      #000000;
+    --mid:        #5a4a40;
+    --shadow:     rgba(0,0,0,0.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,246,241,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,128,104,0.2);}
+  .nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+  .nav-logo-script{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:22px;color:var(--tan);}
+  .nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:1px;}
+  .nav-links{display:flex;gap:36px;list-style:none;}
+  .nav-links a{font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--tan);}
+  .nav-cta{background:var(--tan);color:var(--white);padding:10px 24px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;
+    opacity:0.92;}
+  .nav-cta:hover{background:var(--brown);}
+
+  /* HERO */
+  .hero{padding-top:72px;min-height:70vh;position:relative;display:flex;align-items:center;overflow:hidden;background:var(--brown);}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,var(--brown) 0%,var(--brown) 60%,rgba(166,128,104,0.25) 100%);z-index:1;}
+  .hero-pattern{position:absolute;inset:0;background-image:radial-gradient(circle at 20% 50%,rgba(166,128,104,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 20%,rgba(194,168,148,0.06) 0%,transparent 40%);z-index:1;}
+  .hero-content{position:relative;z-index:2;padding:80px 80px;max-width:760px;}
+  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan-light);margin-bottom:20px;}
+  .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,5vw,68px);font-weight:300;line-height:1.08;color:var(--white);margin-bottom:24px;}
+  .hero-headline em{font-style:italic;color:var(--tan-light);}
+  .hero-body{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.7);max-width:560px;margin-bottom:40px;}
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;}
+  .btn-primary{background:var(--tan);color:var(--white);padding:16px 36px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;
+    opacity:0.92;display:inline-block;}
+  .btn-primary:hover{background:var(--brown);}
+  .btn-outline-light{background:var(--tan);color:var(--white);padding:16px 36px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;opacity:0.92;display:inline-block;}
+  .btn-outline-light:hover{background:var(--brown);}
+
+  /* WHY WE DO THIS */
+  .why-section{display:grid;grid-template-columns:1fr 1fr;min-height:500px;}
+  .why-content{background:var(--white);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .why-img-side{background:var(--tan-pale);display:flex;align-items:center;justify-content:center;padding:64px;position:relative;overflow:hidden;}
+  .why-quote{position:relative;z-index:1;text-align:center;}
+  .why-quote-mark{font-family:'Cormorant Garamond',serif;font-size:120px;color:var(--tan);opacity:0.3;line-height:0.7;display:block;margin-bottom:16px;}
+  .why-quote-text{font-family:'Cormorant Garamond',serif;font-size:24px;font-style:italic;font-weight:300;color:var(--brown);line-height:1.6;}
+  .why-quote-attr{font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-top:16px;}
+  .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:20px;}
+  .section-title em{font-style:italic;color:var(--tan);}
+  .section-body{font-size:15px;font-weight:300;line-height:1.9;color:var(--mid);}
+  .section-body+.section-body{margin-top:14px;}
+
+  /* EVENT TYPES */
+  .types-section{padding:100px 80px;background:var(--cream);}
+  .types-header{text-align:center;margin-bottom:64px;}
+  .types-header .section-body{max-width:560px;margin:0 auto;}
+  .types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .type-card{background:var(--white);padding:0;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
+  .type-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow);}
+  .type-card-img{aspect-ratio:3/2;background-size:cover;background-position:center;position:relative;background-color:var(--tan-pale);}
+  .type-card-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
+  .type-placeholder-icon{font-size:48px;opacity:0.5;}
+  .type-placeholder-label{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);opacity:0.7;}
+  .type-card-body{padding:28px 28px 32px;}
+  .type-card-tag{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin-bottom:10px;display:block;}
+  .type-card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--dark);margin-bottom:10px;}
+  .type-card-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--mid);}
+
+  /* PAST EVENTS GALLERY */
+  .gallery-section{padding:100px 80px;background:var(--brown);}
+  .gallery-header{text-align:center;margin-bottom:64px;}
+  .gallery-header .section-title{color:var(--white);}
+  .gallery-header .section-body{color:rgba(255,255,255,0.6);max-width:540px;margin:0 auto;}
+
+  /* Masonry-style gallery grid */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:6px;}
+  .gallery-item{background:rgba(255,255,255,0.05);border:1px solid rgba(166,128,104,0.15);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden;cursor:pointer;transition:all 0.3s;}
+  .gallery-item:hover{border-color:var(--tan);background:rgba(166,128,104,0.08);}
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item.wide{grid-column:span 2;}
+  .gallery-item-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:20px;}
+  .gallery-placeholder-icon{font-size:32px;opacity:0.4;}
+  .gallery-placeholder-text{font-size:10px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.3);text-align:center;}
+  .gallery-add-label{font-size:11px;color:rgba(255,255,255,0.2);font-weight:300;}
+
+  /* Video placeholders in gallery */
+  .gallery-item.video-item::after{content:'▶';position:absolute;font-size:28px;color:rgba(255,255,255,0.5);background:rgba(0,0,0,0.5);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;top:50%;left:50%;transform:translate(-50%,-50%);}
+
+  .gallery-note{text-align:center;margin-top:32px;font-size:13px;color:rgba(255,255,255,0.35);font-weight:300;}
+  .gallery-note strong{color:var(--tan-light);}
+
+  /* UPCOMING EVENT */
+  .upcoming-section{padding:100px 80px;background:var(--white);}
+  .upcoming-inner{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+  .upcoming-card{background:var(--cream);padding:56px 48px;border-top:4px solid var(--tan);position:relative;}
+  .upcoming-tag{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;display:block;}
+  .upcoming-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--dark);margin-bottom:8px;}
+  .upcoming-title em{font-style:italic;color:var(--tan);}
+  .upcoming-details{display:flex;flex-direction:column;gap:12px;margin:24px 0 32px;}
+  .upcoming-detail{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mid);}
+  .upcoming-detail-icon{font-size:18px;}
+  .upcoming-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--mid);margin-bottom:28px;}
+  .btn-event{background:var(--tan);color:var(--white);padding:14px 28px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;
+    opacity:0.92;display:inline-block;border:none;cursor:pointer;}
+  .btn-event:hover{background:var(--brown);}
+  .upcoming-content .section-body{margin-bottom:14px;}
+
+  /* NOTIFY FORM */
+  .notify-section{padding:80px;background:var(--tan-pale);display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+  .notify-text h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--brown);}
+  .notify-text h2 em{font-style:italic;color:var(--tan);}
+  .notify-text p{font-size:14px;font-weight:300;color:var(--mid);margin-top:8px;max-width:400px;line-height:1.7;}
+  .notify-form{display:flex;gap:0;flex:1;max-width:480px;}
+  .notify-input{flex:1;padding:16px 20px;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark);border:1.5px solid rgba(166,128,104,0.3);border-right:none;outline:none;background:var(--white);}
+  .notify-input:focus{border-color:var(--tan);}
+  .notify-input::placeholder{color:#b0a09a;}
+  .notify-btn{background:var(--tan);color:var(--white);padding:16px 24px;font-family:'Jost',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;
+    opacity:0.92;white-space:nowrap;}
+  .notify-btn:hover{background:var(--brown);}
+
+  /* FOOTER */
+  footer{background:var(--brown);padding:64px 80px 32px;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
+  .footer-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--tan-light);margin-bottom:4px;}
+  .footer-logo-sub{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+  .footer-tagline{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.5);max-width:280px;}
+  .footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan-light);margin-bottom:20px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--tan-light);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-legal{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6;}
+
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  @media(max-width:900px){
+    nav{padding:0 24px;}.nav-links{display:none;}
+    .hero-content{padding:60px 32px;}
+    .why-section{grid-template-columns:1fr;}.why-img-side{padding:48px 32px;min-height:280px;}.why-content{padding:56px 32px;}
+    .types-section,.gallery-section,.upcoming-section{padding:64px 32px;}
+    .types-grid{grid-template-columns:1fr 1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-item.wide{grid-column:span 1;}
+    .upcoming-inner{grid-template-columns:1fr;}
+    .notify-section{padding:56px 32px;flex-direction:column;}.notify-form{max-width:100%;}
+    .footer-top{grid-template-columns:1fr 1fr;}footer{padding:48px 32px 24px;}
+  }
+  @media(max-width:600px){
+    .types-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:1fr 1fr;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;">
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--tan);letter-spacing:0.02em;display:block;">Taylor Thompson Home Group</span>
+    <span style="font-size:9px;font-weight:500;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:2px;display:block;font-family:'Jost',sans-serif;">Keller Williams Realty</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="taylorthompson_team.html">About</a></li>
+    <li><a href="taylorthompson_sell.html">Sell</a></li>
+    <li><a href="taylorthompson_buy.html">Buy</a></li>
+    <li><a href="taylorthompson_neighborhoods.html">Areas</a></li>
+    <li><a href="taylorthompson_events.html" class="active">Events</a></li>
+    <li><a href="taylorthompson_blog.html">Blog</a></li>
+    <li><a href="taylorthompson_contact.html">Contact</a></li>
+  </ul>
+  <a href="taylorthompson_home_valuation.html" class="nav-cta">Free Home Value</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Client Appreciation Events</p>
+    <h1 class="hero-headline">Because Real Estate<br>Is About More Than <em>Transactions</em></h1>
+    <p class="hero-body">We don't just help people buy and sell homes - we build real relationships. Our client events are how we celebrate our community, show appreciation for our clients, and create memories that last long after the closing table.</p>
+    <div class="hero-actions">
+      <a href="#notify" class="btn-primary">Get Invited to Our Next Event</a>
+      <a href="#events" class="btn-outline-light">See Past Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE DO THIS -->
+<section class="why-section">
+  <div class="why-content">
+    <p class="section-eyebrow fade-up">Our Philosophy</p>
+    <h2 class="section-title fade-up">Clients Aren't Just<br>Clients - They're <em>Family</em></h2>
+    <p class="section-body fade-up">At Taylor Thompson Home Group, we believe the relationship doesn't end at closing. We stay connected with our clients because we genuinely care about them - not just their referrals.</p>
+    <p class="section-body fade-up">Our events are our way of giving back and staying connected. Whether it's a holiday party, a pumpkin patch trip, a movie night, or a summer cookout - these moments are how we show our appreciation for the people who trust us with the biggest decisions of their lives.</p>
+    <p class="section-body fade-up">And yes - when you work with us, you're invited to all of it.</p>
+  </div>
+  <div class="why-img-side">
+    <div class="why-quote">
+      <span class="why-quote-mark">"</span>
+      <p class="why-quote-text">We don't settle for average. We want to WOW you - during your transaction and long after it.</p>
+      <p class="why-quote-attr">- Taylor Thompson</p>
+    </div>
+  </div>
+</section>
+
+<!-- EVENT TYPES -->
+<section class="types-section" id="events">
+  <div class="types-header">
+    <p class="section-eyebrow fade-up">What We Host</p>
+    <h2 class="section-title fade-up">Events for Every <em>Season</em></h2>
+    <p class="section-body fade-up">Throughout the year we host a variety of client appreciation events - from casual family outings to festive holiday parties. Here's a taste of what being a Taylor Thompson Home Group client looks like.</p>
+  </div>
+  <div class="types-grid">
+    <div class="type-card fade-up">
+      <div class="type-card-img">
+        <div class="type-card-img-placeholder">
+          <div class="type-placeholder-icon">🎃</div>
+          <div class="type-placeholder-label">Add Event Photo</div>
+        </div>
+      </div>
+      <div class="type-card-body">
+        <span class="type-card-tag">Fall Event</span>
+        <div class="type-card-title">Pumpkin Patch & Fall Festival</div>
+        <p class="type-card-desc">One of our most popular annual events - clients and their families join us for a fun fall day at a local pumpkin patch. Think photos, hay rides, cider, and good company.</p>
+      </div>
+    </div>
+    <div class="type-card fade-up">
+      <div class="type-card-img">
+        <div class="type-card-img-placeholder">
+          <div class="type-placeholder-icon">🎄</div>
+          <div class="type-placeholder-label">Add Event Photo</div>
+        </div>
+      </div>
+      <div class="type-card-body">
+        <span class="type-card-tag">Holiday Event</span>
+        <div class="type-card-title">Holiday Client Party</div>
+        <p class="type-card-desc">Our annual holiday celebration brings the whole community together. Great food, drinks, games, and the warmth of people who've all shared a chapter of their story with us.</p>
+      </div>
+    </div>
+    <div class="type-card fade-up">
+      <div class="type-card-img">
+        <div class="type-card-img-placeholder">
+          <div class="type-placeholder-icon">🎬</div>
+          <div class="type-placeholder-label">Add Event Photo</div>
+        </div>
+      </div>
+      <div class="type-card-body">
+        <span class="type-card-tag">Summer Event</span>
+        <div class="type-card-title">Movie Night &amp; Summer Cookout</div>
+        <p class="type-card-desc">Outdoor movie screenings, backyard BBQ vibes, and a chance for clients to connect with each other in a relaxed, fun environment. Kids welcome - always.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAST EVENTS GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-header">
+    <p class="section-eyebrow" style="color:var(--tan-light)">Gallery</p>
+    <h2 class="section-title fade-up" style="color:var(--white)">Moments From Our <em>Community</em></h2>
+    <p class="section-body fade-up">Photos and videos from past events. This is what it looks like to be part of the Taylor Thompson Home Group family.</p>
+  </div>
+
+  <!--
+    TO MAJHONG - GALLERY INSTRUCTIONS:
+    Each .gallery-item can hold a photo or video.
+    For PHOTOS: Add style="background-image:url('your-photo.jpg');background-size:cover;background-position:center;" to the .gallery-item div
+    For VIDEOS: Add class "video-item" to the .gallery-item and embed a video or link inside
+    The .tall class makes an item 2 rows tall. The .wide class makes it 2 columns wide.
+    Replace the placeholder content inside each .gallery-item-inner with your actual media.
+    Recommended: 8-12 photos + 2-3 video clips minimum for best visual impact.
+  -->
+
+  <div class="gallery-grid fade-up">
+    <div class="gallery-item tall">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+        <div class="gallery-add-label">Replace with image</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+      </div>
+    </div>
+    <div class="gallery-item wide">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">🎬</div>
+        <div class="gallery-placeholder-text">Event Video Highlight</div>
+        <div class="gallery-add-label">Replace with video embed</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+      </div>
+    </div>
+    <div class="gallery-item tall">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+        <div class="gallery-add-label">Replace with image</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo</div>
+      </div>
+    </div>
+    <div class="gallery-item wide">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">📸</div>
+        <div class="gallery-placeholder-text">Event Photo - Wide</div>
+      </div>
+    </div>
+    <div class="gallery-item">
+      <div class="gallery-item-inner">
+        <div class="gallery-placeholder-icon">🎬</div>
+        <div class="gallery-placeholder-text">Video Clip</div>
+      </div>
+    </div>
+  </div>
+  <p class="gallery-note"><strong>To Majhong:</strong> Replace each placeholder above with real event photos and video embeds. Use the tall/wide classes to create visual variety in the layout.</p>
+</section>
+
+<!-- UPCOMING EVENT -->
+<section class="upcoming-section">
+  <div class="upcoming-inner">
+    <div class="upcoming-content fade-up">
+      <p class="section-eyebrow">Next Up</p>
+      <h2 class="section-title">Our Next Client Event<br>Is <em>Coming Soon</em></h2>
+      <p class="section-body">We host events throughout the year for our clients and their families. Enter your email below and you'll be the first to know when our next event is announced - including date, location, and how to RSVP.</p>
+      <p class="section-body">Past clients, current clients, and anyone who has referred us are all welcome. These events are our way of saying thank you for being part of our community.</p>
+    </div>
+    <div class="upcoming-card fade-up">
+      <span class="upcoming-tag">Upcoming Event</span>
+      <div class="upcoming-title"><em>Coming Soon</em></div>
+      <p class="upcoming-desc">Details for our next client appreciation event will be announced soon. Sign up below to be the first to know - spots fill up fast!</p>
+      <div class="upcoming-details">
+        <div class="upcoming-detail"><span class="upcoming-detail-icon">📅</span><span>Date TBA - Sign up to get notified</span></div>
+        <div class="upcoming-detail"><span class="upcoming-detail-icon">📍</span><span>Central Valley, CA</span></div>
+        <div class="upcoming-detail"><span class="upcoming-detail-icon">👨‍👩‍👧</span><span>Clients, families & friends welcome</span></div>
+        <div class="upcoming-detail"><span class="upcoming-detail-icon">🎟️</span><span>Free - our treat</span></div>
+      </div>
+      <a href="#notify" class="btn-event">Notify Me →</a>
+    </div>
+  </div>
+</section>
+
+<!-- NOTIFY SIGNUP -->
+<div class="notify-section" id="notify">
+  <div class="notify-text">
+    <h2>Stay in the Loop.<br>Get <em>Invited.</em></h2>
+    <p>Drop your email and we'll personally reach out when our next event is announced. No spam - just good times ahead.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:10px;flex:1;max-width:480px;">
+    <div class="notify-form">
+      <input class="notify-input" type="text" placeholder="Your name">
+      <button class="notify-btn" style="border-left:none;">→</button>
+    </div>
+    <div class="notify-form">
+      <input class="notify-input" type="email" placeholder="Your email address">
+      <button class="notify-btn">Notify Me</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="taylorthompson_team.html">Meet the Team</a></li>
+        <li><a href="taylorthompson_sell.html">Sell</a></li>
+        <li><a href="taylorthompson_buy.html">Buy</a></li>
+        <li><a href="taylorthompson_events.html">Events</a></li>
+        <li><a href="taylorthompson_home_valuation.html">Free Home Value</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Cities We Serve</div>
+      <ul class="footer-links">
+        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
+        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
+        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
+        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
+        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
+        <li><a href="taylorthompson_neighborhood_riverbank.html">Riverbank</a></li>
+        <li><a href="taylorthompson_neighborhood_stockton.html">Stockton</a></li>
+        <li><a href="taylorthompson_neighborhood_tracy.html">Tracy</a></li>
+        <li><a href="taylorthompson_neighborhood_lodi.html">Lodi</a></li>
+        <li><a href="taylorthompson_neighborhood_merced.html">Merced</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/soldby.taylor" target="_blank">Instagram @soldby.taylor</a></li>
+        <li><a href="https://instagram.com/soldby.dave" target="_blank">Instagram @soldby.dave</a></li>
+        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
+        <li><a href="https://youtube.com/@Soldby.taylor" target="_blank">YouTube</a></li>
+        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2025 Taylor Thompson Home Group · Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
+    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+<!-- AI CHATBOT - replace this script with your Tidio embed code from tidio.com -->
+<script>
+  window.addEventListener('load', function() {
+    const bubble = document.createElement('div');
+    bubble.innerHTML = '💬';
+    bubble.style.cssText = 'position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#a68068;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:999;transition:transform 0.2s;';
+    bubble.title = 'Chat with us!';
+    bubble.onmouseover = () => bubble.style.transform = 'scale(1.1)';
+    bubble.onmouseout = () => bubble.style.transform = 'scale(1)';
+    bubble.onclick = () => window.location.href = 'contact.html';
+    document.body.appendChild(bubble);
+  });
+</script>
+</body>
+</html>
