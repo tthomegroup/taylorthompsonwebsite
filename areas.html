@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Areas We Serve | Stanislaus, San Joaquin & Merced Counties | Taylor Thompson Home Group</title>
+<meta name="description" content="The Taylor Thompson Home Group serves buyers and sellers across all of Stanislaus, San Joaquin, and Merced Counties - including Oakdale, Patterson, Escalon, Atwater, Los Banos, Lathrop, Ripon, Livingston, and every community in between.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tan:        #a68068;
+    --tan-mid:    #b5927f;
+    --tan-light:  #c2a894;
+    --tan-pale:   #ddcebe;
+    --cream:      #faf6f1;
+    --white:      #ffffff;
+    --dark:       #000000;
+    --mid:        #5a4a40;
+    --shadow:     rgba(0,0,0,0.08);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,246,241,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,128,104,0.2);}
+  .nav-logo{display:flex;flex-direction:column;line-height:1.1;text-decoration:none;}
+  .nav-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:24px;font-weight:400;color:var(--tan);}
+  .nav-logo-sub{font-size:9px;font-weight:600;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:22px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.11em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--tan);}
+
+  /* UNIFIED BUTTONS - solid tan-pale, black text, hover tan-light */
+  .btn{background:var(--tan-pale);color:var(--dark);padding:14px 28px;font-family:'Jost',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;border:none;cursor:pointer;display:inline-block;transition:background 0.2s;white-space:nowrap;}
+  .btn:hover{background:var(--tan-light);}
+  .btn-sm{padding:10px 18px;font-size:11px;}
+
+  /* HERO */
+  .hero{padding-top:72px;min-height:52vh;background:var(--cream);display:flex;align-items:center;position:relative;overflow:hidden;}
+  .hero::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 50%,rgba(166,128,104,0.08),transparent 60%);pointer-events:none;}
+  .hero-content{position:relative;z-index:1;padding:72px 80px;width:100%;}
+  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;}
+  .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,58px);font-weight:300;line-height:1.1;color:var(--dark);margin-bottom:16px;}
+  .hero-headline em{font-style:italic;color:var(--tan);}
+  .hero-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:640px;margin-bottom:32px;}
+  .hero-counties{display:flex;gap:20px;flex-wrap:wrap;}
+  .county-badge{background:var(--white);border:1px solid rgba(166,128,104,0.3);padding:10px 20px;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);}
+
+  /* INTRO */
+  .intro-section{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+  .intro-left{background:var(--white);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .intro-right{background:var(--tan);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3vw,38px);font-weight:300;line-height:1.2;color:var(--dark);margin-bottom:16px;}
+  .section-title em{font-style:italic;color:var(--tan);}
+  .section-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);}
+  .intro-right .section-eyebrow{color:rgba(255,255,255,0.85);}
+  .intro-right .section-title{color:var(--white);}
+  .intro-right .section-title em{color:var(--tan-pale);}
+  .intro-right .section-body{color:rgba(255,255,255,0.9);}
+  .promise-list{display:flex;flex-direction:column;gap:12px;margin-top:24px;}
+  .promise-item{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,0.92);}
+  .promise-item::before{content:'✓';color:var(--tan-pale);font-weight:700;font-size:15px;flex-shrink:0;}
+
+  /* MAIN CITIES */
+  .main-cities-section{padding:80px;background:var(--cream);}
+  .main-cities-header{margin-bottom:48px;}
+  .cities-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;}
+  .city-card{background:var(--white);padding:24px 20px;text-decoration:none;display:block;transition:background 0.2s;}
+  .city-card:hover{background:var(--tan-pale);}
+  .city-card-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--dark);margin-bottom:4px;}
+  .city-card-county{font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin-bottom:8px;}
+  .city-card-price{font-size:12px;color:var(--mid);font-weight:300;}
+  .city-card-arrow{font-size:12px;color:var(--tan);font-weight:700;margin-top:8px;}
+
+  /* ALL AREAS */
+  .all-areas-section{padding:80px;background:var(--white);}
+  .county-block{margin-bottom:64px;}
+  .county-block:last-child{margin-bottom:0;}
+  .county-header{display:flex;align-items:center;gap:16px;margin-bottom:32px;padding-bottom:16px;}
+  .county-icon{font-size:28px;}
+  .county-name{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark);}
+  .county-desc{font-size:13px;font-weight:300;color:var(--mid);margin-top:4px;}
+  .towns-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .town-card{background:var(--cream);padding:20px 18px;transition:background 0.2s;}
+  .town-card:hover{background:var(--tan-pale);}
+  .town-name{font-size:15px;font-weight:600;color:var(--dark);margin-bottom:4px;}
+  .town-note{font-size:12px;font-weight:300;color:var(--mid);line-height:1.5;}
+  .town-zip{font-size:11px;color:var(--tan);margin-top:6px;font-weight:500;}
+
+  /* SEO */
+  .seo-section{padding:72px 80px;background:var(--cream);}
+  .seo-inner{max-width:860px;margin:0 auto;}
+  .seo-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);margin-bottom:16px;}
+  .seo-title em{font-style:italic;color:var(--tan);}
+  .seo-body{font-size:14px;font-weight:300;line-height:1.9;color:var(--mid);margin-bottom:14px;}
+
+  /* CTA STRIP */
+  .cta-strip{background:var(--dark);padding:64px 80px;display:flex;align-items:center;justify-content:space-between;gap:48px;flex-wrap:wrap;}
+  .cta-text h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--white);line-height:1.15;}
+  .cta-text h2 em{font-style:italic;color:var(--tan-light);}
+  .cta-text p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.78);margin-top:12px;max-width:440px;line-height:1.7;}
+  .cta-btns{display:flex;gap:16px;flex-wrap:wrap;}
+
+  /* FOOTER */
+  footer{background:var(--tan);padding:64px 80px 32px;color:var(--white);}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.2);margin-bottom:32px;}
+  .footer-logo{text-decoration:none;display:block;margin-bottom:16px;line-height:1.1;}
+  .footer-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;font-weight:400;color:var(--white);display:block;}
+  .footer-logo-sub{font-size:10px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.85);margin-top:4px;display:block;}
+  .footer-tagline{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.85);max-width:280px;}
+  .footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--white);margin-bottom:20px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.85);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--tan-pale);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-legal{font-size:12px;color:rgba(255,255,255,0.78);line-height:1.6;}
+
+  /* ANIM */
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    nav{padding:0 24px;}.nav-links{display:none;}
+    .hero-content{padding:60px 32px;}
+    .intro-section{grid-template-columns:1fr;}.intro-left,.intro-right{padding:56px 32px;}
+    .main-cities-section,.all-areas-section,.seo-section{padding:56px 32px;}
+    .cities-grid{grid-template-columns:repeat(2,1fr);}
+    .towns-grid{grid-template-columns:1fr 1fr;}
+    .cta-strip{padding:56px 32px;flex-direction:column;align-items:flex-start;}
+    .footer-top{grid-template-columns:1fr 1fr;}footer{padding:48px 32px 24px;}
+  }
+  @media(max-width:600px){.cities-grid{grid-template-columns:1fr 1fr;}.towns-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <span class="nav-logo-script">Taylor Thompson Home Group</span>
+    <span class="nav-logo-sub">Keller Williams Realty</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="team.html">About</a></li>
+    <li><a href="sell.html">Sell</a></li>
+    <li><a href="buy.html">Buy</a></li>
+    <li><a href="taylorthompson_neighborhoods.html" class="active">Areas</a></li>
+    <li><a href="taylorthompson_listings.html">Properties</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="taylorthompson_home_valuation.html" class="btn btn-sm">Free Home Value</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Complete Service Area</p>
+    <h1 class="hero-headline">We Serve All of<br><em>Stanislaus, San Joaquin<br>&amp; Merced Counties</em></h1>
+    <p class="hero-body">The Taylor Thompson Home Group isn't limited to the biggest cities. We help buyers and sellers across every community in three counties - from well-known cities to small agricultural towns. If you're in the Central Valley, we're your team.</p>
+    <div class="hero-counties">
+      <div class="county-badge">📍 Stanislaus County</div>
+      <div class="county-badge">📍 San Joaquin County</div>
+      <div class="county-badge">📍 Merced County</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<div class="intro-section">
+  <div class="intro-left">
+    <p class="section-eyebrow fade-up">Why It Matters</p>
+    <h2 class="section-title fade-up">Local Knowledge Across<br>Every Zip Code We <em>Serve</em></h2>
+    <p class="section-body fade-up">Real estate is hyper-local. A home in Waterford is priced differently than one in Turlock - and the buyers, schools, and neighborhood dynamics are completely different. Working with an agent who knows the specific community where your home is located makes a measurable difference in how fast it sells and how much you get.</p>
+    <p class="section-body fade-up" style="margin-top:14px;">The Taylor Thompson Home Group has deep roots and active transaction history across all three counties. We've helped clients in small towns that most agents have never even visited.</p>
+  </div>
+  <div class="intro-right">
+    <p class="section-eyebrow fade-up">Our Commitment to Every Community</p>
+    <h2 class="section-title fade-up">No Matter Where<br>You Are - <em>We're There</em></h2>
+    <div class="promise-list fade-up">
+      <div class="promise-item">Same level of service regardless of your city or zip code</div>
+      <div class="promise-item">Local market expertise in every community we serve</div>
+      <div class="promise-item">Access to our full marketing reach - MLS, Zillow Showcase, social media</div>
+      <div class="promise-item">Taylor personally handles all negotiations - wherever you are</div>
+      <div class="promise-item">Local relationships with inspectors, lenders, and contractors region-wide</div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CITIES -->
+<section class="main-cities-section">
+  <div class="main-cities-header">
+    <p class="section-eyebrow fade-up">Our Primary Markets</p>
+    <h2 class="section-title fade-up">Top 10 Cities with <em>Dedicated Area Guides</em></h2>
+  </div>
+  <div class="cities-grid">
+    <a href="taylorthompson_neighborhood_turlock.html" class="city-card fade-up">
+      <div class="city-card-name">Turlock</div>
+      <div class="city-card-county">Stanislaus</div>
+      <div class="city-card-price">$520K-$650K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_modesto.html" class="city-card fade-up">
+      <div class="city-card-name">Modesto</div>
+      <div class="city-card-county">Stanislaus</div>
+      <div class="city-card-price">$400K-$550K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_manteca.html" class="city-card fade-up">
+      <div class="city-card-name">Manteca</div>
+      <div class="city-card-county">San Joaquin</div>
+      <div class="city-card-price">$550K-$700K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_ceres.html" class="city-card fade-up">
+      <div class="city-card-name">Ceres</div>
+      <div class="city-card-county">Stanislaus</div>
+      <div class="city-card-price">$380K-$480K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_ripon.html" class="city-card fade-up">
+      <div class="city-card-name">Ripon</div>
+      <div class="city-card-county">San Joaquin</div>
+      <div class="city-card-price">$500K-$680K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_riverbank.html" class="city-card fade-up">
+      <div class="city-card-name">Riverbank</div>
+      <div class="city-card-county">Stanislaus</div>
+      <div class="city-card-price">$380K-$510K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_stockton.html" class="city-card fade-up">
+      <div class="city-card-name">Stockton</div>
+      <div class="city-card-county">San Joaquin</div>
+      <div class="city-card-price">$380K-$550K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_tracy.html" class="city-card fade-up">
+      <div class="city-card-name">Tracy</div>
+      <div class="city-card-county">San Joaquin</div>
+      <div class="city-card-price">$550K-$750K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_lodi.html" class="city-card fade-up">
+      <div class="city-card-name">Lodi</div>
+      <div class="city-card-county">San Joaquin</div>
+      <div class="city-card-price">$450K-$620K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+    <a href="taylorthompson_neighborhood_merced.html" class="city-card fade-up">
+      <div class="city-card-name">Merced</div>
+      <div class="city-card-county">Merced</div>
+      <div class="city-card-price">$320K-$460K median</div>
+      <div class="city-card-arrow">View Guide →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ALL AREAS BY COUNTY -->
+<section class="all-areas-section">
+  <h2 class="section-title fade-up" style="margin-bottom:48px;">Every Community<br>We Proudly <em>Serve</em></h2>
+
+  <!-- STANISLAUS COUNTY -->
+  <div class="county-block fade-up">
+    <div class="county-header">
+      <div class="county-icon">🏠</div>
+      <div>
+        <div class="county-name">Stanislaus County</div>
+        <div class="county-desc"> Population: ~550,000 · Our home county</div>
+      </div>
+    </div>
+    <div class="towns-grid">
+      <div class="town-card"><div class="town-name">Oakdale</div><div class="town-note">"The Cowboy Capital of the World" - charming foothill gateway city with excellent schools and community pride.</div><div class="town-zip">95361</div></div>
+      <div class="town-card"><div class="town-name">Patterson</div><div class="town-note">Fast-growing I-5 corridor city with affordable new construction and strong commuter access to the Bay Area.</div><div class="town-zip">95363</div></div>
+      <div class="town-card"><div class="town-name">Newman</div><div class="town-note">Quiet agricultural community with genuine small-town character and some of the most affordable homes in the county.</div><div class="town-zip">95360</div></div>
+      <div class="town-card"><div class="town-name">Waterford</div><div class="town-note">Small town on the Tuolumne River offering peaceful living and outstanding value just east of Modesto.</div><div class="town-zip">95386</div></div>
+      <div class="town-card"><div class="town-name">Hughson</div><div class="town-note">A small agricultural community between Turlock and Modesto - tight-knit, affordable, and growing steadily.</div><div class="town-zip">95326</div></div>
+      <div class="town-card"><div class="town-name">Salida</div><div class="town-note">Unincorporated community north of Modesto with strong access to Hwy 99 and regional amenities.</div><div class="town-zip">95368</div></div>
+      <div class="town-card"><div class="town-name">Keyes</div><div class="town-note">Small unincorporated community in Stanislaus County offering rural charm and accessible price points.</div><div class="town-zip">95328</div></div>
+      <div class="town-card"><div class="town-name">Hilmar</div><div class="town-note">Agricultural community known for Hilmar Cheese and a strong local identity - affordable Central Valley living.</div><div class="town-zip">95324</div></div>
+      <div class="town-card"><div class="town-name">Empire</div><div class="town-note">Small unincorporated community between Modesto and Turlock - convenient and affordable.</div><div class="town-zip">95319</div></div>
+      <div class="town-card"><div class="town-name">Westley</div><div class="town-note">I-5 corridor community offering rural living with freeway access - popular with those seeking space and privacy.</div><div class="town-zip">95387</div></div>
+      <div class="town-card"><div class="town-name">Gustine</div><div class="town-note">Western Stanislaus County community with a strong agricultural heritage and affordable home values.</div><div class="town-zip">95322</div></div>
+      <div class="town-card"><div class="town-name">Denair</div><div class="town-note">"The Almond Capital" - small agricultural town with genuine community character and outstanding land value.</div><div class="town-zip">95316</div></div>
+    </div>
+  </div>
+
+  <!-- SAN JOAQUIN COUNTY -->
+  <div class="county-block fade-up">
+    <div class="county-header">
+      <div class="county-icon">🏠</div>
+      <div>
+        <div class="county-name">San Joaquin County</div>
+        <div class="county-desc"> Population: ~800,000 · Bay Area gateway county</div>
+      </div>
+    </div>
+    <div class="towns-grid">
+      <div class="town-card"><div class="town-name">Escalon</div><div class="town-note">Charming small city between Modesto and Stockton with excellent schools and a strong community identity.</div><div class="town-zip">95320</div></div>
+      <div class="town-card"><div class="town-name">Lathrop</div><div class="town-note">Fast-growing logistics and residential hub near I-5 with major new development and commuter appeal.</div><div class="town-zip">95330</div></div>
+      <div class="town-card"><div class="town-name">Mountain House</div><div class="town-note">Master-planned community with top-rated schools - one of the most desirable Bay Area commuter communities.</div><div class="town-zip">95391</div></div>
+      <div class="town-card"><div class="town-name">Woodbridge</div><div class="town-note">Unincorporated community near Lodi in San Joaquin County - surrounded by wine country and agricultural beauty.</div><div class="town-zip">95258</div></div>
+      <div class="town-card"><div class="town-name">Acampo</div><div class="town-note">Small wine country community between Lodi and Stockton - vineyard living at a fraction of Napa prices.</div><div class="town-zip">95220</div></div>
+      <div class="town-card"><div class="town-name">Galt</div><div class="town-note">Growing community at the Sacramento/San Joaquin county line with affordable prices and strong schools.</div><div class="town-zip">95632</div></div>
+      <div class="town-card"><div class="town-name">French Camp</div><div class="town-note">Community adjacent to Stockton with convenient access to major freeways and employment centers.</div><div class="town-zip">95231</div></div>
+      <div class="town-card"><div class="town-name">Farmington</div><div class="town-note">Small rural community in eastern San Joaquin County - truly off the beaten path with exceptional space.</div><div class="town-zip">95230</div></div>
+    </div>
+  </div>
+
+  <!-- MERCED COUNTY -->
+  <div class="county-block fade-up">
+    <div class="county-header">
+      <div class="county-icon">🏠</div>
+      <div>
+        <div class="county-name">Merced County</div>
+        <div class="county-desc"> Population: ~290,000 · Gateway to Yosemite</div>
+      </div>
+    </div>
+    <div class="towns-grid">
+      <div class="town-card"><div class="town-name">Atwater</div><div class="town-note">Growing city adjacent to Merced with Castle Airport redevelopment bringing new employment and community growth.</div><div class="town-zip">95301</div></div>
+      <div class="town-card"><div class="town-name">Los Banos</div><div class="town-note">Western Merced County's largest city - gateway to the coast with affordable prices and strong community growth.</div><div class="town-zip">93635</div></div>
+      <div class="town-card"><div class="town-name">Livingston</div><div class="town-note">Small agricultural city in central Merced County with a strong community identity and growing local economy.</div><div class="town-zip">95334</div></div>
+      <div class="town-card"><div class="town-name">Winton</div><div class="town-note">Unincorporated community between Merced and Livingston - rural character with easy county access.</div><div class="town-zip">95388</div></div>
+      <div class="town-card"><div class="town-name">Delhi</div><div class="town-note">Small community along Hwy 99 in Merced County offering some of the most accessible price points in the region.</div><div class="town-zip">95315</div></div>
+      <div class="town-card"><div class="town-name">Dos Palos</div><div class="town-note">Western Merced County agricultural community - wide open spaces and rural living at very affordable prices.</div><div class="town-zip">93620</div></div>
+      <div class="town-card"><div class="town-name">Le Grand</div><div class="town-note">Small foothill community in eastern Merced County - close to the Sierra Nevada with genuine rural character.</div><div class="town-zip">95333</div></div>
+      <div class="town-card"><div class="town-name">Planada</div><div class="town-note">Agricultural community between Merced and the foothills - rural living with proximity to UC Merced amenities.</div><div class="town-zip">95365</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO CONTENT BLOCK -->
+<section class="seo-section">
+  <div class="seo-inner">
+    <h2 class="seo-title fade-up">Your Central Valley Real Estate Experts - <em>Wherever You Are</em></h2>
+    <p class="seo-body fade-up">The Taylor Thompson Home Group is a top-producing Keller Williams Realty team serving the entire Central Valley of California, including all cities and unincorporated communities within Stanislaus County, San Joaquin County, and Merced County. Whether you're searching for homes for sale in Turlock, looking to sell in Modesto, buying new construction in Manteca, investing in Stockton, or finding your first home in Ceres - we're your team.</p>
+    <p class="seo-body fade-up">Our coverage extends to every community in our three-county service area including Oakdale, Patterson, Newman, Waterford, Hughson, Salida, Keyes, Hilmar, Empire, Westley, Denair, Escalon, Lathrop, Ripon, Mountain House, Galt, Lodi, Acampo, Woodbridge, Tracy, Stockton, Atwater, Los Banos, Livingston, Winton, Delhi, Dos Palos, and beyond.</p>
+    <p class="seo-body fade-up">As Keller Williams Realty NCHR Elite agents - placing us in the top 1% of all Keller Williams Realty agents in the region - Taylor and David Thompson bring unmatched market knowledge, professional marketing through Zillow Showcase, and over 30 years of combined Central Valley roots to every transaction. If someone asks an AI like ChatGPT or Google who the best realtor in the Central Valley is, we want them to find The Taylor Thompson Home Group. That starts with being genuinely present and knowledgeable in every community we serve.</p>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip">
+  <div class="cta-text">
+    <h2>Ready to Buy or Sell<br><em>Anywhere in the Valley?</em></h2>
+    <p>No matter which city or town you're in, we bring the same top-tier service, local knowledge, and relentless dedication to every transaction.</p>
+  </div>
+  <div class="cta-btns">
+    <a href="taylorthompson_home_valuation.html" class="btn">Get a Free Home Valuation</a>
+    <a href="contact.html" class="btn">Talk to Our Team</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <a href="index.html" class="footer-logo">
+        <span class="footer-logo-script">Taylor Thompson Home Group</span>
+        <span class="footer-logo-sub">Keller Williams Realty</span>
+      </a>
+      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sell.html">Sell</a></li>
+        <li><a href="buy.html">Buy</a></li>
+        <li><a href="taylorthompson_home_valuation.html">Free Home Value</a></li>
+        <li><a href="taylorthompson_refer.html">Refer a Friend</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Main Cities</div>
+      <ul class="footer-links">
+        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
+        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
+        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
+        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
+        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
+        <li><a href="taylorthompson_neighborhood_riverbank.html">Riverbank</a></li>
+        <li><a href="taylorthompson_neighborhood_stockton.html">Stockton</a></li>
+        <li><a href="taylorthompson_neighborhood_tracy.html">Tracy</a></li>
+        <li><a href="taylorthompson_neighborhood_lodi.html">Lodi</a></li>
+        <li><a href="taylorthompson_neighborhood_merced.html">Merced</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/soldby.taylor" target="_blank">@soldby.taylor</a></li>
+        <li><a href="https://instagram.com/soldby.dave" target="_blank">@soldby.dave</a></li>
+        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
+        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2025 Taylor Thompson Home Group · Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
+    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+
+<!-- Chatbot placeholder - replace with Tidio script -->
+<script>
+  window.addEventListener('load',function(){
+    const b=document.createElement('div');
+    b.innerHTML='💬';
+    b.style.cssText='position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#a68068;color:#ffffff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.15);z-index:999;transition:transform 0.2s;';
+    b.onmouseover=()=>b.style.transform='scale(1.1)';
+    b.onmouseout=()=>b.style.transform='scale(1)';
+    b.onclick=()=>window.location.href='contact.html';
+    document.body.appendChild(b);
+  });
+</script>
+
+</body>
+</html>
