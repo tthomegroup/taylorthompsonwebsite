@@ -1,0 +1,5 @@
+{
+  "scripts": {
+    "generate:blog": "node scripts/generate-blog-pages.js"
+  }
+}

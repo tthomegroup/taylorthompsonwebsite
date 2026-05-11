@@ -1,0 +1,18 @@
+[build]
+  command = "node scripts/generate-blog-pages.js"
+  publish = "."
+
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/assets/data/blog-posts.json"
+  [headers.values]
+    Cache-Control = "no-cache"

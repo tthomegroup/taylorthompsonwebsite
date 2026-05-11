@@ -1,0 +1,77 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+site_url: https://taylorthompsonhomegroup.netlify.app
+display_url: https://taylorthompsonhomegroup.netlify.app
+logo_url: /assets/images/favicon.png
+
+collections:
+  - name: "blog_data"
+    label: "Blog Editor"
+    files:
+      - name: "blog_posts"
+        label: "Click Here To Add/Edit Blog Posts"
+        file: "assets/data/blog-posts.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Blog Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}} - {{fields.date}}"
+            add_to_top: true
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+              - label: "Category"
+                name: "category"
+                widget: "select"
+                default: "Market Updates"
+                options:
+                  - "Market Updates"
+                  - "Buyer Tips"
+                  - "Seller Tips"
+                  - "First-Time Buyers"
+                  - "Investment"
+                  - "Local Spotlight"
+              - label: "Publish Date"
+                name: "date"
+                widget: "datetime"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+                format: "YYYY-MM-DD"
+              - label: "Read Time"
+                name: "time"
+                widget: "string"
+                default: "4 Min Read"
+              - label: "Excerpt"
+                name: "excerpt"
+                widget: "text"
+              - label: "Featured Image"
+                name: "image"
+                widget: "image"
+                required: false
+                hint: "Upload the blog image here. Recommended size: 1600 x 900 px."
+              - label: "Image Alt Text"
+                name: "imageAlt"
+                widget: "string"
+                required: false
+              - label: "Article Body"
+                name: "body"
+                widget: "markdown"
+                buttons:
+                  - "bold"
+                  - "italic"
+                  - "heading-two"
+                  - "heading-three"
+                  - "quote"
+                  - "bulleted-list"
+                  - "numbered-list"
+                  - "link"
+                editor_components: []
+                hint: "Use ## for subheadings and **bold text** for emphasis."
