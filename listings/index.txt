@@ -1,0 +1,21 @@
+<section class="listings-hero">
+  <p class="section-eyebrow">Listings</p>
+  <h1>Find a Home That Fits Your Life</h1>
+  <p>
+    Browse active homes for sale across Modesto, Turlock, Manteca, Tracy, and the Central Valley.
+  </p>
+</section>
+
+<section class="idx-listings-section">
+  <h2>Central Valley Homes for Sale</h2>
+
+  <script charset="UTF-8"
+    type="text/javascript"
+    id="idxwidgetsrc-26450"
+    src="//taylorthompsonhomegroup.idxbroker.com/idx/quicksearchjs.php?widgetid=26450">
+  </script>
+
+  <a class="idx-more-link" href="https://taylorthompsonhomegroup.idxbroker.com/idx/search/advanced">
+    Click here to search for more homes
+  </a>
+</section>
