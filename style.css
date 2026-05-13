@@ -1,0 +1,438 @@
+/* =========================================
+   TAYLOR THOMPSON HOME GROUP
+   GLOBAL SITE STYLES
+========================================= */
+
+/* ===== GOOGLE FONT FALLBACKS ===== */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: var(--cream);
+  color: var(--dark);
+  font-family: 'Jost', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* =========================================
+   ROOT COLORS
+========================================= */
+
+:root {
+  --tan: #a68068;
+  --tan-mid: #b5927f;
+  --tan-light: #c2a894;
+  --tan-pale: #ddcebe;
+
+  --cream: #faf6f1;
+  --white: #ffffff;
+
+  --dark: #000000;
+  --brown: #000000;
+  --mid: #5a4a40;
+
+  --shadow: rgba(0,0,0,0.12);
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  padding: 0 48px;
+
+  background: rgba(250,246,241,0.96);
+  backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(184,154,114,0.2);
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.nav-logo-script {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: var(--tan);
+  letter-spacing: 0.02em;
+}
+
+.nav-logo-sub {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  color: var(--mid);
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--dark);
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--tan);
+}
+
+.nav-cta {
+  background: var(--tan);
+  color: var(--white);
+
+  padding: 10px 24px;
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.nav-cta:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.btn-primary,
+.btn-outline {
+  display: inline-block;
+
+  padding: 14px 32px;
+
+  background: var(--tan-pale);
+  color: #000000;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  text-decoration: none;
+
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+  background: var(--tan-light);
+}
+
+/* =========================================
+   SECTIONS
+========================================= */
+
+section {
+  position: relative;
+}
+
+.section-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+
+  color: var(--tan);
+
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 300;
+  line-height: 1.15;
+
+  color: var(--dark);
+
+  margin-bottom: 24px;
+}
+
+.section-title em {
+  font-style: italic;
+  color: var(--tan);
+}
+
+.section-body {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+
+  color: var(--mid);
+}
+
+/* =========================================
+   FORMS
+========================================= */
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+
+  margin-bottom: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  margin-bottom: 16px;
+}
+
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--mid);
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  background: var(--cream);
+
+  border: 1.5px solid rgba(184,154,114,0.3);
+  outline: none;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 14px;
+  color: var(--dark);
+
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: var(--tan);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-submit {
+  width: 100%;
+
+  padding: 16px;
+
+  background: var(--brown);
+  color: var(--white);
+
+  border: none;
+
+  font-family: 'Jost', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition: background 0.2s ease;
+}
+
+.form-submit:hover {
+  opacity: 0.92;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  background: var(--brown);
+  padding: 64px 80px 32px;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+
+  gap: 48px;
+
+  padding-bottom: 48px;
+  margin-bottom: 32px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-tagline {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+
+  color: rgba(255,255,255,0.55);
+
+  max-width: 280px;
+}
+
+.footer-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  color: var(--tan);
+
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  list-style: none;
+}
+
+.footer-links a {
+  font-size: 13px;
+  font-weight: 300;
+
+  color: rgba(255,255,255,0.6);
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--tan);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+.footer-legal,
+.footer-dre {
+  font-size: 12px;
+  line-height: 1.6;
+
+  color: rgba(255,255,255,0.3);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+  nav {
+    padding: 0 24px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  footer {
+    padding: 48px 32px 24px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+}
