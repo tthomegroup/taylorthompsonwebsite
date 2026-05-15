@@ -16,7 +16,7 @@ collections:
     create: true
     slug: "{{slug}}"
     editor:
-      preview: false
+      preview: true
 
     fields:
       - label: "Title"
