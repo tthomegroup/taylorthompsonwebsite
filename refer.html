@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refer a Friend | Taylor Thompson Home Group | Central Valley Real Estate</title>
+<meta name="description" content="Know someone buying or selling in the Central Valley? Refer them to Taylor Thompson Home Group and we'll take great care of them - and of you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --tan:        #a68068;
+    --tan-mid:    #b5927f;
+    --tan-light:  #c2a894;
+    --tan-pale:   #ddcebe;
+    --cream:      #faf6f1;
+    --white:      #ffffff;
+    --dark:       #000000;
+    --brown:      #000000;
+    --mid:        #5a4a40;
+    --shadow:     rgba(0,0,0,0.12);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,246,241,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,128,104,0.2);}
+  .nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
+  .nav-logo-script{font-family:'Cormorant Garamond',serif;font-style:normal;font-size:22px;color:var(--tan);}
+  .nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:1px;}
+  .nav-links{display:flex;gap:28px;list-style:none;}
+  .nav-links a{font-size:11px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:color 0.2s;}
+  .nav-links a:hover{color:var(--tan);}
+  .nav-cta{background:var(--tan);color:var(--white);padding:10px 20px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;
+    opacity:0.92;}
+  .nav-cta:hover{background:var(--brown);}
+
+  .hero{padding-top:72px;min-height:60vh;background:var(--brown);display:grid;grid-template-columns:1fr 1fr;}
+  .hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 80px;position:relative;overflow:hidden;}
+  .hero-left::after{content:'';position:absolute;top:-20%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(166,128,104,0.08),transparent 70%);pointer-events:none;}
+  .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan-light);margin-bottom:20px;}
+  .hero-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,5vw,60px);font-weight:300;line-height:1.1;color:var(--white);margin-bottom:24px;}
+  .hero-headline em{font-style:italic;color:var(--tan-light);}
+  .hero-body{font-size:15px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.65);max-width:440px;}
+  .hero-right{background:var(--tan);display:flex;flex-direction:column;justify-content:center;align-items:center;padding:80px 64px;text-align:center;}
+  .hero-right-icon{font-size:80px;margin-bottom:24px;}
+  .hero-right-text{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--white);line-height:1.4;margin-bottom:16px;}
+  .hero-right-text em{font-style:italic;}
+  .hero-right-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,0.8);line-height:1.7;}
+
+  .how-section{padding:80px;background:var(--white);}
+  .how-header{text-align:center;margin-bottom:56px;}
+  .section-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:16px;}
+  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:16px;}
+  .section-title em{font-style:italic;color:var(--tan);}
+  .section-body{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(166,128,104,0.12);}
+  .how-card{background:var(--white);padding:48px 36px;text-align:center;transition:background 0.3s;}
+  .how-card:hover{background:var(--cream);}
+  .how-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:300;color:var(--tan-pale);line-height:1;margin-bottom:12px;}
+  .how-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:400;color:var(--dark);margin-bottom:12px;}
+  .how-desc{font-size:14px;font-weight:300;line-height:1.85;color:var(--mid);}
+
+  .form-section{display:grid;grid-template-columns:1fr 1fr;min-height:600px;}
+  .form-left{background:var(--tan-pale);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .form-left .section-title{color:var(--brown);}
+  .form-left .section-body{color:var(--mid);margin-bottom:0;}
+  .promise-list{display:flex;flex-direction:column;gap:14px;margin-top:28px;}
+  .promise-item{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:var(--dark);}
+  .promise-item::before{content:'✓';color:var(--tan);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px;}
+  .form-right{background:var(--white);padding:80px 72px;display:flex;flex-direction:column;justify-content:center;}
+  .form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:16px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .form-label{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);}
+  .form-input,.form-select,.form-textarea{padding:14px 16px;font-family:'Jost',sans-serif;font-size:14px;color:var(--dark);border:1.5px solid rgba(166,128,104,0.3);outline:none;background:var(--cream);transition:border-color 0.2s;width:100%;}
+  .form-input:focus,.form-select:focus{border-color:var(--tan);}
+  .form-input::placeholder{color:#b0a09a;}
+  .form-divider{height:1px;background:var(--tan-pale);margin:20px 0;}
+  .form-divider-label{text-align:center;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);margin:-8px 0 16px;}
+  .form-submit{width:100%;background:var(--brown);color:var(--white);padding:16px;font-family:'Jost',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;border:none;cursor:pointer;transition:background 0.2s;
+    opacity:0.92;margin-top:8px;}
+  .form-submit:hover{background:var(--tan);}
+  .form-note{font-size:11px;color:var(--mid);text-align:center;margin-top:12px;opacity:0.7;}
+
+  .testimonial-section{padding:80px;background:var(--tan);}
+  .testimonial-inner{max-width:760px;margin:0 auto;text-align:center;}
+  .testimonial-stars{font-size:20px;color:rgba(255,255,255,0.85);letter-spacing:3px;margin-bottom:24px;}
+  .testimonial-quote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,3vw,30px);font-weight:300;font-style:italic;color:var(--white);line-height:1.65;margin-bottom:28px;}
+  .testimonial-author{font-size:13px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.9);}
+
+  footer{background:var(--brown);padding:64px 80px 32px;}
+  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
+  .footer-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--tan-light);margin-bottom:4px;}
+  .footer-logo-sub{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;}
+  .footer-tagline{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.5);max-width:280px;}
+  .footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan-light);margin-bottom:20px;}
+  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
+  .footer-links a:hover{color:var(--tan-light);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+  .footer-legal{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6;}
+  .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+  .fade-up.visible{opacity:1;transform:translateY(0);}
+  @media(max-width:900px){
+    nav{padding:0 24px;}.nav-links{display:none;}
+    .hero{grid-template-columns:1fr;}.hero-left{padding:60px 32px;}.hero-right{padding:56px 32px;min-height:280px;}
+    .how-section,.testimonial-section{padding:64px 32px;}
+    .how-grid{grid-template-columns:1fr;}
+    .form-section{grid-template-columns:1fr;}.form-left,.form-right{padding:56px 32px;}
+    .footer-top{grid-template-columns:1fr 1fr;}footer{padding:48px 32px 24px;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;display:flex;flex-direction:column;line-height:1;">
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--tan);letter-spacing:0.02em;display:block;">Taylor Thompson Home Group</span>
+    <span style="font-size:9px;font-weight:500;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:2px;display:block;font-family:'Jost',sans-serif;">Keller Williams Realty</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="taylorthompson_team.html">About</a></li>
+    <li><a href="taylorthompson_sell.html">Sell</a></li>
+    <li><a href="taylorthompson_buy.html">Buy</a></li>
+    <li><a href="taylorthompson_neighborhoods.html">Areas</a></li>
+    <li><a href="taylorthompson_events.html">Events</a></li>
+    <li><a href="taylorthompson_blog.html">Blog</a></li>
+    <li><a href="taylorthompson_contact.html">Contact</a></li>
+  </ul>
+  <a href="taylorthompson_home_valuation.html" class="nav-cta">Free Home Value</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Refer a Friend</p>
+    <h1 class="hero-headline">Know Someone Who<br>Needs a Great<br><em>Realtor?</em></h1>
+    <p class="hero-body">If you've worked with us and had a great experience, the best thing you can do is introduce a friend, family member, or colleague to our team. We'll take exceptional care of them - and we never take a referral for granted.</p>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-icon">🤝</div>
+    <div class="hero-right-text">Your Referrals Are<br>Our <em>Greatest Honor</em></div>
+    <p class="hero-right-sub">73% of our business comes from people who trusted us enough to introduce someone they care about. That means everything to us.</p>
+  </div>
+</section>
+
+<section class="how-section">
+  <div class="how-header">
+    <p class="section-eyebrow fade-up">How It Works</p>
+    <h2 class="section-title fade-up">Simple. <em>Personal.</em> No Hassle.</h2>
+    <p class="section-body fade-up" style="max-width:520px;margin:0 auto;">Referring someone takes less than 2 minutes. We handle everything from there - and we'll keep you updated on how it goes.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card fade-up">
+      <div class="how-num">01</div>
+      <div class="how-title">You Fill Out the Form</div>
+      <p class="how-desc">Give us your friend's name, contact info, and a quick note about what they need. That's it. Takes about 60 seconds.</p>
+    </div>
+    <div class="how-card fade-up">
+      <div class="how-num">02</div>
+      <div class="how-title">We Reach Out Personally</div>
+      <p class="how-desc">Taylor or Dave will contact your referral directly - not a bot, not an assistant. A real personal call or text, same day.</p>
+    </div>
+    <div class="how-card fade-up">
+      <div class="how-num">03</div>
+      <div class="how-title">We Keep You in the Loop</div>
+      <p class="how-desc">You'll hear from us after we connect with them. We never leave you wondering what happened to someone you trusted us with.</p>
+    </div>
+  </div>
+</section>
+
+<section class="form-section" id="refer-form">
+  <div class="form-left">
+    <p class="section-eyebrow fade-up">Our Promise to Your Referral</p>
+    <h2 class="section-title fade-up" style="font-size:32px;">We'll Treat Them<br>Like <em>Family</em></h2>
+    <p class="section-body fade-up">When you refer someone to us, you're putting your name on the line. We take that seriously. Here's what your referral can expect:</p>
+    <div class="promise-list fade-up">
+      <div class="promise-item">Personal outreach within 24 hours - same day whenever possible</div>
+      <div class="promise-item">Zero pressure - just honest answers and genuine guidance</div>
+      <div class="promise-item">The same level of service and attention you received</div>
+      <div class="promise-item">Expert negotiation and communication throughout the entire process</div>
+      <div class="promise-item">Updates back to you so you know they're being taken care of</div>
+    </div>
+  </div>
+  <div class="form-right">
+    <p class="section-eyebrow fade-up" style="display:block;margin-bottom:8px;">Make the Introduction</p>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);margin-bottom:28px;" class="fade-up">Tell Us About<br><em>Your Referral</em></h3>
+
+    <div class="form-divider-label">About You</div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Jane Smith"></div>
+      <div class="form-group"><label class="form-label">Your Phone</label><input class="form-input" type="tel" placeholder="(209) 000-0000"></div>
+    </div>
+
+    <div class="form-divider"></div>
+    <div class="form-divider-label">About Your Referral</div>
+
+    <div class="form-row">
+      <div class="form-group"><label class="form-label">Their Name</label><input class="form-input" type="text" placeholder="John Doe"></div>
+      <div class="form-group"><label class="form-label">Their Phone</label><input class="form-input" type="tel" placeholder="(209) 000-0000"></div>
+    </div>
+    <div class="form-group"><label class="form-label">Their Email (if you have it)</label><input class="form-input" type="email" placeholder="john@email.com"></div>
+    <div class="form-group">
+      <label class="form-label">What Do They Need?</label>
+      <select class="form-select">
+        <option>They want to sell their home</option>
+        <option>They want to buy a home</option>
+        <option>They want to do both - sell and buy</option>
+        <option>They're thinking about it and need guidance</option>
+        <option>They're a real estate investor</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">Anything Else We Should Know?</label>
+      <input class="form-input" type="text" placeholder="Timeline, location, special circumstances...">
+    </div>
+    <button class="form-submit">Submit My Referral →</button>
+    <p class="form-note">We'll reach out to your referral personally and follow up with you after we connect.</p>
+  </div>
+</section>
+
+<section class="testimonial-section">
+  <div class="testimonial-inner">
+    <div class="testimonial-stars">★★★★★</div>
+    <p class="testimonial-quote">"Our experience with Taylor was nothing short of amazing. From our first meeting I could tell that she was the agent for our family! Her caring demeanor along with her professionalism made the entire process feel effortless."</p>
+    <div class="testimonial-author">K. Rodriguez · Sold a Home · September 2023 · Verified Zillow Review</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Quick Links</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="taylorthompson_team.html">Meet the Team</a></li>
+        <li><a href="taylorthompson_sell.html">Sell</a></li>
+        <li><a href="taylorthompson_buy.html">Buy</a></li>
+        <li><a href="taylorthompson_events.html">Events</a></li>
+        <li><a href="taylorthompson_home_valuation.html">Free Home Value</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Cities We Serve</div>
+      <ul class="footer-links">
+        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
+        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
+        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
+        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
+        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
+        <li><a href="taylorthompson_neighborhood_riverbank.html">Riverbank</a></li>
+        <li><a href="taylorthompson_neighborhood_stockton.html">Stockton</a></li>
+        <li><a href="taylorthompson_neighborhood_tracy.html">Tracy</a></li>
+        <li><a href="taylorthompson_neighborhood_lodi.html">Lodi</a></li>
+        <li><a href="taylorthompson_neighborhood_merced.html">Merced</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Connect</div>
+      <ul class="footer-links">
+        <li><a href="https://instagram.com/soldby.taylor" target="_blank">Instagram @soldby.taylor</a></li>
+        <li><a href="https://instagram.com/soldby.dave" target="_blank">Instagram @soldby.dave</a></li>
+        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
+        <li><a href="https://youtube.com/@Soldby.taylor" target="_blank">YouTube</a></li>
+        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2025 Taylor Thompson Home Group · Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
+    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
+  </div>
+</footer>
+<script>
+  const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
+  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+</script>
+<!-- AI CHATBOT - replace this script with your Tidio embed code from tidio.com -->
+<script>
+  window.addEventListener('load', function() {
+    const bubble = document.createElement('div');
+    bubble.innerHTML = '💬';
+    bubble.style.cssText = 'position:fixed;bottom:24px;right:24px;width:56px;height:56px;background:#a68068;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;cursor:pointer;box-shadow:0 4px 20px rgba(0,0,0,0.2);z-index:999;transition:transform 0.2s;';
+    bubble.title = 'Chat with us!';
+    bubble.onmouseover = () => bubble.style.transform = 'scale(1.1)';
+    bubble.onmouseout = () => bubble.style.transform = 'scale(1)';
+    bubble.onclick = () => window.location.href = 'contact.html';
+    document.body.appendChild(bubble);
+  });
+</script>
+</body>
+</html>
