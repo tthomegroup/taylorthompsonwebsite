@@ -1,11 +1,11 @@
 ---
 title: Why a New Construction Home Might Be the Right Fit for You
-featured: false
-category: Buyer Tips
 date: 2026-05-16
-time: 5 Min Read
 excerpt: If you have been exploring your options and wondering whether a new
   builder community is worth considering, here are a few things to think about.
+featured: true
+category: Buyer Tips
+time: 5 Min Read
 image: /assets/images/uploads/new-blog-images-2-.jpg
 ---
 When most people think about buying a home, they picture an existing property with history and character. And while those homes can be beautiful and meaningful, a new construction home can offer something equally special. For the right buyer, building or buying new might be the perfect fit.
