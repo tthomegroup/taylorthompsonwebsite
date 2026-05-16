@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const { execSync } = require("child_process");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
@@ -166,6 +167,21 @@ function sortByDateDesc(a, b) {
   return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
 }
 
+function fileUpdatedAt(filePath) {
+  try {
+    const relativePath = path.relative(ROOT_DIR, filePath).replace(/\\/g, "/");
+    const timestamp = execSync(`git log -1 --format=%ct -- "${relativePath}"`, {
+      cwd: ROOT_DIR,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+
+    return Number(timestamp) || 0;
+  } catch (error) {
+    return 0;
+  }
+}
+
 function setMarkdownFeatured(filePath, featured) {
   const markdown = fs.readFileSync(filePath, "utf8");
   const value = featured ? "true" : "false";
@@ -245,13 +261,19 @@ function readPosts() {
         isFeatured: featured,
         featuredPost: featured,
         sourceFile: filePath,
+        updatedAt: fileUpdatedAt(filePath),
         body,
         content: body,
       };
     })
     .sort(sortByDateDesc);
 
-  const featuredPost = posts.find((post) => post.featured);
+  const featuredPost = posts
+    .filter((post) => post.featured)
+    .sort((a, b) => {
+      if (b.updatedAt !== a.updatedAt) return b.updatedAt - a.updatedAt;
+      return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
+    })[0];
 
   if (featuredPost) {
     posts.forEach((post) => {
@@ -269,6 +291,7 @@ function readPosts() {
 
   posts.forEach((post) => {
     delete post.sourceFile;
+    delete post.updatedAt;
   });
 
   return posts;
