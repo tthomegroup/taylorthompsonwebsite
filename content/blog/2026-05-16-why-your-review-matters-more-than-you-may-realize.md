@@ -6,7 +6,7 @@ category: LOCAL SPOTLIGHT
 excerpt: If you have worked with us in the past or know us personally, this
   message is for you.
 featuredImage: /assets/images/uploads/new-blog-images-3-.jpg
-featured: false
+featured: true
 ---
 Running a small, relationship based business means trust is everything. Reviews are one of the ways that trust gets passed along to others who may be quietly searching for guidance, reassurance, or someone they feel confident working with.
 
