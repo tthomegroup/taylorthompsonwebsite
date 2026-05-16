@@ -5,12 +5,12 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const SOURCE_FILE = path.join(ROOT_DIR, "assets", "data", "blog-posts.json");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
 const CATEGORY_LABELS = {
-  "market-updates": "MARKET UPDATES",
-  "buyer-tips": "BUYER TIPS",
-  "seller-tips": "SELLER TIPS",
-  "first-time-buyers": "FIRST-TIME BUYERS",
-  investment: "INVESTMENT",
-  "local-spotlight": "LOCAL SPOTLIGHT",
+  "market-updates": "Market Updates",
+  "buyer-tips": "Buyer Tips",
+  "seller-tips": "Seller Tips",
+  "first-time-buyers": "First-Time Buyers",
+  investment: "Investment",
+  "local-spotlight": "Local Spotlight",
 };
 
 function ensureDir(dir) {
@@ -29,7 +29,18 @@ function slugify(value) {
 
 function normalizeCategory(value) {
   const slug = slugify(value);
-  return CATEGORY_LABELS[slug] || String(value || "").trim().toUpperCase();
+  return CATEGORY_LABELS[slug] || titleCaseCategory(value);
+}
+
+function titleCaseCategory(value) {
+  return String(value || "")
+    .toLowerCase()
+    .split(/(\s+|-)/)
+    .map((part) => {
+      if (part === "-" || /^\s+$/.test(part)) return part;
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join("");
 }
 
 function yamlString(value) {

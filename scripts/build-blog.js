@@ -5,12 +5,12 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
 const OUTPUT_FILE = path.join(ROOT_DIR, "assets", "data", "blog-posts.json");
 const CATEGORY_LABELS = {
-  "market-updates": "MARKET UPDATES",
-  "buyer-tips": "BUYER TIPS",
-  "seller-tips": "SELLER TIPS",
-  "first-time-buyers": "FIRST-TIME BUYERS",
-  investment: "INVESTMENT",
-  "local-spotlight": "LOCAL SPOTLIGHT",
+  "market-updates": "Market Updates",
+  "buyer-tips": "Buyer Tips",
+  "seller-tips": "Seller Tips",
+  "first-time-buyers": "First-Time Buyers",
+  investment: "Investment",
+  "local-spotlight": "Local Spotlight",
 };
 
 function ensureDir(dir) {
@@ -128,7 +128,7 @@ function slugify(value) {
 
 function normalizeCategory(value) {
   const slug = slugify(value);
-  return CATEGORY_LABELS[slug] || String(value || "").trim().toUpperCase();
+  return CATEGORY_LABELS[slug] || titleCaseCategory(value);
 }
 
 function titleCaseCategory(value) {
@@ -140,6 +140,10 @@ function titleCaseCategory(value) {
       return part.charAt(0).toUpperCase() + part.slice(1);
     })
     .join("");
+}
+
+function displayCategory(value) {
+  return normalizeCategory(value).toUpperCase();
 }
 
 function normalizeFeatured(value) {
@@ -223,10 +227,13 @@ function readPosts() {
         publishDate: data.publishDate || data.date || "",
         readTime: data.readTime || data.read_time || "",
         category,
+        categoryLabel: displayCategory(category),
+        displayCategory: displayCategory(category),
         categorySlug,
         categoryValue: categorySlug,
         categoryTitle,
         categories,
+        categoryLabels: categories.map(displayCategory),
         categorySlugs: categories.map(slugify),
         categoryValues: categories.map(slugify),
         categoryTitles: categories.map(titleCaseCategory),

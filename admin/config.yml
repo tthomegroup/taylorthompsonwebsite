@@ -54,17 +54,17 @@ collections:
         required: true
         options:
           - label: "MARKET UPDATES"
-            value: "MARKET UPDATES"
+            value: "Market Updates"
           - label: "BUYER TIPS"
-            value: "BUYER TIPS"
+            value: "Buyer Tips"
           - label: "SELLER TIPS"
-            value: "SELLER TIPS"
+            value: "Seller Tips"
           - label: "FIRST-TIME BUYERS"
-            value: "FIRST-TIME BUYERS"
+            value: "First-Time Buyers"
           - label: "INVESTMENT"
-            value: "INVESTMENT"
+            value: "Investment"
           - label: "LOCAL SPOTLIGHT"
-            value: "LOCAL SPOTLIGHT"
+            value: "Local Spotlight"
         hint: "Choose the main category for this post."
 
       - label: "Excerpt"
