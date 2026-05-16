@@ -54,6 +54,8 @@
   }
 
   function isInsideFeaturedSection(element) {
+    if (element.closest("[data-dynamic-featured='true']")) return true;
+
     var section = element.closest("section, .featured, .featured-posts, .featured-blog, .featured-blogs");
     if (!section) return false;
 

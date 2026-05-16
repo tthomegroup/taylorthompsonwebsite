@@ -151,6 +151,20 @@ function sortByDateDesc(a, b) {
   return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
 }
 
+function setMarkdownFeatured(filePath, featured) {
+  const markdown = fs.readFileSync(filePath, "utf8");
+  const value = featured ? "true" : "false";
+
+  if (/^featured:\s*(true|false)\s*$/m.test(markdown)) {
+    fs.writeFileSync(filePath, markdown.replace(/^featured:\s*(true|false)\s*$/m, `featured: ${value}`));
+    return;
+  }
+
+  if (/^---\r?\n/.test(markdown)) {
+    fs.writeFileSync(filePath, markdown.replace(/\r?\n---\r?\n/, `\nfeatured: ${value}\n---\n`));
+  }
+}
+
 function formatOutput(posts) {
   if (!fs.existsSync(OUTPUT_FILE)) return posts;
 
@@ -174,7 +188,7 @@ function formatOutput(posts) {
 function readPosts() {
   ensureDir(CONTENT_DIR);
 
-  return fs
+  const posts = fs
     .readdirSync(CONTENT_DIR)
     .filter((file) => file.endsWith(".md"))
     .map((file) => {
@@ -205,11 +219,34 @@ function readPosts() {
         featured,
         isFeatured: featured,
         featuredPost: featured,
+        sourceFile: filePath,
         body,
         content: body,
       };
     })
     .sort(sortByDateDesc);
+
+  const featuredPost = posts.find((post) => post.featured);
+
+  if (featuredPost) {
+    posts.forEach((post) => {
+      const isFeaturedWinner = post.slug === featuredPost.slug;
+
+      if (!isFeaturedWinner && post.featured) {
+        setMarkdownFeatured(post.sourceFile, false);
+      }
+
+      post.featured = isFeaturedWinner;
+      post.isFeatured = isFeaturedWinner;
+      post.featuredPost = isFeaturedWinner;
+    });
+  }
+
+  posts.forEach((post) => {
+    delete post.sourceFile;
+  });
+
+  return posts;
 }
 
 function buildBlog() {
