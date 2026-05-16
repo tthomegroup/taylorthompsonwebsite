@@ -39,16 +39,24 @@ collections:
         required: false
         hint: "Example: 5 min read"
 
-      - label: "Categories"
-        name: "categories"
-        widget: "list"
-        required: false
-        collapsed: false
-        summary: "{{fields.category}}"
-        field:
-          label: "Category"
-          name: "category"
-          widget: "string"
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        required: true
+        options:
+          - label: "MARKET UPDATES"
+            value: "MARKET UPDATES"
+          - label: "BUYER TIPS"
+            value: "BUYER TIPS"
+          - label: "SELLER TIPS"
+            value: "SELLER TIPS"
+          - label: "FIRST-TIME BUYERS"
+            value: "FIRST-TIME BUYERS"
+          - label: "INVESTMENT"
+            value: "INVESTMENT"
+          - label: "LOCAL SPOTLIGHT"
+            value: "LOCAL SPOTLIGHT"
+        hint: "Choose the main category for this post."
 
       - label: "Excerpt"
         name: "excerpt"
@@ -72,7 +80,7 @@ collections:
         name: "featured"
         widget: "boolean"
         default: false
-        required: false
+        required: true
         hint: "Turn on for posts that should appear in featured blog areas."
 
       - label: "Body"

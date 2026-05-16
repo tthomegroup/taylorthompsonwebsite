@@ -43,6 +43,7 @@ function normalizeCategories(post) {
 function postToMarkdown(post) {
   const slug = post.slug || slugify(post.title || post.id || "untitled-post");
   const categories = normalizeCategories(post);
+  const category = post.category || categories[0] || "";
   const body = post.body || post.content || "";
 
   return {
@@ -51,7 +52,7 @@ function postToMarkdown(post) {
 title: ${yamlString(post.title || "")}
 date: ${yamlString(post.date || post.publishDate || "")}
 readTime: ${yamlString(post.readTime || "")}
-categories: ${yamlArray(categories)}
+category: ${yamlString(category)}
 excerpt: ${yamlString(post.excerpt || "")}
 featuredImage: ${yamlString(post.featuredImage || post.image || "")}
 imageAlt: ${yamlString(post.imageAlt || "")}
