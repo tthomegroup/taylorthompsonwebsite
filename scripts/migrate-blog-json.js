@@ -59,6 +59,7 @@ function postToMarkdown(post) {
   const slug = post.slug || slugify(post.title || post.id || "untitled-post");
   const categories = normalizeCategories(post);
   const category = normalizeCategory(post.category || categories[0] || "");
+  const featured = post.featured || post.isFeatured || post.featuredPost;
   const body = post.body || post.content || "";
 
   return {
@@ -71,7 +72,7 @@ category: ${yamlString(category)}
 excerpt: ${yamlString(post.excerpt || "")}
 featuredImage: ${yamlString(post.featuredImage || post.image || "")}
 imageAlt: ${yamlString(post.imageAlt || "")}
-featured: ${post.featured ? "true" : "false"}
+featured: ${featured ? "true" : "false"}
 ---
 
 ${body.trim()}

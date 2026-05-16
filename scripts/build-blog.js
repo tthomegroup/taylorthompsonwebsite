@@ -139,6 +139,14 @@ function normalizeFeatured(value) {
   return ["true", "yes", "1", "featured"].includes(normalized);
 }
 
+function firstDefined() {
+  for (let index = 0; index < arguments.length; index += 1) {
+    if (arguments[index] !== undefined) return arguments[index];
+  }
+
+  return undefined;
+}
+
 function sortByDateDesc(a, b) {
   return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
 }
@@ -175,6 +183,7 @@ function readPosts() {
       const slug = data.slug || slugFromFilename(filePath);
       const categories = normalizeCategories(data.categories, data.category);
       const category = normalizeCategory(data.category || categories[0] || "");
+      const featured = normalizeFeatured(firstDefined(data.featured, data.isFeatured, data.featuredPost));
 
       return {
         id: data.id || slug,
@@ -193,7 +202,9 @@ function readPosts() {
         featuredImage: data.featuredImage || data.featured_image || data.image || "",
         image: data.image || data.featuredImage || data.featured_image || "",
         imageAlt: data.imageAlt || data.image_alt || "",
-        featured: normalizeFeatured(data.featured),
+        featured,
+        isFeatured: featured,
+        featuredPost: featured,
         body,
         content: body,
       };

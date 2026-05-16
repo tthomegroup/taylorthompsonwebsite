@@ -90,6 +90,8 @@ collections:
         widget: "boolean"
         default: false
         required: true
+        true_label: "Featured"
+        false_label: "Not Featured"
         hint: "Turn on for posts that should appear in featured blog areas."
 
       - label: "Body"
