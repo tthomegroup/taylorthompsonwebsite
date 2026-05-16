@@ -6,7 +6,7 @@ time: 5 Min Read
 title: Why a New Construction Home Might Be the Right Fit for You
 date: 2026-05-16
 category: FIRST-TIME BUYERS
-featured: true
+featured: false
 image: /assets/images/uploads/new-blog-images-2-.jpg
 ---
 When most people think about buying a home, they picture an existing property with history and character. And while those homes can be beautiful and meaningful, a new construction home can offer something equally special. For the right buyer, building or buying new might be the perfect fit.
