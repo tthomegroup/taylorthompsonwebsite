@@ -131,6 +131,17 @@ function normalizeCategory(value) {
   return CATEGORY_LABELS[slug] || String(value || "").trim().toUpperCase();
 }
 
+function titleCaseCategory(value) {
+  return String(value || "")
+    .toLowerCase()
+    .split(/(\s+|-)/)
+    .map((part) => {
+      if (part === "-" || /^\s+$/.test(part)) return part;
+      return part.charAt(0).toUpperCase() + part.slice(1);
+    })
+    .join("");
+}
+
 function normalizeFeatured(value) {
   if (value === true) return true;
   if (value === false || value === undefined || value === null) return false;
@@ -198,6 +209,8 @@ function readPosts() {
       const categories = normalizeCategories(data.categories, data.category);
       const category = normalizeCategory(data.category || categories[0] || "");
       const featured = normalizeFeatured(firstDefined(data.featured, data.isFeatured, data.featuredPost));
+      const categorySlug = slugify(category);
+      const categoryTitle = titleCaseCategory(category);
 
       return {
         id: data.id || slug,
@@ -210,8 +223,13 @@ function readPosts() {
         publishDate: data.publishDate || data.date || "",
         readTime: data.readTime || data.read_time || "",
         category,
-        categorySlug: slugify(category),
+        categorySlug,
+        categoryValue: categorySlug,
+        categoryTitle,
         categories,
+        categorySlugs: categories.map(slugify),
+        categoryValues: categories.map(slugify),
+        categoryTitles: categories.map(titleCaseCategory),
         excerpt: data.excerpt || "",
         featuredImage: data.featuredImage || data.featured_image || data.image || "",
         image: data.image || data.featuredImage || data.featured_image || "",
