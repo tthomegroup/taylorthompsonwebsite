@@ -35,9 +35,18 @@ collections:
 
       - label: "Read Time"
         name: "readTime"
-        widget: "string"
-        required: false
-        hint: "Example: 5 min read"
+        widget: "select"
+        required: true
+        options:
+          - label: "3 Min Read"
+            value: "3 Min Read"
+          - label: "5 Min Read"
+            value: "5 Min Read"
+          - label: "7 min"
+            value: "7 min"
+          - label: "10 min"
+            value: "10 min"
+        hint: "Choose the estimated reading time."
 
       - label: "Category"
         name: "category"
