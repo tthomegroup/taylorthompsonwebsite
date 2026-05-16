@@ -5,70 +5,93 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-site_url: https://taylorthompsonhomegroup.netlify.app
-display_url: https://taylorthompsonhomegroup.netlify.app
-logo_url: /assets/images/favicon.png
+publish_mode: editorial_workflow
 
 collections:
   - name: "blog"
     label: "Blog Posts"
+    label_singular: "Blog Post"
     folder: "content/blog"
     create: true
-    slug: "{{slug}}"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{title}} — {{date}}"
     editor:
       preview: true
-
     fields:
       - label: "Title"
         name: "title"
         widget: "string"
-
-      - label: "Featured Blog?"
-        name: "featured"
-        widget: "boolean"
-        default: false
-        required: false
-
-      - label: "Category"
-        name: "category"
-        widget: "select"
-        default: "Market Updates"
-        options:
-          - "Market Updates"
-          - "Buyer Tips"
-          - "Seller Tips"
-          - "First-Time Buyers"
-          - "Investment"
-          - "Local Spotlight"
+        hint: "The public blog post title."
 
       - label: "Publish Date"
         name: "date"
         widget: "datetime"
+        format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
-        format: "YYYY-MM-DD"
+        hint: "Used for sorting posts newest first."
 
       - label: "Read Time"
-        name: "time"
+        name: "readTime"
         widget: "string"
-        default: "4 Min Read"
+        required: false
+        hint: "Example: 5 min read"
+
+      - label: "Categories"
+        name: "categories"
+        widget: "list"
+        required: false
+        collapsed: false
+        summary: "{{fields.category}}"
+        field:
+          label: "Category"
+          name: "category"
+          widget: "string"
 
       - label: "Excerpt"
         name: "excerpt"
         widget: "text"
+        required: false
+        hint: "Short summary used on blog cards."
 
       - label: "Featured Image"
-        name: "image"
+        name: "featuredImage"
         widget: "image"
         required: false
-        hint: "Upload the blog image here. Recommended size: 1600 x 900 px."
+        hint: "Shown anywhere the current frontend displays the blog image."
 
       - label: "Image Alt Text"
         name: "imageAlt"
         widget: "string"
         required: false
+        hint: "Describe the image for accessibility."
 
-      - label: "Article Body"
+      - label: "Featured Post"
+        name: "featured"
+        widget: "boolean"
+        default: false
+        required: false
+        hint: "Turn on for posts that should appear in featured blog areas."
+
+      - label: "Body"
         name: "body"
         widget: "markdown"
-        required: true
+        required: false
+        buttons:
+          - bold
+          - italic
+          - code
+          - link
+          - heading-two
+          - heading-three
+          - bulleted-list
+          - numbered-list
+          - quote
+        editor_components:
+          - image
+        modes:
+          - rich_text
+          - raw
+        hint: "Use H2 for main sections and H3 for subsections."
