@@ -1,10 +1,10 @@
 ---
 title: Why a New Construction Home Might Be the Right Fit for You
 date: 2026-05-16
+category: FIRST-TIME BUYERS
 excerpt: If you have been exploring your options and wondering whether a new
   builder community is worth considering, here are a few things to think about.
 featured: true
-category: Buyer Tips
 time: 5 Min Read
 image: /assets/images/uploads/new-blog-images-2-.jpg
 ---
