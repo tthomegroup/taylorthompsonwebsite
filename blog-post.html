@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog Post</title>
+  <style>
+    :root {
+      --ink: #050505;
+      --muted: #765f50;
+      --line: #d8cfc7;
+      --paper: #f7f2ed;
+      --white: #fff;
+      --tan: #c8ad9a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .post-shell {
+      width: min(920px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 42px 0 72px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 34px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .post-hero {
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .post-image {
+      display: block;
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      background: var(--tan);
+    }
+
+    .post-header,
+    .post-content {
+      padding: clamp(28px, 5vw, 56px);
+    }
+
+    .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    h1 {
+      max-width: 760px;
+      font-size: clamp(34px, 6vw, 62px);
+    }
+
+    .excerpt {
+      max-width: 720px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .post-content {
+      border-top: 1px solid var(--line);
+      font-size: 17px;
+    }
+
+    .post-content h2 {
+      margin: 38px 0 14px;
+      font-size: clamp(28px, 4vw, 40px);
+    }
+
+    .post-content h3 {
+      margin: 30px 0 12px;
+      font-size: clamp(22px, 3vw, 30px);
+    }
+
+    .post-content p,
+    .post-content ul,
+    .post-content ol,
+    .post-content blockquote {
+      margin: 0 0 20px;
+    }
+
+    .post-content img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .post-content blockquote {
+      border-left: 3px solid var(--tan);
+      padding-left: 18px;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .post-error {
+      padding: 42px;
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+  </style>
+</head>
+<body>
+  <main class="post-shell">
+    <a class="back-link" href="/blog.html">Back to Blogs</a>
+    <article class="post-hero" id="post"></article>
+  </main>
+
+  <script>
+    function slugify(value) {
+      return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, "and")
+        .replace(/['"]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
+    function inlineMarkdown(value) {
+      return escapeHtml(value)
+        .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+        .replace(/\*(.*?)\*/g, "<em>$1</em>")
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+    }
+
+    function markdownToHtml(markdown) {
+      var lines = String(markdown || "").split(/\r?\n/);
+      var html = [];
+      var listType = null;
+
+      function closeList() {
+        if (!listType) return;
+        html.push("</" + listType + ">");
+        listType = null;
+      }
+
+      lines.forEach(function (line) {
+        var trimmed = line.trim();
+
+        if (!trimmed) {
+          closeList();
+          return;
+        }
+
+        if (/^###\s+/.test(trimmed)) {
+          closeList();
+          html.push("<h3>" + inlineMarkdown(trimmed.replace(/^###\s+/, "")) + "</h3>");
+          return;
+        }
+
+        if (/^##\s+/.test(trimmed)) {
+          closeList();
+          html.push("<h2>" + inlineMarkdown(trimmed.replace(/^##\s+/, "")) + "</h2>");
+          return;
+        }
+
+        if (/^>\s+/.test(trimmed)) {
+          closeList();
+          html.push("<blockquote>" + inlineMarkdown(trimmed.replace(/^>\s+/, "")) + "</blockquote>");
+          return;
+        }
+
+        if (/^[-*]\s+/.test(trimmed)) {
+          if (listType !== "ul") {
+            closeList();
+            listType = "ul";
+            html.push("<ul>");
+          }
+          html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*]\s+/, "")) + "</li>");
+          return;
+        }
+
+        if (/^\d+\.\s+/.test(trimmed)) {
+          if (listType !== "ol") {
+            closeList();
+            listType = "ol";
+            html.push("<ol>");
+          }
+          html.push("<li>" + inlineMarkdown(trimmed.replace(/^\d+\.\s+/, "")) + "</li>");
+          return;
+        }
+
+        closeList();
+        html.push("<p>" + inlineMarkdown(trimmed) + "</p>");
+      });
+
+      closeList();
+      return html.join("");
+    }
+
+    function assetPath(value) {
+      if (!value) return "";
+      if (/^(https?:)?\/\//.test(value) || value.charAt(0) === "/") return value;
+      return "/" + value.replace(/^\.?\//, "");
+    }
+
+    function postsArray(data) {
+      return Array.isArray(data) ? data : data.posts || [];
+    }
+
+    function getRequestedSlug() {
+      var params = new URLSearchParams(window.location.search);
+      var fromQuery = params.get("slug") || params.get("id") || params.get("post");
+      if (fromQuery) return slugify(fromQuery.replace(/\.html$/, ""));
+
+      var pathParts = window.location.pathname.split("/").filter(Boolean);
+      var lastPart = pathParts[pathParts.length - 1] || "";
+      return slugify(lastPart.replace(/\.html$/, ""));
+    }
+
+    function renderPost(post) {
+      var image = post.featuredImage || post.image || "";
+      var imageAlt = post.imageAlt || post.title || "";
+      var body = post.body || post.content || "";
+
+      document.title = post.title || "Blog Post";
+      document.getElementById("post").innerHTML =
+        (image ? '<img class="post-image" src="' + escapeHtml(assetPath(image)) + '" alt="' + escapeHtml(imageAlt) + '">' : "") +
+        '<header class="post-header">' +
+          '<div class="post-meta">' +
+            (post.category ? "<span>" + escapeHtml(post.category) + "</span>" : "") +
+            (post.date ? "<span>" + escapeHtml(post.date) + "</span>" : "") +
+            (post.readTime ? "<span>" + escapeHtml(post.readTime) + "</span>" : "") +
+          "</div>" +
+          "<h1>" + escapeHtml(post.title || "") + "</h1>" +
+          (post.excerpt ? '<p class="excerpt">' + escapeHtml(post.excerpt) + "</p>" : "") +
+        "</header>" +
+        '<div class="post-content">' + markdownToHtml(body) + "</div>";
+    }
+
+    function renderError() {
+      document.getElementById("post").innerHTML =
+        '<div class="post-error">' +
+          "<h1>Blog post not found</h1>" +
+          '<p><a href="/blog.html">Return to the blog</a></p>' +
+        "</div>";
+    }
+
+    fetch("/assets/data/blog-posts.json")
+      .then(function (response) { return response.json(); })
+      .then(function (data) {
+        var requestedSlug = getRequestedSlug();
+        var post = postsArray(data).find(function (item) {
+          return slugify(item.slug || item.id || item.title) === requestedSlug;
+        });
+
+        if (post) renderPost(post);
+        else renderError();
+      })
+      .catch(renderError);
+  </script>
+</body>
+</html>

@@ -179,6 +179,9 @@ function readPosts() {
       return {
         id: data.id || slug,
         slug,
+        url: `/blog/${slug}`,
+        link: `/blog/${slug}`,
+        permalink: `/blog/${slug}`,
         title: data.title || slug,
         date: data.date || data.publishDate || "",
         publishDate: data.publishDate || data.date || "",

@@ -1,0 +1,5 @@
+/blog/:slug /blog-post.html?slug=:slug 200
+/blogs/:slug /blog-post.html?slug=:slug 200
+/post/:slug /blog-post.html?slug=:slug 200
+/posts/:slug /blog-post.html?slug=:slug 200
+/blog-posts/:slug /blog-post.html?slug=:slug 200
