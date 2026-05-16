@@ -10,6 +10,7 @@
 
   var activeCategory = "ALL";
   var searchTerm = "";
+  var observerStarted = false;
 
   function slugify(value) {
     return String(value || "")
@@ -40,6 +41,12 @@
     return text === "ALL" || categories.indexOf(text) !== -1;
   }
 
+  function closestCategoryControl(element) {
+    if (!element || !element.closest) return null;
+
+    return element.closest("button, a, [role='button'], .filter-btn, .category-filter, .blog-filter");
+  }
+
   function getCategoryControls() {
     return Array.prototype.filter.call(
       document.querySelectorAll("button, a, [role='button']"),
@@ -49,7 +56,7 @@
 
   function closestCard(element) {
     return element.closest(
-      "article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card"
+      "article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card, [class*='blog'][class*='card'], [class*='post'][class*='card']"
     );
   }
 
@@ -72,7 +79,7 @@
     var matches = [];
     var controls = getCategoryControls();
     var firstControl = controls.length ? controls[0] : null;
-    var allElements = document.querySelectorAll("article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card");
+    var allElements = document.querySelectorAll("article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card, [class*='blog'][class*='card'], [class*='post'][class*='card']");
 
     Array.prototype.forEach.call(allElements, function (element) {
       var text = element.textContent || "";
@@ -88,6 +95,23 @@
 
       matches.push(element);
     });
+
+    if (!matches.length) {
+      Array.prototype.forEach.call(document.querySelectorAll("body *"), function (element) {
+        if (element.children.length > 4) return;
+
+        var ownText = element.textContent || "";
+        var hasCategory = categories.some(function (category) {
+          return slugify(ownText).indexOf(slugify(category)) !== -1;
+        });
+        var card = hasCategory ? closestCard(element) || element.parentElement : null;
+
+        if (!card || matches.indexOf(card) !== -1 || isInsideFeaturedSection(card)) return;
+        if (firstControl && firstControl.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_PRECEDING) return;
+
+        matches.push(card);
+      });
+    }
 
     return matches;
   }
@@ -118,25 +142,30 @@
         activeCategory === "ALL" || slugify(cardCategory(card)) === activeSlug;
       var searchMatches = !searchSlug || slugify(card.textContent || "").indexOf(searchSlug) !== -1;
 
-      card.hidden = !(categoryMatches && searchMatches);
+      var shouldShow = categoryMatches && searchMatches;
+      card.hidden = !shouldShow;
+      card.style.display = shouldShow ? "" : "none";
     });
 
     applyActiveStyles();
   }
 
   function wireCategoryControls() {
-    getCategoryControls().forEach(function (control) {
-      control.addEventListener(
-        "click",
-        function (event) {
-          event.preventDefault();
-          event.stopImmediatePropagation();
-          activeCategory = controlText(control);
-          applyFilters();
-        },
-        true
-      );
-    });
+    document.addEventListener(
+      "click",
+      function (event) {
+        var control = closestCategoryControl(event.target);
+
+        if (!control || !isCategoryControl(control)) return;
+
+        event.preventDefault();
+        event.stopPropagation();
+        event.stopImmediatePropagation();
+        activeCategory = controlText(control);
+        applyFilters();
+      },
+      true
+    );
   }
 
   function wireSearch() {
@@ -156,6 +185,16 @@
     wireCategoryControls();
     wireSearch();
     applyFilters();
+
+    if (!observerStarted) {
+      observerStarted = true;
+      new MutationObserver(function () {
+        applyFilters();
+      }).observe(document.body, {
+        childList: true,
+        subtree: true,
+      });
+    }
   }
 
   if (document.readyState === "loading") {
