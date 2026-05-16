@@ -22,13 +22,23 @@
       .replace(/^-+|-+$/g, "");
   }
 
+  function compact(value) {
+    return String(value || "")
+      .toLowerCase()
+      .replace(/&/g, "and")
+      .replace(/[^a-z0-9]/g, "");
+  }
+
   function normalizeCategory(value) {
     var slug = slugify(value);
+    var compactValue = compact(value);
 
     if (slug === "all") return "ALL";
 
     for (var index = 0; index < categories.length; index += 1) {
-      if (slugify(categories[index]) === slug) return categories[index];
+      if (slugify(categories[index]) === slug || compact(categories[index]) === compactValue) {
+        return categories[index];
+      }
     }
 
     return String(value || "").trim().toUpperCase();
@@ -47,6 +57,10 @@
   function isCategoryText(value) {
     var normalized = normalizeCategory(value);
     return normalized === "ALL" || categories.indexOf(normalized) !== -1;
+  }
+
+  function textContainsCategory(value, category) {
+    return slugify(value).indexOf(slugify(category)) !== -1 || compact(value).indexOf(compact(category)) !== -1;
   }
 
   function closestCategoryButton(element) {
@@ -84,7 +98,11 @@
       if (element.children.length > 1) return false;
       if (hasFeaturedAncestor(element)) return false;
 
-      return categories.indexOf(normalizeCategory(ownText(element) || element.textContent)) !== -1;
+      var text = ownText(element) || element.textContent;
+
+      return categories.some(function (category) {
+        return textContainsCategory(text, category);
+      });
     });
   }
 
@@ -131,7 +149,14 @@
       return card.contains(label);
     });
 
-    return labels.length ? normalizeCategory(ownText(labels[0]) || labels[0].textContent) : "";
+    if (!labels.length) return "";
+
+    var text = ownText(labels[0]) || labels[0].textContent;
+    var found = categories.find(function (category) {
+      return textContainsCategory(text, category);
+    });
+
+    return found || normalizeCategory(text);
   }
 
   function applyActiveStyles() {
