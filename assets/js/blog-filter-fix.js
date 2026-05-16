@@ -24,43 +24,47 @@
 
   function normalizeCategory(value) {
     var slug = slugify(value);
+
+    if (slug === "all") return "ALL";
+
     for (var index = 0; index < categories.length; index += 1) {
       if (slugify(categories[index]) === slug) return categories[index];
     }
+
     return String(value || "").trim().toUpperCase();
   }
 
-  function controlText(element) {
-    return normalizeCategory(element.textContent || "");
+  function ownText(element) {
+    return Array.prototype.map
+      .call(element.childNodes || [], function (node) {
+        return node.nodeType === Node.TEXT_NODE ? node.textContent : "";
+      })
+      .join(" ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
-  function isCategoryControl(element) {
-    if (!element || !element.textContent) return false;
-
-    var text = controlText(element);
-    return text === "ALL" || categories.indexOf(text) !== -1;
+  function isCategoryText(value) {
+    var normalized = normalizeCategory(value);
+    return normalized === "ALL" || categories.indexOf(normalized) !== -1;
   }
 
-  function closestCategoryControl(element) {
+  function closestCategoryButton(element) {
     if (!element || !element.closest) return null;
 
-    return element.closest("button, a, [role='button'], .filter-btn, .category-filter, .blog-filter");
+    var button = element.closest("button, a, [role='button']");
+    if (!button || !isCategoryText(button.textContent)) return null;
+
+    return button;
   }
 
-  function getCategoryControls() {
-    return Array.prototype.filter.call(
-      document.querySelectorAll("button, a, [role='button']"),
-      isCategoryControl
-    );
+  function getCategoryButtons() {
+    return Array.prototype.filter.call(document.querySelectorAll("button, a, [role='button']"), function (button) {
+      return isCategoryText(button.textContent);
+    });
   }
 
-  function closestCard(element) {
-    return element.closest(
-      "article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card, [class*='blog'][class*='card'], [class*='post'][class*='card']"
-    );
-  }
-
-  function isInsideFeaturedSection(element) {
+  function hasFeaturedAncestor(element) {
     if (element.closest("[data-dynamic-featured='true']")) return true;
 
     var section = element.closest("section, .featured, .featured-posts, .featured-blog, .featured-blogs");
@@ -69,80 +73,86 @@
     var marker = [
       section.id || "",
       section.className || "",
-      section.querySelector("h1, h2, h3") ? section.querySelector("h1, h2, h3").textContent : "",
+      section.querySelector("h1, h2, h3, p, span") ? section.querySelector("h1, h2, h3, p, span").textContent : "",
     ].join(" ");
 
     return slugify(marker).indexOf("featured") !== -1;
   }
 
-  function findCards() {
-    var matches = [];
-    var controls = getCategoryControls();
-    var firstControl = controls.length ? controls[0] : null;
-    var allElements = document.querySelectorAll("article, .blog-card, .post-card, .blog-post-card, .blog-item, .post-item, .card, [class*='blog'][class*='card'], [class*='post'][class*='card']");
+  function categoryLabelElements() {
+    return Array.prototype.filter.call(document.querySelectorAll("body *"), function (element) {
+      if (element.children.length > 1) return false;
+      if (hasFeaturedAncestor(element)) return false;
 
-    Array.prototype.forEach.call(allElements, function (element) {
-      var text = element.textContent || "";
-      var hasCategory = categories.some(function (category) {
-        return slugify(text).indexOf(slugify(category)) !== -1;
-      });
+      return categories.indexOf(normalizeCategory(ownText(element) || element.textContent)) !== -1;
+    });
+  }
 
-      if (!hasCategory) return;
-      if (isInsideFeaturedSection(element)) return;
-      if (firstControl && firstControl.compareDocumentPosition(element) & Node.DOCUMENT_POSITION_PRECEDING) {
-        return;
+  function containsAnotherCategoryLabel(card, originalLabel) {
+    return categoryLabelElements().some(function (label) {
+      return label !== originalLabel && card.contains(label);
+    });
+  }
+
+  function cardFromLabel(label) {
+    var current = label;
+
+    while (current && current !== document.body) {
+      var hasImage = Boolean(current.querySelector && current.querySelector("img, [style*='background-image']"));
+      var hasTitle = Boolean(current.querySelector && current.querySelector("h1, h2, h3, a"));
+      var hasReadLink = slugify(current.textContent).indexOf("read-full-blog") !== -1;
+
+      if ((hasImage && hasTitle) || hasReadLink) {
+        if (!containsAnotherCategoryLabel(current, label)) return current;
       }
 
-      matches.push(element);
-    });
-
-    if (!matches.length) {
-      Array.prototype.forEach.call(document.querySelectorAll("body *"), function (element) {
-        if (element.children.length > 4) return;
-
-        var ownText = element.textContent || "";
-        var hasCategory = categories.some(function (category) {
-          return slugify(ownText).indexOf(slugify(category)) !== -1;
-        });
-        var card = hasCategory ? closestCard(element) || element.parentElement : null;
-
-        if (!card || matches.indexOf(card) !== -1 || isInsideFeaturedSection(card)) return;
-        if (firstControl && firstControl.compareDocumentPosition(card) & Node.DOCUMENT_POSITION_PRECEDING) return;
-
-        matches.push(card);
-      });
+      current = current.parentElement;
     }
 
-    return matches;
+    return null;
+  }
+
+  function uniqueCards(cards) {
+    var unique = [];
+
+    cards.forEach(function (card) {
+      if (card && unique.indexOf(card) === -1) unique.push(card);
+    });
+
+    return unique;
+  }
+
+  function findCards() {
+    return uniqueCards(categoryLabelElements().map(cardFromLabel));
   }
 
   function cardCategory(card) {
-    var text = card.textContent || "";
-    var found = categories.find(function (category) {
-      return slugify(text).indexOf(slugify(category)) !== -1;
+    var labels = categoryLabelElements().filter(function (label) {
+      return card.contains(label);
     });
 
-    return found || "";
+    return labels.length ? normalizeCategory(ownText(labels[0]) || labels[0].textContent) : "";
   }
 
   function applyActiveStyles() {
-    getCategoryControls().forEach(function (control) {
-      var isActive = controlText(control) === activeCategory;
-      control.classList.toggle("active", isActive);
-      control.setAttribute("aria-pressed", isActive ? "true" : "false");
+    getCategoryButtons().forEach(function (button) {
+      var isActive = normalizeCategory(button.textContent) === activeCategory;
+
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 
   function applyFilters() {
-    var activeSlug = slugify(activeCategory);
     var searchSlug = slugify(searchTerm);
+    var cards = findCards();
 
-    findCards().forEach(function (card) {
+    cards.forEach(function (card) {
       var categoryMatches =
-        activeCategory === "ALL" || slugify(cardCategory(card)) === activeSlug;
+        activeCategory === "ALL" || cardCategory(card) === activeCategory;
       var searchMatches = !searchSlug || slugify(card.textContent || "").indexOf(searchSlug) !== -1;
-
       var shouldShow = categoryMatches && searchMatches;
+
       card.hidden = !shouldShow;
       card.style.display = shouldShow ? "" : "none";
     });
@@ -150,51 +160,54 @@
     applyActiveStyles();
   }
 
-  function wireCategoryControls() {
+  function wireCategoryButtons() {
     document.addEventListener(
       "click",
       function (event) {
-        var control = closestCategoryControl(event.target);
+        var button = closestCategoryButton(event.target);
 
-        if (!control || !isCategoryControl(control)) return;
+        if (!button) return;
 
         event.preventDefault();
         event.stopPropagation();
         event.stopImmediatePropagation();
-        activeCategory = controlText(control);
+
+        activeCategory = normalizeCategory(button.textContent);
         applyFilters();
+        window.setTimeout(applyFilters, 0);
+        window.setTimeout(applyFilters, 100);
       },
       true
     );
   }
 
   function wireSearch() {
-    var searchInput = document.querySelector(
+    var input = document.querySelector(
       "input[type='search'], input[placeholder*='Search blog'], input[placeholder*='Search Blog']"
     );
 
-    if (!searchInput) return;
+    if (!input) return;
 
-    searchInput.addEventListener("input", function () {
-      searchTerm = searchInput.value || "";
+    input.addEventListener("input", function () {
+      searchTerm = input.value || "";
       applyFilters();
     });
   }
 
   function init() {
-    wireCategoryControls();
+    wireCategoryButtons();
     wireSearch();
     applyFilters();
 
-    if (!observerStarted) {
-      observerStarted = true;
-      new MutationObserver(function () {
-        applyFilters();
-      }).observe(document.body, {
-        childList: true,
-        subtree: true,
-      });
-    }
+    if (observerStarted) return;
+
+    observerStarted = true;
+    new MutationObserver(function () {
+      window.requestAnimationFrame(applyFilters);
+    }).observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
   }
 
   if (document.readyState === "loading") {
