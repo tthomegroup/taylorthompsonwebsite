@@ -1,4 +1,10 @@
 (function () {
+  var path = window.location.pathname.replace(/\/+$/, "");
+
+  if (path !== "/blog" && path !== "/blog.html") {
+    return;
+  }
+
   function slugify(value) {
     return String(value || "")
       .toLowerCase()
