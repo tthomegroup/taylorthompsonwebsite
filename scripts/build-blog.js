@@ -4,6 +4,14 @@ const path = require("path");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
 const OUTPUT_FILE = path.join(ROOT_DIR, "assets", "data", "blog-posts.json");
+const CATEGORY_LABELS = {
+  "market-updates": "MARKET UPDATES",
+  "buyer-tips": "BUYER TIPS",
+  "seller-tips": "SELLER TIPS",
+  "first-time-buyers": "FIRST-TIME BUYERS",
+  investment: "INVESTMENT",
+  "local-spotlight": "LOCAL SPOTLIGHT",
+};
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -96,15 +104,39 @@ function parseFrontmatter(markdown) {
 }
 
 function normalizeCategories(categories, category) {
-  if (Array.isArray(categories)) return categories.filter(Boolean);
+  if (Array.isArray(categories)) return categories.map(normalizeCategory).filter(Boolean);
   if (typeof categories === "string" && categories.trim()) {
     return categories
       .split(",")
       .map((item) => item.trim())
+      .map(normalizeCategory)
       .filter(Boolean);
   }
-  if (typeof category === "string" && category.trim()) return [category.trim()];
+  if (typeof category === "string" && category.trim()) return [normalizeCategory(category)];
   return [];
+}
+
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/['"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeCategory(value) {
+  const slug = slugify(value);
+  return CATEGORY_LABELS[slug] || String(value || "").trim().toUpperCase();
+}
+
+function normalizeFeatured(value) {
+  if (value === true) return true;
+  if (value === false || value === undefined || value === null) return false;
+
+  const normalized = String(value).trim().toLowerCase();
+  return ["true", "yes", "1", "featured"].includes(normalized);
 }
 
 function sortByDateDesc(a, b) {
@@ -142,6 +174,7 @@ function readPosts() {
       const { data, body } = parseFrontmatter(fs.readFileSync(filePath, "utf8"));
       const slug = data.slug || slugFromFilename(filePath);
       const categories = normalizeCategories(data.categories, data.category);
+      const category = normalizeCategory(data.category || categories[0] || "");
 
       return {
         id: data.id || slug,
@@ -150,13 +183,14 @@ function readPosts() {
         date: data.date || data.publishDate || "",
         publishDate: data.publishDate || data.date || "",
         readTime: data.readTime || data.read_time || "",
-        category: data.category || categories[0] || "",
+        category,
+        categorySlug: slugify(category),
         categories,
         excerpt: data.excerpt || "",
         featuredImage: data.featuredImage || data.featured_image || data.image || "",
         image: data.image || data.featuredImage || data.featured_image || "",
         imageAlt: data.imageAlt || data.image_alt || "",
-        featured: Boolean(data.featured),
+        featured: normalizeFeatured(data.featured),
         body,
         content: body,
       };
