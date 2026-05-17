@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "node scripts/migrate-blog-json.js && node scripts/build-blog.js",
+    "build": "node scripts/build-blog.js",
     "blog:build": "node scripts/build-blog.js",
     "blog:migrate": "node scripts/migrate-blog-json.js"
   }

@@ -12,18 +12,25 @@ collections:
     label: "Blog Posts"
     label_singular: "Blog Post"
     folder: "content/blog"
+    filter:
+      field: "published"
+      value: true
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     extension: "md"
     format: "frontmatter"
-    summary: "{{title}} — {{date}}"
+    summary: "{{title}}"
     editor:
       preview: true
     fields:
+      - label: "Published"
+        name: "published"
+        widget: "hidden"
+        default: true
+
       - label: "Title"
         name: "title"
         widget: "string"
-        hint: "The public blog post title."
 
       - label: "Publish Date"
         name: "date"
@@ -31,12 +38,10 @@ collections:
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
         time_format: false
-        hint: "Used for sorting posts newest first."
 
       - label: "Read Time"
         name: "readTime"
         widget: "select"
-        required: true
         options:
           - label: "3 Min Read"
             value: "3 Min Read"
@@ -46,12 +51,10 @@ collections:
             value: "7 min"
           - label: "10 min"
             value: "10 min"
-        hint: "Choose the estimated reading time."
 
       - label: "Category"
         name: "category"
         widget: "select"
-        required: true
         options:
           - label: "MARKET UPDATES"
             value: "Market Updates"
@@ -65,34 +68,29 @@ collections:
             value: "Investment"
           - label: "LOCAL SPOTLIGHT"
             value: "Local Spotlight"
-        hint: "Choose the main category for this post."
 
       - label: "Excerpt"
         name: "excerpt"
         widget: "text"
         required: false
-        hint: "Short summary used on blog cards."
 
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
         required: false
-        hint: "Shown anywhere the current frontend displays the blog image."
 
       - label: "Image Alt Text"
         name: "imageAlt"
         widget: "string"
         required: false
-        hint: "Describe the image for accessibility."
 
-      - label: "Featured Post"
+      - label: "Featured Blog"
         name: "featured"
         widget: "boolean"
         default: false
-        required: true
         true_label: "Featured"
         false_label: "Not Featured"
-        hint: "Turn on for posts that should appear in featured blog areas."
+        hint: "If multiple posts are marked featured, the most recently changed one wins and the site only shows one."
 
       - label: "Body"
         name: "body"
@@ -113,4 +111,3 @@ collections:
         modes:
           - rich_text
           - raw
-        hint: "Use H2 for main sections and H3 for subsections."

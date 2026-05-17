@@ -1,510 +1,400 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="assets/images/favicon.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Blog | Taylor Thompson Home Group | Central Valley Real Estate</title>
-<meta name="description" content="Real estate tips, market notes, and Central Valley home guidance from Taylor Thompson Home Group.">
-<link rel="canonical" href="https://taylorthompsonhomegroup.netlify.app/blog.html">
-<meta property="og:title" content="Blog | Taylor Thompson Home Group">
-<meta property="og:description" content="Real estate tips, market updates, buyer tips, seller tips, and Central Valley home guidance from Taylor Thompson Home Group.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://taylorthompsonhomegroup.netlify.app/blog.html">
-<meta property="og:image" content="https://taylorthompsonhomegroup.netlify.app/assets/images/hero-1.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<style>
-  :root {
-    --tan:#a68068;
-    --tan-mid:#b5927f;
-    --tan-light:#c2a894;
-    --tan-pale:#ddcebe;
-    --cream:#faf6f1;
-    --white:#ffffff;
-    --dark:#000000;
-    --brown:#000000;
-    --mid:#5a4a40;
-    --shadow:rgba(0,0,0,0.12);
-  }
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-  html{scroll-behavior:smooth;}
-  body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--dark);overflow-x:hidden;}
-  body.article-open{overflow:hidden;}
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;background:rgba(250,246,241,0.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(166,128,104,0.2);}
-  .nav-logo{display:flex;flex-direction:column;line-height:1;text-decoration:none;}
-  .nav-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--tan);letter-spacing:0.02em;}
-  .nav-logo-sub{font-size:9px;font-weight:500;letter-spacing:0.22em;color:var(--mid);text-transform:uppercase;margin-top:2px;}
-  .nav-links{display:flex;gap:28px;list-style:none;}
-  .nav-links a{font-size:12px;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;color:var(--dark);text-decoration:none;transition:color 0.2s;}
-  .nav-links a:hover,.nav-links a.active{color:var(--tan);}
-  .nav-cta{background:var(--tan);color:var(--white);padding:10px 20px;font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;opacity:0.92;transition:all 0.2s;}
-  .nav-cta:hover{opacity:1;background:var(--brown);}
-  .page-hero{padding:144px 80px 72px;background:var(--brown);color:var(--white);}
-  .hero-inner{max-width:1120px;margin:0 auto;}
-  .eyebrow{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan-light);margin-bottom:16px;}
-  h1{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,6vw,76px);font-weight:300;line-height:1.05;max-width:820px;margin-bottom:18px;}
-  h1 em,.section-title em{font-style:italic;color:var(--tan-light);}
-  .hero-copy{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.68);max-width:620px;}
-  .blog-shell{padding:72px 80px 88px;}
-  .blog-inner{max-width:1120px;margin:0 auto;}
-  .featured{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,0.92fr);gap:48px;align-items:center;margin:0 auto 76px;max-width:1040px;}
-  .featured>*{min-width:0;}
-  .article-media{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--tan-pale),var(--tan-mid));min-height:260px;}
-  .article-media.has-image{background-size:cover;background-position:center;}
-  .featured .article-media{aspect-ratio:16/9;min-height:0;width:100%;}
-  .article-media::after{content:'Article Image';position:absolute;left:24px;bottom:22px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.42);}
-  .article-media.has-image::after{display:none;}
-  .article-kicker{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan);margin-bottom:14px;}
-  .article-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,48px);font-weight:300;line-height:1.12;margin-bottom:16px;color:var(--dark);}
-  .article-excerpt{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:24px;}
-  .article-meta{display:flex;gap:16px;flex-wrap:wrap;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);margin-bottom:24px;}
-  .read-button{display:inline-flex;align-items:center;justify-content:center;background:var(--brown);color:var(--white);border:none;padding:14px 24px;font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:all 0.2s;}
-  .read-button:hover{background:var(--tan);}
-  .section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;border-top:1px solid rgba(166,128,104,0.22);padding-top:34px;margin-bottom:30px;}
-  .section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,44px);font-weight:300;line-height:1.12;color:var(--dark);}
-  .section-note{font-size:13px;font-weight:300;line-height:1.7;color:var(--mid);max-width:360px;}
-  .blog-tools{display:grid;grid-template-columns:minmax(220px,1fr) 190px;gap:12px;margin-bottom:18px;}
-  .blog-search,.blog-sort{width:100%;border:1px solid rgba(0,0,0,0.2);background:var(--white);color:var(--dark);padding:13px 14px;font-family:'Jost',sans-serif;font-size:13px;outline:none;}
-  .blog-search:focus,.blog-sort:focus{border-color:var(--tan);}
-  .blog-sort{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;}
-  .result-note{font-size:12px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--tan);margin:-4px 0 18px;}
-  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px;}
-  .filter-button{background:transparent;color:var(--dark);border:1px solid rgba(0,0,0,0.2);padding:10px 16px;font-family:'Jost',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
-  .filter-button:hover,.filter-button.active{background:var(--brown);color:var(--white);border-color:var(--brown);}
-  .blog-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
-  .blog-card{background:var(--white);display:flex;flex-direction:column;min-height:100%;box-shadow:0 10px 32px rgba(0,0,0,0.05);}
-  .blog-card .article-media{aspect-ratio:4/3;min-height:0;}
-  .blog-card-body{padding:24px;display:flex;flex-direction:column;flex:1;}
-  .blog-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1.15;margin-bottom:12px;}
-  .blog-card p{font-size:14px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:20px;}
-  .blog-card .read-button{margin-top:auto;align-self:flex-start;background:transparent;color:var(--dark);border:1px solid rgba(0,0,0,0.22);}
-  .blog-card .read-button:hover{background:var(--brown);color:var(--white);}
-  .blog-pager{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:34px;}
-  .pager-button{width:44px;height:44px;border:1px solid rgba(0,0,0,0.22);background:var(--white);color:var(--dark);font-size:24px;line-height:1;cursor:pointer;transition:all 0.2s;}
-  .pager-button:hover:not(:disabled){background:var(--brown);color:var(--white);}
-  .pager-button:disabled{opacity:0.35;cursor:not-allowed;}
-  .pager-status{font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);min-width:110px;text-align:center;}
-  .article-view{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,0.58);display:none;padding:28px;overflow:auto;}
-  .article-view.active{display:block;}
-  .article-panel{background:var(--cream);max-width:980px;margin:0 auto;min-height:100%;position:relative;}
-  .close-article{position:sticky;top:0;margin-left:auto;z-index:2;width:48px;height:48px;border:none;background:var(--brown);color:var(--white);font-size:28px;line-height:1;display:flex;align-items:center;justify-content:center;cursor:pointer;}
-  .article-full-media{aspect-ratio:16/9;background:linear-gradient(135deg,var(--tan-pale),var(--tan-mid));position:relative;}
-  .article-full-media.has-image{background-size:cover;background-position:center;}
-  .article-full-media::after{content:'Header Image';position:absolute;left:28px;bottom:24px;font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:rgba(0,0,0,0.42);}
-  .article-full-media.has-image::after{display:none;}
-  .article-content{padding:56px 72px 76px;}
-  .article-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,58px);font-weight:300;line-height:1.08;margin-bottom:18px;}
-  .article-content .article-meta{margin-bottom:34px;}
-  .article-content p{font-size:17px;font-weight:300;line-height:1.9;color:var(--mid);margin-bottom:22px;}
-  .article-content h3{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;margin:36px 0 12px;}
-  footer{background:var(--brown);padding:64px 80px 32px;}
-  .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
-  .footer-logo-script{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:28px;color:var(--tan-light);margin-bottom:4px;}
-  .footer-logo-sub{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px;}
-  .footer-tagline{font-size:14px;font-weight:300;line-height:1.8;color:rgba(255,255,255,0.5);max-width:280px;}
-  .footer-col-title{font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--tan-light);margin-bottom:20px;}
-  .footer-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
-  .footer-links a{font-size:13px;font-weight:300;color:rgba(255,255,255,0.55);text-decoration:none;transition:color 0.2s;}
-  .footer-links a:hover{color:var(--tan-light);}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-  .footer-legal{font-size:12px;color:rgba(255,255,255,0.3);line-height:1.6;}
-  @media(max-width:980px){
-    nav{padding:0 24px;}
-    .nav-links{display:none;}
-    .page-hero,.blog-shell{padding-left:32px;padding-right:32px;}
-    .featured{grid-template-columns:1fr;gap:28px;}
-    .blog-grid{grid-template-columns:1fr 1fr;}
-    .article-content{padding:42px 32px 56px;}
-    .footer-top{grid-template-columns:1fr 1fr;}
-    footer{padding:48px 32px 24px;}
-  }
-  @media(max-width:640px){
-    .page-hero{padding-top:120px;padding-bottom:54px;}
-    .blog-shell{padding-top:48px;}
-    .featured .article-media{min-height:220px;}
-    .section-head{display:block;}
-    .section-note{margin-top:12px;}
-    .blog-tools{grid-template-columns:1fr;}
-    .filter-row{gap:8px;}
-    .blog-grid{grid-template-columns:1fr;}
-    .article-view{padding:0;}
-    .article-panel{min-height:100vh;}
-    .close-article{width:44px;height:44px;}
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Taylor Thompson Home Group</title>
+  <style>
+    :root {
+      --bg: #f7f2ed;
+      --ink: #050505;
+      --muted: #765f50;
+      --tan: #c8ad9a;
+      --line: #d9cec5;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: "Montserrat", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a { color: inherit; }
+
+    .blog-page {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 56px 0 84px;
+    }
+
+    .page-title {
+      margin: 0 0 34px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 7vw, 76px);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .page-title em {
+      color: var(--tan);
+      font-style: italic;
+    }
+
+    .featured {
+      display: none;
+      grid-template-columns: minmax(0, 1fr) minmax(300px, 0.9fr);
+      gap: clamp(36px, 5vw, 64px);
+      align-items: center;
+      padding: 36px 0 72px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 38px;
+    }
+
+    .featured.is-visible { display: grid; }
+
+    .featured img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: var(--tan);
+    }
+
+    .eyebrow,
+    .meta,
+    .card-category {
+      color: #a77e67;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .featured h2 {
+      margin: 12px 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      font-weight: 400;
+      line-height: 1.12;
+    }
+
+    .featured-excerpt {
+      margin: 0 0 24px;
+      color: var(--muted);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 28px;
+      margin-bottom: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      border: 0;
+      background: #000;
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .blog-tools {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .blog-tools input,
+    .blog-tools select {
+      width: 100%;
+      border: 1px solid #cfc7bf;
+      background: #fff;
+      color: var(--ink);
+      min-height: 48px;
+      padding: 0 14px;
+      font: inherit;
+      font-size: 13px;
+    }
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 0 0 28px;
+    }
+
+    .filter {
+      border: 1px solid #cfc7bf;
+      background: transparent;
+      min-height: 38px;
+      padding: 0 16px;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .filter.active {
+      background: #000;
+      border-color: #000;
+      color: #fff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      display: flex;
+      min-height: 100%;
+      background: var(--white);
+      flex-direction: column;
+    }
+
+    .card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: var(--tan);
+    }
+
+    .card-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 26px 24px 28px;
+    }
+
+    .card h3 {
+      margin: 18px 0 14px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0 0 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .card .button {
+      margin-top: auto;
+      align-self: flex-start;
+      padding: 12px 22px;
+    }
+
+    .empty {
+      display: none;
+      padding: 40px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--muted);
+    }
+
+    .empty.is-visible { display: block; }
+
+    @media (max-width: 900px) {
+      .featured,
+      .grid,
+      .blog-tools {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-script">Taylor Thompson Home Group</span>
-    <span class="nav-logo-sub">Keller Williams Realty</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="/sell">Sell</a></li>
-    <li><a href="/buy">Buy</a></li>
-    <li><a href="areas.html">Areas</a></li>
-    <li><a href="events.html">Events</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Get Started</a>
-</nav>
+  <main class="blog-page">
+    <section class="featured" id="featured-blog" aria-label="Featured blog"></section>
 
-<main>
-  <section class="page-hero">
-    <div class="hero-inner">
-      <p class="eyebrow">Central Valley Real Estate Blog</p>
-      <h1>Guidance for every move, <em>before you make it.</em></h1>
-      <p class="hero-copy">Market notes, buyer and seller strategy, and practical local insight from Taylor Thompson Home Group.</p>
+    <header>
+      <h1 class="page-title">Latest <em>Blogs</em></h1>
+    </header>
+
+    <div class="blog-tools">
+      <input id="blog-search" type="search" placeholder="Search blog keywords">
+      <select id="blog-sort" aria-label="Sort blog posts">
+        <option value="newest">Newest First</option>
+        <option value="oldest">Oldest First</option>
+      </select>
     </div>
-  </section>
 
-  <section class="blog-shell">
-    <div class="blog-inner">
-      <article class="featured" id="featuredBlog"></article>
+    <nav class="filters" aria-label="Blog categories">
+      <button class="filter active" type="button" data-category="ALL">All</button>
+      <button class="filter" type="button" data-category="Market Updates">Market Updates</button>
+      <button class="filter" type="button" data-category="Buyer Tips">Buyer Tips</button>
+      <button class="filter" type="button" data-category="Seller Tips">Seller Tips</button>
+      <button class="filter" type="button" data-category="First-Time Buyers">First-Time Buyers</button>
+      <button class="filter" type="button" data-category="Investment">Investment</button>
+      <button class="filter" type="button" data-category="Local Spotlight">Local Spotlight</button>
+    </nav>
 
-      <div class="section-head">
-        <h2 class="section-title">Latest <em>Blogs</em></h2>
-        <p class="section-note">Search by keyword, browse by topic, and sort posts by publish date.</p>
-      </div>
+    <section class="grid" id="blog-grid" aria-live="polite"></section>
+    <p class="empty" id="blog-empty">No blog posts are published yet.</p>
+  </main>
 
-      <div class="blog-tools" aria-label="Blog search and sort controls">
-        <input class="blog-search" id="blogSearch" type="search" placeholder="Search blog keywords" aria-label="Search blog keywords">
-        <select class="blog-sort" id="sortOrder" aria-label="Sort blog posts">
-          <option value="newest">Newest First</option>
-          <option value="oldest">Oldest First</option>
-        </select>
-      </div>
-      <div class="result-note" id="resultNote"></div>
-      <div class="filter-row" id="filterRow" aria-label="Blog category filters"></div>
-      <div class="blog-grid" id="blogGrid"></div>
-      <div class="blog-pager" aria-label="Blog pagination">
-        <button class="pager-button" type="button" id="prevPage" aria-label="Newer posts">&lsaquo;</button>
-        <div class="pager-status" id="pagerStatus"></div>
-        <button class="pager-button" type="button" id="nextPage" aria-label="Older posts">&rsaquo;</button>
-      </div>
-    </div>
-  </section>
-</main>
+  <script>
+    const categories = [
+      "Market Updates",
+      "Buyer Tips",
+      "Seller Tips",
+      "First-Time Buyers",
+      "Investment",
+      "Local Spotlight",
+    ];
+    let posts = [];
+    let activeCategory = "ALL";
 
-<div class="article-view" id="articleView" aria-hidden="true">
-  <article class="article-panel" role="dialog" aria-modal="true" aria-labelledby="articleTitle">
-    <button class="close-article" type="button" aria-label="Close article">&times;</button>
-    <div class="article-full-media"></div>
-    <div class="article-content" id="articleContent"></div>
-  </article>
-</div>
-
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo-script">Taylor Thompson Home Group</div>
-      <div class="footer-logo-sub">Keller Williams Realty</div>
-      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Quick Links</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="taylorthompson_team.html">Meet the Team</a></li>
-        <li><a href="taylorthompson_sell.html">Sell a Home</a></li>
-        <li><a href="taylorthompson_buy.html">Buy a Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Cities We Serve</div>
-      <ul class="footer-links">
-        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
-        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
-        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
-        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
-        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Connect</div>
-      <ul class="footer-links">
-        <li><a href="https://instagram.com/soldby.taylor" target="_blank">Instagram @soldby.taylor</a></li>
-        <li><a href="https://instagram.com/soldby.dave" target="_blank">Instagram @soldby.dave</a></li>
-        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
-        <li><a href="https://youtube.com/@Soldby.taylor" target="_blank">YouTube</a></li>
-        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-legal">&copy; 2026 Taylor Thompson Home Group Â· Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
-    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
-  </div>
-</footer>
-
-<script>
-  const POSTS_PER_PAGE = 6;
-  const BLOG_DATA_URL = 'assets/data/blog-posts.json';
-  const BLOG_CATEGORIES = ['Market Updates', 'Buyer Tips', 'Seller Tips', 'First-Time Buyers', 'Investment', 'Local Spotlight'];
-  let posts = [];
-  let postsById = {};
-  let activeCategory = 'All';
-  let searchTerm = '';
-  let sortOrder = 'newest';
-  let currentPage = 0;
-  const featuredBlog = document.getElementById('featuredBlog');
-  const blogGrid = document.getElementById('blogGrid');
-  const filterRow = document.getElementById('filterRow');
-  const prevPage = document.getElementById('prevPage');
-  const nextPage = document.getElementById('nextPage');
-  const pagerStatus = document.getElementById('pagerStatus');
-  const blogSearch = document.getElementById('blogSearch');
-  const sortSelect = document.getElementById('sortOrder');
-  const resultNote = document.getElementById('resultNote');
-  const view = document.getElementById('articleView');
-  const fullMedia = document.querySelector('.article-full-media');
-  const content = document.getElementById('articleContent');
-  const closeButton = document.querySelector('.close-article');
-
-  function escapeHTML(value) {
-    return String(value || '').replace(/[&<>"']/g, char => ({
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#39;'
-    }[char]));
-  }
-
-  function formatDate(value) {
-    return new Date(`${value}T00:00:00`).toLocaleDateString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      year: 'numeric'
-    });
-  }
-
-  function slugify(post) {
-    return `${post.date || ''}-${post.title || 'post'}`
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
-  }
-
-  function normalizePosts(rawPosts) {
-    return rawPosts.map(post => ({
-      ...post,
-      id: post.id || slugify(post),
-      body: normalizeBody(post.body)
-    })).sort((a, b) => new Date(b.date) - new Date(a.date));
-  }
-
-  function normalizeBody(body) {
-    if (typeof body === 'string') return body;
-    if (!Array.isArray(body)) return '';
-    return body.map(section => {
-      const heading = Array.isArray(section) ? section[0] : section.heading;
-      const paragraph = Array.isArray(section) ? section[1] : section.paragraph;
-      return `## ${heading || ''}\n\n${paragraph || ''}`.trim();
-    }).join('\n\n');
-  }
-
-  function renderInlineMarkdown(value) {
-    return escapeHTML(value)
-      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\*(.+?)\*/g, '<em>$1</em>');
-  }
-
-  function renderArticleBody(body) {
-    return String(body || '').split(/\n{2,}/).map(block => {
-      const text = block.trim();
-      if (!text) return '';
-      if (text.startsWith('### ')) return `<h4>${renderInlineMarkdown(text.slice(4))}</h4>`;
-      if (text.startsWith('## ')) return `<h3>${renderInlineMarkdown(text.slice(3))}</h3>`;
-      if (text.startsWith('> ')) return `<blockquote>${renderInlineMarkdown(text.slice(2))}</blockquote>`;
-      if (text.split('\n').every(line => line.trim().startsWith('- '))) {
-        return `<ul>${text.split('\n').map(line => `<li>${renderInlineMarkdown(line.trim().slice(2))}</li>`).join('')}</ul>`;
-      }
-      return `<p>${text.split('\n').map(renderInlineMarkdown).join('<br>')}</p>`;
-    }).join('');
-  }
-
-  function imageMarkup(post) {
-    const style = post.image ? ` style="background-image:url(&quot;${escapeHTML(post.image)}&quot;)"` : '';
-    const imageClass = post.image ? 'article-media has-image' : 'article-media';
-    return `<div class="${imageClass}" role="img" aria-label="${escapeHTML(post.imageAlt)}"${style}></div>`;
-  }
-
-  function postUrl(post) {
-    return `blog/${escapeHTML(post.id)}.html`;
-  }
-
-  function searchableText(post) {
-    return normalizeSearchText([post.title, post.category, post.excerpt, post.body, post.imageAlt].join(' '));
-  }
-
-  function normalizeSearchText(value) {
-    return String(value || '')
-      .toLowerCase()
-      .replace(/[^a-z0-9\s]+/g, ' ')
-      .replace(/\s+/g, ' ')
-      .trim();
-  }
-
-  function getVisiblePosts() {
-    const keywords = normalizeSearchText(searchTerm).split(' ').filter(Boolean);
-    return [...posts]
-      .sort((a, b) => sortOrder === 'oldest' ? new Date(a.date) - new Date(b.date) : new Date(b.date) - new Date(a.date))
-      .filter(post => activeCategory === 'All' || post.category === activeCategory)
-      .filter(post => {
-        if (!keywords.length) return true;
-        const text = searchableText(post);
-        return keywords.every(keyword => text.includes(keyword));
-      });
-  }
-
-  function renderPosts() {
-    const categories = ['All', ...BLOG_CATEGORIES];
-    const visiblePosts = getVisiblePosts();
-    resultNote.textContent = searchTerm.trim() ? `${visiblePosts.length} result${visiblePosts.length === 1 ? '' : 's'} for "${searchTerm.trim()}"` : '';
-    filterRow.innerHTML = categories.map(category => `
-      <button class="filter-button${category === activeCategory ? ' active' : ''}" type="button" data-category="${escapeHTML(category)}">${escapeHTML(category)}</button>
-    `).join('');
-
-    if (!visiblePosts.length) {
-      featuredBlog.innerHTML = `<p class="section-note">${posts.length ? 'No posts match that search yet.' : 'No blog posts have been added yet.'}</p>`;
-      blogGrid.innerHTML = '';
-      pagerStatus.textContent = '0 / 0';
-      prevPage.disabled = true;
-      nextPage.disabled = true;
-      return;
+    function slugify(value) {
+      return String(value || "")
+        .toLowerCase()
+        .trim()
+        .replace(/&/g, "and")
+        .replace(/['"]/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
     }
 
-    const [featured, ...remainingPosts] = visiblePosts;
-    const totalPages = Math.max(1, Math.ceil(remainingPosts.length / POSTS_PER_PAGE));
-    currentPage = Math.min(currentPage, totalPages - 1);
-    const pagePosts = remainingPosts.slice(currentPage * POSTS_PER_PAGE, (currentPage + 1) * POSTS_PER_PAGE);
+    function escapeHtml(value) {
+      return String(value || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
 
-    featuredBlog.innerHTML = `
-      ${imageMarkup(featured)}
-      <div>
-        <p class="article-kicker">Featured Blog</p>
-        <h2 class="article-title">${escapeHTML(featured.title)}</h2>
-        <p class="article-excerpt">${escapeHTML(featured.excerpt)}</p>
-        <div class="article-meta"><span>${escapeHTML(featured.category)}</span><span>${escapeHTML(featured.time)}</span><span>${formatDate(featured.date)}</span></div>
-        <a class="read-button" href="${postUrl(featured)}">Read Full Blog</a>
-      </div>
-    `;
-    blogGrid.innerHTML = pagePosts.map(post => `
-      <article class="blog-card">
-        ${imageMarkup(post)}
-        <div class="blog-card-body">
-          <p class="article-kicker">${escapeHTML(post.category)}</p>
-          <h3>${escapeHTML(post.title)}</h3>
-          <p>${escapeHTML(post.excerpt)}</p>
-          <a class="read-button" href="${postUrl(post)}">Read Full Blog</a>
+    function assetPath(value) {
+      if (!value) return "";
+      if (/^(https?:)?\/\//.test(value) || value.charAt(0) === "/") return value;
+      return "/" + value.replace(/^\.?\//, "");
+    }
+
+    function postUrl(post) {
+      return post.url || post.link || post.permalink || "/blog/" + (post.slug || slugify(post.title));
+    }
+
+    function postCategory(post) {
+      const value = post.category || (post.categories && post.categories[0]) || "";
+      const match = categories.find((category) => slugify(category) === slugify(value));
+      return match || value;
+    }
+
+    function postDate(post) {
+      return new Date(post.date || post.publishDate || 0).getTime();
+    }
+
+    function isFeatured(post) {
+      return post.featured === true || post.isFeatured === true || post.featuredPost === true;
+    }
+
+    function renderFeatured() {
+      const featured = posts.filter(isFeatured).sort((a, b) => postDate(b) - postDate(a))[0];
+      const container = document.getElementById("featured-blog");
+
+      if (!featured) {
+        container.classList.remove("is-visible");
+        container.innerHTML = "";
+        return;
+      }
+
+      const image = featured.featuredImage || featured.image || "";
+      container.innerHTML = `
+        <div>${image ? `<img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(featured.imageAlt || featured.title || "")}">` : ""}</div>
+        <div>
+          <p class="eyebrow">Featured Blog</p>
+          <h2>${escapeHtml(featured.title || "")}</h2>
+          <p class="featured-excerpt">${escapeHtml(featured.excerpt || "")}</p>
+          <div class="meta">
+            <span>${escapeHtml(postCategory(featured))}</span>
+            <span>${escapeHtml(featured.date || featured.publishDate || "")}</span>
+          </div>
+          <a class="button" href="${escapeHtml(postUrl(featured))}">Read Full Blog</a>
         </div>
-      </article>
-    `).join('');
-    if (!pagePosts.length) {
-      blogGrid.innerHTML = '<p class="section-note">No posts in this category yet.</p>';
+      `;
+      container.classList.add("is-visible");
     }
-    prevPage.disabled = currentPage === 0;
-    nextPage.disabled = currentPage >= totalPages - 1;
-    pagerStatus.textContent = `${currentPage + 1} / ${totalPages}`;
-  }
 
-  function openArticle(id) {
-    const article = postsById[id];
-    if (!article) return;
-    fullMedia.className = article.image ? 'article-full-media has-image' : 'article-full-media';
-    fullMedia.style.backgroundImage = article.image ? `url("${article.image}")` : '';
-    fullMedia.setAttribute('aria-label', article.imageAlt || '');
-    content.innerHTML = `
-      <p class="article-kicker">${escapeHTML(article.category)}</p>
-      <h2 id="articleTitle">${escapeHTML(article.title)}</h2>
-      <div class="article-meta"><span>${escapeHTML(article.category)}</span><span>${escapeHTML(article.time)}</span><span>${formatDate(article.date)}</span></div>
-      ${renderArticleBody(article.body)}
-    `;
-    view.classList.add('active');
-    view.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('article-open');
-    history.replaceState(null, '', `#${id}`);
-  }
+    function filteredPosts() {
+      const search = slugify(document.getElementById("blog-search").value);
+      const sort = document.getElementById("blog-sort").value;
 
-  function closeArticle() {
-    view.classList.remove('active');
-    view.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('article-open');
-    history.replaceState(null, '', window.location.pathname);
-  }
-
-  async function loadPosts() {
-    try {
-      const response = await fetch(BLOG_DATA_URL, { cache: 'no-store' });
-      if (!response.ok) throw new Error('Blog data could not be loaded.');
-      const data = await response.json();
-      posts = normalizePosts(data.posts || []);
-      postsById = Object.fromEntries(posts.map(post => [post.id, post]));
-      renderPosts();
-      if (window.location.hash) openArticle(window.location.hash.slice(1));
-    } catch (error) {
-      featuredBlog.innerHTML = '<p class="section-note">Blog posts are unavailable right now.</p>';
-      blogGrid.innerHTML = '';
-      console.error(error);
+      return posts
+        .filter((post) => {
+          const categoryMatch = activeCategory === "ALL" || slugify(postCategory(post)) === slugify(activeCategory);
+          const searchMatch = !search || slugify([post.title, post.excerpt, postCategory(post)].join(" ")).includes(search);
+          return categoryMatch && searchMatch;
+        })
+        .sort((a, b) => sort === "oldest" ? postDate(a) - postDate(b) : postDate(b) - postDate(a));
     }
-  }
 
-  document.addEventListener('click', event => {
-    const filter = event.target.closest('[data-category]');
-    if (filter) {
-      activeCategory = filter.dataset.category;
-      currentPage = 0;
-      renderPosts();
-      return;
+    function renderGrid() {
+      const grid = document.getElementById("blog-grid");
+      const empty = document.getElementById("blog-empty");
+      const visiblePosts = filteredPosts();
+
+      grid.innerHTML = visiblePosts.map((post) => {
+        const image = post.featuredImage || post.image || "";
+        return `
+          <article class="card">
+            ${image ? `<img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(post.imageAlt || post.title || "")}">` : ""}
+            <div class="card-body">
+              <div class="card-category">${escapeHtml(postCategory(post))}</div>
+              <h3>${escapeHtml(post.title || "")}</h3>
+              <p>${escapeHtml(post.excerpt || "")}</p>
+              <a class="button" href="${escapeHtml(postUrl(post))}">Read Full Blog</a>
+            </div>
+          </article>
+        `;
+      }).join("");
+
+      empty.classList.toggle("is-visible", visiblePosts.length === 0);
     }
-  });
-  closeButton.addEventListener('click', closeArticle);
-  prevPage.addEventListener('click', () => {
-    currentPage = Math.max(0, currentPage - 1);
-    renderPosts();
-  });
-  nextPage.addEventListener('click', () => {
-    currentPage += 1;
-    renderPosts();
-  });
-  blogSearch.addEventListener('input', () => {
-    searchTerm = blogSearch.value;
-    activeCategory = 'All';
-    currentPage = 0;
-    renderPosts();
-  });
-  sortSelect.addEventListener('change', () => {
-    sortOrder = sortSelect.value;
-    currentPage = 0;
-    renderPosts();
-  });
-  view.addEventListener('click', event => {
-    if (event.target === view) closeArticle();
-  });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && view.classList.contains('active')) closeArticle();
-  });
-  loadPosts();
-</script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
+
+    function setCategory(category) {
+      activeCategory = category;
+      document.querySelectorAll(".filter").forEach((button) => {
+        button.classList.toggle("active", button.dataset.category === category);
+      });
+      renderGrid();
+    }
+
+    document.querySelectorAll(".filter").forEach((button) => {
+      button.addEventListener("click", () => setCategory(button.dataset.category));
     });
-  }
-</script>
-<script src="/assets/js/blog-featured-only.js?v=20260516f"></script>
+    document.getElementById("blog-search").addEventListener("input", renderGrid);
+    document.getElementById("blog-sort").addEventListener("change", renderGrid);
+
+    fetch("/assets/data/blog-posts.json")
+      .then((response) => response.json())
+      .then((data) => {
+        posts = Array.isArray(data) ? data : data.posts || [];
+        renderFeatured();
+        renderGrid();
+      })
+      .catch(() => {
+        document.getElementById("blog-empty").classList.add("is-visible");
+      });
+  </script>
 </body>
 </html>

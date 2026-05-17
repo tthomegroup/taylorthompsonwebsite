@@ -5,7 +5,8 @@ const { execSync } = require("child_process");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
 const OUTPUT_FILE = path.join(ROOT_DIR, "assets", "data", "blog-posts.json");
-const CATEGORY_LABELS = {
+
+const CATEGORIES = {
   "market-updates": "Market Updates",
   "buyer-tips": "Buyer Tips",
   "seller-tips": "Seller Tips",
@@ -18,8 +19,14 @@ function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
 }
 
-function slugFromFilename(filePath) {
-  return path.basename(filePath, path.extname(filePath)).toLowerCase();
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/['"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function parseValue(value) {
@@ -28,24 +35,17 @@ function parseValue(value) {
   if (trimmed === "true") return true;
   if (trimmed === "false") return false;
   if (trimmed === "null") return null;
-  if (trimmed === "") return "";
-
   if (
     (trimmed.startsWith('"') && trimmed.endsWith('"')) ||
     (trimmed.startsWith("'") && trimmed.endsWith("'"))
   ) {
     return trimmed.slice(1, -1);
   }
-
   if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
     try {
       return JSON.parse(trimmed.replace(/'/g, '"'));
     } catch (error) {
-      return trimmed
-        .slice(1, -1)
-        .split(",")
-        .map((item) => item.trim().replace(/^["']|["']$/g, ""))
-        .filter(Boolean);
+      return [];
     }
   }
 
@@ -54,13 +54,7 @@ function parseValue(value) {
 
 function parseFrontmatter(markdown) {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
-
-  if (!match) {
-    return {
-      data: {},
-      body: markdown.trim(),
-    };
-  }
+  if (!match) return { data: {}, body: markdown.trim() };
 
   const data = {};
   const lines = match[1].split(/\r?\n/);
@@ -85,12 +79,10 @@ function parseFrontmatter(markdown) {
 
     if (/^[>|]/.test(rawValue.trim())) {
       const blockLines = [];
-
       while (index + 1 < lines.length && /^\s+/.test(lines[index + 1])) {
         index += 1;
         blockLines.push(lines[index].replace(/^\s{2,}/, ""));
       }
-
       data[currentKey] = blockLines.join(rawValue.trim().startsWith(">") ? " " : "\n").trim();
       continue;
     }
@@ -98,73 +90,18 @@ function parseFrontmatter(markdown) {
     data[currentKey] = rawValue === "" ? [] : parseValue(rawValue);
   }
 
-  return {
-    data,
-    body: match[2].trim(),
-  };
-}
-
-function normalizeCategories(categories, category) {
-  if (Array.isArray(categories)) return categories.map(normalizeCategory).filter(Boolean);
-  if (typeof categories === "string" && categories.trim()) {
-    return categories
-      .split(",")
-      .map((item) => item.trim())
-      .map(normalizeCategory)
-      .filter(Boolean);
-  }
-  if (typeof category === "string" && category.trim()) return [normalizeCategory(category)];
-  return [];
-}
-
-function slugify(value) {
-  return String(value || "")
-    .toLowerCase()
-    .trim()
-    .replace(/&/g, "and")
-    .replace(/['"]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+  return { data, body: match[2].trim() };
 }
 
 function normalizeCategory(value) {
   const slug = slugify(value);
-  return CATEGORY_LABELS[slug] || titleCaseCategory(value);
-}
-
-function titleCaseCategory(value) {
-  return String(value || "")
-    .toLowerCase()
-    .split(/(\s+|-)/)
-    .map((part) => {
-      if (part === "-" || /^\s+$/.test(part)) return part;
-      return part.charAt(0).toUpperCase() + part.slice(1);
-    })
-    .join("");
-}
-
-function displayCategory(value) {
-  return normalizeCategory(value).toUpperCase();
+  return CATEGORIES[slug] || String(value || "").trim();
 }
 
 function normalizeFeatured(value) {
   if (value === true) return true;
   if (value === false || value === undefined || value === null) return false;
-
-  const normalized = String(value).trim().toLowerCase();
-  return ["true", "yes", "1", "featured"].includes(normalized);
-}
-
-function firstDefined() {
-  for (let index = 0; index < arguments.length; index += 1) {
-    if (arguments[index] !== undefined) return arguments[index];
-  }
-
-  return undefined;
-}
-
-function sortByDateDesc(a, b) {
-  return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
+  return ["true", "yes", "1", "featured"].includes(String(value).trim().toLowerCase());
 }
 
 function fileUpdatedAt(filePath) {
@@ -175,45 +112,10 @@ function fileUpdatedAt(filePath) {
       encoding: "utf8",
       stdio: ["ignore", "pipe", "ignore"],
     }).trim();
-
     return Number(timestamp) || 0;
   } catch (error) {
     return 0;
   }
-}
-
-function setMarkdownFeatured(filePath, featured) {
-  const markdown = fs.readFileSync(filePath, "utf8");
-  const value = featured ? "true" : "false";
-
-  if (/^featured:\s*(true|false)\s*$/m.test(markdown)) {
-    fs.writeFileSync(filePath, markdown.replace(/^featured:\s*(true|false)\s*$/m, `featured: ${value}`));
-    return;
-  }
-
-  if (/^---\r?\n/.test(markdown)) {
-    fs.writeFileSync(filePath, markdown.replace(/\r?\n---\r?\n/, `\nfeatured: ${value}\n---\n`));
-  }
-}
-
-function formatOutput(posts) {
-  if (!fs.existsSync(OUTPUT_FILE)) return posts;
-
-  try {
-    const current = JSON.parse(fs.readFileSync(OUTPUT_FILE, "utf8"));
-
-    if (Array.isArray(current)) return posts;
-    if (current && typeof current === "object" && Array.isArray(current.posts)) {
-      return {
-        ...current,
-        posts,
-      };
-    }
-  } catch (error) {
-    console.warn(`Could not read existing ${path.relative(ROOT_DIR, OUTPUT_FILE)} shape.`);
-  }
-
-  return posts;
 }
 
 function readPosts() {
@@ -225,48 +127,41 @@ function readPosts() {
     .map((file) => {
       const filePath = path.join(CONTENT_DIR, file);
       const { data, body } = parseFrontmatter(fs.readFileSync(filePath, "utf8"));
-      const slug = data.slug || slugFromFilename(filePath);
-      const categories = normalizeCategories(data.categories, data.category);
-      const category = normalizeCategory(data.category || categories[0] || "");
-      const featured = normalizeFeatured(firstDefined(data.featured, data.isFeatured, data.featuredPost));
-      const categorySlug = slugify(category);
-      const categoryTitle = titleCaseCategory(category);
+
+      if (data.published !== true) return null;
+
+      const slug = data.slug || path.basename(file, ".md");
+      const category = normalizeCategory(data.category);
+      const featured = normalizeFeatured(data.featured);
 
       return {
-        id: data.id || slug,
+        id: slug,
         slug,
         url: `/blog/${slug}`,
         link: `/blog/${slug}`,
         permalink: `/blog/${slug}`,
         title: data.title || slug,
-        date: data.date || data.publishDate || "",
-        publishDate: data.publishDate || data.date || "",
-        readTime: data.readTime || data.read_time || "",
+        date: data.date || "",
+        publishDate: data.date || "",
+        readTime: data.readTime || "",
         category,
-        categoryLabel: displayCategory(category),
-        displayCategory: displayCategory(category),
-        categorySlug,
-        categoryValue: categorySlug,
-        categoryTitle,
-        categories,
-        categoryLabels: categories.map(displayCategory),
-        categorySlugs: categories.map(slugify),
-        categoryValues: categories.map(slugify),
-        categoryTitles: categories.map(titleCaseCategory),
+        categories: category ? [category] : [],
+        categorySlug: slugify(category),
         excerpt: data.excerpt || "",
-        featuredImage: data.featuredImage || data.featured_image || data.image || "",
-        image: data.image || data.featuredImage || data.featured_image || "",
-        imageAlt: data.imageAlt || data.image_alt || "",
+        featuredImage: data.featuredImage || "",
+        image: data.featuredImage || "",
+        imageAlt: data.imageAlt || "",
         featured,
         isFeatured: featured,
         featuredPost: featured,
-        sourceFile: filePath,
-        updatedAt: fileUpdatedAt(filePath),
         body,
         content: body,
+        sourceFile: filePath,
+        updatedAt: fileUpdatedAt(filePath),
       };
     })
-    .sort(sortByDateDesc);
+    .filter(Boolean)
+    .sort((a, b) => new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime());
 
   const featuredPost = posts
     .filter((post) => post.featured)
@@ -275,21 +170,11 @@ function readPosts() {
       return new Date(b.date || 0).getTime() - new Date(a.date || 0).getTime();
     })[0];
 
-  if (featuredPost) {
-    posts.forEach((post) => {
-      const isFeaturedWinner = post.slug === featuredPost.slug;
-
-      if (!isFeaturedWinner && post.featured) {
-        setMarkdownFeatured(post.sourceFile, false);
-      }
-
-      post.featured = isFeaturedWinner;
-      post.isFeatured = isFeaturedWinner;
-      post.featuredPost = isFeaturedWinner;
-    });
-  }
-
   posts.forEach((post) => {
+    const isWinner = Boolean(featuredPost && post.slug === featuredPost.slug);
+    post.featured = isWinner;
+    post.isFeatured = isWinner;
+    post.featuredPost = isWinner;
     delete post.sourceFile;
     delete post.updatedAt;
   });
@@ -299,11 +184,9 @@ function readPosts() {
 
 function buildBlog() {
   ensureDir(path.dirname(OUTPUT_FILE));
-
   const posts = readPosts();
-  fs.writeFileSync(OUTPUT_FILE, `${JSON.stringify(formatOutput(posts), null, 2)}\n`);
-
-  console.log(`Built ${posts.length} blog post(s) into ${path.relative(ROOT_DIR, OUTPUT_FILE)}`);
+  fs.writeFileSync(OUTPUT_FILE, `${JSON.stringify(posts, null, 2)}\n`);
+  console.log(`Built ${posts.length} blog post(s).`);
 }
 
 buildBlog();
