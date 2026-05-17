@@ -224,6 +224,7 @@
   </style>
 </head>
 <body>
+  <div id="site-header"></div>
   <main class="blog-page">
     <section class="featured" id="featured-blog" aria-label="Featured blog"></section>
 
@@ -252,6 +253,7 @@
     <section class="grid" id="blog-grid" aria-live="polite"></section>
     <p class="empty" id="blog-empty">No blog posts are published yet.</p>
   </main>
+  <div id="site-footer"></div>
 
   <script>
     const categories = [
@@ -395,6 +397,29 @@
       .catch(() => {
         document.getElementById("blog-empty").classList.add("is-visible");
       });
+  </script>
+  <script>
+    fetch("/index.html")
+      .then((response) => response.text())
+      .then((html) => {
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        doc.querySelectorAll('link[rel="stylesheet"], style').forEach((asset) => {
+          const key = asset.href || asset.textContent.slice(0, 80);
+          const alreadyLoaded = Array.from(document.querySelectorAll('link[rel="stylesheet"], style')).some((existing) => {
+            return (existing.href || existing.textContent.slice(0, 80)) === key;
+          });
+
+          if (!alreadyLoaded) document.head.appendChild(asset.cloneNode(true));
+        });
+
+        const header = doc.querySelector("header, nav");
+        const footer = doc.querySelector("footer");
+
+        if (header) document.getElementById("site-header").replaceChildren(header.cloneNode(true));
+        if (footer) document.getElementById("site-footer").replaceChildren(footer.cloneNode(true));
+      })
+      .catch(() => {});
   </script>
 </body>
 </html>
