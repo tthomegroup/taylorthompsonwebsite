@@ -184,37 +184,146 @@
     <p class="section-eyebrow fade-up" style="display:block;margin-bottom:8px;">Make the Introduction</p>
     <h3 style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);margin-bottom:28px;" class="fade-up">Tell Us About<br><em>Your Referral</em></h3>
 
-    <div class="form-divider-label">About You</div>
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">Your Name</label><input class="form-input" type="text" placeholder="Jane Smith"></div>
-      <div class="form-group"><label class="form-label">Your Phone</label><input class="form-input" type="tel" placeholder="(209) 000-0000"></div>
+   <form 
+  name="referral-form"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/thank-you"
+>
+
+  <input type="hidden" name="form-name" value="referral-form">
+
+  <p hidden>
+    <label>
+      Don’t fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
+
+  <div class="form-divider-label">About You</div>
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label class="form-label">Your Name</label>
+
+      <input
+        class="form-input"
+        type="text"
+        name="your-name"
+        placeholder="Jane Smith"
+        required
+      >
     </div>
 
-    <div class="form-divider"></div>
-    <div class="form-divider-label">About Your Referral</div>
+    <div class="form-group">
+      <label class="form-label">Your Phone</label>
 
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">Their Name</label><input class="form-input" type="text" placeholder="John Doe"></div>
-      <div class="form-group"><label class="form-label">Their Phone</label><input class="form-input" type="tel" placeholder="(209) 000-0000"></div>
+      <input
+        class="form-input"
+        type="tel"
+        name="your-phone"
+        placeholder="(209) 000-0000"
+      >
     </div>
-    <div class="form-group"><label class="form-label">Their Email (if you have it)</label><input class="form-input" type="email" placeholder="john@email.com"></div>
-    <div class="form-group">
-      <label class="form-label">What Do They Need?</label>
-      <select class="form-select">
-        <option>They want to sell their home</option>
-        <option>They want to buy a home</option>
-        <option>They want to do both - sell and buy</option>
-        <option>They're thinking about it and need guidance</option>
-        <option>They're a real estate investor</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label class="form-label">Anything Else We Should Know?</label>
-      <input class="form-input" type="text" placeholder="Timeline, location, special circumstances...">
-    </div>
-    <button class="form-submit">Submit My Referral →</button>
-    <p class="form-note">We'll reach out to your referral personally and follow up with you after we connect.</p>
+
   </div>
+
+  <div class="form-divider"></div>
+
+  <div class="form-divider-label">
+    About Your Referral
+  </div>
+
+  <div class="form-row">
+
+    <div class="form-group">
+      <label class="form-label">Their Name</label>
+
+      <input
+        class="form-input"
+        type="text"
+        name="referral-name"
+        placeholder="John Doe"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Their Phone</label>
+
+      <input
+        class="form-input"
+        type="tel"
+        name="referral-phone"
+        placeholder="(209) 000-0000"
+      >
+    </div>
+
+  </div>
+
+  <div class="form-group">
+
+    <label class="form-label">
+      Their Email (if you have it)
+    </label>
+
+    <input
+      class="form-input"
+      type="email"
+      name="referral-email"
+      placeholder="john@email.com"
+    >
+
+  </div>
+
+  <div class="form-group">
+
+    <label class="form-label">
+      What Do They Need?
+    </label>
+
+    <select
+      class="form-select"
+      name="referral-needs"
+    >
+      <option>They want to sell their home</option>
+      <option>They want to buy a home</option>
+      <option>They want to do both - sell and buy</option>
+      <option>They're thinking about it and need guidance</option>
+      <option>They're a real estate investor</option>
+    </select>
+
+  </div>
+
+  <div class="form-group">
+
+    <label class="form-label">
+      Anything Else We Should Know?
+    </label>
+
+    <input
+      class="form-input"
+      type="text"
+      name="additional-details"
+      placeholder="Timeline, location, special circumstances..."
+    >
+
+  </div>
+
+  <button
+    class="form-submit"
+    type="submit"
+  >
+    Submit My Referral →
+  </button>
+
+  <p class="form-note">
+    We'll reach out to your referral personally and follow up with you after we connect.
+  </p>
+
+</form>
 </section>
 
 <section class="testimonial-section">
