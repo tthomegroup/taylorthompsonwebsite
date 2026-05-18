@@ -36,8 +36,9 @@
   justify-content: space-between;
   gap: 28px;
   min-height: 78px;
-  width: min(1240px, calc(100% - 40px));
-  margin: 0 auto;
+  width: 100%;
+  margin: 0;
+  padding: 0 clamp(28px, 5vw, 72px);
 }
 
 .site-logo,
@@ -93,8 +94,8 @@
   color: var(--ink);
   font-family: "Jost", sans-serif;
   font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.16em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   line-height: 1;
   text-decoration: none;
   text-transform: uppercase;
@@ -148,6 +149,7 @@
   min-height: 42px;
   padding: 0 18px;
   border: 1px solid var(--ink);
+  font-weight: 700;
   white-space: nowrap;
 }
 
@@ -185,6 +187,28 @@
 .site-footer__logo {
   display: inline-block;
   margin-bottom: 10px;
+}
+
+.site-footer__brand {
+  position: relative;
+  padding-top: 86px;
+}
+
+.site-footer__brand::before {
+  content: "T";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(200, 173, 154, 0.62);
+  color: var(--tan);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 42px;
+  font-style: italic;
+  line-height: 1;
 }
 
 .site-footer__copy {
