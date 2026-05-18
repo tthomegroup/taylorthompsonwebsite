@@ -5,6 +5,7 @@ const ROOT_DIR = path.resolve(__dirname, "..");
 const SKIP_DIRS = new Set([".git", "admin", "assets", "content", "includes", "node_modules", "scripts"]);
 const SHARED_CSS = '<link rel="stylesheet" href="/assets/css/nav-footer.css">';
 const SHARED_JS = '<script src="/assets/js/includes.js" defer></script>';
+const FAVICON = '<link rel="icon" href="/assets/images/favicon.png" type="image/png">';
 const HEADER_INCLUDE = '<div data-include="/includes/header.html"></div>';
 const FOOTER_INCLUDE = '<div data-include="/includes/footer.html"></div>';
 
@@ -44,6 +45,11 @@ function ensureCss(html) {
   return html.replace(/<\/head>/i, `  ${SHARED_CSS}\n</head>`);
 }
 
+function ensureFavicon(html) {
+  if (/<link[^>]+rel=["'](?:shortcut icon|icon)["']/i.test(html)) return html;
+  return html.replace(/<\/head>/i, `  ${FAVICON}\n</head>`);
+}
+
 function ensureJs(html) {
   if (html.includes("/assets/js/includes.js")) return html;
   return html.replace(/<\/body>/i, `  ${SHARED_JS}\n</body>`);
@@ -53,6 +59,7 @@ function updateFile(filePath) {
   const original = fs.readFileSync(filePath, "utf8");
   let html = original;
 
+  html = ensureFavicon(html);
   html = ensureCss(html);
   html = replaceFirstNav(html);
   html = replaceFooter(html);
