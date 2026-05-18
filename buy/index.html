@@ -218,14 +218,43 @@
     <h2>Download Your Free<br><em>Buyer Consult Guide</em></h2>
     <p>Everything you need to know to successfully purchase a home in the Central Valley - from start to sold. Enter your name and email and we'll send it straight to your inbox.</p>
   </div>
-  <div class="guide-form">
-    <input type="text" placeholder="Your First Name">
-    <input type="email" placeholder="Your Email Address">
-    <input type="tel" placeholder="Your Phone Number (optional)">
-    <button class="guide-btn">Send Me the Free Buyer Guide →</button>
-    <p class="guide-note">🔒 No spam. Your info is never shared. We'll follow up personally - not with a robot.</p>
-  </div>
-</section>
+ <form 
+  name="buyer-consult-form"
+  method="POST"
+  data-netlify="true"
+  action="/assets/guides/buyer-guide.pdf"
+  class="guide-form"
+>
+  <input type="hidden" name="form-name" value="buyer-consult-form">
+
+  <input 
+    type="text" 
+    name="first-name" 
+    placeholder="Your First Name" 
+    required
+  >
+
+  <input 
+    type="email" 
+    name="email" 
+    placeholder="Your Email Address" 
+    required
+  >
+
+  <input 
+    type="tel" 
+    name="phone" 
+    placeholder="Your Phone Number (optional)"
+  >
+
+  <button class="guide-btn" type="submit">
+    Download the Free Buyer Guide →
+  </button>
+
+  <p class="guide-note">
+    🔒 No spam. Your info is never shared. We'll follow up personally - not with a robot.
+  </p>
+</form>
 
 <!-- BUYING PROCESS -->
 <section class="process-section" id="process">
