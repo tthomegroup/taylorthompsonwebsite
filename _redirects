@@ -1,3 +1,15 @@
+/about /about.html 200
+/areas /areas.html 200
+/events /events.html 200
+/contact /contact.html 200
+/home-value /taylorthompson_home_valuation.html 200
+/blog /blog.html 200
+/reviews /reviews.html 200
+/refer /refer.html 200
+/zillow-showcase /zillow-showcase.html 200
+/buy /buy/index.html 200
+/sell /sell/index.html 200
+/listings /listings/index.html 200
 /blog/:slug /blog-post.html?slug=:slug 200
 /blogs/:slug /blog-post.html?slug=:slug 200
 /post/:slug /blog-post.html?slug=:slug 200
