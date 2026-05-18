@@ -22,12 +22,18 @@
 }
 
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   background: rgba(247, 242, 237, 0.96);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(12px);
+}
+
+body {
+  padding-top: 78px;
 }
 
 .site-nav {
@@ -99,7 +105,7 @@
 .site-nav-cta {
   color: var(--ink);
   font-family: "Jost", sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.14em;
   line-height: 1;
@@ -158,6 +164,7 @@
   border: 1px solid var(--tan);
   color: var(--white);
   font-weight: 700;
+  font-size: 12px;
   white-space: nowrap;
 }
 
@@ -260,6 +267,10 @@
   .site-nav {
     display: flex;
     min-height: 68px;
+  }
+
+  body {
+    padding-top: 68px;
   }
 
   .site-nav-toggle {
