@@ -270,17 +270,20 @@ function handleGuideDownload(event) {
 
   fetch("/", {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
+    },
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
     window.location.href = "https://drive.google.com/uc?export=download&id=1n_FwrW02CuZrc0lhuwe8eWIOSzS4uzD0";
   })
-  .catch(error => {
+  .catch(() => {
     alert("Something went wrong. Please try again.");
   });
 }
 </script>
+
 
 
 <!-- BUYING PROCESS -->
