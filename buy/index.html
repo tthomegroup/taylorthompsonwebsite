@@ -220,19 +220,21 @@
   </div>
  
 
+
 <form 
   name="buyer-consult-form"
   method="POST"
   data-netlify="true"
-  action="https://drive.google.com/uc?export=download&id=1n_FwrW02CuZrc0lhuwe8eWIOSzS4uzD0"
   class="guide-form"
+  onsubmit="handleGuideDownload(event)"
 >
+
   <input type="hidden" name="form-name" value="buyer-consult-form">
 
   <input 
     type="text" 
-    name="full-name" 
-    placeholder="Your Full Name" 
+    name="first-name" 
+    placeholder="Your First Name" 
     required
   >
 
@@ -256,7 +258,30 @@
   <p class="guide-note">
     🔒 No spam. Your info is never shared. We'll follow up personally - not with a robot.
   </p>
+
 </form>
+
+<script>
+function handleGuideDownload(event) {
+  event.preventDefault();
+
+  const form = event.target;
+  const data = new FormData(form);
+
+  fetch("/", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams(data).toString()
+  })
+  .then(() => {
+    window.location.href = "https://drive.google.com/uc?export=download&id=1n_FwrW02CuZrc0lhuwe8eWIOSzS4uzD0";
+  })
+  .catch(error => {
+    alert("Something went wrong. Please try again.");
+  });
+}
+</script>
+
 
 <!-- BUYING PROCESS -->
 <section class="process-section" id="process">
