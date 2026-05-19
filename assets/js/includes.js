@@ -57,6 +57,13 @@
     });
   }
 
+  function moveFooterToBodyEnd() {
+    var footer = document.querySelector(".site-footer");
+    if (footer && footer.parentElement !== document.body) {
+      document.body.appendChild(footer);
+    }
+  }
+
   function initIncludes() {
     var includes = Array.prototype.slice.call(document.querySelectorAll("[data-include]"));
 
@@ -64,6 +71,7 @@
       setActiveNav();
       setupMobileNav();
       setYear();
+      moveFooterToBodyEnd();
       document.dispatchEvent(new CustomEvent("site:includes-loaded"));
     });
   }
