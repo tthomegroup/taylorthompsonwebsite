@@ -1235,6 +1235,21 @@
 
 <script>
   (function () {
+    var loader = document.querySelector(".loader, .loading-screen, #loader, #loading-screen");
+    var storageKey = "homeLoaderShown";
+
+    if (!loader) return;
+
+    if (sessionStorage.getItem(storageKey) === "true") {
+      loader.remove();
+      return;
+    }
+
+    sessionStorage.setItem(storageKey, "true");
+  })();
+</script>
+<script>
+  (function () {
     function slugify(value) {
       return String(value || "")
         .toLowerCase()
