@@ -276,6 +276,9 @@ function handleGuideDownload(event) {
     body: new URLSearchParams(data).toString()
   })
   .then(() => {
+
+    form.reset();
+
     window.location.href = "https://drive.google.com/uc?export=download&id=1n_FwrW02CuZrc0lhuwe8eWIOSzS4uzD0";
   })
   .catch(() => {
