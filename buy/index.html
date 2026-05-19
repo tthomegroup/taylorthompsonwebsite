@@ -519,6 +519,7 @@ function handleGuideDownload(event) {
 </section>
 
 <!-- CONTACT FORM -->
+
 <section class="contact-section" id="contact-form">
   <div class="contact-left">
     <p class="section-eyebrow">Ready to Find Your Home?</p>
@@ -526,37 +527,157 @@ function handleGuideDownload(event) {
     <p class="section-body">Fill out the form and we'll reach out within 24 hours to schedule your free, no-obligation buyer consultation. Tell us what you're looking for and we'll get to work finding it.</p>
     <div class="contact-img"></div>
   </div>
+
+
   <div class="contact-right">
-    <p class="section-eyebrow" style="display:block;margin-bottom:28px;">Tell Us About Your Search</p>
+
+  <form
+    name="buy-info-form"
+    method="POST"
+    data-netlify="true"
+  >
+
+    <input type="hidden" name="form-name" value="buy-info-form">
+
+    <p class="section-eyebrow" style="display:block;margin-bottom:28px;">
+      Tell Us About Your Search
+    </p>
+
     <div class="form-row">
-      <div class="form-group"><label class="form-label">First Name</label><input class="form-input" type="text" placeholder="Jane"></div>
-      <div class="form-group"><label class="form-label">Last Name</label><input class="form-input" type="text" placeholder="Smith"></div>
-    </div>
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">Phone</label><input class="form-input" type="tel" placeholder="(209) 000-0000"></div>
-      <div class="form-group"><label class="form-label">Email</label><input class="form-input" type="email" placeholder="jane@email.com"></div>
-    </div>
-    <div class="form-group"><label class="form-label">What City / Area Are You Looking In?</label><input class="form-input" type="text" placeholder="Turlock, Modesto, Manteca..."></div>
-    <div class="form-row">
-      <div class="form-group"><label class="form-label">Price Range</label>
-        <select class="form-select">
-          <option>Under $400K</option><option>$400K – $500K</option>
-          <option selected>$500K – $650K</option><option>$650K – $800K</option><option>$800K+</option>
-        </select>
+
+      <div class="form-group">
+        <label class="form-label">First Name</label>
+
+        <input
+          class="form-input"
+          type="text"
+          name="first-name"
+          placeholder="Jane"
+          required
+        >
       </div>
-      <div class="form-group"><label class="form-label">Timeline</label>
-        <select class="form-select">
-          <option>Ready now</option><option>Within 3 months</option>
-          <option>3–6 months</option><option>6–12 months</option><option>Just exploring</option>
-        </select>
+
+      <div class="form-group">
+        <label class="form-label">Last Name</label>
+
+        <input
+          class="form-input"
+          type="text"
+          name="last-name"
+          placeholder="Smith"
+          required
+        >
       </div>
+
     </div>
-    <div class="form-group"><label class="form-label">Are You Pre-Approved?</label>
-      <select class="form-select"><option>Yes, I'm pre-approved</option><option>No, I need help getting pre-approved</option><option>Not sure</option></select>
+
+    <div class="form-row">
+
+      <div class="form-group">
+        <label class="form-label">Phone</label>
+
+        <input
+          class="form-input"
+          type="tel"
+          name="phone"
+          placeholder="(209) 000-0000"
+        >
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Email</label>
+
+        <input
+          class="form-input"
+          type="email"
+          name="email"
+          placeholder="jane@email.com"
+          required
+        >
+      </div>
+
     </div>
-    <div class="form-group"><label class="form-label">Anything Else?</label><textarea class="form-textarea" placeholder="Tell us what you're looking for - beds, baths, must-haves, deal breakers..."></textarea></div>
-    <button class="form-submit">Let's Find My Home →</button>
-  </div>
+
+    <div class="form-group">
+
+      <label class="form-label">
+        What City / Area Are You Looking In?
+      </label>
+
+      <input
+        class="form-input"
+        type="text"
+        name="city-area"
+        placeholder="Turlock, Modesto, Manteca..."
+      >
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="form-group">
+
+        <label class="form-label">Price Range</label>
+
+        <select class="form-select" name="price-range">
+          <option>Under $400K</option>
+          <option>$400K – $500K</option>
+          <option selected>$500K – $650K</option>
+          <option>$650K – $800K</option>
+          <option>$800K+</option>
+        </select>
+
+      </div>
+
+      <div class="form-group">
+
+        <label class="form-label">Timeline</label>
+
+        <select class="form-select" name="timeline">
+          <option>Ready now</option>
+          <option>Within 3 months</option>
+          <option>3–6 months</option>
+          <option>6–12 months</option>
+          <option>Just exploring</option>
+        </select>
+
+      </div>
+
+    </div>
+
+    <div class="form-group">
+
+      <label class="form-label">
+        Are You Pre-Approved?
+      </label>
+
+      <select class="form-select" name="pre-approved">
+        <option>Yes, I'm pre-approved</option>
+        <option>No, I need help getting pre-approved</option>
+        <option>Not sure</option>
+      </select>
+
+    </div>
+
+    <div class="form-group">
+
+      <label class="form-label">Anything Else?</label>
+
+      <textarea
+        class="form-textarea"
+        name="additional-info"
+        placeholder="Tell us what you're looking for - beds, baths, must-haves, deal breakers..."
+      ></textarea>
+
+    </div>
+
+    <button class="form-submit" type="submit">
+      Let's Find My Home →
+    </button>
+
+  </form>
+
+</div>
 </section>
 
 <!-- FOOTER -->
