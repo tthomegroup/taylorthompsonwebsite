@@ -44,6 +44,8 @@ function replaceFirstNav(html) {
 }
 
 function replaceFooter(html) {
+  html = html.replace(/<div\s+data-include=["']\/includes\/footer\.html["']\s*>\s*<\/div>/gi, FOOTER_INCLUDE);
+
   if (html.includes('data-include="/includes/footer.html"')) return html;
 
   const footerMatch = html.match(/<footer\b[\s\S]*?<\/footer>/i);
