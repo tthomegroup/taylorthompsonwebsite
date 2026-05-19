@@ -184,18 +184,10 @@ body {
   background: var(--ink);
 }
 
-.site-footer,
-.site-footer * {
-  box-sizing: border-box;
-}
-
 .site-footer {
   background: var(--ink);
   color: var(--cream);
   font-family: "Jost", sans-serif;
-  width: 100%;
-  margin: 0;
-  clear: both;
 }
 
 .site-footer__inner {
@@ -207,51 +199,13 @@ body {
   padding: clamp(54px, 7vw, 86px) 0;
 }
 
-.site-footer__brand {
-  position: relative;
-}
-
 .site-footer__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
+  display: inline-block;
   margin-bottom: 10px;
-  text-decoration: none;
-}
-
-.site-footer__mark {
-  display: grid;
-  place-items: center;
-  width: 64px;
-  height: 64px;
-  border: 1px solid rgba(200, 173, 154, 0.62);
-  color: var(--tan);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 42px;
-  font-style: italic;
-  line-height: 1;
-}
-
-.site-footer__name {
-  color: var(--tan);
-  font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
-  font-style: italic;
-  line-height: 1;
-}
-
-.site-footer__brokerage {
-  margin: 10px 0 0 80px;
-  color: rgba(247, 242, 237, 0.76);
-  font-size: 9px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
 }
 
 .site-footer__copy {
   max-width: 340px;
-  margin: 24px 0 0;
   color: rgba(247, 242, 237, 0.72);
 }
 
