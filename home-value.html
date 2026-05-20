@@ -35,7 +35,8 @@
   .nav-cta:hover{background:var(--brown);}
 
   /* HERO - SPLIT LAYOUT */
-  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:72px;}
+
+  .hero{display:grid;grid-template-columns:1fr 1fr;min-height:100vh;padding-top:0px;}
   .hero-left{display:flex;flex-direction:column;justify-content:center;padding:80px 64px 80px 80px;background:var(--brown);position:relative;overflow:hidden;}
   .hero-left::after{content:'';position:absolute;bottom:-20%;right:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(166,128,104,0.08),transparent 70%);pointer-events:none;}
   .hero-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan-light);margin-bottom:16px;}
@@ -524,7 +525,10 @@
   const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
+
+
 <!-- AI CHATBOT - replace this script with your Tidio embed code from tidio.com -->
+
 <script>
   window.addEventListener('load', function() {
     const bubble = document.createElement('div');
@@ -537,5 +541,6 @@
     document.body.appendChild(bubble);
   });
 </script>
+
 </body>
 </html>
