@@ -70,17 +70,101 @@
   .types-section{padding:100px 80px;background:var(--cream);}
   .types-header{text-align:center;margin-bottom:64px;}
   .types-header .section-body{max-width:560px;margin:0 auto;}
-  .types-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
-  .type-card{background:var(--white);padding:0;overflow:hidden;transition:transform 0.3s,box-shadow 0.3s;}
-  .type-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px var(--shadow);}
-  .type-card-img{aspect-ratio:4/5;background-size:cover;background-position:center;position:relative;background-color:var(--tan-pale);}
-  .type-card-img-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;}
-  .type-placeholder-icon{font-size:48px;opacity:0.5;}
-  .type-placeholder-label{font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--tan);opacity:0.7;}
-  .type-card-body{padding:28px 28px 32px;}
-  .type-card-tag{font-size:10px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan);margin-bottom:10px;display:block;}
-  .type-card-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;color:var(--dark);margin-bottom:10px;}
-  .type-card-desc{font-size:14px;font-weight:300;line-height:1.8;color:var(--mid);}
+  .types-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+  margin-top:48px;
+}
+
+.type-card{
+  background:var(--white);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+}
+
+.type-card-img{
+  aspect-ratio:4/5;
+  width:100%;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+  background-color:var(--tan-pale);
+}
+
+.type-card-img-placeholder{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+.type-placeholder-icon{
+  font-size:34px;
+  opacity:0.5;
+}
+
+.type-placeholder-label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  color:rgba(166,128,104,0.5);
+}
+
+.type-card-body{
+  padding:32px 28px 34px;
+}
+
+.type-card-tag{
+  display:block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--tan);
+  margin-bottom:16px;
+}
+
+.type-card-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:30px;
+  font-weight:300;
+  line-height:1.12;
+  color:var(--dark);
+  margin-bottom:16px;
+}
+
+.type-card-desc{
+  font-size:14px;
+  font-weight:300;
+  line-height:1.85;
+  color:var(--mid);
+}
+
+@media(max-width:1100px){
+
+  .types-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .types-grid{
+    grid-template-columns:1fr;
+  }
+
+  .type-card-img{
+    aspect-ratio:4/5;
+  }
+
+}
 
   /* PAST EVENTS GALLERY */
   .gallery-section{padding:100px 80px;background:var(--brown);}
@@ -204,6 +288,7 @@
 </section>
 
 <!-- WHY WE DO THIS -->
+
 <section class="why-section">
   <div class="why-content">
     <p class="section-eyebrow fade-up">Our Philosophy</p>
@@ -224,54 +309,92 @@
 <!-- EVENT TYPES -->
 
 
-<section class="types-section" id="events">
-  <div class="types-header">
-    <p class="section-eyebrow fade-up">What We Host</p>
-    <h2 class="section-title fade-up">Events for Every <em>Season</em></h2>
-    <p class="section-body fade-up">Throughout the year we host a variety of client appreciation events - from casual family outings to festive holiday parties. Here's a taste of what being a Taylor Thompson Home Group client looks like.</p>
+<section class="types-section">
+
+  <div class="types-grid">
+
+    <!-- EVENT 1 -->
+    <div class="type-card fade-up">
+
+      <div 
+        class="type-card-img"
+        style="background-image:url('/assets/events/event-1.jpg');">
+      </div>
+
+      <div class="type-card-body">
+
+        <span class="type-card-tag">
+          Fall Event
+        </span>
+
+        <div class="type-card-title">
+          Pumpkin Patch & Fall Festival
+        </div>
+
+        <p class="type-card-desc">
+          One of our most popular annual events - clients and their families join us for a fun fall day at a local pumpkin patch. Think photos, hay rides, cider, and good company.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- EVENT 2 -->
+    <div class="type-card fade-up">
+
+      <div 
+        class="type-card-img"
+        style="background-image:url('/assets/events/event-2.jpg');">
+      </div>
+
+      <div class="type-card-body">
+
+        <span class="type-card-tag">
+          Holiday Event
+        </span>
+
+        <div class="type-card-title">
+          Holiday Client Party
+        </div>
+
+        <p class="type-card-desc">
+          Our annual holiday celebration brings the whole community together. Great food, drinks, games, and the warmth of people who’ve all shared a chapter of their story with us.
+        </p>
+
+      </div>
+
+    </div>
+
+    <!-- EVENT 3 -->
+    <div class="type-card fade-up">
+
+      <div 
+        class="type-card-img"
+        style="background-image:url('/assets/events/event-3.jpg');">
+      </div>
+
+      <div class="type-card-body">
+
+        <span class="type-card-tag">
+          Summer Event
+        </span>
+
+        <div class="type-card-title">
+          Movie Night & Summer Cookout
+        </div>
+
+        <p class="type-card-desc">
+          Outdoor movie screenings, backyard BBQ vibes, and a chance for clients to connect with each other in a relaxed, fun environment. Kids welcome - always.
+        </p>
+
+      </div>
+
+    </div>
+
   </div>
 
-<div 
-  class="type-card-img"
-  style="background-image:url('/assets/images/events/event-1.jpg');background-size:cover;background-position:center;">
-</div>
-
-      <div class="type-card-body">
-        <span class="type-card-tag">Fall Event</span>
-        <div class="type-card-title">Pumpkin Patch & Fall Festival</div>
-        <p class="type-card-desc">One of our most popular annual events - clients and their families join us for a fun fall day at a local pumpkin patch. Think photos, hay rides, cider, and good company.</p>
-      </div>
-    </div>
-
-    <div class="type-card fade-up">
-      <div class="type-card-img">
-        <div class="type-card-img-placeholder">
-          <div class="type-placeholder-icon">🎄</div>
-          <div class="type-placeholder-label">Add Event Photo</div>
-        </div>
-      </div>
-
-      <div class="type-card-body">
-        <span class="type-card-tag">Holiday Event</span>
-        <div class="type-card-title">Holiday Client Party</div>
-        <p class="type-card-desc">Our annual holiday celebration brings the whole community together. Great food, drinks, games, and the warmth of people who've all shared a chapter of their story with us.</p>
-      </div>
-    </div>
-    <div class="type-card fade-up">
-      <div class="type-card-img">
-        <div class="type-card-img-placeholder">
-          <div class="type-placeholder-icon">🎬</div>
-          <div class="type-placeholder-label">Add Event Photo</div>
-        </div>
-      </div>
-      <div class="type-card-body">
-        <span class="type-card-tag">Summer Event</span>
-        <div class="type-card-title">Movie Night &amp; Summer Cookout</div>
-        <p class="type-card-desc">Outdoor movie screenings, backyard BBQ vibes, and a chance for clients to connect with each other in a relaxed, fun environment. Kids welcome - always.</p>
-      </div>
-    </div>
-  </div>
 </section>
+
 
 <!-- CANVA EMBED - PAST EVENTS -->
 
