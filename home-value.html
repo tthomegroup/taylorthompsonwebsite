@@ -179,20 +179,36 @@
       <div class="trust-item"><span class="trust-icon">✓</span> Response Within 24 Hours</div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="val-form-wrap">
+
+ <div class="hero-right">
+  <div class="val-form-wrap">
+
+    <form
+      name="home-value-full"
+      method="POST"
+      data-netlify="true"
+      id="home-value-full"
+    >
+
+      <input type="hidden" name="form-name" value="home-value-full">
+
       <h2 class="val-form-title">Get Your <em>Free</em> Valuation</h2>
-      <p class="val-form-sub">3 quick steps. No commitment. We'll reach out personally with your home's current market value.</p>
+
+      <p class="val-form-sub">
+        3 quick steps. No commitment. We'll reach out personally with your home's current market value.
+      </p>
 
       <div class="steps">
         <div class="step active" id="step-ind-1">
           <div class="step-dot">1</div>
           <div class="step-label">Your Home</div>
         </div>
+
         <div class="step" id="step-ind-2">
           <div class="step-dot">2</div>
           <div class="step-label">Details</div>
         </div>
+
         <div class="step" id="step-ind-3">
           <div class="step-dot">3</div>
           <div class="step-label">Contact</div>
@@ -201,62 +217,102 @@
 
       <!-- STEP 1: Address -->
       <div class="form-step active" id="step-1">
+
         <div class="form-group">
           <label class="form-label">Property Address</label>
-          <input class="form-input" type="text" placeholder="123 Main Street">
+          <input class="form-input" type="text" name="property-address" placeholder="123 Main Street" required>
         </div>
+
         <div class="form-row">
+
           <div class="form-group">
             <label class="form-label">City</label>
-            <select class="form-select">
-              <option>Turlock</option><option>Modesto</option><option>Manteca</option>
-              <option>Ceres</option><option>Denair</option><option>Riverbank</option>
-              <option>Oakdale</option><option>Patterson</option><option>Other</option>
+            <select class="form-select" name="city" required>
+              <option>Turlock</option>
+              <option>Modesto</option>
+              <option>Manteca</option>
+              <option>Ceres</option>
+              <option>Denair</option>
+              <option>Riverbank</option>
+              <option>Oakdale</option>
+              <option>Patterson</option>
+              <option>Other</option>
             </select>
           </div>
+
           <div class="form-group">
             <label class="form-label">Zip Code</label>
-            <input class="form-input" type="text" placeholder="95380">
+            <input class="form-input" type="text" name="zip-code" placeholder="95380">
           </div>
+
         </div>
-        <button class="btn-next" onclick="goStep(2)">Next: Property Details →</button>
-        <p class="form-note">🔒 Your information is private and never shared.</p>
+
+        <button class="btn-next" type="button" onclick="goStep(2)">
+          Next: Property Details →
+        </button>
+
+        <p class="form-note">
+          🔒 Your information is private and never shared.
+        </p>
+
       </div>
 
       <!-- STEP 2: Property Details -->
       <div class="form-step" id="step-2">
+
         <div class="form-row">
+
           <div class="form-group">
             <label class="form-label">Bedrooms</label>
-            <select class="form-select"><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6+</option></select>
+            <select class="form-select" name="bedrooms">
+              <option>2</option>
+              <option>3</option>
+              <option selected>4</option>
+              <option>5</option>
+              <option>6+</option>
+            </select>
           </div>
+
           <div class="form-group">
             <label class="form-label">Bathrooms</label>
-            <select class="form-select"><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5+</option></select>
+            <select class="form-select" name="bathrooms">
+              <option>1</option>
+              <option>2</option>
+              <option selected>3</option>
+              <option>4</option>
+              <option>5+</option>
+            </select>
           </div>
+
         </div>
+
         <div class="form-row">
+
           <div class="form-group">
             <label class="form-label">Approx. Sq Ft</label>
-            <input class="form-input" type="text" placeholder="1,800">
+            <input class="form-input" type="text" name="square-feet" placeholder="1,800">
           </div>
+
           <div class="form-group">
             <label class="form-label">Year Built</label>
-            <input class="form-input" type="text" placeholder="2018">
+            <input class="form-input" type="text" name="year-built" placeholder="2018">
           </div>
+
         </div>
+
         <div class="form-group">
           <label class="form-label">Home Condition</label>
-          <select class="form-select">
+          <select class="form-select" name="home-condition">
             <option>Excellent - Move-in ready, updated</option>
             <option>Good - Well maintained, minor wear</option>
             <option>Fair - Needs some updating</option>
             <option>Needs Work - Fixer upper</option>
           </select>
         </div>
+
         <div class="form-group">
           <label class="form-label">When Are You Thinking of Selling?</label>
-          <select class="form-select">
+          <select class="form-select" name="selling-timeline">
             <option>As soon as possible</option>
             <option>Within 3 months</option>
             <option>3–6 months</option>
@@ -264,55 +320,96 @@
             <option>Just curious about my home's value</option>
           </select>
         </div>
-        <button class="btn-back" onclick="goStep(1)">← Back</button>
-        <button class="btn-next" onclick="goStep(3)" style="width:calc(100% - 106px)">Next: Your Contact Info →</button>
+
+        <button class="btn-back" type="button" onclick="goStep(1)">
+          ← Back
+        </button>
+
+        <button class="btn-next" type="button" onclick="goStep(3)" style="width:calc(100% - 106px)">
+          Next: Your Contact Info →
+        </button>
+
       </div>
 
       <!-- STEP 3: Contact -->
       <div class="form-step" id="step-3">
+
         <div class="form-row">
+
           <div class="form-group">
             <label class="form-label">First Name</label>
-            <input class="form-input" type="text" placeholder="Jane">
+            <input class="form-input" type="text" name="first-name" placeholder="Jane" required>
           </div>
+
           <div class="form-group">
             <label class="form-label">Last Name</label>
-            <input class="form-input" type="text" placeholder="Smith">
+            <input class="form-input" type="text" name="last-name" placeholder="Smith" required>
           </div>
+
         </div>
+
         <div class="form-group">
           <label class="form-label">Phone Number</label>
-          <input class="form-input" type="tel" placeholder="(209) 000-0000">
+          <input class="form-input" type="tel" name="phone" placeholder="(209) 000-0000">
         </div>
+
         <div class="form-group">
           <label class="form-label">Email Address</label>
-          <input class="form-input" type="email" placeholder="jane@email.com">
+          <input class="form-input" type="email" name="email" placeholder="jane@email.com" required>
         </div>
+
         <div class="form-group">
           <label class="form-label">Anything Else We Should Know?</label>
-          <input class="form-input" type="text" placeholder="Recent updates, special features, questions...">
+          <input class="form-input" type="text" name="additional-notes" placeholder="Recent updates, special features, questions...">
         </div>
-        <button class="btn-back" onclick="goStep(2)">← Back</button>
-        <button class="btn-next" onclick="submitForm()" style="width:calc(100% - 106px)">Get My Free Home Value →</button>
-        <p class="form-note">By submitting, you agree to be contacted by Taylor Thompson Home Group. No spam, ever.</p>
+
+        <button class="btn-back" type="button" onclick="goStep(2)">
+          ← Back
+        </button>
+
+        <button class="btn-next" type="submit" style="width:calc(100% - 106px)">
+          Get My Free Home Value →
+        </button>
+
+        <p class="form-note">
+          By submitting, you agree to be contacted by Taylor Thompson Home Group. No spam, ever.
+        </p>
+
       </div>
 
-      <!-- SUCCESS -->
-      <div class="success-state" id="success">
-        <div class="success-icon">🏡</div>
-        <h3 class="success-title">You're All Set,<br><em>We're On It!</em></h3>
-        <p class="success-body">Thank you! We've received your request and will personally review your home's details and reach out within 24 hours - usually same day - with your free home valuation.</p>
-        <div class="success-agent">
-          <div style="width:48px;height:48px;border-radius:50%;background:var(--tan);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">👩</div>
-          <div class="success-agent-info">
-            <div class="name">Taylor Thompson</div>
-            <div class="role">Lead Agent · DRE# 01999706</div>
-            <div class="phone"><a href="tel:2094950317" style="color:var(--tan);text-decoration:none;">(209) 495-0317</a></div>
+    </form>
+
+    <!-- SUCCESS -->
+    <div class="success-state" id="success">
+      <div class="success-icon">🏡</div>
+
+      <h3 class="success-title">
+        You're All Set,<br><em>We're On It!</em>
+      </h3>
+
+      <p class="success-body">
+        Thank you! We've received your request and will personally review your home's details and reach out within 24 hours - usually same day - with your free home valuation.
+      </p>
+
+      <div class="success-agent">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--tan);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">
+          👩
+        </div>
+
+        <div class="success-agent-info">
+          <div class="name">Taylor Thompson</div>
+          <div class="role">Lead Agent · DRE# 01999706</div>
+          <div class="phone">
+            <a href="tel:2094950317" style="color:var(--tan);text-decoration:none;">
+              (209) 495-0317
+            </a>
           </div>
         </div>
       </div>
     </div>
+
   </div>
+</div>
 </section>
 
 <!-- WHY GET A VALUATION -->
