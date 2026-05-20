@@ -3,7 +3,7 @@ published: true
 title: Who You Work With Matters More Than Ever
 date: 2026-05-19
 readTime: 5 Min Read
-category: First-Time Buyers
+category: Buyer Tips
 excerpt: A closer look at the 2025 NAR numbers and what they really mean for
   buyers and sellers
 featuredImage: /assets/images/uploads/website-new-blog-images-1-.jpg
@@ -24,14 +24,14 @@ Agents who were actively working in the market had to pivot quickly, adjust pric
 
 Numbers do not tell the whole story, but they do reveal patterns. They show who is actively practicing real estate and who may not be fully immersed in the day to day realities of the market.
 
-## What This Means for Buyers and Sellers
+### What This Means for Buyers and Sellers
 If you are buying, you want someone who understands current competition, knows how to structure a strong offer, and can spot potential issues before they become problems.
 
 If you are selling, you want someone who knows how to price strategically, market effectively, and negotiate with confidence when the stakes are high.
 
 Choosing the right agent is really about choosing guidance. It is about working with someone who has navigated uncertainty before and knows how to create solutions, not guesswork.
 
-## Our Approach at Taylor Thompson Home Group
+### Our Approach at Taylor Thompson Home Group
 At Taylor Thompson Home Group, we believe experience shows up in preparation, communication, and strategy. It shows up in how we pivot when the market shifts and how we guide our clients with clarity at every step.
 
 Your move deserves more than hoping for the best. It deserves a team that understands the market, stays active, and leads with intention.
