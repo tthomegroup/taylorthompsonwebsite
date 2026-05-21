@@ -49,12 +49,33 @@ function escapeRegExp(value) {
 }
 
 function linkCities(html) {
+  html = unlinkInlineCityText(html);
+
   for (const [city, route] of CITY_ROUTES) {
     const cityPattern = escapeRegExp(city);
 
     html = html.replace(
-      new RegExp(`(?<![>\\w-])${cityPattern}(?![^<]*<\\/a>)(?![\\w-])`, "g"),
-      `<a href="${route}">${city}</a>`
+      new RegExp(`(<div\\b[^>]*class=["'][^"']*(?:city|area)[^"']*(?:card|tile|item)[^"']*["'][^>]*>[\\s\\S]*?)(<h[2-4]\\b[^>]*>)${cityPattern}(</h[2-4]>)([\\s\\S]*?</div>)`, "gi"),
+      `$1<a href="${route}">$2${city}$3</a>$4`
+    );
+
+    html = html.replace(
+      new RegExp(`(<a\\b[^>]*href=["'])[^"']*(["'][^>]*>\\s*<h[2-4]\\b[^>]*>)${cityPattern}(</h[2-4]>)`, "gi"),
+      `$1${route}$2${city}$3`
+    );
+  }
+
+  return html;
+}
+
+function unlinkInlineCityText(html) {
+  for (const [city, route] of CITY_ROUTES) {
+    const cityPattern = escapeRegExp(city);
+    const routePattern = escapeRegExp(route);
+
+    html = html.replace(
+      new RegExp(`<a\\b[^>]*href=["']${routePattern}["'][^>]*>${cityPattern}</a>`, "gi"),
+      city
     );
   }
 
