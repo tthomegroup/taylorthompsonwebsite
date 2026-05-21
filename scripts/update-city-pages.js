@@ -94,7 +94,16 @@ function normalizeForms(html) {
     return form.replace(/(<form\b[^>]*>)/i, '$1\n  <input type="hidden" name="form-name" value="home-value-city-form">');
   });
 
-  return html;
+  return html.replace(/<form\b[\s\S]*?<\/form>/gi, (form) => {
+    if (!/\bname=["']home-value-city-form["']/i.test(form)) return form;
+
+    form = form.replace(/<button\b(?![^>]*\btype=)([^>]*)>/gi, '<button type="submit"$1>');
+    form = form.replace(/<button\b([^>]*)\btype=["']button["']([^>]*)>/gi, '<button$1type="submit"$2>');
+    form = form.replace(/\sdisabled(?:=["'][^"']*["'])?/gi, "");
+    form = form.replace(/\saria-disabled=["']true["']/gi, "");
+
+    return form;
+  });
 }
 
 function removeCityFromPlaceholders(html, city) {

@@ -64,6 +64,25 @@
     }
   }
 
+  function setupHomeValueForms() {
+    document.addEventListener("click", function (event) {
+      var trigger = event.target.closest && event.target.closest("button, a, input[type='button'], input[type='submit']");
+      if (!trigger) return;
+
+      var label = (trigger.value || trigger.textContent || "").toLowerCase();
+      if (label.indexOf("home value") === -1) return;
+
+      var form = trigger.closest("form");
+      if (!form || form.getAttribute("name") !== "home-value-city-form") return;
+
+      if (trigger.tagName.toLowerCase() === "a" || trigger.type === "button") {
+        event.preventDefault();
+        if (form.requestSubmit) form.requestSubmit();
+        else form.submit();
+      }
+    });
+  }
+
   function initIncludes() {
     var includes = Array.prototype.slice.call(document.querySelectorAll("[data-include]"));
 
@@ -72,6 +91,7 @@
       setupMobileNav();
       setYear();
       moveFooterToBodyEnd();
+      setupHomeValueForms();
       document.dispatchEvent(new CustomEvent("site:includes-loaded"));
     });
   }
