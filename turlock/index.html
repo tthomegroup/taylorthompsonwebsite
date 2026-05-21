@@ -278,13 +278,43 @@
     <p class="section-eyebrow fade-up">Selling in Turlock?</p>
     <h2 class="section-title fade-up" style="font-size:30px;">What Is Your<br><em>Turlock Home</em> Worth?</h2>
     <p class="section-body fade-up">Get a free, no-obligation valuation from agents who know the Turlock market. We analyze recent comparable sales in your specific neighborhood.</p>
-    <div class="cta-form fade-up">
-      <input class="cta-input" type="text" placeholder="Your Turlock property address">
-      <input class="cta-input" type="tel" placeholder="Your phone number">
-      <input class="cta-input" type="email" placeholder="Your email address">
-      <button class="btn btn-block">Get My Free Turlock Home Value →</button>
-    </div>
-  </div>
+    
+<form 
+  name="city-value-form"
+  method="POST"
+  data-netlify="true"
+  class="cta-form fade-up">
+
+  <input type="hidden" name="form-name" value="city-value-form">
+
+  <input 
+    class="cta-input"
+    type="text"
+    name="propertyAddress"
+    placeholder="Your property address"
+    required>
+
+  <input 
+    class="cta-input"
+    type="tel"
+    name="phone"
+    placeholder="Your phone number">
+
+  <input 
+    class="cta-input"
+    type="email"
+    name="email"
+    placeholder="Your email address"
+    required>
+
+  <button type="submit" class="btn btn-block">
+    Get My Free Home Valuation →
+  </button>
+
+</form>
+
+
+
   <div class="cta-right">
     <h2 class="section-title fade-up" style="font-size:28px;">More Ways We Can <em>Help</em></h2>
     <div class="links-list fade-up">
