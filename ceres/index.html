@@ -287,7 +287,7 @@
       Get a free, no-obligation valuation from agents who know the Ceres market. We analyze recent comparable sales in your specific neighborhood.
     </p>
 
-    <form 
+  <form 
   name="city-valuation-form"
   method="POST"
   data-netlify="true"
@@ -295,6 +295,13 @@
   class="cta-form fade-up">
 
   <input type="hidden" name="form-name" value="city-valuation-form">
+
+  <p hidden>
+    <label>
+      Don’t fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
 
   <input 
     class="cta-input"
@@ -327,6 +334,14 @@
     Get My Free Home Value →
   </button>
 
+</form>
+
+<!-- NETLIFY FORM DETECTION -->
+<form name="city-valuation-form" netlify hidden>
+  <input type="text" name="fullName">
+  <input type="text" name="propertyAddress">
+  <input type="tel" name="phone">
+  <input type="email" name="email">
 </form>
 
   </div>
