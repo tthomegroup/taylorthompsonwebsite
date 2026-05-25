@@ -160,6 +160,51 @@
     .why-grid{grid-template-columns:1fr;}
     .other-grid{grid-template-columns:1fr 1fr;}
   }
+
+
+.city-value-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+  max-width: 810px;
+}
+
+.city-value-form input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 16px;
+  border: 0;
+  background: #fff;
+  color: #050505;
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+}
+
+.city-value-form input::placeholder {
+  color: #765f50;
+}
+
+.city-value-form button {
+  width: 100%;
+  min-height: 48px;
+  border: 2px solid #050505;
+  background: transparent;
+  color: #050505;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.city-value-form button:hover {
+  background: #050505;
+  color: #fff;
+}
+
+
+
 </style>
 </head>
 <body>
@@ -272,28 +317,66 @@
 </section>
 
 <section class="cta-section">
+
   <div class="cta-left">
-    <p class="section-eyebrow fade-up">Selling in Stockton?</p>
-    <h2 class="section-title fade-up" style="font-size:30px;">What Is Your<br><em>Stockton Home</em> Worth?</h2>
-    <p class="section-body fade-up">Get a free, no-obligation valuation from agents who know the Stockton market. We analyze recent comparable sales in your specific neighborhood.</p>
-    <div class="cta-form fade-up">
-      <input class="cta-input" type="text" placeholder="Your Stockton property address">
-      <input class="cta-input" type="tel" placeholder="Your phone number">
-      <input class="cta-input" type="email" placeholder="Your email address">
-      <button class="btn btn-block">Get My Free Stockton Home Value →</button>
-    </div>
-  </div>
+
+    <p class="section-eyebrow fade-up">
+      Selling in Stockton?
+    </p>
+
+    <h2 class="section-title fade-up" style="font-size:30px;">
+      What Is Your<br><em>Stockton Home</em> Worth?
+    </h2>
+
+    <p class="section-body fade-up">
+      Get a free, no-obligation valuation from agents who know the Stockton market. We analyze recent comparable sales in your specific neighborhood.
+    </p>
+
+<form
+  name="home-value-city-form-v2"
+  method="POST"
+  data-netlify="true"
+  action="/thank-you"
+  class="city-value-form"
+>
+  <input type="hidden" name="form-name" value="home-value-city-form-v2">
+  <input type="hidden" name="city" value="Ceres">
+
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="text" name="address" placeholder="Property Address" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <input type="email" name="email" placeholder="Email Address" required>
+
+  <button type="submit">Get My Free Home Value →</button>
+</form>
+
+<!-- NETLIFY FORM DETECTION -->
+<form name="home-valuation-form-area" netlify hidden>
+  <input type="text" name="fullName">
+  <input type="text" name="propertyAddress">
+  <input type="tel" name="phone">
+  <input type="email" name="email">
+</form>
+</div>
+
+
   <div class="cta-right">
-    <h2 class="section-title fade-up" style="font-size:28px;">More Ways We Can <em>Help</em></h2>
+
+    <h2 class="section-title fade-up" style="font-size:28px;">
+      More Ways We Can <em>Help</em>
+    </h2>
+
     <div class="links-list fade-up">
       <a href="buy.html">Buy a Home in Stockton</a>
       <a href="sell.html">Sell Your Stockton Home</a>
-      <a href="taylorthompson_home_valuation.html">Free Home Valuation</a>
-      <a href="taylorthompson_listings.html">Browse All Listings</a>
-      <a href="taylorthompson_refer.html">Refer a Friend</a>
+      <a href="home-value.html">Free Home Valuation</a>
+      <a href="listings.html">Browse All Listings</a>
+      <a href="refer.html">Refer a Friend</a>
       <a href="contact.html">Talk to Taylor or Dave</a>
     </div>
+
   </div>
+
 </section>
 
 <section class="other-section">
