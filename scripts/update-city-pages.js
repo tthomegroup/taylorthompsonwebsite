@@ -1,4 +1,4 @@
-const fs = require("fs");
+﻿const fs = require("fs");
 const path = require("path");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
@@ -83,19 +83,19 @@ function unlinkInlineCityText(html) {
 }
 
 function normalizeForms(html) {
-  html = html.replace(/(<form\b[^>]*\b(?:data-netlify|netlify)\b[^>]*\bname=["'])[^"']*(["'][^>]*>)/gi, "$1home-value-city-form$2");
-  html = html.replace(/(<form\b(?=[^>]*\b(?:data-netlify|netlify)\b)(?![^>]*\bname=)[^>]*)(>)/gi, '$1 name="home-value-city-form"$2');
-  html = html.replace(/(<input\b[^>]*\bname=["']form-name["'][^>]*\bvalue=["'])[^"']*(["'][^>]*>)/gi, "$1home-value-city-form$2");
+  html = html.replace(/(<form\b[^>]*\b(?:data-netlify|netlify)\b[^>]*\bname=["'])[^"']*(["'][^>]*>)/gi, "$1home-value-city-form-v2$2");
+  html = html.replace(/(<form\b(?=[^>]*\b(?:data-netlify|netlify)\b)(?![^>]*\bname=)[^>]*)(>)/gi, '$1 name="home-value-city-form-v2"$2');
+  html = html.replace(/(<input\b[^>]*\bname=["']form-name["'][^>]*\bvalue=["'])[^"']*(["'][^>]*>)/gi, "$1home-value-city-form-v2$2");
 
   html = html.replace(/<form\b[\s\S]*?<\/form>/gi, (form) => {
-    if (!/\bname=["']home-value-city-form["']/i.test(form)) return form;
+    if (!/\bname=["']home-value-city-form-v2["']/i.test(form)) return form;
     if (/<input\b[^>]*\bname=["']form-name["']/i.test(form)) return form;
 
-    return form.replace(/(<form\b[^>]*>)/i, '$1\n  <input type="hidden" name="form-name" value="home-value-city-form">');
+    return form.replace(/(<form\b[^>]*>)/i, '$1\n  <input type="hidden" name="form-name" value="home-value-city-form-v2">');
   });
 
   return html.replace(/<form\b[\s\S]*?<\/form>/gi, (form) => {
-    if (!/\bname=["']home-value-city-form["']/i.test(form)) return form;
+    if (!/\bname=["']home-value-city-form-v2["']/i.test(form)) return form;
 
     form = form.replace(/<button\b(?![^>]*\btype=)([^>]*)>/gi, '<button type="submit"$1>');
     form = form.replace(/<button\b([^>]*)\btype=["']button["']([^>]*)>/gi, '<button$1type="submit"$2>');
@@ -134,3 +134,4 @@ function updateFile(filePath) {
 }
 
 walk(ROOT_DIR).forEach(updateFile);
+

@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   function cleanPath(pathname) {
     var path = pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "").replace(/\/+$/, "");
     return path || "/";
@@ -73,7 +73,7 @@
       if (label.indexOf("home value") === -1) return;
 
       var form = trigger.closest("form");
-      if (!form || form.getAttribute("name") !== "home-value-city-form") return;
+      if (!form || form.getAttribute("name") !== "home-value-city-form-v2") return;
 
       if (trigger.tagName.toLowerCase() === "a" || trigger.type === "button") {
         event.preventDefault();
@@ -102,3 +102,4 @@
     initIncludes();
   }
 })();
+
