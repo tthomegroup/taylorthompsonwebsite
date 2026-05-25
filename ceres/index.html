@@ -289,59 +289,41 @@
       Get a free, no-obligation valuation from agents who know the Ceres market. We analyze recent comparable sales in your specific neighborhood.
     </p>
 
-<form 
-  name="home-valuation-form-area-v2"
-  method="POST"
-  data-netlify="true"
-  class="cta-form fade-up"
->
+<form name="home-value-city-form-v2" method="POST" data-netlify="true" action="/thank-you">
+  <input type="hidden" name="form-name" value="home-value-city-form-v2">
+  <input type="hidden" name="city" value="Turlock">
 
-  <input type="hidden" name="form-name" value="home-valuation-form-area-v2">
+  <input
+    type="text"
+    name="name"
+    placeholder="Full Name"
+    required
+  >
 
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="text"
-      name="fullName"
-      placeholder="Your Name"
-      required
-    >
-  </div>
+  <input
+    type="text"
+    name="address"
+    placeholder="Property Address"
+    required
+  >
 
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="text"
-      name="propertyAddress"
-      placeholder="Your property address"
-      required
-    >
-  </div>
+  <input
+    type="tel"
+    name="phone"
+    placeholder="Phone Number"
+    required
+  >
 
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="tel"
-      name="phone"
-      placeholder="Your phone number"
-    >
-  </div>
+  <input
+    type="email"
+    name="email"
+    placeholder="Email Address"
+    required
+  >
 
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="email"
-      name="email"
-      placeholder="Your email address"
-      required
-    >
-  </div>
-
-  <button type="submit" class="btn btn-block">
-    Get My Free Home Value →
-  </button>
-
+  <button type="submit">Get My Free Home Value</button>
 </form>
+
 
 
 <!-- NETLIFY FORM DETECTION -->
