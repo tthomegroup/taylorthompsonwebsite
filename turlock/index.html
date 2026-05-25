@@ -290,68 +290,32 @@
       We analyze recent comparable sales in your specific neighborhood.
     </p>
 
-     <form 
-  name="home-valuation-form-area-v2"
+   <form
+  name="home-value-city-form-v2"
   method="POST"
   data-netlify="true"
-  netlify-honeypot="bot-field"
-  action="/thank-you.html"
-  class="cta-form fade-up"
+  action="/thank-you"
+  class="city-value-form"
 >
+  <input type="hidden" name="form-name" value="home-value-city-form-v2">
+  <input type="hidden" name="city" value="Ceres">
 
-  <input type="hidden" name="form-name" value="home-valuation-form-area-v2">
+  <input type="text" name="name" placeholder="Full Name" required>
+  <input type="text" name="address" placeholder="Property Address" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+  <input type="email" name="email" placeholder="Email Address" required>
 
-  <p hidden>
-    <label>
-      Don’t fill this out:
-      <input name="bot-field">
-    </label>
-  </p>
-
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="text"
-      name="fullName"
-      placeholder="Your name"
-      required
-    >
-  </div>
-
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="text"
-      name="propertyAddress"
-      placeholder="Your property address"
-      required
-    >
-  </div>
-
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="tel"
-      name="phone"
-      placeholder="Your phone number"
-    >
-  </div>
-
-  <div class="form-group">
-    <input 
-      class="cta-input"
-      type="email"
-      name="email"
-      placeholder="Your email address"
-      required
-    >
-  </div>
-
-  <button type="submit" class="btn btn-block">
-    Get My Free Home Value →
-  </button>
-
+  <button type="submit">Get My Free Home Value →</button>
 </form>
+
+<!-- NETLIFY FORM DETECTION -->
+<form name="home-valuation-form-area" netlify hidden>
+  <input type="text" name="fullName">
+  <input type="text" name="propertyAddress">
+  <input type="tel" name="phone">
+  <input type="email" name="email">
+</form>
+</div>
 
   </div>
 
