@@ -305,36 +305,35 @@
     </label>
   </p>
 
-  <input 
-    class="cta-input"
-    type="text"
-    name="fullName"
-    placeholder="Your name"
-    required>
+  <form name="home-valuation-form-area" method="POST" data-netlify="true" action="/thank-you.html">
 
-  <input 
-    class="cta-input"
-    type="text"
-    name="propertyAddress"
-    placeholder="Your property address"
-    required>
+  <input type="hidden" name="form-name" value="home-valuation-form-area">
 
-  <input 
-    class="cta-input"
-    type="tel"
-    name="phone"
-    placeholder="Your phone number">
+  <div class="form-group">
+    <label class="form-label">Full Name</label>
+    <input class="form-input" type="text" name="fullName" placeholder="John Smith" required>
+  </div>
 
-  <input 
-    class="cta-input"
-    type="email"
-    name="email"
-    placeholder="Your email address"
-    required>
+  <div class="form-group">
+    <label class="form-label">Property Address</label>
+    <input class="form-input" type="text" name="address" placeholder="123 Main St, Ceres, CA" required>
+  </div>
 
-  <button type="submit" class="btn btn-block">
-    Get My Free Home Value →
+  <div class="form-group">
+    <label class="form-label">Phone Number</label>
+    <input class="form-input" type="tel" name="phone" placeholder="(209) 000-0000" required>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Email</label>
+    <input class="form-input" type="email" name="email" placeholder="john@email.com" required>
+  </div>
+
+  <button type="submit" class="form-submit">
+    Get My Free Home Value
   </button>
+
+</form>
 
 </form>
 
