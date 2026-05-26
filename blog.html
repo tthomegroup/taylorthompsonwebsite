@@ -216,6 +216,52 @@
       gap: 24px;
     }
 
+    .pagination {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 42px;
+    }
+
+    .pagination.is-visible { display: flex; }
+
+    .page-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 52px;
+      height: 52px;
+      border: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+    }
+
+    .page-arrow:hover:not(:disabled),
+    .page-arrow:focus-visible:not(:disabled) {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .page-arrow:disabled {
+      cursor: default;
+      opacity: 0.3;
+    }
+
+    .page-status {
+      min-width: 92px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
     .card {
       display: flex;
       min-height: 100%;
@@ -330,6 +376,11 @@
 
     <section class="grid" id="blog-grid" aria-live="polite"></section>
     <p class="empty" id="blog-empty">No blog posts are published yet.</p>
+    <div class="pagination" id="blog-pagination" role="navigation" aria-label="Blog pages">
+      <button class="page-arrow" id="blog-prev" type="button" aria-label="Previous blog page">&#8592;</button>
+      <span class="page-status" id="blog-page-status" aria-live="polite"></span>
+      <button class="page-arrow" id="blog-next" type="button" aria-label="Next blog page">&#8594;</button>
+    </div>
   </main>
   <div id="site-footer"></div>
 
@@ -342,8 +393,10 @@
       "Investment",
       "Local Spotlight",
     ];
+    const postsPerPage = 9;
     let posts = [];
     let activeCategory = "ALL";
+    let currentPage = 1;
 
     function slugify(value) {
       return String(value || "")
@@ -431,7 +484,15 @@
     function renderGrid() {
       const grid = document.getElementById("blog-grid");
       const empty = document.getElementById("blog-empty");
-      const visiblePosts = filteredPosts();
+      const pagination = document.getElementById("blog-pagination");
+      const prevButton = document.getElementById("blog-prev");
+      const nextButton = document.getElementById("blog-next");
+      const pageStatus = document.getElementById("blog-page-status");
+      const filtered = filteredPosts();
+      const totalPages = Math.max(1, Math.ceil(filtered.length / postsPerPage));
+      currentPage = Math.min(currentPage, totalPages);
+      const start = (currentPage - 1) * postsPerPage;
+      const visiblePosts = filtered.slice(start, start + postsPerPage);
 
       grid.innerHTML = visiblePosts.map((post) => {
         const image = post.featuredImage || post.image || "";
@@ -448,11 +509,16 @@
         `;
       }).join("");
 
-      empty.classList.toggle("is-visible", visiblePosts.length === 0);
+      empty.classList.toggle("is-visible", filtered.length === 0);
+      pagination.classList.toggle("is-visible", totalPages > 1);
+      prevButton.disabled = currentPage === 1;
+      nextButton.disabled = currentPage === totalPages;
+      pageStatus.textContent = `Page ${currentPage} of ${totalPages}`;
     }
 
     function setCategory(category) {
       activeCategory = category;
+      currentPage = 1;
       document.querySelectorAll(".filter").forEach((button) => {
         button.classList.toggle("active", button.dataset.category === category);
       });
@@ -462,8 +528,27 @@
     document.querySelectorAll(".filter").forEach((button) => {
       button.addEventListener("click", () => setCategory(button.dataset.category));
     });
-    document.getElementById("blog-search").addEventListener("input", renderGrid);
-    document.getElementById("blog-sort").addEventListener("change", renderGrid);
+    document.getElementById("blog-search").addEventListener("input", () => {
+      currentPage = 1;
+      renderGrid();
+    });
+    document.getElementById("blog-sort").addEventListener("change", () => {
+      currentPage = 1;
+      renderGrid();
+    });
+    document.getElementById("blog-prev").addEventListener("click", () => {
+      if (currentPage > 1) {
+        currentPage -= 1;
+        renderGrid();
+      }
+    });
+    document.getElementById("blog-next").addEventListener("click", () => {
+      const totalPages = Math.ceil(filteredPosts().length / postsPerPage);
+      if (currentPage < totalPages) {
+        currentPage += 1;
+        renderGrid();
+      }
+    });
 
     fetch("/assets/data/blog-posts.json")
       .then((response) => response.json())
