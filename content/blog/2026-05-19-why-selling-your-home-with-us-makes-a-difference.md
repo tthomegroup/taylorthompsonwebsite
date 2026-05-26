@@ -6,7 +6,7 @@ readTime: 5 Min Read
 category: Seller Tips
 excerpt: Selling a home is a big decision, and the right guidance makes all the
   difference.
-featuredImage: /assets/images/uploads/website-new-blog-images.jpg
+featuredImage: /assets/images/uploads/new-blog-images-1-.jpg
 featured: false
 ---
 ## Why This Is a Strong Time to Sell
