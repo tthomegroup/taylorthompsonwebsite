@@ -76,6 +76,7 @@
   .review-card .review-stars{font-size:14px;padding-top:12px;}
   .review-card .review-text{font-size:14px;}
   .review-card .review-author{font-size:12px;}
+  .reviews-empty{grid-column:1/-1;text-align:center;font-size:15px;font-weight:300;color:var(--mid);padding:32px;}
 
   .platform-section{padding:80px;background:var(--brown);}
   .platform-header{text-align:center;margin-bottom:48px;}
@@ -180,7 +181,7 @@
     <h2 class="section-title fade-up">What Our Clients <em>Say</em></h2>
     <p class="section-body fade-up">These are the words of real buyers and sellers - unedited, unfiltered, and directly from the platforms where they were posted.</p>
   </div>
-  <div class="featured-grid" style="grid-template-columns:repeat(3,1fr);">
+  <div class="featured-grid" id="featured-reviews" style="grid-template-columns:repeat(3,1fr);">
 
     <div class="featured-card fade-up">
       <div class="review-stars">★★★★★</div>
@@ -215,7 +216,7 @@
     <p class="section-eyebrow fade-up">More Reviews</p>
     <h2 class="section-title fade-up">Every Client. <em>Every Story.</em></h2>
   </div>
-  <div class="reviews-masonry">
+  <div class="reviews-masonry" id="more-reviews">
 
     <div class="review-card fade-up">
       <div class="review-stars">★★★★★</div>
@@ -354,7 +355,61 @@
 </footer>
 <script>
   const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
-  document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+
+  function observeAnimations(container) {
+    (container || document).querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+  }
+
+  function escapeReviewHtml(value) {
+    return String(value || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function reviewCard(review, cardClass) {
+    const rating = Math.min(5, Math.max(1, Number(review.rating) || 5));
+    const stars = '&#9733;'.repeat(rating);
+    return `
+      <div class="${cardClass} fade-up">
+        <div class="review-stars">${stars}</div>
+        <p class="review-text">&ldquo;${escapeReviewHtml(review.text)}&rdquo;</p>
+        <div class="review-author">${escapeReviewHtml(review.author)}</div>
+        <div class="review-detail">${escapeReviewHtml(review.detail)}</div>
+        <span class="review-source">Verified ${escapeReviewHtml(review.source)} Review</span>
+      </div>
+    `;
+  }
+
+  function renderReviews(reviews) {
+    const featured = reviews.filter(review => review.placement === 'featured');
+    const more = reviews.filter(review => review.placement !== 'featured');
+    const featuredContainer = document.getElementById('featured-reviews');
+    const moreContainer = document.getElementById('more-reviews');
+
+    featuredContainer.innerHTML = featured.length
+      ? featured.map(review => reviewCard(review, 'featured-card')).join('')
+      : '<p class="reviews-empty">Featured reviews will appear here soon.</p>';
+    moreContainer.innerHTML = more.length
+      ? more.map(review => reviewCard(review, 'review-card')).join('')
+      : '<p class="reviews-empty">More client reviews will appear here soon.</p>';
+
+    observeAnimations(featuredContainer);
+    observeAnimations(moreContainer);
+  }
+
+  observeAnimations();
+  fetch('/assets/data/reviews.json')
+    .then(response => {
+      if (!response.ok) throw new Error('Unable to load reviews');
+      return response.json();
+    })
+    .then(renderReviews)
+    .catch(() => {
+      /* Keep the original review cards visible if managed review data is unavailable. */
+    });
 </script>
 <!-- AI CHATBOT - replace this script with your Tidio embed code from tidio.com -->
 <script>

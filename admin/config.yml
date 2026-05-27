@@ -8,6 +8,92 @@ public_folder: "/assets/images/uploads"
 publish_mode: editorial_workflow
 
 collections:
+  - name: "reviews"
+    label: "Client Reviews"
+    label_singular: "Client Review"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    summary: "{{author}} - {{placement}} - {{source}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Published"
+        name: "published"
+        widget: "hidden"
+        default: true
+
+      - label: "Reviewer Name"
+        name: "author"
+        widget: "string"
+        hint: "Enter the client name exactly as it should appear on the website."
+
+      - label: "Review Text"
+        name: "body"
+        widget: "text"
+        hint: "Paste only the review wording. Quotation marks are added on the website."
+
+      - label: "Transaction Details"
+        name: "detail"
+        widget: "string"
+        required: false
+        hint: "Example: Bought a Single Family Home · Modesto, CA · April 2025"
+
+      - label: "Where Was This Review Posted?"
+        name: "source"
+        widget: "select"
+        default: "Zillow"
+        options:
+          - label: "Zillow"
+            value: "Zillow"
+          - label: "Google"
+            value: "Google"
+          - label: "Socials"
+            value: "Socials"
+          - label: "Instagram"
+            value: "Instagram"
+          - label: "Facebook"
+            value: "Facebook"
+          - label: "Other"
+            value: "Other"
+
+      - label: "Show Review In"
+        name: "placement"
+        widget: "select"
+        default: "more"
+        options:
+          - label: "Featured Reviews (top cards)"
+            value: "featured"
+          - label: "More Reviews (all review cards)"
+            value: "more"
+        hint: "Choose Featured only for reviews you want highlighted at the top of the Reviews page."
+
+      - label: "Display Order"
+        name: "order"
+        widget: "number"
+        default: 10
+        value_type: "int"
+        min: 1
+        hint: "Smaller numbers display first within the selected section."
+
+      - label: "Star Rating"
+        name: "rating"
+        widget: "select"
+        default: 5
+        options:
+          - label: "5 Stars"
+            value: 5
+          - label: "4 Stars"
+            value: 4
+          - label: "3 Stars"
+            value: 3
+          - label: "2 Stars"
+            value: 2
+          - label: "1 Star"
+            value: 1
+
   - name: "blog"
     label: "Blog Posts"
     label_singular: "Blog Post"
