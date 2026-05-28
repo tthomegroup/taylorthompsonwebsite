@@ -69,7 +69,7 @@
 
   .all-reviews-section{padding:80px;background:var(--cream);}
   .all-reviews-header{text-align:center;margin-bottom:56px;}
-  .reviews-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+  .reviews-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1280px;margin:0 auto;}
   #more-reviews.reviews-masonry{grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
   .review-card{background:var(--white);padding:36px 32px;position:relative;transition:box-shadow 0.3s;}
   .review-card:hover{box-shadow:0 8px 32px var(--shadow);}
@@ -406,6 +406,8 @@
     const nextButton = document.getElementById('review-next');
     const totalPages = Math.max(1, Math.ceil(moreReviews.length / reviewsPerPage));
 
+    moreContainer.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
+    moreContainer.style.maxWidth = '1280px';
     currentReviewPage = Math.min(currentReviewPage, totalPages);
 
     if (!moreReviews.length) {
