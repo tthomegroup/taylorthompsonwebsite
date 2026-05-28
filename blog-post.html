@@ -173,6 +173,12 @@
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
     }
 
+    function markdownImage(value) {
+      var match = value.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+      if (!match) return "";
+      return '<img src="' + escapeHtml(assetPath(match[2])) + '" alt="' + escapeHtml(match[1]) + '">';
+    }
+
     function markdownToHtml(markdown) {
       var lines = String(markdown || "").split(/\r?\n/);
       var html = [];
@@ -207,6 +213,12 @@
         if (/^>\s+/.test(trimmed)) {
           closeList();
           html.push("<blockquote>" + inlineMarkdown(trimmed.replace(/^>\s+/, "")) + "</blockquote>");
+          return;
+        }
+
+        if (/^!\[[^\]]*\]\([^)]+\)$/.test(trimmed)) {
+          closeList();
+          html.push(markdownImage(trimmed));
           return;
         }
 
