@@ -14,7 +14,7 @@ collections:
     folder: "content/reviews"
     create: true
     identifier_field: "author"
-    slug: "{{slug}}"
+    slug: "{{author}}"
     extension: "md"
     format: "frontmatter"
     summary: "{{author}} - {{placement}} - {{source}}"
