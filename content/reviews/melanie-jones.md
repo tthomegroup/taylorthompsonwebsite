@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Melanie Jones"
 author: "Melanie Jones"
 detail: "Bought a Single Family Home · Merced, CA · May 2025"
 source: "Zillow"

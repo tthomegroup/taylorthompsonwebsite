@@ -1,5 +1,6 @@
 ---
 published: true
+title: "N. Montgomery"
 author: "N. Montgomery"
 detail: "Sold a Single Family Home · Oakdale, CA · July 2025"
 source: "Zillow"

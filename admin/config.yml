@@ -13,8 +13,8 @@ collections:
     label_singular: "Client Review"
     folder: "content/reviews"
     create: true
-    identifier_field: "author"
-    slug: "{{author}}"
+    identifier_field: "title"
+    slug: "{{slug}}"
     extension: "md"
     format: "frontmatter"
     summary: "{{author}} - {{placement}} - {{source}}"
@@ -25,6 +25,11 @@ collections:
         name: "published"
         widget: "hidden"
         default: true
+
+      - label: "Review File Name"
+        name: "title"
+        widget: "string"
+        hint: "Use a short unique name for the file, like Juan Hernandez or Christine Cisco. Do not paste the full review here."
 
       - label: "Reviewer Name"
         name: "author"

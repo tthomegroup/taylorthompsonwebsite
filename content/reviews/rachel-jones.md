@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Rachel Jones"
 author: "Rachel Jones"
 detail: "Sold a Condo · Lodi, CA · September 2023"
 source: "Zillow"

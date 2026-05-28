@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Heather"
 author: "Heather"
 detail: "Bought a Single Family Home · Turlock, CA · December 2025"
 source: "Zillow"

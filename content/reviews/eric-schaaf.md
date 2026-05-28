@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Eric Schaaf"
 author: "Eric Schaaf"
 detail: "Sold a Single Family Home · Turlock, CA · September 2023"
 source: "Zillow"

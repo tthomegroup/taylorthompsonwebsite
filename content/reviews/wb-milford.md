@@ -1,5 +1,6 @@
 ---
 published: true
+title: "W.B. Milford"
 author: "W.B. Milford"
 detail: "Sold a Single Family Home · Manteca, CA · August 2023"
 source: "Zillow"

@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Miranda Thomas"
 author: "Miranda Thomas"
 detail: "Sold a Single Family Home · Merced, CA · December 2023"
 source: "Zillow"

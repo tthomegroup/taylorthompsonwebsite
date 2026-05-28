@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Chuck Hale"
 author: "Chuck Hale"
 detail: "Sold a Single Family Home · Modesto, CA · September 2023"
 source: "Zillow"

@@ -1,5 +1,6 @@
 ---
 published: true
+title: "Lindsey Gonsales"
 author: Lindsey Gonsales
 detail: Bought a Single Family Home · Modesto, CA · April 2025
 source: Zillow
