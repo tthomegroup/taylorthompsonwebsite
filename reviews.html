@@ -69,7 +69,7 @@
 
   .all-reviews-section{padding:80px;background:var(--cream);}
   .all-reviews-header{text-align:center;margin-bottom:56px;}
-  .reviews-masonry{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:1100px;margin:0 auto;}
+  .reviews-masonry{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1100px;margin:0 auto;}
   .review-card{background:var(--white);padding:36px 32px;position:relative;transition:box-shadow 0.3s;}
   .review-card:hover{box-shadow:0 8px 32px var(--shadow);}
   .review-card::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:60px;line-height:0.7;color:var(--tan);opacity:0.2;position:absolute;top:20px;left:24px;}
@@ -77,6 +77,12 @@
   .review-card .review-text{font-size:14px;}
   .review-card .review-author{font-size:12px;}
   .reviews-empty{grid-column:1/-1;text-align:center;font-size:15px;font-weight:300;color:var(--mid);padding:32px;}
+  .review-pagination{display:none;align-items:center;justify-content:center;gap:10px;margin:38px auto 0;}
+  .review-pagination.is-visible{display:flex;}
+  .review-page-arrow,.review-page-number{display:inline-flex;align-items:center;justify-content:center;min-width:42px;height:42px;border:1px solid var(--tan-pale);background:transparent;color:var(--dark);font-family:'Jost',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;cursor:pointer;transition:background 0.2s,color 0.2s,border-color 0.2s,opacity 0.2s;}
+  .review-page-arrow{font-size:18px;line-height:1;}
+  .review-page-number.is-active,.review-page-arrow:hover:not(:disabled),.review-page-number:hover{background:var(--tan);border-color:var(--tan);color:var(--white);}
+  .review-page-arrow:disabled{cursor:default;opacity:0.35;}
 
   .platform-section{padding:80px;background:var(--brown);}
   .platform-header{text-align:center;margin-bottom:48px;}
@@ -267,6 +273,11 @@
     </div>
 
   </div>
+  <div class="review-pagination" id="review-pagination" aria-label="More reviews pages">
+    <button class="review-page-arrow" id="review-prev" type="button" aria-label="Previous reviews page">&larr;</button>
+    <div class="review-page-numbers" id="review-page-numbers"></div>
+    <button class="review-page-arrow" id="review-next" type="button" aria-label="Next reviews page">&rarr;</button>
+  </div>
 </section>
 
 <!-- PLATFORMS -->
@@ -355,6 +366,9 @@
 </footer>
 <script>
   const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
+  const reviewsPerPage = 6;
+  let currentReviewPage = 1;
+  let moreReviews = [];
 
   function observeAnimations(container) {
     (container || document).querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
@@ -383,24 +397,71 @@
     `;
   }
 
+  function renderMoreReviews() {
+    const moreContainer = document.getElementById('more-reviews');
+    const pagination = document.getElementById('review-pagination');
+    const pageNumbers = document.getElementById('review-page-numbers');
+    const prevButton = document.getElementById('review-prev');
+    const nextButton = document.getElementById('review-next');
+    const totalPages = Math.max(1, Math.ceil(moreReviews.length / reviewsPerPage));
+
+    currentReviewPage = Math.min(currentReviewPage, totalPages);
+
+    if (!moreReviews.length) {
+      moreContainer.innerHTML = '<p class="reviews-empty">More client reviews will appear here soon.</p>';
+      pagination.classList.remove('is-visible');
+      observeAnimations(moreContainer);
+      return;
+    }
+
+    const start = (currentReviewPage - 1) * reviewsPerPage;
+    const visibleReviews = moreReviews.slice(start, start + reviewsPerPage);
+
+    moreContainer.innerHTML = visibleReviews.map(review => reviewCard(review, 'review-card')).join('');
+    pageNumbers.innerHTML = Array.from({ length: totalPages }, (_, index) => {
+      const page = index + 1;
+      return `<button class="review-page-number${page === currentReviewPage ? ' is-active' : ''}" type="button" data-page="${page}" aria-label="Go to reviews page ${page}"${page === currentReviewPage ? ' aria-current="page"' : ''}>${page}</button>`;
+    }).join('');
+    pagination.classList.toggle('is-visible', totalPages > 1);
+    prevButton.disabled = currentReviewPage === 1;
+    nextButton.disabled = currentReviewPage === totalPages;
+    observeAnimations(moreContainer);
+  }
+
   function renderReviews(reviews) {
     const featured = reviews.filter(review => review.placement === 'featured');
-    const more = reviews.filter(review => review.placement !== 'featured');
     const featuredContainer = document.getElementById('featured-reviews');
-    const moreContainer = document.getElementById('more-reviews');
+    moreReviews = reviews.filter(review => review.placement !== 'featured');
+    currentReviewPage = 1;
 
     featuredContainer.innerHTML = featured.length
       ? featured.map(review => reviewCard(review, 'featured-card')).join('')
       : '<p class="reviews-empty">Featured reviews will appear here soon.</p>';
-    moreContainer.innerHTML = more.length
-      ? more.map(review => reviewCard(review, 'review-card')).join('')
-      : '<p class="reviews-empty">More client reviews will appear here soon.</p>';
 
     observeAnimations(featuredContainer);
-    observeAnimations(moreContainer);
+    renderMoreReviews();
   }
 
   observeAnimations();
+  document.getElementById('review-prev').addEventListener('click', () => {
+    if (currentReviewPage > 1) {
+      currentReviewPage -= 1;
+      renderMoreReviews();
+    }
+  });
+  document.getElementById('review-next').addEventListener('click', () => {
+    const totalPages = Math.max(1, Math.ceil(moreReviews.length / reviewsPerPage));
+    if (currentReviewPage < totalPages) {
+      currentReviewPage += 1;
+      renderMoreReviews();
+    }
+  });
+  document.getElementById('review-page-numbers').addEventListener('click', event => {
+    const button = event.target.closest('[data-page]');
+    if (!button) return;
+    currentReviewPage = Number(button.dataset.page) || 1;
+    renderMoreReviews();
+  });
   fetch('/assets/data/reviews.json')
     .then(response => {
       if (!response.ok) throw new Error('Unable to load reviews');
