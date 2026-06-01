@@ -128,7 +128,7 @@ function readPosts() {
       const filePath = path.join(CONTENT_DIR, file);
       const { data, body } = parseFrontmatter(fs.readFileSync(filePath, "utf8"));
 
-      if (data.published !== true) return null;
+      if (data.published === false) return null;
 
       const slug = data.slug || path.basename(file, ".md");
       const category = normalizeCategory(data.category);

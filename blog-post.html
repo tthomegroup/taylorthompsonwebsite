@@ -289,6 +289,10 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       return slugify(lastPart.replace(/\.html$/, ""));
     }
 
+    function withoutDatePrefix(value) {
+      return slugify(value).replace(/^\d{4}-\d{2}-\d{2}-/, "");
+    }
+
     function renderPost(post) {
       var image = post.featuredImage || post.image || "";
       var imageAlt = post.imageAlt || post.title || "";
@@ -322,7 +326,11 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       .then(function (data) {
         var requestedSlug = getRequestedSlug();
         var post = postsArray(data).find(function (item) {
-          return slugify(item.slug || item.id || item.title) === requestedSlug;
+          var postSlug = slugify(item.slug || item.id || item.title);
+          var titleSlug = slugify(item.title);
+          return postSlug === requestedSlug ||
+            withoutDatePrefix(postSlug) === withoutDatePrefix(requestedSlug) ||
+            titleSlug === requestedSlug;
         });
 
         if (post) renderPost(post);
