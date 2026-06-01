@@ -130,7 +130,7 @@ function readPosts() {
 
       if (data.published === false) return null;
 
-      const slug = data.slug || path.basename(file, ".md");
+      const slug = slugify(data.slug || data.title || path.basename(file, ".md"));
       const category = normalizeCategory(data.category);
       const featured = normalizeFeatured(data.featured);
 
