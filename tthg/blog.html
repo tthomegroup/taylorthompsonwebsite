@@ -133,25 +133,27 @@
     .close-article{width:44px;height:44px;}
   }
 </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-logo">
-    <span class="nav-logo-script">Taylor Thompson Home Group</span>
-    <span class="nav-logo-sub">Keller Williams Realty</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="taylorthompson_team.html">About</a></li>
-    <li><a href="taylorthompson_sell.html">Sell</a></li>
-    <li><a href="taylorthompson_buy.html">Buy</a></li>
-    <li><a href="taylorthompson_neighborhoods.html">Areas</a></li>
-    <li><a href="taylorthompson_events.html">Events</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-  <a href="contact.html" class="nav-cta">Get Started</a>
-</nav>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
+<div data-include="/includes/header.html"></div>
 
 <main>
   <section class="page-hero">
@@ -198,50 +200,7 @@
   </article>
 </div>
 
-<footer>
-  <div class="footer-top">
-    <div>
-      <div class="footer-logo-script">Taylor Thompson Home Group</div>
-      <div class="footer-logo-sub">Keller Williams Realty</div>
-      <p class="footer-tagline">Serving buyers and sellers across Stanislaus, San Joaquin, and Merced Counties with integrity, expertise, and care.</p>
-    </div>
-    <div>
-      <div class="footer-col-title">Quick Links</div>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="taylorthompson_team.html">Meet the Team</a></li>
-        <li><a href="taylorthompson_sell.html">Sell a Home</a></li>
-        <li><a href="taylorthompson_buy.html">Buy a Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Cities We Serve</div>
-      <ul class="footer-links">
-        <li><a href="taylorthompson_neighborhood_turlock.html">Turlock</a></li>
-        <li><a href="taylorthompson_neighborhood_modesto.html">Modesto</a></li>
-        <li><a href="taylorthompson_neighborhood_manteca.html">Manteca</a></li>
-        <li><a href="taylorthompson_neighborhood_ceres.html">Ceres</a></li>
-        <li><a href="taylorthompson_neighborhood_ripon.html">Ripon</a></li>
-      </ul>
-    </div>
-    <div>
-      <div class="footer-col-title">Connect</div>
-      <ul class="footer-links">
-        <li><a href="https://instagram.com/soldby.taylor" target="_blank">Instagram @soldby.taylor</a></li>
-        <li><a href="https://instagram.com/soldby.dave" target="_blank">Instagram @soldby.dave</a></li>
-        <li><a href="https://facebook.com/soldby.taylorrr" target="_blank">Facebook</a></li>
-        <li><a href="https://youtube.com/@Soldby.taylor" target="_blank">YouTube</a></li>
-        <li><a href="https://taplink.cc/taylorthompsonreviews" target="_blank">Reviews</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="footer-legal">&copy; 2026 Taylor Thompson Home Group Â· Keller Williams Realty<br>Each Office Is Independently Owned and Operated</div>
-    <div class="footer-legal">Keller Williams Realty DRE #02324551</div>
-  </div>
-</footer>
+<div data-include="/includes/footer.html"></div>
 
 <script>
   const POSTS_PER_PAGE = 6;
@@ -492,6 +451,20 @@
     if (event.key === 'Escape' && view.classList.contains('active')) closeArticle();
   });
   loadPosts();
+</script>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
 </script>
 </body>
 </html>

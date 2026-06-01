@@ -1,5 +1,15 @@
 [
   {
+    "id": "cheri-coffee",
+    "author": "Cheri Coffee",
+    "text": "Taylor was pretty amazing as she worked with us throughout the sale of our family ranch. From start to finish she was very professional but at the same time had a great since of humor which made the process fun. Taylor and her staff were there to answer every question and give us great advise as needed. I highly recommend Taylor for any Real Estate needs you may have.",
+    "detail": "",
+    "source": "Google",
+    "placement": "featured",
+    "order": 2,
+    "rating": 5
+  },
+  {
     "id": "heather",
     "author": "Heather",
     "text": "Taylor did an excellent job helping me and my partner through the home buying process. Most importantly she was flexible and available with meeting with us due to my complicated schedule…",
@@ -27,6 +37,16 @@
     "source": "Zillow",
     "placement": "more",
     "order": 1,
+    "rating": 5
+  },
+  {
+    "id": "christine-sisco",
+    "author": "Christine Sisco",
+    "text": "Taylor Thompson is an incredible realtor. Her patience and guidance helped us through a very difficult process. Ultimately We found our forever home and are so incredibly happy. Communication is fantastic and Taylor is always available. I highly recommend!",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 2,
     "rating": 5
   },
   {
@@ -60,6 +80,16 @@
     "rating": 5
   },
   {
+    "id": "nexsus-300",
+    "author": "Nexsus 300",
+    "text": "Taylor helped me purchase my first home. My experience working with Taylor and her team has been nothing but amazing. They were patient and always there if I had a question or needed something. Taylor guided me every step of the way and always made sure I was getting a fair deal. I couldn't ask for a better Realtor. I cant thank Taylor and her team enough. 10/10",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 5,
+    "rating": 5
+  },
+  {
     "id": "rachel-jones",
     "author": "Rachel Jones",
     "text": "I had the task of getting a couple of condos sold as part of a probate in Lodi, CA. I live out of state so had to find an agent that would be able to go above and beyond…",
@@ -77,6 +107,26 @@
     "source": "Zillow",
     "placement": "more",
     "order": 6,
+    "rating": 5
+  },
+  {
+    "id": "juan-hernandez",
+    "author": "Juan Hernandez",
+    "text": "Taylor and team helped us not only purchase our dream home, but also successfully sell the home where we raised our boys and created so many memories. This was a huge and emotional transition for our family, and your guidance, patience, and expertise made the entire process smooth and stress-free.",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 10,
+    "rating": 5
+  },
+  {
+    "id": "kirill-legkiy",
+    "author": "Kirill Legkiy",
+    "text": "Taylor Thompson made selling my home a seamless experience! Her market-savvy pricing, staging advice, and pro photos attracted buyers quickly. Super responsive even weekends and her negotiation sealed a full-price deal with concessions covering closing costs. We closed quickly, stress-free! Taylor's professional, energetic, and results-driven highly recommend for selling (or buying)!",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 10,
     "rating": 5
   },
   {

@@ -274,28 +274,29 @@
     }
 
   </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
 </head>
 
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
 
-  <nav>
-
-    <a href="/" class="nav-logo">
-      <div class="nav-logo-main">Taylor Thompson</div>
-      <div class="nav-logo-sub">Home Group</div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="/">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/listings" class="active">Listings</a></li>
-      <li><a href="/blog">Blog</a></li>
-      <li><a href="/contact">Contact</a></li>
-    </ul>
-
-    <a href="/contact" class="nav-cta">Get Started</a>
-
-  </nav>
+  <div data-include="/includes/header.html"></div>
 
   <section class="hero">
 
@@ -406,12 +407,21 @@
 
   </section>
 
-  <footer>
+  <div data-include="/includes/footer.html"></div>
 
-    Taylor Thompson Home Group | Keller Williams Realty<br>
-    Taylor Thompson DRE #01999706 | Keller Williams Realty DRE #01485473
-
-  </footer>
-
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

@@ -6,6 +6,23 @@ const SKIP_DIRS = new Set([".git", "admin", "assets", "content", "includes", "no
 const SHARED_CSS = '<link rel="stylesheet" href="/assets/css/nav-footer.css">';
 const SHARED_JS = '<script src="/assets/js/includes.js" defer></script>';
 const FAVICON = '<link rel="icon" href="/assets/images/favicon.png" type="image/png">';
+const META_PIXEL_SCRIPT = `<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->`;
+const META_PIXEL_NOSCRIPT = `<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>`;
 const NETLIFY_IDENTITY_WIDGET = '<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>';
 const NETLIFY_IDENTITY_REDIRECT = `<script>
   if (window.netlifyIdentity) {
@@ -64,6 +81,18 @@ function ensureFavicon(html) {
   return html.replace(/<\/head>/i, `  ${FAVICON}\n</head>`);
 }
 
+function ensureMetaPixel(html) {
+  if (!html.includes("4531065853843983") || !html.includes("connect.facebook.net/en_US/fbevents.js")) {
+    html = html.replace(/<\/head>/i, `  ${META_PIXEL_SCRIPT}\n</head>`);
+  }
+
+  if (!html.includes("facebook.com/tr?id=4531065853843983")) {
+    html = html.replace(/<body([^>]*)>/i, `<body$1>\n  ${META_PIXEL_NOSCRIPT}`);
+  }
+
+  return html;
+}
+
 function ensureJs(html) {
   if (html.includes("/assets/js/includes.js")) return html;
   return html.replace(/<\/body>/i, `  ${SHARED_JS}\n</body>`);
@@ -110,6 +139,7 @@ function updateFile(filePath) {
 
   html = removeTidioPlaceholders(html);
   html = ensureFavicon(html);
+  html = ensureMetaPixel(html);
   html = ensureCss(html);
   html = replaceFirstNav(html);
   html = replaceFooter(html);

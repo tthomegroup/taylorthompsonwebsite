@@ -26,29 +26,30 @@
       padding: 50px 32px 70px;
     }
   </style>
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
 </head>
 
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
 
-<nav>
-  <a href="/" class="nav-logo">
-    <span class="nav-logo-script">Taylor Thompson Home Group</span>
-    <span class="nav-logo-sub">Keller Williams Realty</span>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="/listings">Search Homes</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/sell">Sell</a></li>
-    <li><a href="/buy">Buy</a></li>
-    <li><a href="/areas">Areas</a></li>
-    <li><a href="/events">Events</a></li>
-    <li><a href="/blog">Blog</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
-
-  <a href="/contact" class="nav-cta">Get Started</a>
-</nav>
+<div data-include="/includes/header.html"></div>
 
 <main class="idx-wrapper-main">
 
@@ -56,59 +57,21 @@
 
 </main>
 
-<footer>
-  <div class="footer-top">
+<div data-include="/includes/footer.html"></div>
 
-    <div>
-      <img src="/assets/images/logowhite.png"
-           alt="Taylor Thompson Home Group"
-           style="height:120px;width:auto;display:block;margin-bottom:16px;">
-
-      <p class="footer-tagline">
-        Serving buyers and sellers across Stanislaus, San Joaquin,
-        and Merced Counties with integrity, expertise, and care.
-      </p>
-    </div>
-
-    <div>
-      <div class="footer-col-title">Quick Links</div>
-
-      <ul class="footer-links">
-        <li><a href="/listings">Search Homes</a></li>
-        <li><a href="/about">About Taylor</a></li>
-        <li><a href="/areas">Service Areas</a></li>
-        <li><a href="/contact">Contact Us</a></li>
-      </ul>
-    </div>
-
-    <div>
-      <div class="footer-col-title">Cities We Serve</div>
-
-      <ul class="footer-links">
-        <li><a href="/turlock">Turlock</a></li>
-        <li><a href="/modesto">Modesto</a></li>
-        <li><a href="/manteca">Manteca</a></li>
-        <li><a href="/ceres">Ceres</a></li>
-        <li><a href="/ripon">Ripon</a></li>
-        <li><a href="/riverbank">Riverbank</a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-
-    <div class="footer-legal">
-      © 2026 Taylor Thompson Home Group · Keller Williams Realty<br>
-      Each Office Is Independently Owned and Operated
-    </div>
-
-    <div class="footer-dre">
-      Taylor Thompson DRE #01999706 · Keller Williams Realty DRE #01485473
-    </div>
-
-  </div>
-</footer>
-
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>

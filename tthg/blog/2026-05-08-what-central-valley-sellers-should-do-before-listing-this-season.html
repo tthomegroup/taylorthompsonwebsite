@@ -39,12 +39,27 @@
   footer{background:var(--dark);color:rgba(255,255,255,.5);padding:32px;text-align:center;font-size:12px;}
   @media(max-width:720px){nav{padding:0 22px}.back-link{padding:9px 12px}.hero{padding-top:48px}}
 </style>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
 </head>
 <body>
-<nav>
-  <a class="brand" href="../index.html"><span>Taylor Thompson Home Group</span><span>Keller Williams Realty</span></a>
-  <a class="back-link" href="../blog.html">All Blogs</a>
-</nav>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
+<div data-include="/includes/header.html"></div>
 <main>
   <section class="hero">
     <div class="hero-inner">
@@ -64,6 +79,20 @@
 <p>Fresh paint, clean landscaping, working lights, repaired trim, and simple staging decisions can change how a home photographs and shows. Large renovations are not always necessary before selling. The best prep is usually focused, practical, and tied to the likely return.</p>
   </article>
 </main>
-<footer>Taylor Thompson Home Group | Central Valley Real Estate</footer>
+<div data-include="/includes/footer.html"></div>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
