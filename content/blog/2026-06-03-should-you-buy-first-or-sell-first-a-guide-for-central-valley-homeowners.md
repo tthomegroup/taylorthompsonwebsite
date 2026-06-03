@@ -57,6 +57,6 @@ If you are considering a move in Modesto, Turlock, Manteca, Riverbank, or anywhe
 
 Curious what your current home may be worth?
 
-👉 <https://taylorthompsonhomegroup.com/home-value>
+[Get your free home value](https://taylorthompsonhomegroup.com/home-value)
 
 The right move starts with the right plan, and we would love to help you create one.

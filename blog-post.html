@@ -185,11 +185,35 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
         .replace(/'/g, "&#039;");
     }
 
+    function linkHtml(text, href) {
+      var cleanHref = String(href || "").trim().replace(/^['"]|['"]$/g, "");
+      var isSafeHref = /^(https?:\/\/|mailto:|tel:|\/|#)/i.test(cleanHref);
+      if (!isSafeHref) return escapeHtml(text);
+
+      var newTab = /^https?:\/\//i.test(cleanHref) ? ' target="_blank" rel="noopener"' : "";
+      return '<a href="' + escapeHtml(cleanHref) + '"' + newTab + ">" + escapeHtml(text) + "</a>";
+    }
+
     function inlineMarkdown(value) {
-      return escapeHtml(value)
+      var links = [];
+      var tokenPrefix = "\u0000LINK";
+      var tokenSuffix = "\u0000";
+      var text = String(value || "")
+        .replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+['"][^'"]*['"])?\)/g, function (_, label, href) {
+          links.push(linkHtml(label, href));
+          return tokenPrefix + (links.length - 1) + tokenSuffix;
+        })
+        .replace(/<((?:https?:\/\/|mailto:|tel:)[^>\s]+)>/gi, function (_, href) {
+          links.push(linkHtml(href, href));
+          return tokenPrefix + (links.length - 1) + tokenSuffix;
+        });
+
+      return escapeHtml(text)
         .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
         .replace(/\*(.*?)\*/g, "<em>$1</em>")
-        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+        .replace(/\u0000LINK(\d+)\u0000/g, function (_, index) {
+          return links[Number(index)] || "";
+        });
     }
 
     function markdownImage(value) {

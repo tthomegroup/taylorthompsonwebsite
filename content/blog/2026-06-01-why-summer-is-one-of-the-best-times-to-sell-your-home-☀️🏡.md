@@ -57,7 +57,7 @@ If selling has been on your mind, the first step is understanding your home's va
 
 Get your free home valuation today and see what your home could be worth in the current market:
 
-👉 <https://taylorthompsonhomegroup.com/home-value>
+[Get your free home valuation](https://taylorthompsonhomegroup.com/home-value)
 
 Whether you are planning to move this summer or simply exploring your options, our team would love to help you create a strategy that works for your goals.
 
