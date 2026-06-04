@@ -121,6 +121,28 @@
       margin: 0 0 20px;
     }
 
+    .post-content ul,
+    .post-content ol {
+      padding-left: 1.35em;
+    }
+
+    .post-content ul {
+      list-style: disc;
+    }
+
+    .post-content ol {
+      list-style: decimal;
+    }
+
+    .post-content li {
+      margin: 0 0 8px;
+      padding-left: 4px;
+    }
+
+    .post-content li::marker {
+      color: var(--tan);
+    }
+
     .post-content img {
       max-width: 100%;
       height: auto;
@@ -265,13 +287,13 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           return;
         }
 
-        if (/^[-*]\s+/.test(trimmed)) {
+        if (/^[-*+]\s+/.test(trimmed)) {
           if (listType !== "ul") {
             closeList();
             listType = "ul";
             html.push("<ul>");
           }
-          html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*]\s+/, "")) + "</li>");
+          html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*+]\s+/, "")) + "</li>");
           return;
         }
 
