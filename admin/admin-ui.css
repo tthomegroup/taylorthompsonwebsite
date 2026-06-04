@@ -1,0 +1,94 @@
+:root {
+  --admin-ink: #2f251f;
+  --admin-muted: #765f50;
+  --admin-line: #ded4cc;
+  --admin-paper: #f7f2ed;
+  --admin-white: #fff;
+  --admin-tan: #c8ad9a;
+  --admin-dark: #050505;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(200, 173, 154, 0.24), transparent 34rem),
+    var(--admin-paper) !important;
+  color: var(--admin-ink) !important;
+  font-family: Montserrat, Arial, sans-serif !important;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: Montserrat, Arial, sans-serif !important;
+}
+
+label span:first-child {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  margin-bottom: 8px !important;
+  padding: 5px 9px !important;
+  border: 1px solid var(--admin-line) !important;
+  border-radius: 999px !important;
+  background: var(--admin-white) !important;
+  color: var(--admin-muted) !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+input,
+textarea,
+select,
+[class*="control"],
+[class*="Control"] {
+  border-color: var(--admin-line) !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus,
+[class*="control"]:focus-within,
+[class*="Control"]:focus-within {
+  border-color: var(--admin-tan) !important;
+  box-shadow: 0 0 0 3px rgba(200, 173, 154, 0.22) !important;
+}
+
+[class*="hint"],
+[class*="Hint"],
+label + p,
+label p {
+  color: var(--admin-muted) !important;
+  font-size: 12px !important;
+}
+
+[class*="EditorControl"],
+[class*="ControlContainer"] {
+  margin-bottom: 22px !important;
+}
+
+[class*="EditorControl"]:has(label span:first-child),
+[class*="ControlContainer"]:has(label span:first-child) {
+  padding: 2px 0 !important;
+}
+
+[class*="EditorControl"]:has(label span:first-child):has([name="publishTiming"]),
+[class*="EditorControl"]:has(label span:first-child):has([name="scheduleDate"]),
+[class*="EditorControl"]:has(label span:first-child):has([name="scheduleHour"]),
+[class*="ControlContainer"]:has(label span:first-child):has([name="publishTiming"]),
+[class*="ControlContainer"]:has(label span:first-child):has([name="scheduleDate"]),
+[class*="ControlContainer"]:has(label span:first-child):has([name="scheduleHour"]) {
+  padding: 18px !important;
+  border: 1px solid rgba(200, 173, 154, 0.45) !important;
+  border-radius: 18px !important;
+  background: rgba(255, 255, 255, 0.76) !important;
+}
+
+a,
+[role="button"] {
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;
+}

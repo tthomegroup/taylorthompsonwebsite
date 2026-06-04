@@ -137,9 +137,10 @@ collections:
 
       - label: "Scheduled Date"
         name: "scheduleDate"
-        widget: "date"
+        widget: "datetime"
         format: "YYYY-MM-DD"
         date_format: "YYYY-MM-DD"
+        time_format: false
         required: false
         hint: "Only use this when scheduling for a different day. California / Pacific Time."
         condition:
