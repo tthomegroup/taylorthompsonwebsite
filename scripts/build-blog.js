@@ -5,6 +5,7 @@ const { execSync } = require("child_process");
 const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "blog");
 const OUTPUT_FILE = path.join(ROOT_DIR, "assets", "data", "blog-posts.json");
+const SCHEDULE_TIME_ZONE = "America/Los_Angeles";
 
 const CATEGORIES = {
   "market-updates": "Market Updates",
@@ -104,6 +105,65 @@ function normalizeFeatured(value) {
   return ["true", "yes", "1", "featured"].includes(String(value).trim().toLowerCase());
 }
 
+function pacificNowParts() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: SCHEDULE_TIME_ZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(new Date());
+
+  return parts.reduce((result, part) => {
+    if (part.type !== "literal") result[part.type] = part.value;
+    return result;
+  }, {});
+}
+
+function pacificToday() {
+  const now = pacificNowParts();
+  return `${now.year}-${now.month}-${now.day}`;
+}
+
+function scheduleNumber(date, hour) {
+  return Number(`${String(date || "").replace(/-/g, "")}${String(hour || "00:00").slice(0, 2)}`);
+}
+
+function currentPacificScheduleNumber() {
+  const now = pacificNowParts();
+  return scheduleNumber(`${now.year}-${now.month}-${now.day}`, `${now.hour}:00`);
+}
+
+function normalizeScheduleHour(value) {
+  const match = String(value || "").match(/^(\d{1,2})(?::\d{2})?$/);
+  if (!match) return "00:00";
+
+  const hour = Math.max(0, Math.min(23, Number(match[1])));
+  return `${String(hour).padStart(2, "0")}:00`;
+}
+
+function fileDate(fileName) {
+  const match = String(fileName || "").match(/^(\d{4}-\d{2}-\d{2})-/);
+  return match ? match[1] : "";
+}
+
+function publishDetails(data, fileName) {
+  const timing = String(data.publishTiming || data.scheduleTiming || "").toLowerCase();
+  const isFuture = timing === "future" || Boolean(data.scheduleDate);
+  const date = String((isFuture ? data.scheduleDate : "") || data.date || fileDate(fileName) || pacificToday()).slice(0, 10);
+  const hour = normalizeScheduleHour(isFuture ? data.scheduleHour : "00:00");
+
+  return {
+    date,
+    hour,
+    isFuture,
+    scheduledAt: `${date} ${hour} PT`,
+    scheduleTimezone: SCHEDULE_TIME_ZONE,
+    isReady: !isFuture || scheduleNumber(date, hour) <= currentPacificScheduleNumber(),
+  };
+}
+
 function fileUpdatedAt(filePath) {
   try {
     const relativePath = path.relative(ROOT_DIR, filePath).replace(/\\/g, "/");
@@ -133,6 +193,9 @@ function readPosts() {
       const slug = slugify(data.slug || data.title || path.basename(file, ".md"));
       const category = normalizeCategory(data.category);
       const featured = normalizeFeatured(data.featured);
+      const publish = publishDetails(data, file);
+
+      if (!publish.isReady) return null;
 
       return {
         id: slug,
@@ -141,8 +204,10 @@ function readPosts() {
         link: `/blog/${slug}`,
         permalink: `/blog/${slug}`,
         title: data.title || slug,
-        date: data.date || "",
-        publishDate: data.date || "",
+        date: publish.date,
+        publishDate: publish.date,
+        scheduledAt: publish.scheduledAt,
+        scheduleTimezone: publish.scheduleTimezone,
         readTime: data.readTime || "",
         category,
         categories: category ? [category] : [],
