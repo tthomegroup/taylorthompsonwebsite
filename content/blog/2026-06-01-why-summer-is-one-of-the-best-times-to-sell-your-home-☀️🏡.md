@@ -1,7 +1,7 @@
 ---
 published: true
 title: Why Summer Is One of the Best Times to Sell Your Home ☀️🏡
-date: 2026-06-01
+publishTiming: now
 readTime: 5 Min Read
 category: Market Updates
 excerpt: When most people think about moving, summer is often the season that
@@ -9,9 +9,10 @@ excerpt: When most people think about moving, summer is often the season that
   motivated buyers make summer one of the busiest and most successful times of
   year to sell a home. If you've been considering a move, this season may offer
   the perfect opportunity.
-featuredImage: /assets/images/uploads/blog.png
+featuredImage: /assets/images/uploads/summer.png
 imageAlt: Summer Blog
 featured: false
+date: 2026-06-01
 ---
 ## More Buyers Are in the Market
 
