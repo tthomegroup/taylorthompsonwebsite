@@ -3,6 +3,7 @@ const path = require("path");
 
 const ROOT_DIR = path.resolve(__dirname, "..");
 const CONTENT_DIR = path.join(ROOT_DIR, "content", "reviews");
+const ORGANIZER_FILE = path.join(ROOT_DIR, "content", "reviews-organizer.json");
 const OUTPUT_FILE = path.join(ROOT_DIR, "assets", "data", "reviews.json");
 
 function ensureDir(dir) {
@@ -47,7 +48,43 @@ function normalizeRating(value) {
   return Math.min(5, Math.max(1, Math.round(rating)));
 }
 
-function readReviews() {
+function slugify(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, "and")
+    .replace(/['"]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+function normalizeReview(review, placement, order) {
+  return {
+    id: review.id || slugify(review.title || review.author),
+    author: review.author || "",
+    text: review.text || review.body || "",
+    detail: review.detail || "",
+    source: review.source || "Other",
+    placement,
+    order,
+    rating: normalizeRating(review.rating),
+  };
+}
+
+function readOrganizedReviews() {
+  const organizer = JSON.parse(fs.readFileSync(ORGANIZER_FILE, "utf8"));
+  const reviews = Array.isArray(organizer.reviews)
+    ? organizer.reviews
+    : (organizer.featuredReviews || []).concat(organizer.moreReviews || []);
+
+  return reviews.map((review, index) => {
+    const placement = index < 3 ? "featured" : "more";
+    const order = placement === "featured" ? index + 1 : index - 2;
+    return normalizeReview(review, placement, order);
+  });
+}
+
+function readLegacyReviews() {
   ensureDir(CONTENT_DIR);
 
   return fs
@@ -77,7 +114,20 @@ function readReviews() {
     });
 }
 
-ensureDir(path.dirname(OUTPUT_FILE));
-const reviews = readReviews();
-fs.writeFileSync(OUTPUT_FILE, `${JSON.stringify(reviews, null, 2)}\n`);
-console.log(`Built ${reviews.length} review(s).`);
+function readReviews() {
+  return fs.existsSync(ORGANIZER_FILE) ? readOrganizedReviews() : readLegacyReviews();
+}
+
+function buildReviews() {
+  ensureDir(path.dirname(OUTPUT_FILE));
+  const reviews = readReviews();
+  fs.writeFileSync(OUTPUT_FILE, `${JSON.stringify(reviews, null, 2)}\n`);
+  console.log(`Built ${reviews.length} review(s).`);
+}
+
+if (require.main === module) buildReviews();
+
+module.exports = {
+  ORGANIZER_FILE,
+  readLegacyReviews,
+};

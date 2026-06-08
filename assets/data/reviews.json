@@ -6,7 +6,7 @@
     "detail": "",
     "source": "Google",
     "placement": "featured",
-    "order": 2,
+    "order": 1,
     "rating": 5
   },
   {
@@ -30,13 +30,23 @@
     "rating": 5
   },
   {
+    "id": "lati-m",
+    "author": "Elizabeth Walsh",
+    "text": "Taylor and her amazing team of real estate professionals were instrumental in the work they did to make sure my home sold in a timely manner and at a great price. I could not have asked for a more supportive, reliable, conscientious and positive experience. I can recommend the Taylor Thompson team without reservation.",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 1,
+    "rating": 5
+  },
+  {
     "id": "n-montgomery",
     "author": "N. Montgomery",
     "text": "Taylor and her team work seamlessly together, making the process of buying or selling as easy as possible. I truly appreciated the excellent communication, expertise, advice…",
     "detail": "Sold a Single Family Home · Oakdale, CA · July 2025",
     "source": "Zillow",
     "placement": "more",
-    "order": 1,
+    "order": 2,
     "rating": 5
   },
   {
@@ -46,7 +56,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 2,
+    "order": 3,
     "rating": 5
   },
   {
@@ -56,7 +66,7 @@
     "detail": "Bought a Single Family Home · Merced, CA · May 2025",
     "source": "Zillow",
     "placement": "more",
-    "order": 2,
+    "order": 4,
     "rating": 5
   },
   {
@@ -66,7 +76,7 @@
     "detail": "Sold a Single Family Home · Turlock, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 3,
+    "order": 5,
     "rating": 5
   },
   {
@@ -76,7 +86,7 @@
     "detail": "Sold a Single Family Home · Modesto, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 4,
+    "order": 6,
     "rating": 5
   },
   {
@@ -86,7 +96,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 5,
+    "order": 7,
     "rating": 5
   },
   {
@@ -96,7 +106,7 @@
     "detail": "Sold a Condo · Lodi, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 5,
+    "order": 8,
     "rating": 5
   },
   {
@@ -106,7 +116,17 @@
     "detail": "Sold a Single Family Home · Manteca, CA · August 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 6,
+    "order": 9,
+    "rating": 5
+  },
+  {
+    "id": "acvdo-maria",
+    "author": "Acvdo Maria",
+    "text": "I recently had the pleasure of working with Taylor Thompson for both the sale of my home and the purchase of a new one, and the entire experience was smooth. Taylor is professional, knowledgeable, and always available to answer my questions and guide me through each step of the process. Her attention to detail and commitment to making everything as stress-free as possible truly stood out. I felt confident and supported every step of the way. I highly recommend Taylor for anyone with real estate needs—you’ll be in great hands!",
+    "detail": "",
+    "source": "Facebook",
+    "placement": "more",
+    "order": 10,
     "rating": 5
   },
   {
@@ -116,7 +136,17 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 10,
+    "order": 11,
+    "rating": 5
+  },
+  {
+    "id": "justin-raybould",
+    "author": "Justin Raybould",
+    "text": "Very knowledgeable and friendly person to work with .",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 12,
     "rating": 5
   },
   {
@@ -126,7 +156,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 10,
+    "order": 13,
     "rating": 5
   },
   {
@@ -136,7 +166,17 @@
     "detail": "Bought a Single Family Home · Modesto, CA · April 2025",
     "source": "Zillow",
     "placement": "more",
-    "order": 10,
+    "order": 14,
+    "rating": 5
+  },
+  {
+    "id": "oscar-medina",
+    "author": "Oscar Medina",
+    "text": "Definitely recommend! She did a great job helping my family and I finding and getting our forever home! We appreciate her dedication and passion in line of work!",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 15,
     "rating": 5
   }
 ]

@@ -8,6 +8,44 @@ public_folder: "/assets/images/uploads"
 collections:
   - name: "reviews"
     label: "Client Reviews"
+    files:
+      - label: "Organize Reviews"
+        name: "review-organizer"
+        file: "content/reviews-organizer.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Review Order"
+            name: "reviews"
+            widget: "list"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.author}} - {{fields.source}}"
+            hint: "Drag reviews into the exact website order. The first 3 reviews are automatically Featured. Reviews below the divider appear in More Reviews."
+            fields:
+              - { label: "Internal ID", name: "id", widget: "hidden", required: false }
+              - { label: "Reviewer Name", name: "author", widget: "string" }
+              - { label: "Review Text", name: "text", widget: "text" }
+              - { label: "Transaction Details", name: "detail", widget: "string", required: false }
+              - label: "Where Was This Review Posted?"
+                name: "source"
+                widget: "select"
+                default: "Zillow"
+                options: ["Zillow", "Google", "Socials", "Instagram", "Facebook", "Other"]
+              - label: "Star Rating"
+                name: "rating"
+                widget: "select"
+                default: 5
+                options:
+                  - { label: "5 Stars", value: 5 }
+                  - { label: "4 Stars", value: 4 }
+                  - { label: "3 Stars", value: 3 }
+                  - { label: "2 Stars", value: 2 }
+                  - { label: "1 Star", value: 1 }
+
+  - name: "reviews_legacy"
+    label: "Legacy Reviews"
+    hide: true
     label_singular: "Client Review"
     folder: "content/reviews"
     create: true
