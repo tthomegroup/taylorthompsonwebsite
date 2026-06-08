@@ -16,6 +16,20 @@ body {
   font-family: Montserrat, Arial, sans-serif !important;
 }
 
+html,
+body,
+#nc-root {
+  min-height: 100% !important;
+}
+
+body {
+  overflow-y: auto !important;
+}
+
+#nc-root {
+  overflow: visible !important;
+}
+
 button,
 input,
 textarea,
@@ -41,9 +55,7 @@ label span:first-child {
 
 input,
 textarea,
-select,
-[class*="control"],
-[class*="Control"] {
+select {
   border-color: var(--admin-line) !important;
   border-radius: 12px !important;
   box-shadow: none !important;
@@ -51,9 +63,7 @@ select,
 
 input:focus,
 textarea:focus,
-select:focus,
-[class*="control"]:focus-within,
-[class*="Control"]:focus-within {
+select:focus {
   border-color: var(--admin-tan) !important;
   box-shadow: 0 0 0 3px rgba(200, 173, 154, 0.22) !important;
 }
@@ -69,6 +79,7 @@ label p {
 [class*="EditorControl"],
 [class*="ControlContainer"] {
   margin-bottom: 22px !important;
+  overflow: visible !important;
 }
 
 [class*="EditorControl"]:has(label span:first-child),
@@ -86,6 +97,20 @@ label p {
   border: 1px solid rgba(200, 173, 154, 0.45) !important;
   border-radius: 18px !important;
   background: rgba(255, 255, 255, 0.76) !important;
+}
+
+/* Keep Decap's markdown editor toolbar inside the Body field while the form scrolls. */
+[class*="MarkdownControl"],
+[class*="EditorControlPane"],
+[class*="EditorContainer"],
+[class*="EditorMain"] {
+  overflow: visible !important;
+}
+
+[class*="MarkdownControl"] [class*="Toolbar"],
+[class*="MarkdownControl"] [class*="toolbar"] {
+  position: static !important;
+  top: auto !important;
 }
 
 a,
