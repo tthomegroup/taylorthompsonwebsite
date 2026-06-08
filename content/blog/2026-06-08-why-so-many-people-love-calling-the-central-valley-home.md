@@ -15,6 +15,7 @@ excerpt: >-
 
 
   From Stanislaus County to San Joaquin County and Merced County, the Central Valley continues to attract families, professionals, retirees, and first-time buyers looking for a place to put down roots.
+featuredImage: /assets/images/uploads/75613ab4-2bc6-4189-bcb1-549f183a26df.png
 imageAlt: Beautiful Central Valley neighborhood with tree-lined streets, parks,
   and scenic foothill views showcasing the lifestyle and community that make the
   region a great place to call home.
