@@ -53,6 +53,25 @@
     return Array.isArray(data) ? data : data.posts || [];
   }
 
+  function isPostReady(post) {
+    if (String(post.publishTiming || "").toLowerCase() !== "future") return true;
+
+    var parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      hourCycle: "h23",
+    }).formatToParts(new Date()).reduce(function (result, part) {
+      if (part.type !== "literal") result[part.type] = part.value;
+      return result;
+    }, {});
+    var now = Number("" + parts.year + parts.month + parts.day + parts.hour);
+    var scheduled = Number(String(post.scheduleDate || post.date || "").replace(/-/g, "") + String(post.scheduleHour || "00:00").slice(0, 2));
+    return scheduled <= now;
+  }
+
   function postUrl(post) {
     return post.url || post.link || post.permalink || "/blog/" + (post.slug || slugify(post.title));
   }
@@ -243,7 +262,7 @@
   fetch("/assets/data/blog-posts.json")
     .then(function (response) { return response.json(); })
     .then(function (data) {
-      allPosts = postsArray(data).sort(function (a, b) {
+      allPosts = postsArray(data).filter(isPostReady).sort(function (a, b) {
         return postDate(b) - postDate(a);
       });
       renderFeatured();

@@ -195,8 +195,6 @@ function readPosts() {
       const featured = normalizeFeatured(data.featured);
       const publish = publishDetails(data, file);
 
-      if (!publish.isReady) return null;
-
       return {
         id: slug,
         slug,
@@ -206,6 +204,9 @@ function readPosts() {
         title: data.title || slug,
         date: publish.date,
         publishDate: publish.date,
+        publishTiming: data.publishTiming || (publish.isFuture ? "future" : "now"),
+        scheduleDate: publish.date,
+        scheduleHour: publish.hour,
         scheduledAt: publish.scheduledAt,
         scheduleTimezone: publish.scheduleTimezone,
         readTime: data.readTime || "",

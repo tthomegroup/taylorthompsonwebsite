@@ -325,6 +325,25 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       return Array.isArray(data) ? data : data.posts || [];
     }
 
+    function isPostReady(post) {
+      if (String(post.publishTiming || "").toLowerCase() !== "future") return true;
+
+      var parts = new Intl.DateTimeFormat("en-US", {
+        timeZone: "America/Los_Angeles",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+        hour: "2-digit",
+        hourCycle: "h23",
+      }).formatToParts(new Date()).reduce(function (result, part) {
+        if (part.type !== "literal") result[part.type] = part.value;
+        return result;
+      }, {});
+      var now = Number("" + parts.year + parts.month + parts.day + parts.hour);
+      var scheduled = Number(String(post.scheduleDate || post.date || "").replace(/-/g, "") + String(post.scheduleHour || "00:00").slice(0, 2));
+      return scheduled <= now;
+    }
+
     function getRequestedSlug() {
       var params = new URLSearchParams(window.location.search);
       var fromQuery = params.get("slug") || params.get("id") || params.get("post");
@@ -372,6 +391,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       .then(function (data) {
         var requestedSlug = getRequestedSlug();
         var post = postsArray(data).find(function (item) {
+          if (!isPostReady(item)) return false;
           var postSlug = slugify(item.slug || item.id || item.title);
           var titleSlug = slugify(item.title);
           return postSlug === requestedSlug ||
