@@ -1,6 +1,14 @@
 {
   "reviews": [
     {
+      "id": "heather",
+      "author": "Heather",
+      "text": "Taylor did an excellent job helping me and my partner through the home buying process. Most importantly she was flexible and available with meeting with us due to my complicated schedule…",
+      "detail": "Bought a Single Family Home · Turlock, CA · December 2025",
+      "source": "Zillow",
+      "rating": 5
+    },
+    {
       "id": "cheri-coffee",
       "author": "Cheri Coffee",
       "text": "Taylor was pretty amazing as she worked with us throughout the sale of our family ranch. From start to finish she was very professional but at the same time had a great since of humor which made the process fun. Taylor and her staff were there to answer every question and give us great advise as needed. I highly recommend Taylor for any Real Estate needs you may have.",
@@ -9,12 +17,10 @@
       "rating": 5
     },
     {
-      "id": "heather",
-      "author": "Heather",
-      "text": "Taylor did an excellent job helping me and my partner through the home buying process. Most importantly she was flexible and available with meeting with us due to my complicated schedule…",
-      "detail": "Bought a Single Family Home · Turlock, CA · December 2025",
-      "source": "Zillow",
-      "rating": 5
+      "source": "Google",
+      "rating": 5,
+      "author": "Elycia Armienta",
+      "text": "Definitely recommend contacting Taylor if you're trying to buy a house! She's super friendly and always willing to work around your schedule. She also points out things some would never know to look for. Will definitely be working with her again in the future."
     },
     {
       "id": "miranda-thomas",
@@ -105,6 +111,14 @@
       "rating": 5
     },
     {
+      "id": "oscar-medina",
+      "author": "Oscar Medina",
+      "text": "Definitely recommend! She did a great job helping my family and I finding and getting our forever home! We appreciate her dedication and passion in line of work!",
+      "detail": "",
+      "source": "Google",
+      "rating": 5
+    },
+    {
       "id": "juan-hernandez",
       "author": "Juan Hernandez",
       "text": "Taylor and team helped us not only purchase our dream home, but also successfully sell the home where we raised our boys and created so many memories. This was a huge and emotional transition for our family, and your guidance, patience, and expertise made the entire process smooth and stress-free.",
@@ -134,14 +148,6 @@
       "text": "Taylor is very kind and patient. She did an excellent job guiding me through the home buying process. I would recommend her to anyone buying or selling a home.",
       "detail": "Bought a Single Family Home · Modesto, CA · April 2025",
       "source": "Zillow",
-      "rating": 5
-    },
-    {
-      "id": "oscar-medina",
-      "author": "Oscar Medina",
-      "text": "Definitely recommend! She did a great job helping my family and I finding and getting our forever home! We appreciate her dedication and passion in line of work!",
-      "detail": "",
-      "source": "Google",
       "rating": 5
     }
   ]
