@@ -149,6 +149,32 @@ label p {
   top: auto !important;
 }
 
+.admin-markdown-field {
+  overflow: visible !important;
+}
+
+.admin-markdown-toolbar {
+  position: relative !important;
+  top: auto !important;
+  z-index: 1 !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  margin: 0 !important;
+  transform: none !important;
+}
+
+.admin-markdown-field textarea,
+.admin-markdown-field [contenteditable="true"],
+.admin-markdown-field [class*="CodeMirror"],
+.admin-markdown-field [class*="codeMirror"] {
+  position: relative !important;
+  z-index: 0 !important;
+  min-height: 360px !important;
+  padding-top: 18px !important;
+  scroll-margin-top: 96px !important;
+}
+
 a,
 [role="button"] {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;
