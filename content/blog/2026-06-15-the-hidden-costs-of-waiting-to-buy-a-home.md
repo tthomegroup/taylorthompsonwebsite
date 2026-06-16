@@ -10,7 +10,7 @@ excerpt: >-
   One of the most common things we hear from buyers is:
 
 
-  *"We're thinking about waiting."*
+  "We're thinking about waiting."
 
 
   Maybe you're hoping interest rates will come down. Maybe you're waiting for prices to drop. Or maybe you're just unsure whether now is the right time.
