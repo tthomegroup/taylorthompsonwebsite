@@ -53,6 +53,19 @@ function parseValue(value) {
   return trimmed;
 }
 
+function parseBlockValue(indicator, blockLines) {
+  if (indicator.startsWith(">")) {
+    return blockLines
+      .join("\n")
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.replace(/\s*\n\s*/g, " ").trim())
+      .filter(Boolean)
+      .join("\n\n");
+  }
+
+  return blockLines.join("\n").trim();
+}
+
 function parseFrontmatter(markdown) {
   const match = markdown.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
   if (!match) return { data: {}, body: markdown.trim() };
@@ -80,15 +93,30 @@ function parseFrontmatter(markdown) {
 
     if (/^[>|]/.test(rawValue.trim())) {
       const blockLines = [];
-      while (index + 1 < lines.length && /^\s+/.test(lines[index + 1])) {
+      while (index + 1 < lines.length && (!lines[index + 1].trim() || /^\s+/.test(lines[index + 1]))) {
         index += 1;
-        blockLines.push(lines[index].replace(/^\s{2,}/, ""));
+        blockLines.push(lines[index].trim() ? lines[index].replace(/^\s{2,}/, "") : "");
       }
-      data[currentKey] = blockLines.join(rawValue.trim().startsWith(">") ? " " : "\n").trim();
+      data[currentKey] = parseBlockValue(rawValue.trim(), blockLines);
       continue;
     }
 
-    data[currentKey] = rawValue === "" ? [] : parseValue(rawValue);
+    if (rawValue !== "") {
+      const valueLines = [rawValue];
+      while (
+        index + 1 < lines.length &&
+        /^\s+/.test(lines[index + 1]) &&
+        !/^\s+-\s+/.test(lines[index + 1])
+      ) {
+        index += 1;
+        valueLines.push(lines[index].trim());
+      }
+
+      data[currentKey] = parseValue(valueLines.join(" "));
+      continue;
+    }
+
+    data[currentKey] = [];
   }
 
   return { data, body: match[2].trim() };
