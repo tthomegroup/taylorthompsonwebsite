@@ -48,6 +48,10 @@
 
       field.classList.add("admin-markdown-field");
       toolbar.classList.add("admin-markdown-toolbar");
+
+      Array.prototype.forEach.call(field.querySelectorAll(".CodeMirror, .CodeMirror-scroll, .CodeMirror-sizer, .CodeMirror-lines"), function (part) {
+        part.classList.add("admin-markdown-editor-part");
+      });
     });
   }
 

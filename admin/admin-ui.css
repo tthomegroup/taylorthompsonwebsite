@@ -150,6 +150,7 @@ label p {
 }
 
 .admin-markdown-field {
+  --admin-toolbar-space: 88px;
   overflow: visible !important;
 }
 
@@ -184,11 +185,15 @@ label p {
 .EasyMDEContainer .CodeMirror,
 .admin-markdown-field .CodeMirror {
   order: 1 !important;
-  margin-top: 0 !important;
+  margin-top: var(--admin-toolbar-space) !important;
 }
 
-.CodeMirror-scroll {
-  padding-top: 14px !important;
+.CodeMirror-scroll,
+.admin-markdown-field .CodeMirror-scroll,
+.admin-markdown-field .CodeMirror-sizer,
+.admin-markdown-field .CodeMirror-lines,
+.admin-markdown-editor-part {
+  padding-top: 22px !important;
 }
 
 .admin-markdown-field textarea,
@@ -198,8 +203,12 @@ label p {
   position: relative !important;
   z-index: 0 !important;
   min-height: 360px !important;
-  padding-top: 18px !important;
+  padding-top: var(--admin-toolbar-space) !important;
   scroll-margin-top: 96px !important;
+}
+
+.admin-markdown-field .CodeMirror pre {
+  padding-top: 4px !important;
 }
 
 a,
