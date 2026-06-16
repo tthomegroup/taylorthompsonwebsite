@@ -145,6 +145,34 @@ textarea[name="body"],
   white-space: pre-wrap !important;
 }
 
+.admin-markdown-field {
+  --admin-toolbar-offset: 104px;
+}
+
+.admin-markdown-field .editor-toolbar,
+.admin-markdown-field [class*="toolbar"],
+.admin-markdown-toolbar {
+  z-index: 2 !important;
+}
+
+.admin-markdown-field .CodeMirror {
+  min-height: 520px !important;
+}
+
+.admin-markdown-field .CodeMirror-scroll {
+  padding-top: var(--admin-toolbar-offset) !important;
+}
+
+.admin-markdown-field .CodeMirror-sizer,
+.admin-markdown-field .CodeMirror-lines {
+  margin-top: var(--admin-toolbar-offset) !important;
+  padding-top: var(--admin-toolbar-offset) !important;
+}
+
+.admin-markdown-field .CodeMirror-code {
+  padding-top: var(--admin-toolbar-offset) !important;
+}
+
 a,
 [role="button"] {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;

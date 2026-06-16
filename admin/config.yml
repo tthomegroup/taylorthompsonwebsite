@@ -302,6 +302,20 @@ collections:
 
       - label: "Body"
         name: "body"
-        widget: "text"
+        widget: "markdown"
         required: false
-        hint: "Write in Markdown. Examples: ## Heading, ### Subheading, * bullet, [link text](https://example.com), ![](/assets/images/uploads/image.jpg)."
+        buttons:
+          - bold
+          - italic
+          - code
+          - link
+          - heading-two
+          - heading-three
+          - bulleted-list
+          - numbered-list
+          - quote
+        editor_components:
+          - image
+        modes:
+          - rich_text
+          - raw

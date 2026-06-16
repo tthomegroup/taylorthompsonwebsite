@@ -23,8 +23,30 @@
     });
   }
 
+  function decorateMarkdownEditor() {
+    Array.prototype.forEach.call(document.querySelectorAll(".CodeMirror"), function (editor) {
+      var field = editor.closest('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]');
+      if (!field) return;
+
+      var toolbar = field.querySelector(".editor-toolbar, [class*='toolbar'], [class*='Toolbar']");
+      if (!toolbar) return;
+
+      var toolbarHeight = Math.max(96, Math.ceil(toolbar.getBoundingClientRect().height) + 34);
+      field.classList.add("admin-markdown-field");
+      toolbar.classList.add("admin-markdown-toolbar");
+      field.style.setProperty("--admin-toolbar-offset", toolbarHeight + "px");
+
+      [".CodeMirror-scroll", ".CodeMirror-sizer", ".CodeMirror-lines", ".CodeMirror-code"].forEach(function (selector) {
+        Array.prototype.forEach.call(field.querySelectorAll(selector), function (part) {
+          part.style.setProperty("padding-top", toolbarHeight + "px", "important");
+        });
+      });
+    });
+  }
+
   function decorateAdmin() {
     decorateReviewOrder();
+    decorateMarkdownEditor();
   }
 
   var observer = new MutationObserver(decorateAdmin);
