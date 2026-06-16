@@ -135,80 +135,14 @@ label p {
   text-transform: uppercase;
 }
 
-/* Keep Decap's markdown editor toolbar inside the Body field while the form scrolls. */
-[class*="MarkdownControl"],
-[class*="EditorControlPane"],
-[class*="EditorContainer"],
-[class*="EditorMain"] {
-  overflow: visible !important;
-}
-
-[class*="MarkdownControl"] [class*="Toolbar"],
-[class*="MarkdownControl"] [class*="toolbar"] {
-  position: static !important;
-  top: auto !important;
-}
-
-.admin-markdown-field {
-  --admin-toolbar-space: 88px;
-  overflow: visible !important;
-}
-
-.EasyMDEContainer,
-.admin-markdown-field .EasyMDEContainer {
-  display: flex !important;
-  flex-direction: column !important;
-}
-
-.editor-toolbar,
-.EasyMDEContainer .editor-toolbar,
-.admin-markdown-field .editor-toolbar,
-.admin-markdown-toolbar {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  z-index: 2 !important;
-  display: flex !important;
-  flex-wrap: wrap !important;
-  align-items: center !important;
-  order: 0 !important;
-  width: auto !important;
-  min-height: 58px !important;
-  margin: 0 !important;
-  transform: none !important;
-  clear: both !important;
-}
-
-.CodeMirror,
-.EasyMDEContainer .CodeMirror,
-.admin-markdown-field .CodeMirror {
-  order: 1 !important;
-  margin-top: var(--admin-toolbar-space) !important;
-}
-
-.CodeMirror-scroll,
-.admin-markdown-field .CodeMirror-scroll,
-.admin-markdown-field .CodeMirror-sizer,
-.admin-markdown-field .CodeMirror-lines,
-.admin-markdown-editor-part {
-  padding-top: 22px !important;
-}
-
-.admin-markdown-field textarea,
-.admin-markdown-field [contenteditable="true"],
-.admin-markdown-field [class*="CodeMirror"],
-.admin-markdown-field [class*="codeMirror"] {
-  position: relative !important;
-  z-index: 0 !important;
-  min-height: 360px !important;
-  padding-top: var(--admin-toolbar-space) !important;
-  scroll-margin-top: 96px !important;
-}
-
-.admin-markdown-field .CodeMirror pre {
-  padding-top: 4px !important;
+textarea[name="body"],
+[name="body"] textarea {
+  min-height: 520px !important;
+  padding: 18px !important;
+  font-family: Consolas, "Courier New", monospace !important;
+  font-size: 15px !important;
+  line-height: 1.75 !important;
+  white-space: pre-wrap !important;
 }
 
 a,
