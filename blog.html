@@ -33,50 +33,6 @@
       line-height: 1.65;
     }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 26px;
-      min-height: 78px;
-      padding: 18px clamp(22px, 5vw, 64px);
-      border-bottom: 1px solid var(--line);
-      background: rgba(247, 242, 237, 0.96);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: clamp(14px, 2vw, 28px);
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    .nav-links a,
-    .nav-cta {
-      color: var(--ink);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .nav-links a.active {
-      color: var(--tan);
-    }
-
-    .nav-cta {
-      border: 1px solid var(--ink);
-      padding: 12px 16px;
-      white-space: nowrap;
-    }
-
     img {
       display: block;
       max-width: 100%;
@@ -314,15 +270,6 @@
     .empty.is-visible { display: block; }
 
     @media (max-width: 900px) {
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-      }
-
       .featured,
       .grid,
       .blog-tools {
@@ -489,7 +436,7 @@ fbq('init', '4531065853843983');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
-  <link rel="stylesheet" href="/assets/css/nav-footer.css">
+  <link rel="stylesheet" href="/assets/css/nav-footer.css?v=20260618-mobile-nav">
 </head>
 <body>
   <noscript><img height="1" width="1" style="display:none"
@@ -728,7 +675,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       });
   </script>
   <div data-include="/includes/footer.html"></div>
-  <script src="/assets/js/includes.js" defer></script>
+  <script src="/assets/js/includes.js?v=20260618-mobile-nav" defer></script>
   <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
