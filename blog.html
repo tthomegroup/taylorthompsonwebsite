@@ -329,6 +329,151 @@
         grid-template-columns: 1fr;
       }
     }
+
+    @media (max-width: 760px) {
+      body {
+        overflow-x: hidden;
+      }
+
+      .blog-page {
+        width: min(100% - 32px, 560px);
+        padding: 36px 0 58px;
+      }
+
+      .page-title {
+        margin-bottom: 22px;
+        font-size: clamp(42px, 15vw, 58px);
+      }
+
+      .featured {
+        gap: 22px;
+        padding: 18px 0 38px;
+        margin-bottom: 28px;
+      }
+
+      .featured img {
+        aspect-ratio: 4 / 3;
+      }
+
+      .featured h2 {
+        margin: 10px 0 16px;
+        font-size: clamp(32px, 10vw, 42px);
+      }
+
+      .featured-excerpt {
+        margin-bottom: 18px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .meta {
+        gap: 8px 16px;
+        margin-bottom: 18px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+
+      .blog-tools {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .blog-tools input,
+      .blog-tools select {
+        min-height: 52px;
+        font-size: 16px;
+      }
+
+      .filters {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin: 0 -16px 24px;
+        padding: 0 16px 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .filters::-webkit-scrollbar {
+        display: none;
+      }
+
+      .filter {
+        flex: 0 0 auto;
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 10px;
+        letter-spacing: 0.1em;
+        white-space: nowrap;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .card img {
+        aspect-ratio: 16 / 10;
+      }
+
+      .card-body {
+        padding: 22px 20px 24px;
+      }
+
+      .card h3 {
+        margin: 14px 0 12px;
+        font-size: 29px;
+        line-height: 1.12;
+      }
+
+      .card p {
+        margin-bottom: 22px;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+
+      .button,
+      .card .button {
+        width: 100%;
+        padding: 13px 18px;
+        text-align: center;
+      }
+
+      .pagination {
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .page-arrow {
+        width: 46px;
+        height: 46px;
+      }
+
+      .page-status {
+        min-width: 84px;
+        font-size: 10px;
+        letter-spacing: 0.12em;
+      }
+
+      .empty {
+        padding: 26px 20px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .blog-page {
+        width: calc(100% - 28px);
+      }
+
+      .featured {
+        padding-top: 10px;
+      }
+
+      .card h3 {
+        font-size: 27px;
+      }
+    }
   </style>
   <!-- Meta Pixel Code -->
 <script>
