@@ -136,9 +136,45 @@
     .featured-section,.all-reviews-section,.platform-section{padding:64px 32px;}
     .featured-grid{grid-template-columns:1fr;}
     .reviews-masonry{grid-template-columns:1fr;}
+    #featured-reviews.featured-grid,
+    #more-reviews.reviews-masonry,
+    .platform-grid{
+      grid-template-columns:1fr !important;
+      max-width:560px !important;
+      width:100%;
+    }
+    .featured-card,
+    .review-card{
+      width:100%;
+      min-width:0;
+      padding:34px 26px;
+    }
+    .review-text{
+      font-size:15px;
+      line-height:1.75;
+      overflow-wrap:break-word;
+      word-break:normal;
+    }
+    .review-stars{
+      letter-spacing:2px;
+      white-space:nowrap;
+    }
+    .all-reviews-header .section-title{
+      max-width:560px;
+      margin-left:auto;
+      margin-right:auto;
+    }
     .platform-grid{grid-template-columns:1fr;}
     .leave-section{padding:56px 32px;flex-direction:column;}
     .footer-top{grid-template-columns:1fr 1fr;}footer{padding:48px 32px 24px;}
+  }
+  @media(max-width:560px){
+    .featured-section,.all-reviews-section,.platform-section{padding:52px 22px;}
+    .featured-header,.all-reviews-header{margin-bottom:36px;}
+    .section-title{font-size:clamp(32px,10vw,42px);}
+    .featured-card,.review-card{padding:32px 22px;}
+    .review-card::before{left:18px;}
+    .review-pagination{flex-wrap:wrap;}
   }
 </style>
   <link rel="icon" href="/assets/images/favicon.png" type="image/png">
@@ -363,8 +399,8 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     const nextButton = document.getElementById('review-next');
     const totalPages = Math.max(1, Math.ceil(moreReviews.length / reviewsPerPage));
 
-    moreContainer.style.gridTemplateColumns = 'repeat(3, minmax(0, 1fr))';
-    moreContainer.style.maxWidth = '1280px';
+    moreContainer.style.gridTemplateColumns = '';
+    moreContainer.style.maxWidth = '';
     currentReviewPage = Math.min(currentReviewPage, totalPages);
 
     if (!moreReviews.length) {
