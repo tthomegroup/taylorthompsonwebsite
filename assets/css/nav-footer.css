@@ -281,6 +281,7 @@ body {
   .site-nav-toggle {
     display: inline-flex;
     align-items: center;
+    flex-direction: column;
     justify-content: center;
     flex: 0 0 auto;
     order: 1;
