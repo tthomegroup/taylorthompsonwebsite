@@ -1593,7 +1593,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       const stars = "★".repeat(rating);
 
       return `
-        <div class="review-card fade-up">
+        <div class="review-card">
           <div class="review-stars">${stars}</div>
           <p class="review-text">&ldquo;${escapeReviewHtml(review.text)}&rdquo;</p>
           <div class="review-author">${escapeReviewHtml(review.author)}</div>
@@ -1644,7 +1644,8 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
     fetch("/assets/data/reviews.json")
       .then(response => response.json())
-      .then(reviews => {
+      .then(data => {
+        const reviews = Array.isArray(data) ? data : data.reviews || [];
         homeReviews = reviews.filter(review => review.placement !== "featured");
         renderHomeReviews();
       })
