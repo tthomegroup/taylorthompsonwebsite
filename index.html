@@ -1446,12 +1446,24 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 <style>
   .home-reviews-section {
     padding: 80px;
-    background: var(--cream, #faf6f1);
+    background: #000;
   }
 
   .home-reviews-header {
     text-align: center;
     margin-bottom: 48px;
+  }
+
+  .home-reviews-section .section-eyebrow {
+    color: var(--tan-light, #c2a894);
+  }
+
+  .home-reviews-section .section-title {
+    color: #fff;
+  }
+
+  .home-reviews-section .section-title em {
+    color: var(--tan-light, #c2a894);
   }
 
   .home-reviews-section .reviews-masonry {
@@ -1513,15 +1525,50 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
   }
 
   .home-reviews-section .review-source {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 3px 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 28px;
+    margin-top: 14px;
+    padding: 4px 10px;
+    background: #fff;
     border: 1px solid var(--tan-pale, #ddcebe);
     color: var(--mid, #5a4a40);
+    line-height: 1;
+  }
+
+  .home-reviews-section .review-source-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  .home-reviews-section .review-source-google .g-blue { color: #4285f4; }
+  .home-reviews-section .review-source-google .g-red { color: #ea4335; }
+  .home-reviews-section .review-source-google .g-yellow { color: #fbbc05; }
+  .home-reviews-section .review-source-google .g-green { color: #34a853; }
+
+  .home-reviews-section .review-source-zillow {
+    color: #006aff;
+    font-size: 15px;
+    font-weight: 800;
+  }
+
+  .home-reviews-section .review-source-facebook,
+  .home-reviews-section .review-source-socials {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #1877f2;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 800;
   }
 
   .home-reviews-section .review-pagination {
@@ -1591,6 +1638,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     function reviewCard(review) {
       const rating = Math.min(5, Math.max(1, Number(review.rating) || 5));
       const stars = "★".repeat(rating);
+      const sourceLogo = reviewSourceLogo(review.source);
 
       return `
         <div class="review-card">
@@ -1598,9 +1646,35 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           <p class="review-text">&ldquo;${escapeReviewHtml(review.text)}&rdquo;</p>
           <div class="review-author">${escapeReviewHtml(review.author)}</div>
           <div class="review-detail">${escapeReviewHtml(review.detail)}</div>
-          <span class="review-source">Verified ${escapeReviewHtml(review.source)} Review</span>
+          <span class="review-source" title="${escapeReviewHtml(review.source)} review">${sourceLogo}</span>
         </div>
       `;
+    }
+
+    function reviewSourceLogo(source) {
+      const value = String(source || "").toLowerCase();
+
+      if (value.includes("google")) {
+        return `
+          <span class="review-source-logo review-source-google" aria-label="Google">
+            <span class="g-blue">G</span><span class="g-red">o</span><span class="g-yellow">o</span><span class="g-blue">g</span><span class="g-green">l</span><span class="g-red">e</span>
+          </span>
+        `;
+      }
+
+      if (value.includes("zillow")) {
+        return '<span class="review-source-logo review-source-zillow" aria-label="Zillow">Zillow</span>';
+      }
+
+      if (value.includes("facebook")) {
+        return '<span class="review-source-logo review-source-facebook" aria-label="Facebook">f</span>';
+      }
+
+      if (value.includes("social")) {
+        return '<span class="review-source-logo review-source-socials" aria-label="Socials">@</span>';
+      }
+
+      return '<span class="review-source-logo" aria-label="' + escapeReviewHtml(source || "Review") + '">' + escapeReviewHtml(source || "Review") + '</span>';
     }
 
     function renderHomeReviews() {
