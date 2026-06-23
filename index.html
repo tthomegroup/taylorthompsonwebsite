@@ -1419,9 +1419,74 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
 <div id="TestimonialTree_Widget_71605"></div>
 <script type="text/javascript" src="https://application.testimonialtree.com/api/v1/widgets/script?widgetid=71605"></script>
-
-
   </div>
+
+<div class="reviews-carousel-wrap">
+  <button class="review-arrow review-arrow-left" type="button" aria-label="Previous reviews">
+    &larr;
+  </button>
+
+  <div class="reviews-masonry home-reviews-grid" id="home-reviews">
+    <!-- Review cards go here -->
+  </div>
+
+  <button class="review-arrow review-arrow-right" type="button" aria-label="Next reviews">
+    &rarr;
+  </button>
+</div>
+
+<style>
+  .reviews-carousel-wrap {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    align-items: center;
+    gap: 18px;
+    width: min(1280px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+
+  .home-reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .review-arrow {
+    width: 52px;
+    height: 52px;
+    border: 1px solid #c8ad9a;
+    background: transparent;
+    color: #050505;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .review-arrow:hover {
+    background: #a68068;
+    border-color: #a68068;
+    color: #fff;
+  }
+
+  @media (max-width: 980px) {
+    .home-reviews-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .reviews-carousel-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .home-reviews-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .review-arrow {
+      width: 100%;
+    }
+  }
+</style>
 
 </section>
 
