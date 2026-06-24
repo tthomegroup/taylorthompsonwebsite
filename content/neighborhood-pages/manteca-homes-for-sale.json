@@ -1,0 +1,58 @@
+{
+  "published": true,
+  "title": "Manteca Homes for Sale",
+  "slug": "manteca-homes-for-sale",
+  "metaDescription": "Search Manteca homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.",
+  "city": "Manteca",
+  "county": "San Joaquin County",
+  "eyebrow": "Manteca Real Estate",
+  "heroTitle": "Manteca Homes for *Sale*",
+  "heroIntro": "Explore homes for sale in Manteca, compare local neighborhoods, and get a feel for what makes this San Joaquin County city a popular choice for Central Valley buyers.",
+  "heroImage": "/assets/images/manteca.jpg",
+  "heroImageAlt": "Homes and neighborhoods in Manteca, California",
+  "quickFacts": [
+    {
+      "label": "County",
+      "value": "San Joaquin"
+    },
+    {
+      "label": "Region",
+      "value": "Central Valley"
+    },
+    {
+      "label": "Popular For",
+      "value": "Commuters"
+    },
+    {
+      "label": "Page Type",
+      "value": "IDX Search"
+    }
+  ],
+  "introHeading": "Looking for a Home in *Manteca?*",
+  "introText": "Manteca offers a convenient Central Valley location with access to shopping, commuter routes, parks, and established neighborhoods. Buyers are often drawn to the area for its mix of suburban comfort, newer communities, and proximity to both the Bay Area and nearby Central Valley cities.\n\nWhether you are looking for your first home, more space, or a strategic move within San Joaquin County, this page can be used as a local search hub for current Manteca listings.",
+  "idxHeading": "Search Manteca Homes for Sale",
+  "idxIntro": "Use the live IDX search below to browse current Manteca listings. You can paste the city-specific IDX Broker embed for Manteca into this page from the admin dashboard.",
+  "idxEmbed": "",
+  "neighborhoods": [
+    {
+      "name": "Woodward Park Area",
+      "description": "Known for newer homes, parks, and a suburban feel with convenient access to shopping and daily amenities."
+    },
+    {
+      "name": "Central Manteca",
+      "description": "A practical option for buyers who want access to established neighborhoods, local services, and commute routes."
+    },
+    {
+      "name": "South Manteca",
+      "description": "Popular with buyers looking for residential communities and access toward Highway 120 and nearby cities."
+    }
+  ],
+  "lifestyleHeading": "What Makes Manteca Appealing",
+  "lifestyleText": "Manteca is often a good fit for buyers who want a Central Valley lifestyle while still staying connected to larger job centers. Local parks, shopping, restaurants, and community amenities give the city a practical everyday feel.\n\nFor many buyers, the appeal is simple: more room, more options, and a location that can work for both local and commuter lifestyles.",
+  "marketHeading": "Manteca Market Notes",
+  "marketText": "The Manteca real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to commuter routes. A newer home in one part of town may perform differently than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales.",
+  "ctaHeading": "Thinking About Buying or Selling in *Manteca?*",
+  "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+  "ctaButtonText": "Contact Taylor",
+  "ctaButtonLink": "/contact"
+}

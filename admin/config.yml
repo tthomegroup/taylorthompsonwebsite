@@ -319,3 +319,165 @@ collections:
         modes:
           - rich_text
           - raw
+
+  - name: "neighborhood_pages"
+    label: "Neighborhood / IDX Landing Pages"
+    label_singular: "Neighborhood Page"
+    folder: "content/neighborhood-pages"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    summary: "{{title}} - /{{slug}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Published"
+        name: "published"
+        widget: "boolean"
+        default: true
+
+      - label: "Page Title"
+        name: "title"
+        widget: "string"
+        hint: "Example: Manteca Homes for Sale"
+
+      - label: "Page URL Slug"
+        name: "slug"
+        widget: "string"
+        hint: "Example: manteca-homes-for-sale. This creates /manteca-homes-for-sale/"
+
+      - label: "Meta Description"
+        name: "metaDescription"
+        widget: "text"
+        required: false
+        hint: "Short Google description, around 1-2 sentences."
+
+      - label: "City / Area Name"
+        name: "city"
+        widget: "string"
+        hint: "Example: Manteca"
+
+      - label: "County"
+        name: "county"
+        widget: "string"
+        required: false
+        hint: "Example: San Joaquin County"
+
+      - label: "Hero Eyebrow"
+        name: "eyebrow"
+        widget: "string"
+        default: "Central Valley Homes"
+
+      - label: "Hero Headline"
+        name: "heroTitle"
+        widget: "string"
+        hint: "Example: Manteca Homes for Sale"
+
+      - label: "Hero Intro"
+        name: "heroIntro"
+        widget: "text"
+        hint: "Short intro that explains who this page is for."
+
+      - label: "Hero Image"
+        name: "heroImage"
+        widget: "image"
+        required: false
+
+      - label: "Hero Image Alt Text"
+        name: "heroImageAlt"
+        widget: "string"
+        required: false
+
+      - label: "Quick Facts"
+        name: "quickFacts"
+        widget: "list"
+        required: false
+        collapsed: true
+        summary: "{{fields.label}}: {{fields.value}}"
+        fields:
+          - { label: "Label", name: "label", widget: "string" }
+          - { label: "Value", name: "value", widget: "string" }
+
+      - label: "Intro Heading"
+        name: "introHeading"
+        widget: "string"
+        required: false
+
+      - label: "Intro Content"
+        name: "introText"
+        widget: "markdown"
+        required: false
+        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+        modes: [rich_text, raw]
+
+      - label: "IDX Search Heading"
+        name: "idxHeading"
+        widget: "string"
+        default: "Search Homes for Sale"
+
+      - label: "IDX Search Intro"
+        name: "idxIntro"
+        widget: "text"
+        required: false
+
+      - label: "IDX Embed Code"
+        name: "idxEmbed"
+        widget: "text"
+        required: false
+        hint: "Paste the IDX Broker embed code for this city or search here. Script, iframe, and div embeds are okay."
+
+      - label: "Popular Neighborhoods / Areas"
+        name: "neighborhoods"
+        widget: "list"
+        required: false
+        collapsed: true
+        summary: "{{fields.name}}"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Description", name: "description", widget: "text", required: false }
+
+      - label: "Lifestyle Heading"
+        name: "lifestyleHeading"
+        widget: "string"
+        required: false
+
+      - label: "Lifestyle Content"
+        name: "lifestyleText"
+        widget: "markdown"
+        required: false
+        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+        modes: [rich_text, raw]
+
+      - label: "Market Heading"
+        name: "marketHeading"
+        widget: "string"
+        required: false
+
+      - label: "Market Content"
+        name: "marketText"
+        widget: "markdown"
+        required: false
+        buttons: [bold, italic, link, heading-two, heading-three, bulleted-list, numbered-list]
+        modes: [rich_text, raw]
+
+      - label: "CTA Heading"
+        name: "ctaHeading"
+        widget: "string"
+        default: "Thinking About Buying or Selling Here?"
+
+      - label: "CTA Text"
+        name: "ctaText"
+        widget: "text"
+        required: false
+
+      - label: "CTA Button Text"
+        name: "ctaButtonText"
+        widget: "string"
+        default: "Contact Taylor"
+
+      - label: "CTA Button Link"
+        name: "ctaButtonLink"
+        widget: "string"
+        default: "/contact"

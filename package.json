@@ -1,9 +1,10 @@
 {
   "scripts": {
-    "build": "node scripts/update-city-pages.js && node scripts/apply-shared-layout.js && node scripts/build-blog.js && node scripts/build-reviews.js",
+    "build": "node scripts/update-city-pages.js && node scripts/build-neighborhood-pages.js && node scripts/apply-shared-layout.js && node scripts/build-blog.js && node scripts/build-reviews.js",
     "blog:build": "node scripts/build-blog.js",
     "blog:migrate": "node scripts/migrate-blog-json.js",
     "reviews:build": "node scripts/build-reviews.js",
+    "neighborhoods:build": "node scripts/build-neighborhood-pages.js",
     "reviews:migrate-organizer": "node scripts/migrate-reviews-organizer.js"
   }
 }
