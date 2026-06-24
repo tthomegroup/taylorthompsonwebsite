@@ -324,8 +324,6 @@ collections:
     label: "Neighborhood / IDX Landing Pages"
     label_singular: "Neighborhood Page"
     folder: "content/neighborhood-pages"
-    media_folder: "assets/images/neighborhood-pages"
-    public_folder: "/assets/images/neighborhood-pages"
     create: true
     slug: "{{slug}}"
     extension: "json"
