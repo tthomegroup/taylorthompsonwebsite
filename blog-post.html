@@ -291,6 +291,18 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
         .replace(/<((?:https?:\/\/|mailto:|tel:)[^>\s]+)>/gi, function (_, href) {
           links.push(linkHtml(href, href));
           return tokenPrefix + (links.length - 1) + tokenSuffix;
+        })
+        .replace(/(^|[\s(])((?:https?:\/\/)[^\s<>()]+)/gi, function (_, prefix, href) {
+          var trailing = "";
+          var cleanHref = href;
+
+          while (/[.,!?;:]$/.test(cleanHref)) {
+            trailing = cleanHref.slice(-1) + trailing;
+            cleanHref = cleanHref.slice(0, -1);
+          }
+
+          links.push(linkHtml(cleanHref, cleanHref));
+          return prefix + tokenPrefix + (links.length - 1) + tokenSuffix + trailing;
         });
 
       return escapeHtml(text)
