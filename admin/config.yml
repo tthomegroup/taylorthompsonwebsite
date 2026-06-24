@@ -324,11 +324,13 @@ collections:
     label: "Neighborhood / IDX Landing Pages"
     label_singular: "Neighborhood Page"
     folder: "content/neighborhood-pages"
+    media_folder: "assets/images/neighborhood-pages"
+    public_folder: "/assets/images/neighborhood-pages"
     create: true
     slug: "{{slug}}"
     extension: "json"
     format: "json"
-    identifier_field: "title"
+    identifier_field: "slug"
     summary: "{{title}} - /{{slug}}"
     editor:
       preview: false
@@ -347,6 +349,9 @@ collections:
         name: "slug"
         widget: "string"
         hint: "Example: manteca-homes-for-sale. This creates /manteca-homes-for-sale/"
+        pattern:
+          - "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          - "Use lowercase letters, numbers, and dashes only. Example: ceres-homes-for-sale"
 
       - label: "Meta Description"
         name: "metaDescription"
