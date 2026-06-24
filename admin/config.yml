@@ -387,6 +387,7 @@ collections:
         name: "heroImage"
         widget: "image"
         required: false
+        hint: "Use JPG, PNG, or WebP. If your phone saves the image as .jfif, upload or select the .jpg version so it appears in the gallery."
 
       - label: "Hero Image Alt Text"
         name: "heroImageAlt"
