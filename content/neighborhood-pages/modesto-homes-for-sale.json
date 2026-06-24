@@ -14,10 +14,6 @@
     {
       "name": "Del Rio",
       "description": "Known for larger homes, golf course living, and one of Modesto's most established upscale communities."
-    },
-    {
-      "name": "La Loma",
-      "description": "Offers historic charm, unique architecture, and a central location near parks and schools."
     }
   ],
   "marketHeading": "Modesto Market Notes",
@@ -56,6 +52,7 @@
     }
   ],
   "ctaButtonLink": "/contact",
+  "idxEmbed": "<script charset=\"UTF-8\" type=\"text/javascript\" id=\"idxwidgetsrc-157245\" src=\"//taylorthompsonhomegroup.idxbroker.com/idx/widgets/157245\"></script>\n",
   "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
   "heroTitle": "Modesto Homes for *Sale*"
 }
