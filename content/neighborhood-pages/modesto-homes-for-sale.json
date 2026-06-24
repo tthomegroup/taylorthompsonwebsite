@@ -1,0 +1,58 @@
+{
+  "heroImage": "/assets/images/uploads/modesto-landing.jpg",
+  "lifestyleText": "Modesto offers a blend of everyday convenience, established neighborhoods, local businesses, and community events that appeal to a wide range of homebuyers. Residents enjoy access to parks, shopping centers, dining, entertainment, and recreational opportunities throughout the city.\n\nFor many buyers, Modesto provides the flexibility of larger city amenities while maintaining a strong sense of community. Its central location, variety of housing options, and access to major transportation routes continue to make it a popular choice throughout the Central Valley.",
+  "idxHeading": "Search Modesto Homes for Sale",
+  "neighborhoods": [
+    {
+      "name": "College Area",
+      "description": "Known for character homes, mature trees, and proximity to schools and downtown amenities.\n"
+    },
+    {
+      "name": "Village One",
+      "description": "Popular for newer homes, family friendly streets, and convenient access to shopping and parks.\n"
+    },
+    {
+      "name": "Del Rio",
+      "description": "Known for larger homes, golf course living, and one of Modesto's most established upscale communities."
+    }
+  ],
+  "marketHeading": "Modesto Market Notes",
+  "heroImageAlt": "Homes and neighborhoods in Modesto, California",
+  "marketText": "The Modesto real estate market can vary by neighborhood, home age, lot size, upgrades, and location throughout the city. A property in one area may offer a different experience and value proposition than a similar home elsewhere in Modesto.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, neighborhood characteristics, days on market, and recent comparable sales when evaluating opportunities.",
+  "eyebrow": "Modesto Real Estate",
+  "county": "Stanislaus County",
+  "city": "Modesto",
+  "slug": "modesto-homes-for-sale",
+  "lifestyleHeading": "What Makes Modesto Appealing",
+  "published": true,
+  "ctaButtonText": "Contact Taylor",
+  "idxIntro": "Browse current homes for sale in Modesto using the live property search below. Explore available listings, compare home features, and discover opportunities across a variety of neighborhoods throughout the city.",
+  "ctaHeading": "Thinking About Buying or Selling in *Modesto?*",
+  "heroIntro": "Explore homes for sale in Modesto, compare local neighborhoods, and discover what makes this vibrant Stanislaus County city one of the Central Valley's most popular places to call home.",
+  "introHeading": "Looking for a Home in *Modesto?*",
+  "metaDescription": "Search Modesto homes for sale and explore neighborhoods, lifestyle, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+  "title": "Modesto Homes for Sale",
+  "introText": "Modesto offers a diverse selection of homes, established neighborhoods, local shopping, dining, parks, and convenient access throughout the Central Valley. As the largest city in Stanislaus County, it continues to attract buyers looking for a balance of amenities, opportunity, and community.\n\nWhether you are searching for your first home, upgrading to more space, or relocating within the region, Modesto provides a variety of housing options and neighborhoods to explore.",
+  "quickFacts": [
+    {
+      "label": "Population",
+      "value": "Approximately 220,000 Residents"
+    },
+    {
+      "label": "Known For",
+      "value": "Family Friendly Neighborhoods, Agriculture, and Community Events"
+    },
+    {
+      "label": "Major Employer",
+      "value": "Healthcare, Education, Agriculture, Manufacturing, and Logistics"
+    },
+    {
+      "label": "Life Style",
+      "value": "Urban Amenities with a Strong Community Feel"
+    }
+  ],
+  "ctaButtonLink": "/contact",
+  "idxEmbed": "<script charset=\"UTF-8\" type=\"text/javascript\" id=\"idxwidgetsrc-157245\" src=\"//taylorthompsonhomegroup.idxbroker.com/idx/widgets/157245\"></script>\n",
+  "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+  "heroTitle": "Modesto Homes for *Sale*"
+}
