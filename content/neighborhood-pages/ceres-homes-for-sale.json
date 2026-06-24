@@ -1,0 +1,56 @@
+{
+  "lifestyleText": "Current listing prices are around $499,500, though prices vary by neighborhood and property type.",
+  "idxHeading": "Search All Ceres Homes",
+  "neighborhoods": [
+    {
+      "name": "Eastgate",
+      "description": "Known for well maintained homes, convenient shopping access, and family oriented streets."
+    },
+    {
+      "name": "Mayfield",
+      "description": "Offers newer construction homes and proximity to parks and schools."
+    },
+    {
+      "name": "East Ceres",
+      "description": "Popular among buyers looking for larger lots and newer developments."
+    }
+  ],
+  "marketHeading": "Ceres Real Estate Market",
+  "heroImageAlt": "Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today.",
+  "marketText": "The Ceres housing market continues to attract buyers looking for affordability, convenience, and a strong sense of community. From charming established neighborhoods to newer construction opportunities, there is something for a wide range of lifestyles and budgets.\n\nWhether you are purchasing your first home, upgrading to a larger property, or relocating to the Central Valley, understanding local market conditions can help you make a more informed decision. Comparing similar homes, neighborhood trends, and property features is often more valuable than focusing solely on price.",
+  "eyebrow": "Ceres Real Estate",
+  "county": "Stanislaus County",
+  "city": "Ceres",
+  "slug": "ceres-homes-for-sale",
+  "lifestyleHeading": "What is the average home price in Ceres?",
+  "published": true,
+  "ctaButtonText": "Contact Taylor",
+  "ctaHeading": "Thinking About Buying or Selling in *Ceres?*",
+  "heroIntro": "Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today.",
+  "introHeading": "Looking for a Home in *Ceres?*",
+  "metaDescription": "Search Ceres homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.",
+  "title": "Ceres Homes for Sale",
+  "introText": "Located in southern Stanislaus County, Ceres offers homebuyers a convenient location just minutes from Modesto while maintaining a strong community atmosphere. Buyers are attracted to Ceres for its relatively affordable home prices, family friendly neighborhoods, newer housing developments, and easy Highway 99 access. With a population of approximately 49,000 residents, Ceres continues to grow while remaining one of the Central Valley's most accessible housing markets.",
+  "quickFacts": [
+    {
+      "label": "Population",
+      "value": "Approximately 49,000"
+    },
+    {
+      "value": "Stanislaus County",
+      "label": "County"
+    },
+    {
+      "label": "Median Home Value",
+      "value": "Approximately $424,800"
+    },
+    {
+      "label": "Average Commut",
+      "value": "33.8 Minutes"
+    }
+  ],
+  "ctaButtonLink": "/contact",
+  "idxEmbed": "<script charset=\"UTF-8\" type=\"text/javascript\" id=\"idxwidgetsrc-157057\" src=\"//taylorthompsonhomegroup.idxbroker.com/idx/widgets/157057\"></script>",
+  "ctaText": "Whether you're buying your first home, relocating to the Central Valley, or searching for more space, Taylor Thompson Home Group can help you navigate the Ceres real estate market with confidence.",
+  "heroTitle": "Ceres Homes for *Sale*"
+}
