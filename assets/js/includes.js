@@ -83,6 +83,114 @@
     });
   }
 
+  function setupContactReminderPopup() {
+    var path = cleanPath(window.location.pathname);
+    if (
+      path === "/contact" ||
+      path === "/thank-you" ||
+      path.indexOf("/admin") === 0
+    ) {
+      return;
+    }
+
+    var delayMs = 5 * 60 * 1000;
+    var dismissedKey = "tthgContactReminderDismissed";
+    var startedKey = "tthgContactReminderStartedAt";
+
+    try {
+      if (window.sessionStorage.getItem(dismissedKey) === "true") return;
+    } catch (error) {}
+
+    var now = Date.now();
+    var startedAt = now;
+
+    try {
+      startedAt = parseInt(window.sessionStorage.getItem(startedKey), 10);
+      if (!startedAt || startedAt > now) {
+        startedAt = now;
+        window.sessionStorage.setItem(startedKey, String(startedAt));
+      }
+    } catch (error) {
+      startedAt = now;
+    }
+
+    window.setTimeout(showContactReminder, Math.max(0, delayMs - (now - startedAt)));
+
+    function showContactReminder() {
+      try {
+        if (window.sessionStorage.getItem(dismissedKey) === "true") return;
+      } catch (error) {}
+
+      if (document.getElementById("contact-reminder-popup")) return;
+
+      var overlay = document.createElement("div");
+      overlay.className = "contact-reminder";
+      overlay.id = "contact-reminder-popup";
+      overlay.setAttribute("role", "dialog");
+      overlay.setAttribute("aria-modal", "true");
+      overlay.setAttribute("aria-labelledby", "contact-reminder-title");
+      overlay.innerHTML =
+        '<div class="contact-reminder__backdrop" data-contact-reminder-close></div>' +
+        '<div class="contact-reminder__panel">' +
+        '  <button class="contact-reminder__close" type="button" aria-label="Close contact reminder" data-contact-reminder-close>&times;</button>' +
+        '  <p class="contact-reminder__eyebrow">Send Us a Message</p>' +
+        '  <h2 class="contact-reminder__title" id="contact-reminder-title">We&rsquo;ll Respond<br><em>Within 24 Hours</em></h2>' +
+        '  <p class="contact-reminder__body">Still browsing? We are happy to answer questions, talk through timing, or point you in the right direction.</p>' +
+        '  <form class="contact-reminder__form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">' +
+        '    <input type="hidden" name="form-name" value="contact">' +
+        '    <input type="hidden" name="subject" value="New Website Contact Reminder Submission">' +
+        '    <p class="contact-reminder__bot-field"><label>Do not fill this out: <input name="bot-field"></label></p>' +
+        '    <div class="contact-reminder__row">' +
+        '      <label class="contact-reminder__group"><span>First Name</span><input type="text" name="firstName" placeholder="Jane"></label>' +
+        '      <label class="contact-reminder__group"><span>Last Name</span><input type="text" name="lastName" placeholder="Smith"></label>' +
+        '    </div>' +
+        '    <div class="contact-reminder__row">' +
+        '      <label class="contact-reminder__group"><span>Email</span><input type="email" name="email" placeholder="jane@email.com" required></label>' +
+        '      <label class="contact-reminder__group"><span>Phone</span><input type="tel" name="phone" placeholder="(209) 000-0000"></label>' +
+        '    </div>' +
+        '    <label class="contact-reminder__group"><span>How Can We Help?</span><select name="interest">' +
+        '      <option>I want to sell my home</option>' +
+        '      <option>I want to buy a home</option>' +
+        '      <option>I want a free home valuation</option>' +
+        '      <option>I&rsquo;m interested in real estate investing</option>' +
+        '      <option>I have a general question</option>' +
+        '      <option>I&rsquo;d like to refer someone</option>' +
+        '    </select></label>' +
+        '    <label class="contact-reminder__group"><span>Message</span><textarea name="message" placeholder="Tell us about your situation, your goals, or just say hello - we&rsquo;d love to hear from you."></textarea></label>' +
+        '    <button class="contact-reminder__submit" type="submit">Send Message</button>' +
+        '  </form>' +
+        '</div>';
+
+      document.body.appendChild(overlay);
+      window.setTimeout(function () {
+        overlay.classList.add("is-visible");
+      }, 20);
+
+      overlay.addEventListener("click", function (event) {
+        if (event.target.closest("[data-contact-reminder-close]")) {
+          closeContactReminder();
+        }
+      });
+
+      document.addEventListener("keydown", closeOnEscape);
+
+      function closeOnEscape(event) {
+        if (event.key === "Escape") closeContactReminder();
+      }
+
+      function closeContactReminder() {
+        try {
+          window.sessionStorage.setItem(dismissedKey, "true");
+        } catch (error) {}
+        document.removeEventListener("keydown", closeOnEscape);
+        overlay.classList.remove("is-visible");
+        window.setTimeout(function () {
+          overlay.remove();
+        }, 220);
+      }
+    }
+  }
+
   function initIncludes() {
     var includes = Array.prototype.slice.call(document.querySelectorAll("[data-include]"));
 
@@ -92,6 +200,7 @@
       setYear();
       moveFooterToBodyEnd();
       setupHomeValueForms();
+      setupContactReminderPopup();
       document.dispatchEvent(new CustomEvent("site:includes-loaded"));
     });
   }

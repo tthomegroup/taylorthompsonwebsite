@@ -259,6 +259,169 @@ body {
   line-height: 1.6;
 }
 
+.contact-reminder {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+  font-family: "Jost", sans-serif;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 220ms ease;
+}
+
+.contact-reminder.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.contact-reminder__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.62);
+  backdrop-filter: blur(4px);
+}
+
+.contact-reminder__panel {
+  position: relative;
+  z-index: 1;
+  width: min(860px, 100%);
+  max-height: calc(100vh - 44px);
+  overflow: auto;
+  padding: clamp(28px, 5vw, 48px);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 80px rgba(5, 5, 5, 0.26);
+  transform: translateY(16px);
+  transition: transform 220ms ease;
+}
+
+.contact-reminder.is-visible .contact-reminder__panel {
+  transform: translateY(0);
+}
+
+.contact-reminder__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 26px;
+  line-height: 1;
+}
+
+.contact-reminder__eyebrow {
+  margin: 0 0 10px;
+  color: var(--tan);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contact-reminder__title {
+  margin: 0 44px 14px 0;
+  color: var(--ink);
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(30px, 4vw, 42px);
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+.contact-reminder__title em {
+  color: var(--tan);
+  font-style: italic;
+}
+
+.contact-reminder__body {
+  max-width: 640px;
+  margin: 0 0 24px;
+  color: var(--mid);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+.contact-reminder__form {
+  display: grid;
+  gap: 16px;
+}
+
+.contact-reminder__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-reminder__group {
+  display: grid;
+  gap: 7px;
+}
+
+.contact-reminder__group span {
+  color: var(--mid);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-reminder__group input,
+.contact-reminder__group select,
+.contact-reminder__group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(166, 128, 104, 0.3);
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 180ms ease;
+}
+
+.contact-reminder__group input:focus,
+.contact-reminder__group select:focus,
+.contact-reminder__group textarea:focus {
+  border-color: var(--tan);
+}
+
+.contact-reminder__group textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.contact-reminder__submit {
+  width: 100%;
+  min-height: 52px;
+  border: 0;
+  background: var(--ink);
+  color: var(--white);
+  cursor: pointer;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: background 180ms ease;
+}
+
+.contact-reminder__submit:hover {
+  background: var(--mid);
+}
+
+.contact-reminder__bot-field {
+  display: none;
+}
+
 @media (max-width: 980px) {
   .site-header .site-nav {
     display: flex !important;
@@ -419,6 +582,25 @@ body {
 
   .footer-legal {
     line-height: 1.45;
+  }
+
+  .contact-reminder {
+    align-items: end;
+    padding: 12px;
+  }
+
+  .contact-reminder__panel {
+    max-height: calc(100vh - 24px);
+    padding: 28px 18px 20px;
+  }
+
+  .contact-reminder__row {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .contact-reminder__title {
+    margin-right: 42px;
   }
 }
 
