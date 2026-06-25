@@ -16,7 +16,7 @@ excerpt: >-
 featuredImage: /assets/images/uploads/taylor-q2.png
 imageAlt: Taylor Thompson celebrating a successful first half of 2026 after
   helping 40 families buy and sell homes throughout California's Central Valley.
-featured: false
+featured: true
 ---
 \### By the Numbers
 
