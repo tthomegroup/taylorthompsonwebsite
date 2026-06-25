@@ -35,13 +35,13 @@ Residents enjoy quick access to:
 * Yosemite National Park for weekend adventures
 * Bay Area and Sacramento via major highways
 
-Whether you're commuting for work or planning a weekend getaway, Ceres makes it easy to stay connected. :contentReference[oaicite:1]{index=1}
+Whether you're commuting for work or planning a weekend getaway, Ceres makes it easy to stay connected.
 
 ### A Community That Continues to Grow
 
 Ceres has experienced steady growth over the past several years with new housing developments, expanding retail options, and continued investment in the community.
 
-The city's long-term vision focuses on creating a balance of housing, shopping, employment opportunities, parks, and a revitalized downtown while preserving its agricultural roots. :contentReference[oaicite:2]{index=2}
+The city's long-term vision focuses on creating a balance of housing, shopping, employment opportunities, parks, and a revitalized downtown while preserving its agricultural roots.
 
 ### Homes for Every Stage of Life
 
@@ -64,7 +64,7 @@ Outdoor living is a big part of the Ceres lifestyle.
 
 Residents enjoy local parks, playgrounds, sports fields, walking paths, and community recreation throughout the year.
 
-One of the area's highlights is **Ceres River Bluff Regional Park**, offering walking trails, open green space, playgrounds, and athletic fields along the Tuolumne River. :contentReference[oaicite:3]{index=3}
+One of the area's highlights is **Ceres River Bluff Regional Park**, offering walking trails, open green space, playgrounds, and athletic fields along the Tuolumne River.
 
 ### Shopping, Dining, and Everyday Convenience
 
@@ -72,7 +72,7 @@ Everything you need is just minutes away.
 
 Ceres offers convenient shopping centers, grocery stores, local restaurants, cafés, and everyday services, while neighboring Modesto expands your options with additional shopping, dining, and entertainment.
 
-As the city continues to grow, residents can expect even more retail and business opportunities in the years ahead. :contentReference[oaicite:4]{index=4}
+As the city continues to grow, residents can expect even more retail and business opportunities in the years ahead.
 
 ### Community Events That Bring People Together
 
@@ -86,7 +86,7 @@ Throughout the year, the city hosts events that bring neighbors together, includ
 * Youth sports
 * Community festivals
 
-These local traditions help create the welcoming atmosphere that makes Ceres feel like home. :contentReference[oaicite:5]{index=5}
+These local traditions help create the welcoming atmosphere that makes Ceres feel like home.
 
 ### Why Buyers Love Ceres
 
