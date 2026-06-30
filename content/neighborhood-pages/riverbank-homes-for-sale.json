@@ -1,0 +1,62 @@
+{
+  "heroImage": "/assets/images/uploads/riverbank-homes-for-sale.jpg",
+  "lifestyleText": "\n\n\nRiverbank combines the charm of a smaller community with convenient access to larger neighboring cities. Residents enjoy parks, walking trails, local restaurants, shopping, and recreational opportunities along the Stanislaus River, creating a comfortable lifestyle for families and professionals alike.\n\nFor many buyers, Riverbank offers more space, a strong sense of community, and a location that provides easy access to employment centers throughout the Central Valley while maintaining a quieter residential feel.",
+  "idxHeading": "Search Riverbank Homes for Sale",
+  "neighborhoods": [
+    {
+      "name": "Crossroads",
+      "description": "Modern homes, family friendly streets, and convenient access to schools and shopping."
+    },
+    {
+      "name": "River Heights",
+      "description": "Established homes, mature landscaping, and close proximity to parks and recreation."
+    },
+    {
+      "name": "Briarwood",
+      "description": "Well maintained homes, quiet residential streets, and easy access to local amenities."
+    },
+    {
+      "name": "Sunrise Estates",
+      "description": "Newer homes, spacious floor plans, and a welcoming neighborhood atmosphere."
+    }
+  ],
+  "marketHeading": "Riverbank Market Notes",
+  "heroImageAlt": "Homes and neighborhoods in Riverbank, California",
+  "marketText": "\n\n\nThe Riverbank real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, parks, and commuter routes. A newer home in one part of the city may offer different features and value than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales to better understand the local market.",
+  "eyebrow": "Central Valley Homes",
+  "county": "Stanislaus County",
+  "city": "Riverbank",
+  "slug": "riverbank-homes-for-sale",
+  "lifestyleHeading": "What Makes Riverbank Appealing",
+  "published": true,
+  "ctaButtonText": "Contact Taylor",
+  "idxIntro": "Browse current homes for sale in Riverbank using the live property search below. Explore available listings, compare home features, and discover opportunities throughout one of Stanislaus County's growing communities.",
+  "ctaHeading": "Thinking About Buying or Selling in *Riverbank?*",
+  "heroIntro": "Explore homes for sale in Riverbank, compare local neighborhoods, and discover why this growing Stanislaus County community is a popular choice for buyers looking for small town charm with convenient access to everything the Central Valley has to offer.",
+  "introHeading": "Looking for a Home in *Riverbank?*",
+  "metaDescription": "Search Riverbank homes for sale and explore neighborhoods, lifestyle, parks, and local real estate opportunities with Taylor Thompson Home Group.",
+  "title": "Riverbank Homes for Sale",
+  "introText": "\n\n\nRiverbank offers buyers a relaxed Central Valley lifestyle with established neighborhoods, newer home communities, local parks, and convenient access to Modesto. Its welcoming atmosphere, scenic location along the Stanislaus River, and growing amenities continue to attract first time buyers, growing families, and those looking for a quieter place to call home.\n\nWhether you are purchasing your first home, looking for more space, or relocating within Stanislaus County, Riverbank offers a variety of housing options to fit different lifestyles and budgets",
+  "quickFacts": [
+    {
+      "label": "County",
+      "value": "Stanislaus County"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 25,000 Residents"
+    },
+    {
+      "label": "Known for",
+      "value": "Small Town Charm, Riverfront Parks, and Family Friendly Neighborhoods"
+    },
+    {
+      "label": "Major employer",
+      "value": "Healthcare, Retail, Education, Agriculture, and Manufacturing"
+    }
+  ],
+  "ctaButtonLink": "/contact",
+  "idxEmbed": "<script charset=\"UTF-8\" type=\"text/javascript\" id=\"idxwidgetsrc-157245\" src=\"//taylorthompsonhomegroup.idxbroker.com/idx/widgets/157245\"></script>",
+  "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+  "heroTitle": "Riverbank Real Estate"
+}
