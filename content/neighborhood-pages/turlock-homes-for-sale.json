@@ -1,0 +1,58 @@
+{
+  "heroImage": "/assets/images/uploads/turlock-homes-for-sale.jpg",
+  "lifestyleText": "\n\n\nTurlock combines the convenience of a growing city with the welcoming feel of a close knit community. Residents enjoy beautiful parks, community events, local farmers markets, excellent dining, and a lively downtown district that brings people together throughout the year.\n\nFor many buyers, Turlock offers outstanding schools, diverse housing options, and a central location that provides convenient access to employment, recreation, and everything the Central Valley has to offer.",
+  "idxHeading": "Search Turlock Homes for Sale",
+  "neighborhoods": [
+    {
+      "name": "Northeast Turlock",
+      "description": "Modern homes, excellent schools, and convenient access to shopping and parks."
+    },
+    {
+      "name": "East Turlock",
+      "description": "Well established neighborhoods with mature trees and spacious homes."
+    },
+    {
+      "name": "Village One at Turlock",
+      "description": "Newer construction, family friendly streets, and nearby community amenities."
+    },
+    {
+      "name": "Downtown Turlock",
+      "description": "Historic charm, walkable streets, and easy access to local dining and shopping."
+    }
+  ],
+  "marketHeading": "Turlock Market Notes",
+  "heroImageAlt": "Homes and neighborhoods in Turlock, California",
+  "marketText": "\n\n\nThe Turlock real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, shopping, and commuter routes. A newer home in one area may offer different features and value than an established property elsewhere in the city.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales to better understand the local market.",
+  "eyebrow": "Turlock Real Estate",
+  "county": "Stanislaus County",
+  "city": "Turlock",
+  "slug": "turlock-homes-for-sale",
+  "lifestyleHeading": "What Makes Turlock Appealing",
+  "published": true,
+  "ctaButtonText": "Contact Taylor",
+  "idxIntro": "Browse current homes for sale in Turlock using the live property search below. Explore available listings, compare home features, and discover opportunities throughout one of Stanislaus County's most desirable communities.",
+  "ctaHeading": "Thinking About Buying or Selling in *Turlock?*",
+  "heroIntro": "Explore homes for sale in Turlock, compare local neighborhoods, and discover why this vibrant Stanislaus County city continues to attract buyers looking for excellent schools, a strong sense of community, and a high quality of life in the Central Valley.",
+  "introHeading": "Looking for a Home in *Turlock?*",
+  "metaDescription": "Search Turlock homes for sale and explore neighborhoods, lifestyle, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+  "title": "Turlock Homes for Sale",
+  "introText": "\n\n\nTurlock offers a unique blend of small town charm, modern amenities, and a thriving local community. Buyers appreciate its well maintained neighborhoods, excellent schools, beautiful parks, and vibrant downtown filled with local restaurants and shops.\n\nWhether you are purchasing your first home, relocating to the Central Valley, or searching for more space, Turlock offers a wide range of housing options to fit different lifestyles and budgets.",
+  "quickFacts": [
+    {
+      "label": "County",
+      "value": "Stanislaus County"
+    },
+    {
+      "label": "Population",
+      "value": "Approximately 75,000 Residents"
+    },
+    {
+      "label": "Known for",
+      "value": "California State University, Stanislaus, agriculture, and vibrant downtown"
+    }
+  ],
+  "ctaButtonLink": "/contact",
+  "idxEmbed": "<script charset=\"UTF-8\" type=\"text/javascript\" id=\"idxwidgetsrc-156885\" src=\"//taylorthompsonhomegroup.idxbroker.com/idx/widgets/156885\"></script>",
+  "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+  "heroTitle": "Turlock Homes for *Sale*"
+}
