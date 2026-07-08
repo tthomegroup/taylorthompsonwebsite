@@ -18,6 +18,10 @@
     {
       "name": "Downtown Turlock",
       "description": "Historic charm, walkable streets, and easy access to local dining and shopping."
+    },
+    {
+      "name": "Monte Vista Crossings",
+      "description": "Popular location with nearby retail, restaurants, and newer residential communities."
     }
   ],
   "marketHeading": "Turlock Market Notes",
@@ -49,6 +53,10 @@
     {
       "label": "Known for",
       "value": "California State University, Stanislaus, agriculture, and vibrant downtown"
+    },
+    {
+      "label": "Housing information",
+      "value": "Historic homes, established neighborhoods, new construction, and custom homes"
     }
   ],
   "ctaButtonLink": "/contact",
