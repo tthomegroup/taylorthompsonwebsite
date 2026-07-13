@@ -11,7 +11,7 @@ excerpt: Escrow is one of the most important parts of a real estate transaction.
   the keys to your new home. During this time, a neutral third party, known as
   the escrow company, helps manage the transaction to ensure everyone fulfills
   their responsibilities before the sale is completed.
-featuredImage: /assets/images/uploads/home-buyers-signing-escrow-and-closing-documents.png
+featuredImage: /assets/images/uploads/escrow.png
 imageAlt: Home buyers signing escrow and closing documents with a Realtor and
   escrow officer during the final steps of purchasing a home in California.
 featured: false
