@@ -143,6 +143,17 @@
   .btn-review-out{background:var(--tan-pale);color:#000000;padding:14px 28px;font-size:12px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:all 0.2s;display:inline-block;}
   .btn-review-out:hover{background:var(--tan-light);color:#000000;}
 
+  /* INSTAGRAM */
+  .instagram-feed-section{padding:92px 80px;background:var(--white);}
+  .instagram-feed-inner{max-width:1120px;margin:0 auto;}
+  .instagram-feed-header{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:56px;align-items:end;margin-bottom:42px;}
+  .instagram-feed-copy{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);}
+  .instagram-feed-copy strong{color:var(--dark);font-weight:500;}
+  .instagram-feed-widget{background:var(--cream);border:1px solid rgba(166,128,104,0.22);padding:24px;min-height:260px;}
+  .instagram-feed-note{margin-top:20px;font-size:13px;font-weight:300;line-height:1.75;color:var(--mid);text-align:center;}
+  .instagram-feed-note a{color:var(--tan);font-weight:600;text-decoration:none;}
+  .instagram-feed-note a:hover{text-decoration:underline;}
+
   /* FOOTER */
   footer{background:var(--brown);padding:64px 80px 32px;}
   .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(255,255,255,0.08);margin-bottom:32px;}
@@ -159,6 +170,7 @@
   .fade-up.visible{opacity:1;transform:translateY(0);}
   @media(max-width:1100px){.team-grid{grid-template-columns:repeat(2,1fr);}.taylor-inner{grid-template-columns:1fr;}}
   @media(max-width:900px){nav{padding:0 24px;}.nav-links{display:none;}.hero{grid-template-columns:1fr;}.hero-left{padding:60px 32px;}.hero-right{height:60vw;}.awards-strip{padding:24px 32px;gap:20px;}.award-div{display:none;}.intro-section{grid-template-columns:1fr;}.intro-img{height:300px;}.intro-content{padding:56px 32px;}.taylor-section,.team-section,.why-section,.testimonial-section{padding:64px 32px;}.why-grid{grid-template-columns:1fr;}.reviews-cta{padding:56px 32px;flex-direction:column;}.footer-top{grid-template-columns:1fr 1fr;}footer{padding:48px 32px 24px;}}
+  @media(max-width:900px){.instagram-feed-section{padding:64px 32px;}.instagram-feed-header{grid-template-columns:1fr;gap:22px;margin-bottom:28px;}.instagram-feed-widget{padding:16px;}}
   @media(max-width:600px){.team-grid{grid-template-columns:1fr;}.credentials-grid{grid-template-columns:1fr;}}
 </style>
   <link rel="icon" href="/assets/images/favicon.png" type="image/png">
@@ -372,6 +384,31 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
   </div>
 </div>
 
+<!-- INSTAGRAM FEED -->
+<section class="instagram-feed-section" aria-labelledby="instagram-feed-title">
+  <div class="instagram-feed-inner">
+    <div class="instagram-feed-header">
+      <div>
+        <p class="section-eyebrow fade-up">Follow Along</p>
+        <h2 class="section-title fade-up" id="instagram-feed-title">Central Valley Real Estate, <em>In Real Life</em></h2>
+      </div>
+      <div class="instagram-feed-copy fade-up">
+        <p>Our Instagram is where we share the day-to-day side of serving buyers and sellers across the Central Valley - from new listings and open houses to local market updates, behind-the-scenes prep, client wins, and the neighborhoods we love.</p>
+        <p>Follow Taylor Thompson Home Group for real estate insight in <strong>Modesto, Turlock, Manteca, Merced, Ceres, Ripon, Riverbank, Tracy, Stockton, Lodi</strong>, and the surrounding Central Valley communities.</p>
+      </div>
+    </div>
+    <div class="instagram-feed-widget fade-up">
+      <div class="embedsocial-hashtag" data-ref="8246311c53bcefcf99be7e40c5f1487abf15f0ff">
+        <a class="feed-powered-by-es feed-powered-by-es-feed-img es-widget-branding" href="https://embedsocial.com/instagram-widget/" target="_blank" rel="noopener" title="Instagram widget">
+          <img src="https://embedsocial.com/cdn/icon/embedsocial-logo.webp" alt="EmbedSocial">
+          <div class="es-widget-branding-text">Instagram widget</div>
+        </a>
+      </div>
+    </div>
+    <p class="instagram-feed-note fade-up">Want the latest listing updates, local events, and practical buying or selling tips? Follow <a href="https://instagram.com/soldby.taylor" target="_blank" rel="noopener">@soldby.taylor</a> on Instagram.</p>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <div data-include="/includes/footer.html"></div>
 
@@ -379,6 +416,16 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
   const obs=new IntersectionObserver((e)=>{e.forEach((en,i)=>{if(en.isIntersecting)setTimeout(()=>en.target.classList.add('visible'),i*80);});},{threshold:0.1});
   document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
 </script>
+  <script>
+  (function(d, s, id) {
+    var js;
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://embedsocial.com/cdn/ht.js";
+    d.getElementsByTagName("head")[0].appendChild(js);
+  }(document, "script", "EmbedSocialHashtagScript"));
+  </script>
   <script src="/assets/js/includes.js" defer></script>
   <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
@@ -393,8 +440,5 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     });
   }
 </script>
-</body>
-</html<div>
-</footer>
 </body>
 </html>
