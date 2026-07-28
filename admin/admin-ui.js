@@ -190,19 +190,25 @@
     window.CMS.registerPreviewTemplate("blog", function BlogPreview(props) {
       var data = props.entry.get("data").toJS();
       var body = data.body || data.content || "";
+      var bodyPreview = props.widgetFor ? props.widgetFor("body") : null;
       return createElement("article", { className: "blog-preview" },
         createElement("style", null,
           ".blog-preview{padding:32px;font-family:Jost,Arial,sans-serif;color:#050505;background:#fff;line-height:1.75}" +
           ".blog-preview h1,.blog-preview h2,.blog-preview h3{font-family:Georgia,serif;font-weight:400;line-height:1.15}" +
           ".blog-preview h1{font-size:44px}.blog-preview h2{font-size:32px;margin-top:34px}.blog-preview h3{font-size:25px;margin-top:28px}" +
           ".blog-preview p,.blog-preview li{font-size:16px;color:#765f50}.blog-preview ul,.blog-preview ol{padding-left:24px}.blog-preview li{margin-bottom:8px}" +
-          ".blog-preview .meta{color:#c8ad9a;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.blog-preview img{max-width:100%;height:auto}"
+          ".blog-preview .meta{color:#c8ad9a;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.blog-preview img{max-width:100%;height:auto}" +
+          ".blog-preview__body{margin-top:28px}.blog-preview__empty{margin-top:28px;color:#765f50;font-style:italic}"
         ),
         createElement("p", { className: "meta" }, [data.category, data.readTime].filter(Boolean).join(" | ")),
         createElement("h1", null, data.title || "Blog Post Preview"),
         data.excerpt ? createElement("p", null, data.excerpt) : null,
         data.featuredImage ? createElement("img", { src: data.featuredImage, alt: data.imageAlt || data.title || "" }) : null,
-        createElement("div", { dangerouslySetInnerHTML: { __html: markdownToHtml(body) } })
+        bodyPreview
+          ? createElement("div", { className: "blog-preview__body" }, bodyPreview)
+          : body
+            ? createElement("div", { className: "blog-preview__body", dangerouslySetInnerHTML: { __html: markdownToHtml(body) } })
+            : createElement("p", { className: "blog-preview__empty" }, "Start typing in the Body field to preview the full post here.")
       );
     });
   }
