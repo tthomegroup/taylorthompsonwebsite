@@ -155,6 +155,25 @@ textarea[name="body"],
   z-index: 2 !important;
 }
 
+.admin-format-helper {
+  margin-left: 14px !important;
+  padding: 8px 12px !important;
+  border: 1px solid var(--admin-tan) !important;
+  border-radius: 999px !important;
+  background: var(--admin-white) !important;
+  color: var(--admin-muted) !important;
+  cursor: pointer !important;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+}
+
+.admin-format-helper:hover {
+  background: var(--admin-tan) !important;
+  color: var(--admin-dark) !important;
+}
+
 .admin-markdown-field .CodeMirror {
   min-height: 520px !important;
 }

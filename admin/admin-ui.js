@@ -1,4 +1,86 @@
 (function () {
+  function escapeHtml(value) {
+    return String(value || "")
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#039;");
+  }
+
+  function inlineMarkdown(value) {
+    return escapeHtml(value)
+      .replace(/\[([^\]]+)\]\(([^)\s]+)(?:\s+['"][^'"]*['"])?\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(/<((?:https?:\/\/|mailto:|tel:)[^>\s]+)>/gi, '<a href="$1" target="_blank" rel="noopener">$1</a>')
+      .replace(/(^|[\s(])((?:https?:\/\/)[^\s<>()]+)/gi, '$1<a href="$2" target="_blank" rel="noopener">$2</a>')
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<em>$1</em>");
+  }
+
+  function markdownToHtml(markdown) {
+    var lines = String(markdown || "").split(/\r?\n/);
+    var html = [];
+    var listType = null;
+
+    function closeList() {
+      if (!listType) return;
+      html.push("</" + listType + ">");
+      listType = null;
+    }
+
+    lines.forEach(function (line) {
+      var trimmed = line.trim();
+      if (!trimmed) {
+        closeList();
+        return;
+      }
+
+      if (/^###\s+/.test(trimmed)) {
+        closeList();
+        html.push("<h3>" + inlineMarkdown(trimmed.replace(/^###\s+/, "")) + "</h3>");
+        return;
+      }
+
+      if (/^#{1,2}\s+/.test(trimmed)) {
+        closeList();
+        html.push("<h2>" + inlineMarkdown(trimmed.replace(/^#{1,2}\s+/, "")) + "</h2>");
+        return;
+      }
+
+      if (/^>\s+/.test(trimmed)) {
+        closeList();
+        html.push("<blockquote>" + inlineMarkdown(trimmed.replace(/^>\s+/, "")) + "</blockquote>");
+        return;
+      }
+
+      if (/^[-*+\u2022\u2023\u25e6\u2043]\s+/.test(trimmed)) {
+        if (listType !== "ul") {
+          closeList();
+          listType = "ul";
+          html.push("<ul>");
+        }
+        html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*+\u2022\u2023\u25e6\u2043]\s+/, "")) + "</li>");
+        return;
+      }
+
+      if (/^\d+\.\s+/.test(trimmed)) {
+        if (listType !== "ol") {
+          closeList();
+          listType = "ol";
+          html.push("<ol>");
+        }
+        html.push("<li>" + inlineMarkdown(trimmed.replace(/^\d+\.\s+/, "")) + "</li>");
+        return;
+      }
+
+      closeList();
+      html.push("<p>" + inlineMarkdown(trimmed) + "</p>");
+    });
+
+    closeList();
+    return html.join("");
+  }
+
   function decorateReviewOrder() {
     var labels = Array.prototype.filter.call(document.querySelectorAll("label, span"), function (element) {
       return element.textContent.trim() === "Review Order";
@@ -50,178 +132,87 @@
     return (label ? label.textContent : field.textContent || "").toLowerCase();
   }
 
-  function isBodyMarkdownPasteTarget(target) {
-    if (!target || !target.closest) return false;
-
-    var field = target.closest('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]');
-    if (!field) return false;
-
-    var isRawEditor =
-      target.tagName === "TEXTAREA" ||
-      target.tagName === "INPUT" ||
-      Boolean(target.closest(".CodeMirror"));
-
-    if (!isRawEditor) return false;
-
-    var label = fieldLabelText(field);
-    return label.indexOf("body") !== -1 || label.indexOf("content") !== -1;
-  }
-
-  function cleanPastedText(value) {
-    return String(value || "")
-      .replace(/\u00a0/g, " ")
-      .replace(/\r\n?/g, "\n")
-      .replace(/[“”]/g, '"')
-      .replace(/[‘’]/g, "'");
-  }
-
-  function plainBulletsToMarkdown(value) {
-    return cleanPastedText(value)
-      .split("\n")
-      .map(function (line) {
-        return line
-          .replace(/^(\s*)[•‣◦⁃]\s+/, "$1- ")
-          .replace(/^(\s*)[–—]\s+/, "$1- ");
-      })
-      .join("\n");
-  }
-
-  function elementText(element) {
-    return cleanPastedText(element.textContent || "").replace(/\s+/g, " ").trim();
-  }
-
-  function htmlNodeToMarkdown(node, depth, output) {
-    if (!node) return;
-
-    if (node.nodeType === 3) {
-      var text = cleanPastedText(node.nodeValue).trim();
-      if (text) output.push(text);
-      return;
-    }
-
-    if (node.nodeType !== 1) return;
-
-    var tag = node.tagName.toLowerCase();
-
-    if (tag === "ul" || tag === "ol") {
-      Array.prototype.forEach.call(node.children, function (child, index) {
-        if (child.tagName && child.tagName.toLowerCase() === "li") {
-          htmlNodeToMarkdown(child, depth, output, tag === "ol" ? index + 1 : null);
-        }
-      });
-      output.push("");
-      return;
-    }
-
-    if (tag === "li") {
-      var nestedLists = Array.prototype.slice.call(node.querySelectorAll(":scope > ul, :scope > ol"));
-      nestedLists.forEach(function (list) {
-        list.parentNode.removeChild(list);
-      });
-
-      var bullet = arguments.length > 3 && arguments[3] ? arguments[3] + ". " : "- ";
-      var indent = new Array(depth + 1).join("  ");
-      var text = elementText(node);
-      if (text) output.push(indent + bullet + text);
-
-      nestedLists.forEach(function (list) {
-        htmlNodeToMarkdown(list, depth + 1, output);
-      });
-      return;
-    }
-
-    if (tag === "br") {
-      output.push("");
-      return;
-    }
-
-    if (/^h[1-6]$/.test(tag)) {
-      var level = Math.min(3, Math.max(2, Number(tag.charAt(1))));
-      var heading = elementText(node);
-      if (heading) output.push(new Array(level + 1).join("#") + " " + heading, "");
-      return;
-    }
-
-    if (tag === "p" || tag === "div") {
-      var paragraph = elementText(node);
-      if (paragraph) output.push(plainBulletsToMarkdown(paragraph), "");
-      return;
-    }
-
-    Array.prototype.forEach.call(node.childNodes, function (child) {
-      htmlNodeToMarkdown(child, depth, output);
+  function getBodyField() {
+    var fields = Array.prototype.slice.call(document.querySelectorAll('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]'));
+    return fields.find(function (field) {
+      return fieldLabelText(field).indexOf("body") !== -1;
     });
   }
 
-  function htmlToMarkdown(value) {
-    if (!value || value.indexOf("<") === -1) return "";
-
-    var doc;
-    try {
-      doc = new DOMParser().parseFromString(value, "text/html");
-    } catch (error) {
-      return "";
-    }
-
-    if (!doc.querySelector("li, ul, ol")) return "";
-
-    var output = [];
-    Array.prototype.forEach.call(doc.body.childNodes, function (node) {
-      htmlNodeToMarkdown(node, 0, output);
-    });
-
-    return output
-      .join("\n")
-      .replace(/\n{3,}/g, "\n\n")
-      .trim();
+  function getPlainEditorText(field) {
+    if (!field) return "";
+    var textArea = field.querySelector("textarea");
+    if (textArea && textArea.value) return textArea.value;
+    var lines = Array.prototype.slice.call(field.querySelectorAll(".CodeMirror-line, [contenteditable='true'] p, [contenteditable='true'] div"));
+    return lines.map(function (line) { return line.textContent; }).join("\n");
   }
 
-  function insertMarkdownAtTarget(target, value) {
-    var text = cleanPastedText(value);
-    if (!text) return;
+  function setEditorHtml(field, html) {
+    var editable = field && field.querySelector("[contenteditable='true']");
+    if (!editable) return false;
+    editable.innerHTML = html;
+    editable.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertText", data: "" }));
+    editable.dispatchEvent(new Event("change", { bubbles: true }));
+    return true;
+  }
 
-    if (target && (target.tagName === "TEXTAREA" || target.tagName === "INPUT")) {
-      var start = target.selectionStart || 0;
-      var end = target.selectionEnd || 0;
-      target.value = target.value.slice(0, start) + text + target.value.slice(end);
-      target.selectionStart = target.selectionEnd = start + text.length;
-      target.dispatchEvent(new Event("input", { bubbles: true }));
-      target.dispatchEvent(new Event("change", { bubbles: true }));
-      return;
-    }
+  function addFormatHelper() {
+    var field = getBodyField();
+    if (!field || field.querySelector(".admin-format-helper")) return;
 
-    if (document.queryCommandSupported && document.queryCommandSupported("insertText")) {
-      document.execCommand("insertText", false, text);
-      var active = document.activeElement;
-      if (active) {
-        active.dispatchEvent(new Event("input", { bubbles: true }));
-        active.dispatchEvent(new Event("change", { bubbles: true }));
+    var helper = document.createElement("button");
+    helper.type = "button";
+    helper.className = "admin-format-helper";
+    helper.textContent = "Format pasted blog text";
+    helper.addEventListener("click", function () {
+      var markdown = getPlainEditorText(field);
+      var html = markdownToHtml(markdown);
+      if (html && setEditorHtml(field, html)) {
+        helper.textContent = "Formatted";
+        window.setTimeout(function () {
+          helper.textContent = "Format pasted blog text";
+        }, 1600);
       }
-    }
+    });
+
+    var toolbar = field.querySelector(".editor-toolbar, [class*='toolbar'], [class*='Toolbar']");
+    if (toolbar) toolbar.appendChild(helper);
+    else field.insertBefore(helper, field.firstChild);
   }
 
-  function normalizeBodyPaste(event) {
-    if (!isBodyMarkdownPasteTarget(event.target)) return;
+  function registerBlogPreview() {
+    if (!window.CMS || window.__tthgBlogPreviewRegistered) return;
+    window.__tthgBlogPreviewRegistered = true;
 
-    var clipboard = event.clipboardData || window.clipboardData;
-    if (!clipboard) return;
+    var createElement = window.h || (window.React && window.React.createElement);
+    if (!createElement) return;
 
-    var html = clipboard.getData("text/html");
-    var plain = clipboard.getData("text/plain");
-    var markdown = htmlToMarkdown(html) || plainBulletsToMarkdown(plain);
-
-    if (!markdown || markdown === plain) return;
-
-    event.preventDefault();
-    insertMarkdownAtTarget(event.target, markdown);
+    window.CMS.registerPreviewTemplate("blog", function BlogPreview(props) {
+      var data = props.entry.get("data").toJS();
+      var body = data.body || data.content || "";
+      return createElement("article", { className: "blog-preview" },
+        createElement("style", null,
+          ".blog-preview{padding:32px;font-family:Jost,Arial,sans-serif;color:#050505;background:#fff;line-height:1.75}" +
+          ".blog-preview h1,.blog-preview h2,.blog-preview h3{font-family:Georgia,serif;font-weight:400;line-height:1.15}" +
+          ".blog-preview h1{font-size:44px}.blog-preview h2{font-size:32px;margin-top:34px}.blog-preview h3{font-size:25px;margin-top:28px}" +
+          ".blog-preview p,.blog-preview li{font-size:16px;color:#765f50}.blog-preview ul,.blog-preview ol{padding-left:24px}.blog-preview li{margin-bottom:8px}" +
+          ".blog-preview .meta{color:#c8ad9a;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.blog-preview img{max-width:100%;height:auto}"
+        ),
+        createElement("p", { className: "meta" }, [data.category, data.readTime].filter(Boolean).join(" | ")),
+        createElement("h1", null, data.title || "Blog Post Preview"),
+        data.excerpt ? createElement("p", null, data.excerpt) : null,
+        data.featuredImage ? createElement("img", { src: data.featuredImage, alt: data.imageAlt || data.title || "" }) : null,
+        createElement("div", { dangerouslySetInnerHTML: { __html: markdownToHtml(body) } })
+      );
+    });
   }
 
   function decorateAdmin() {
     decorateReviewOrder();
     decorateMarkdownEditor();
+    addFormatHelper();
+    registerBlogPreview();
   }
-
-  document.addEventListener("paste", normalizeBodyPaste, true);
 
   var observer = new MutationObserver(decorateAdmin);
   observer.observe(document.documentElement, { childList: true, subtree: true });
