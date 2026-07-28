@@ -304,6 +304,7 @@ collections:
         name: "body"
         widget: "markdown"
         required: false
+        hint: "Paste paragraphs and bullet lists here. Copied bullets from Google Docs, Word, or websites are automatically converted into blog-friendly Markdown."
         buttons:
           - bold
           - italic

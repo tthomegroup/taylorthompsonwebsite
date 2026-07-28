@@ -362,13 +362,13 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           return;
         }
 
-        if (/^[-*+]\s+/.test(trimmed)) {
+        if (/^[-*+•‣◦⁃]\s+/.test(trimmed)) {
           if (listType !== "ul") {
             closeList();
             listType = "ul";
             html.push("<ul>");
           }
-          html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*+]\s+/, "")) + "</li>");
+          html.push("<li>" + inlineMarkdown(trimmed.replace(/^[-*+•‣◦⁃]\s+/, "")) + "</li>");
           return;
         }
 

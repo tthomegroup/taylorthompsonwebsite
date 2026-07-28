@@ -55,8 +55,8 @@ function renderArticleBody(body) {
     if (text.startsWith('### ')) return `<h3>${renderInlineMarkdown(text.slice(4))}</h3>`;
     if (text.startsWith('## ')) return `<h2>${renderInlineMarkdown(text.slice(3))}</h2>`;
     if (text.startsWith('> ')) return `<blockquote>${renderInlineMarkdown(text.slice(2))}</blockquote>`;
-    if (text.split('\n').every(line => line.trim().startsWith('- '))) {
-      return `<ul>${text.split('\n').map(line => `<li>${renderInlineMarkdown(line.trim().slice(2))}</li>`).join('')}</ul>`;
+    if (text.split('\n').every(line => /^[-*+•‣◦⁃]\s+/.test(line.trim()))) {
+      return `<ul>${text.split('\n').map(line => `<li>${renderInlineMarkdown(line.trim().replace(/^[-*+•‣◦⁃]\s+/, ''))}</li>`).join('')}</ul>`;
     }
     return `<p>${text.split('\n').map(renderInlineMarkdown).join('<br>')}</p>`;
   }).join('\n');
