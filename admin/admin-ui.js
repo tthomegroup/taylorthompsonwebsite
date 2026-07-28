@@ -56,6 +56,13 @@
     var field = target.closest('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]');
     if (!field) return false;
 
+    var isRawEditor =
+      target.tagName === "TEXTAREA" ||
+      target.tagName === "INPUT" ||
+      Boolean(target.closest(".CodeMirror"));
+
+    if (!isRawEditor) return false;
+
     var label = fieldLabelText(field);
     return label.indexOf("body") !== -1 || label.indexOf("content") !== -1;
   }

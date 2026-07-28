@@ -350,6 +350,12 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           return;
         }
 
+        if (/^#\s+/.test(trimmed)) {
+          closeList();
+          html.push("<h2>" + inlineMarkdown(trimmed.replace(/^#\s+/, "")) + "</h2>");
+          return;
+        }
+
         if (/^>\s+/.test(trimmed)) {
           closeList();
           html.push("<blockquote>" + inlineMarkdown(trimmed.replace(/^>\s+/, "")) + "</blockquote>");

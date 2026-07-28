@@ -215,6 +215,7 @@ function readPosts() {
     .map((file) => {
       const filePath = path.join(CONTENT_DIR, file);
       const { data, body } = parseFrontmatter(fs.readFileSync(filePath, "utf8"));
+      const postBody = body || data.body || data.content || "";
 
       if (data.published === false) return null;
 
@@ -248,8 +249,8 @@ function readPosts() {
         featured,
         isFeatured: featured,
         featuredPost: featured,
-        body,
-        content: body,
+        body: postBody,
+        content: postBody,
         sourceFile: filePath,
         updatedAt: fileUpdatedAt(filePath),
       };
