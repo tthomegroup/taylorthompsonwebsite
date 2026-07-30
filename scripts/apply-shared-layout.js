@@ -6,6 +6,15 @@ const SKIP_DIRS = new Set([".git", "admin", "assets", "content", "includes", "no
 const SHARED_CSS = '<link rel="stylesheet" href="/assets/css/nav-footer.css">';
 const SHARED_JS = '<script src="/assets/js/includes.js" defer></script>';
 const FAVICON = '<link rel="icon" href="/assets/images/favicon.png" type="image/png">';
+const GOOGLE_TAG_SCRIPT = `<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WB14XQV0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2WB14XQV0B');
+</script>`;
 const META_PIXEL_SCRIPT = `<!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -93,6 +102,11 @@ function ensureMetaPixel(html) {
   return html;
 }
 
+function ensureGoogleTag(html) {
+  if (html.includes("G-2WB14XQV0B") || html.includes("googletagmanager.com/gtag/js")) return html;
+  return html.replace(/<\/head>/i, `  ${GOOGLE_TAG_SCRIPT}\n</head>`);
+}
+
 function ensureJs(html) {
   if (html.includes("/assets/js/includes.js")) return html;
   return html.replace(/<\/body>/i, `  ${SHARED_JS}\n</body>`);
@@ -139,6 +153,7 @@ function updateFile(filePath) {
 
   html = removeTidioPlaceholders(html);
   html = ensureFavicon(html);
+  html = ensureGoogleTag(html);
   html = ensureMetaPixel(html);
   html = ensureCss(html);
   html = replaceFirstNav(html);

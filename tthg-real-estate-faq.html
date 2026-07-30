@@ -991,9 +991,37 @@
       }
     }
   </style>
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WB14XQV0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2WB14XQV0B');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
 </head>
 
 <body>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
 <main class="tthg-faq-page">
 
   <section class="tthg-hero">
@@ -1027,17 +1055,7 @@
       <p class="section-kicker">Your Home. Your Story. Our Commitment.</p>
       <h2>Real answers for real estate decisions.</h2>
       <p>Taylor Thompson Home Group brings local expertise, honest guidance, and relentless dedication to buyers and sellers across the Central Valley. Use this page to learn about selling, buying, home values, new construction, investing, relocation, financing, and local communities.</p>
-      <nav class="toc" aria-label="FAQ categories">
-        <a href="#about">About the Team</a>
-        <a href="#service-areas">Service Areas</a>
-        <a href="#selling">Selling</a>
-        <a href="#buying">Buying</a>
-        <a href="#new-construction">New Construction</a>
-        <a href="#financing">Financing</a>
-        <a href="#relocation">Relocation</a>
-        <a href="#investing">Investing</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div data-include="/includes/header.html"></div>
     </section>
 
     <section id="about" class="section">
@@ -1202,5 +1220,20 @@
   </section>
 
 </main>
+  <div data-include="/includes/footer.html"></div>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
 </body>
 </html>
