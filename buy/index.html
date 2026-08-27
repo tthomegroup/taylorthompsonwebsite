@@ -114,6 +114,10 @@
   .type-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:400;color:var(--tan-light);margin-bottom:12px;}
   .type-desc{font-size:14px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.6);}
 
+  /* MORTGAGE WIDGET */
+  .fello-mortgage-widget-wrap{background:var(--white);padding:32px;border:1px solid rgba(166,128,104,0.18);box-shadow:0 18px 55px rgba(0,0,0,0.08);}
+  .fello-mortgage-widget-wrap fello-mortgage-calculator-widget{display:block;width:100%;}
+
   /* TESTIMONIAL */
   .testimonial-section{padding:100px 80px;background:var(--tan);}
   .testimonial-inner{max-width:760px;margin:0 auto;text-align:center;}
@@ -216,17 +220,7 @@
 
     #calculator{padding:58px 20px !important;}
     #calculator > div{max-width:100% !important;}
-    #calculator > div > div:nth-child(2){
-      display:grid !important;
-      grid-template-columns:1fr !important;
-      gap:28px !important;
-      padding:26px 20px !important;
-    }
-    #calculator input[type="range"]{min-height:34px;}
-    #calculator button{min-height:46px;}
-    #monthly-payment{font-size:clamp(40px,14vw,56px) !important;}
-    #calculator a{padding:14px 18px !important;}
-    #calculator div[style*="grid-template-columns:1fr 1fr"]{grid-template-columns:1fr !important;}
+    .fello-mortgage-widget-wrap{padding:18px;margin:0 -2px;}
 
     .testimonial-quote{font-size:clamp(22px,8vw,30px);line-height:1.55;}
     .contact-img{margin-top:22px;}
@@ -508,97 +502,13 @@ function handleGuideDownload(event) {
         <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3.5vw,44px);font-weight:300;line-height:1.15;color:var(--dark);margin-bottom:16px;">Mortgage <em style="font-style:italic;color:var(--tan);">Calculator</em></h2>
         <p style="font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);max-width:500px;margin:0 auto;">Estimate your monthly payment before you start shopping. Adjust the numbers to match your situation.</p>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;background:var(--white);padding:56px;">
-        <div>
-          <div style="margin-bottom:20px;">
-            <label style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:8px;">Home Price</label>
-            <input type="range" id="calc-price" min="200000" max="1200000" step="5000" value="550000" style="width:100%;accent-color:var(--tan);" oninput="calcMortgage()">
-            <div style="display:flex;justify-content:space-between;margin-top:6px;">
-              <span style="font-size:12px;color:var(--mid);">$200K</span>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;color:var(--tan);" id="price-display">$550,000</span>
-              <span style="font-size:12px;color:var(--mid);">$1.2M</span>
-            </div>
-          </div>
-          <div style="margin-bottom:20px;">
-            <label style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:8px;">Down Payment: <span id="down-pct-display">20%</span></label>
-            <input type="range" id="calc-down" min="3" max="50" step="1" value="20" style="width:100%;accent-color:var(--tan);" oninput="calcMortgage()">
-            <div style="display:flex;justify-content:space-between;margin-top:6px;">
-              <span style="font-size:12px;color:var(--mid);">3%</span>
-              <span style="font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:400;color:var(--tan);" id="down-display">$110,000</span>
-              <span style="font-size:12px;color:var(--mid);">50%</span>
-            </div>
-          </div>
-          <div style="margin-bottom:20px;">
-            <label style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:8px;">Interest Rate: <span id="rate-display">6.5%</span></label>
-            <input type="range" id="calc-rate" min="3" max="10" step="0.1" value="6.5" style="width:100%;accent-color:var(--tan);" oninput="calcMortgage()">
-            <div style="display:flex;justify-content:space-between;margin-top:6px;">
-              <span style="font-size:12px;color:var(--mid);">3%</span>
-              <span style="font-size:12px;color:var(--mid);">10%</span>
-            </div>
-          </div>
-          <div style="margin-bottom:0;">
-            <label style="font-size:11px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid);display:block;margin-bottom:8px;">Loan Term</label>
-            <div style="display:flex;gap:10px;">
-              <button onclick="setTerm(30,this)" style="flex:1;padding:12px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;border:1.5px solid var(--tan);background:var(--tan);color:var(--white);cursor:pointer;" id="term-30">30 Years</button>
-              <button onclick="setTerm(20,this)" style="flex:1;padding:12px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;border:1.5px solid var(--tan-pale);background:none;color:var(--mid);cursor:pointer;" id="term-20">20 Years</button>
-              <button onclick="setTerm(15,this)" style="flex:1;padding:12px;font-family:'Jost',sans-serif;font-size:12px;font-weight:600;border:1.5px solid var(--tan-pale);background:none;color:var(--mid);cursor:pointer;" id="term-15">15 Years</button>
-            </div>
-          </div>
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:center;">
-          <div style="background:var(--brown);padding:40px;text-align:center;margin-bottom:20px;">
-            <p style="font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:var(--tan-light);margin-bottom:10px;">Est. Monthly Payment</p>
-            <div style="font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:var(--white);line-height:1;" id="monthly-payment">$2,760</div>
-            <p style="font-size:11px;color:rgba(255,255,255,0.4);margin-top:8px;">Principal & Interest only</p>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;">
-            <div style="background:var(--cream);padding:16px;text-align:center;">
-              <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;">Loan Amount</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--tan);" id="loan-amt">$440,000</div>
-            </div>
-            <div style="background:var(--cream);padding:16px;text-align:center;">
-              <div style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-bottom:6px;">Total Interest</div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--tan);" id="total-int">$553,600</div>
-            </div>
-          </div>
-          <p style="font-size:12px;color:var(--mid);line-height:1.7;margin-bottom:20px;">This estimate is for principal and interest only. Your actual payment will also include property taxes, insurance, and possibly HOA fees. Talk to a lender for a complete picture.</p>
-          <a href="contact.html" style="display:block;text-align:center;background:var(--tan);color:var(--white);padding:14px 28px;font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='var(--brown)'" onmouseout="this.style.background='var(--tan)'">Talk to a Lender We Trust →</a>
-        </div>
+      <div class="fello-mortgage-widget-wrap">
+        <!-- fello-mortgage-calculator-widget code for Taylor Thompson Home Group -->
+        <script src="https://widget.hifello.com/mortgage-calculator-widget.js" async defer></script>
+        <fello-mortgage-calculator-widget widget-id="6a8f33783dbcf8eb3857bacf"></fello-mortgage-calculator-widget>
       </div>
     </div>
   </section>
-  <script>
-    let calcTerm = 30;
-    function setTerm(t, btn) {
-      calcTerm = t;
-      ['term-30','term-20','term-15'].forEach(id => {
-        const el = document.getElementById(id);
-        el.style.background = 'none'; el.style.color = 'var(--mid)'; el.style.borderColor = 'var(--tan-pale)';
-      });
-      btn.style.background = 'var(--tan)'; btn.style.color = 'var(--white)'; btn.style.borderColor = 'var(--tan)';
-      calcMortgage();
-    }
-    function calcMortgage() {
-      const price = parseInt(document.getElementById('calc-price').value);
-      const downPct = parseInt(document.getElementById('calc-down').value);
-      const rate = parseFloat(document.getElementById('calc-rate').value);
-      const down = price * downPct / 100;
-      const loan = price - down;
-      const r = rate / 100 / 12;
-      const n = calcTerm * 12;
-      const payment = loan * (r * Math.pow(1+r,n)) / (Math.pow(1+r,n) - 1);
-      const totalPaid = payment * n;
-      const totalInt = totalPaid - loan;
-      document.getElementById('price-display').textContent = '$' + price.toLocaleString();
-      document.getElementById('down-pct-display').textContent = downPct + '%';
-      document.getElementById('down-display').textContent = '$' + Math.round(down).toLocaleString();
-      document.getElementById('rate-display').textContent = rate.toFixed(1) + '%';
-      document.getElementById('monthly-payment').textContent = '$' + Math.round(payment).toLocaleString();
-      document.getElementById('loan-amt').textContent = '$' + Math.round(loan).toLocaleString();
-      document.getElementById('total-int').textContent = '$' + Math.round(totalInt).toLocaleString();
-    }
-    calcMortgage();
-  </script>
 
   <!-- TESTIMONIAL -->
 <section class="testimonial-section">
