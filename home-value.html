@@ -145,19 +145,18 @@
   .hifello-embed-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:300;line-height:1.12;color:var(--dark);margin-bottom:10px;}
   .hifello-embed-title em{font-style:italic;color:var(--tan);}
   .hifello-embed-copy{max-width:660px;margin:0 auto;color:var(--mid);font-size:15px;font-weight:300;line-height:1.75;}
-  .hifello-launch-card{max-width:820px;margin:0 auto;padding:34px;background:var(--white);border:1px solid rgba(166,128,104,0.26);box-shadow:0 18px 55px rgba(0,0,0,0.08);text-align:center;}
-  .hifello-launch-card p{max-width:620px;margin:0 auto 24px;color:var(--mid);font-size:14px;font-weight:300;line-height:1.75;}
-  .hifello-launch-button{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 34px;background:var(--tan);color:var(--white);font-size:12px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,transform 0.2s;}
-  .hifello-launch-button:hover{background:var(--brown);transform:translateY(-1px);}
-  .hifello-launch-note{display:block;margin-top:14px;color:var(--mid);font-size:12px;font-weight:300;opacity:0.78;}
+  .hifello-frame-card{max-width:960px;margin:0 auto;background:var(--white);border:1px solid rgba(166,128,104,0.26);box-shadow:0 22px 65px rgba(0,0,0,0.09);overflow:hidden;}
+  .hifello-frame{display:block;width:100%;height:720px;border:0;background:#f5f0ea;}
+  .hifello-frame-fallback{padding:22px;text-align:center;color:var(--mid);font-size:14px;font-weight:300;line-height:1.7;}
+  .hifello-frame-fallback a{color:var(--tan);font-weight:700;text-decoration:none;}
 
   @media(max-width:900px){
     nav{padding:0 24px;}.nav-links{display:none;}
     .hifello-embed-section{padding:36px 14px 44px;}
     .hifello-embed-header{text-align:left;padding:0 6px;}
     .hifello-embed-copy{margin:0;}
-    .hifello-launch-card{padding:24px 18px;text-align:left;}
-    .hifello-launch-button{width:100%;padding:0 18px;text-align:center;}
+    .hifello-frame-card{margin:0 -2px;}
+    .hifello-frame{height:760px;}
     .hero{grid-template-columns:1fr;min-height:unset;}
     .hero-left{padding:60px 32px;}
     .hero-right{padding:56px 32px;}
@@ -204,10 +203,20 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     <h1 class="hifello-embed-title" id="hifello-embed-title">Find Out What Your Home Is <em>Worth Today</em></h1>
     <p class="hifello-embed-copy">Start with our quick home value tool, then Taylor Thompson Home Group will follow up with local Central Valley insight, not a generic online estimate.</p>
   </div>
-  <div class="hifello-launch-card">
-    <p>The instant valuation form opens securely through Hifello. It cannot be embedded directly on this page, so use the button below to launch the home value tool.</p>
-    <a class="hifello-launch-button" href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">Start Free Home Value</a>
-    <span class="hifello-launch-note">Opens the Taylor Thompson Home Group valuation form in a new tab.</span>
+  <div class="hifello-frame-card">
+    <iframe
+      class="hifello-frame"
+      src="https://consumer.hifello.com/lp/6a887b2fbe5deef45d25bf9e?framed=1"
+      title="Taylor Thompson Home Group instant home value form"
+      loading="eager"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="clipboard-write; geolocation"
+    >
+      <p class="hifello-frame-fallback">
+        The home value form is loading. If it does not appear, open the
+        <a href="https://consumer.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">instant valuation form</a>.
+      </p>
+    </iframe>
   </div>
 </section>
 <section class="hero">
