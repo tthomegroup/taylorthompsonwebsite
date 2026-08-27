@@ -95,22 +95,26 @@
   .hero-badge-num { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 300; color: var(--white); line-height: 1; }
   .hero-badge-text { font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 6px; line-height: 1.5; }
 
-  /* VALUATION CTA STRIP */
+  /* VALUATION EMBED */
   .valuation-strip {
-    background: var(--tan-pale);
-    padding: 48px 80px;
-    display: flex; align-items: center; justify-content: space-between; gap: 40px;
-    flex-wrap: wrap;
+    background: linear-gradient(135deg, var(--tan-pale) 0%, #efe4da 100%);
+    padding: 72px 80px;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(520px, 1.4fr);
+    align-items: center;
+    gap: 48px;
   }
-  .valuation-strip-text h2 { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 300; color: var(--white); line-height: 1.2; }
-  .valuation-strip-text h2 em { font-style: italic; }
-  .valuation-strip-text p { font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.8); margin-top: 8px; }
-  .valuation-form { display: flex; gap: 0; flex: 1; max-width: 560px; }
-  .valuation-input { flex: 1; padding: 16px 20px; font-family: 'Jost', sans-serif; font-size: 14px; border: none; outline: none; background: rgba(255,255,255,0.15); color: var(--white); }
-  .valuation-input::placeholder { color: rgba(255,255,255,0.55); }
-  .valuation-input:focus { background: rgba(255,255,255,0.22); }
-  .valuation-btn { background: var(--tan); color: var(--white); padding: 16px 28px; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; border: none; cursor: pointer; transition: background 0.2s; white-space: nowrap; }
-  .valuation-btn:hover { background: var(--tan); }
+  .valuation-strip-text { max-width: 420px; }
+  .valuation-strip-text .section-eyebrow { color: var(--tan); margin-bottom: 14px; }
+  .valuation-strip-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 4vw, 54px); font-weight: 300; color: var(--dark); line-height: 1.08; }
+  .valuation-strip-text h2 em { font-style: italic; color: var(--tan); }
+  .valuation-strip-text p { font-size: 15px; font-weight: 300; color: var(--mid); margin-top: 18px; line-height: 1.8; }
+  .valuation-proof { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-top: 28px; border-top: 1px solid rgba(166,128,104,0.28); }
+  .valuation-proof span { font-size: 12px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid); }
+  .valuation-frame-card { height: 560px; min-height: 560px; background: var(--tan-pale); border: 1px solid rgba(166,128,104,0.32); box-shadow: 0 22px 60px rgba(82,56,40,0.16); overflow: hidden; }
+  .valuation-frame { display: block; width: 100%; height: 730px; min-height: 730px; border: 0; background: var(--tan-pale); transform: translateY(-96px); }
+  .valuation-frame-fallback { padding: 24px; text-align: center; color: var(--mid); font-size: 14px; font-weight: 300; line-height: 1.7; }
+  .valuation-frame-fallback a { color: var(--tan); font-weight: 700; text-decoration: none; }
 
   /* PROCESS */
   .process-section { padding: 100px 80px; background: var(--white); }
@@ -209,8 +213,10 @@
     .hero-left { padding: 60px 32px; }
     .hero-right { height: 60vw; min-height: 300px; 
     background: var(--tan-pale);}
-    .valuation-strip { padding: 40px 32px; flex-direction: column; }
-    .valuation-form { max-width: 100%; }
+    .valuation-strip { padding: 48px 20px; grid-template-columns: 1fr; gap: 28px; }
+    .valuation-strip-text { max-width: none; padding: 0 12px; }
+    .valuation-frame-card { height: 650px; min-height: 650px; margin: 0 -4px; }
+    .valuation-frame { height: 820px; min-height: 820px; transform: translateY(-96px); }
     .process-section, .marketing-section, .testimonial-section { padding: 64px 32px; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .why-section { grid-template-columns: 1fr; }
@@ -296,12 +302,29 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
 <div class="valuation-strip" id="valuation">
   <div class="valuation-strip-text">
-    <h2>What Is Your Home <em>Worth?</em></h2>
-    <p>Enter your address for a free, no-obligation home valuation.</p>
+    <p class="section-eyebrow">Seller Home Value</p>
+    <h2>See What Your Home Could <em>Sell For</em></h2>
+    <p>Use the instant valuation tool to start with your address. Taylor Thompson Home Group follows up with real Central Valley pricing insight, not just a generic online estimate.</p>
+    <div class="valuation-proof">
+      <span>Free</span>
+      <span>No obligation</span>
+      <span>Local market insight</span>
+    </div>
   </div>
-  <div class="valuation-form">
-    <input class="valuation-input" type="text" placeholder="Enter your home address...">
-    <button class="valuation-btn">Get My Value →</button>
+  <div class="valuation-frame-card">
+    <iframe
+      class="valuation-frame"
+      src="https://consumer.hifello.com/lp/6a8f3294313fb5e90d591bf1?framed=1"
+      title="Taylor Thompson Home Group seller home value form"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allow="clipboard-write; geolocation"
+    >
+      <p class="valuation-frame-fallback">
+        The seller valuation form is loading. If it does not appear, open the
+        <a href="https://taylorthompsonhomegroup.hifello.com/lp/6a8f3294313fb5e90d591bf1" target="_blank" rel="noopener">home value form</a>.
+      </p>
+    </iframe>
   </div>
 </div>
 
