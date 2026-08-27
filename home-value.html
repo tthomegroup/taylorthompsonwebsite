@@ -138,8 +138,25 @@
   .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
   .fade-up.visible{opacity:1;transform:translateY(0);}
 
+  /* HIFELLO EMBED */
+  .hifello-embed-section{background:var(--cream);padding:32px clamp(16px,4vw,56px) 48px;border-bottom:1px solid rgba(166,128,104,0.18);}
+  .hifello-embed-header{max-width:920px;margin:0 auto 22px;text-align:center;}
+  .hifello-embed-header .section-eyebrow{margin-bottom:10px;}
+  .hifello-embed-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:300;line-height:1.12;color:var(--dark);margin-bottom:10px;}
+  .hifello-embed-title em{font-style:italic;color:var(--tan);}
+  .hifello-embed-copy{max-width:660px;margin:0 auto;color:var(--mid);font-size:15px;font-weight:300;line-height:1.75;}
+  .hifello-embed-frame-wrap{max-width:1180px;margin:0 auto;background:var(--white);border:1px solid rgba(166,128,104,0.24);box-shadow:0 18px 55px rgba(0,0,0,0.08);overflow:hidden;}
+  .hifello-embed-frame{display:block;width:100%;height:min(900px,calc(100vh - 130px));min-height:720px;border:0;background:var(--white);}
+  .hifello-embed-fallback{max-width:760px;margin:18px auto 0;text-align:center;color:var(--mid);font-size:13px;font-weight:300;line-height:1.7;}
+  .hifello-embed-fallback a{color:var(--tan);font-weight:700;text-decoration:none;}
+  .hifello-embed-fallback a:hover{text-decoration:underline;}
+
   @media(max-width:900px){
     nav{padding:0 24px;}.nav-links{display:none;}
+    .hifello-embed-section{padding:24px 14px 36px;}
+    .hifello-embed-header{text-align:left;padding:0 6px;}
+    .hifello-embed-copy{margin:0;}
+    .hifello-embed-frame{height:820px;min-height:720px;}
     .hero{grid-template-columns:1fr;min-height:unset;}
     .hero-left{padding:60px 32px;}
     .hero-right{padding:56px 32px;}
@@ -180,6 +197,23 @@ fbq('track', 'PageView');
   <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 /></noscript>
+<section class="hifello-embed-section" aria-labelledby="hifello-embed-title">
+  <div class="hifello-embed-header">
+    <p class="section-eyebrow">Instant Home Value</p>
+    <h1 class="hifello-embed-title" id="hifello-embed-title">Find Out What Your Home Is <em>Worth Today</em></h1>
+    <p class="hifello-embed-copy">Use our quick home value tool below to start your free valuation. Taylor Thompson Home Group will follow up with local Central Valley insight, not a generic online estimate.</p>
+  </div>
+  <div class="hifello-embed-frame-wrap">
+    <iframe
+      class="hifello-embed-frame"
+      src="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e"
+      title="Taylor Thompson Home Group free home value estimate"
+      loading="eager"
+      allow="clipboard-write; fullscreen"
+    ></iframe>
+  </div>
+  <p class="hifello-embed-fallback">If the home value tool does not load, <a href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">open the valuation form here</a>.</p>
+</section>
 <section class="hero">
   <div class="hero-left">
     <p class="hero-eyebrow">Free · No Obligation · 24-Hour Response</p>
