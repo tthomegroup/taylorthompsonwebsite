@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash Offer for Your Central Valley Home | Taylor Thompson Home Group</title>
+<meta name="description" content="Explore a cash offer for your Central Valley home with Taylor Thompson Home Group. Compare your options, understand your net proceeds, and choose the selling path that fits your timeline.">
+<link rel="canonical" href="https://taylorthompsonhomegroup.com/cash-offer/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/assets/images/favicon.png" type="image/png">
+<link rel="stylesheet" href="/assets/css/nav-footer.css">
+<style>
+  :root {
+    --tan: #a68068;
+    --tan-light: #c2a894;
+    --tan-pale: #ddcebe;
+    --cream: #faf6f1;
+    --white: #ffffff;
+    --dark: #000000;
+    --mid: #5a4a40;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Jost', sans-serif; background: var(--cream); color: var(--dark); overflow-x: hidden; }
+
+  .cash-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(360px, 0.92fr) minmax(520px, 1.08fr);
+    background: var(--dark);
+  }
+  .cash-copy {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 110px clamp(32px, 5vw, 80px) 80px;
+    overflow: hidden;
+  }
+  .cash-copy::after {
+    content: '';
+    position: absolute;
+    right: -180px;
+    bottom: -180px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(166,128,104,0.18), transparent 68%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--tan-light);
+    margin-bottom: 18px;
+  }
+  .cash-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(44px, 5vw, 70px);
+    font-weight: 300;
+    line-height: 1.04;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+  .cash-title em { font-style: italic; color: var(--tan-light); }
+  .cash-body {
+    max-width: 480px;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.68);
+    margin-bottom: 36px;
+  }
+  .cash-points {
+    display: grid;
+    gap: 12px;
+    max-width: 520px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+  }
+  .cash-point {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.72);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .cash-point span {
+    color: var(--tan-light);
+    font-weight: 700;
+  }
+  .cash-frame-side {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    background: var(--tan-pale);
+    overflow: hidden;
+  }
+  .cash-frame-card {
+    width: 100%;
+    height: 100vh;
+    min-height: 700px;
+    background: var(--tan-pale);
+    overflow: hidden;
+  }
+  .cash-frame {
+    display: block;
+    width: 100%;
+    height: calc(100vh + 260px);
+    min-height: 960px;
+    border: 0;
+    background: var(--tan-pale);
+    transform: translateY(-150px);
+  }
+  .cash-frame-fallback {
+    padding: 24px;
+    text-align: center;
+    color: var(--mid);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .cash-frame-fallback a { color: var(--tan); font-weight: 700; text-decoration: none; }
+
+  .cash-explainer {
+    padding: 88px clamp(24px, 6vw, 80px);
+    background: var(--cream);
+  }
+  .cash-explainer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  .cash-section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--dark);
+  }
+  .cash-section-title em { color: var(--tan); font-style: italic; }
+  .cash-explainer-copy {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--mid);
+    line-height: 1.85;
+  }
+  .cash-grid {
+    margin-top: 28px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(166,128,104,0.18);
+  }
+  .cash-card {
+    background: var(--cream);
+    padding: 28px 24px;
+  }
+  .cash-card-title {
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--tan);
+    margin-bottom: 10px;
+  }
+  .cash-card p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.75;
+    color: var(--mid);
+  }
+
+  @media (max-width: 900px) {
+    .cash-hero { grid-template-columns: 1fr; min-height: unset; }
+    .cash-copy { padding: 92px 24px 48px; }
+    .cash-frame-card { height: 760px; min-height: 760px; }
+    .cash-frame { height: 900px; min-height: 900px; transform: translateY(-70px); }
+    .cash-explainer-inner { grid-template-columns: 1fr; gap: 30px; }
+    .cash-grid { grid-template-columns: 1fr; }
+  }
+</style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WB14XQV0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2WB14XQV0B');
+</script>
+</head>
+<body>
+  <div data-include="/includes/header.html"></div>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
+
+  <main>
+    <section class="cash-hero">
+      <div class="cash-copy">
+        <p class="eyebrow">Cash Offer Option</p>
+        <h1 class="cash-title">Want a Faster Way to <em>Sell Your Home?</em></h1>
+        <p class="cash-body">See what a cash offer could look like for your Central Valley home. Taylor Thompson Home Group helps you compare your options clearly, whether you want speed, certainty, maximum market exposure, or a mix of all three.</p>
+        <div class="cash-points" aria-label="Cash offer benefits">
+          <div class="cash-point"><span>✓</span> Explore a no-pressure cash offer starting with your address.</div>
+          <div class="cash-point"><span>✓</span> Compare convenience against a traditional open-market sale.</div>
+          <div class="cash-point"><span>✓</span> Get local guidance before making a decision.</div>
+        </div>
+      </div>
+
+      <div class="cash-frame-side">
+        <div class="cash-frame-card">
+          <iframe
+            class="cash-frame"
+            src="https://consumer.hifello.com/lp/6a8f331e910d6252a68c2db8?framed=1"
+            title="Taylor Thompson Home Group cash offer form"
+            loading="eager"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="clipboard-write; geolocation"
+          >
+            <p class="cash-frame-fallback">
+              The cash offer form is loading. If it does not appear, open the
+              <a href="https://taylorthompsonhomegroup.hifello.com/lp/6a8f331e910d6252a68c2db8" target="_blank" rel="noopener">cash offer form</a>.
+            </p>
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="cash-explainer">
+      <div class="cash-explainer-inner">
+        <div>
+          <p class="eyebrow" style="color:var(--tan);">Choose With Clarity</p>
+          <h2 class="cash-section-title">A Cash Offer Is One Option, <em>Not Your Only Option.</em></h2>
+        </div>
+        <div>
+          <p class="cash-explainer-copy">Some sellers value speed and simplicity. Others want the highest possible price through full market exposure. Our role is to help you understand both paths, compare the numbers, and choose what fits your timeline and goals.</p>
+          <div class="cash-grid">
+            <div class="cash-card">
+              <div class="cash-card-title">Fast Timeline</div>
+              <p>A cash offer can be helpful when you want fewer showings, less prep, and a more predictable closing path.</p>
+            </div>
+            <div class="cash-card">
+              <div class="cash-card-title">Clear Numbers</div>
+              <p>We help you compare offer terms, likely net proceeds, repairs, fees, and timing so the decision is grounded.</p>
+            </div>
+            <div class="cash-card">
+              <div class="cash-card-title">Local Advice</div>
+              <p>You will still have a local Central Valley team helping you think through what makes the most sense.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/includes/footer.html"></div>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+  </script>
+</body>
+</html>
