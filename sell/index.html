@@ -119,6 +119,15 @@
   .why-point-title { font-size: 15px; font-weight: 600; color: var(--dark); margin-bottom: 4px; }
   .why-point-desc { font-size: 14px; font-weight: 300; line-height: 1.7; color: var(--mid); }
 
+  /* HOME SALE CALCULATOR */
+  .home-sale-calculator-section { background: var(--tan-pale); padding: 92px 80px; }
+  .home-sale-calculator-inner { max-width: 980px; margin: 0 auto; }
+  .home-sale-calculator-header { text-align: center; max-width: 680px; margin: 0 auto 46px; }
+  .home-sale-calculator-header .section-title { color: var(--dark); }
+  .home-sale-calculator-header .section-body { margin: 0 auto; color: var(--mid); }
+  .home-sale-calculator-widget { background: var(--white); padding: 32px; border: 1px solid rgba(166,128,104,0.22); box-shadow: 0 20px 60px rgba(82,56,40,0.14); }
+  .home-sale-calculator-widget fello-home-sale-calculator-widget { display: block; width: 100%; }
+
   /* MARKETING */
   .marketing-section { padding: 100px 80px; background: var(--tan-pale); }
   .marketing-header { text-align: center; margin-bottom: 64px; }
@@ -186,7 +195,7 @@
     .hero-right.has-valuation-frame { height: auto; min-height: 650px; }
     .hero-right.has-valuation-frame .valuation-frame-card { height: 650px; min-height: 650px; }
     .valuation-frame { height: 820px; min-height: 820px; transform: translateY(-96px); }
-    .process-section, .marketing-section, .testimonial-section { padding: 64px 32px; }
+    .process-section, .marketing-section, .testimonial-section, .home-sale-calculator-section { padding: 64px 32px; }
     .process-steps { grid-template-columns: 1fr 1fr; }
     .why-section { grid-template-columns: 1fr; }
     .why-img { height: 300px; }
@@ -347,6 +356,22 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           <p class="why-point-desc">As NCHR Elite agents - top 1% of all KW agents in the region - our track record speaks for itself. We consistently sell homes faster and for more money than the market average.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOME SALE CALCULATOR -->
+<section class="home-sale-calculator-section" id="home-sale-calculator">
+  <div class="home-sale-calculator-inner">
+    <div class="home-sale-calculator-header">
+      <p class="section-eyebrow">Seller Net Sheet</p>
+      <h2 class="section-title">Estimate Your <em>Home Sale Proceeds</em></h2>
+      <p class="section-body">Get a clearer picture of what you may walk away with after selling costs, mortgage payoff, and estimated closing expenses.</p>
+    </div>
+    <div class="home-sale-calculator-widget">
+      <!-- fello-home-sale-calculator-widget code for Taylor Thompson Home Group -->
+      <script src="https://widget.hifello.com/home-sale-calculator-widget.js" async defer></script>
+      <fello-home-sale-calculator-widget widget-id="6a8f339eaeb7824f26e7a089"></fello-home-sale-calculator-widget>
     </div>
   </div>
 </section>
