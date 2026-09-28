@@ -147,6 +147,9 @@
   .hifello-embed-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:300;line-height:1.12;color:var(--brown);margin-bottom:10px;}
   .hifello-embed-title em{font-style:italic;color:var(--tan);}
   .hifello-embed-copy{max-width:660px;margin:0 auto;color:var(--mid);font-size:15px;font-weight:300;line-height:1.75;}
+  .hifello-launch{display:flex;justify-content:center;padding:0 20px 28px;}
+  .hifello-launch-link{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 30px;background:var(--tan);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--tan);transition:background 0.2s,color 0.2s;}
+  .hifello-launch-link:hover{background:var(--dark);border-color:var(--dark);}
   .hifello-frame-card{width:100%;height:1320px;margin:0;background:var(--tan-pale);border-top:1px solid rgba(194,168,148,0.38);overflow:hidden;}
   .hifello-frame{display:block;width:100%;height:1320px;border:0;background:var(--tan-pale);}
   .hifello-frame-fallback{padding:22px;text-align:center;color:var(--mid);font-size:14px;font-weight:300;line-height:1.7;}
@@ -157,6 +160,8 @@
     .hifello-embed-section{padding:36px 0 0;}
     .hifello-embed-header{text-align:left;padding:0 20px;}
     .hifello-embed-copy{margin:0;}
+    .hifello-launch{justify-content:flex-start;padding:0 20px 24px;}
+    .hifello-launch-link{width:100%;}
     .hifello-frame-card{height:1500px;margin:0;}
     .hifello-frame{height:1500px;}
     .hero{grid-template-columns:1fr;min-height:unset;}
@@ -223,18 +228,21 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     <h2 class="hifello-embed-title" id="hifello-embed-title">Find Out What Your Home Is <em>Worth Today</em></h2>
     <p class="hifello-embed-copy">Start with our quick home value tool, then Taylor Thompson Home Group will follow up with local Central Valley insight, not a generic online estimate.</p>
   </div>
+  <div class="hifello-launch">
+    <a class="hifello-launch-link" href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">Open Full Valuation &amp; See My Result</a>
+  </div>
   <div class="hifello-frame-card">
     <iframe
       class="hifello-frame"
-      src="https://consumer.hifello.com/lp/6a887b2fbe5deef45d25bf9e?framed=1"
+      src="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e?framed=1"
       title="Taylor Thompson Home Group instant home value form"
       loading="eager"
       referrerpolicy="strict-origin-when-cross-origin"
-      allow="clipboard-write; geolocation"
+      allow="clipboard-write; geolocation; storage-access"
     >
       <p class="hifello-frame-fallback">
         The home value form is loading. If it does not appear, open the
-        <a href="https://consumer.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">instant valuation form</a>.
+        <a href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">instant valuation form</a>.
       </p>
     </iframe>
   </div>
