@@ -12,7 +12,8 @@
 /areas /areas.html 200
 /events /events.html 200
 /contact /contact.html 200
-/home-value /taylorthompson_home_valuation.html 200
+/home-value /home-value.html 200
+/home-value/ /home-value.html 200
 /blog /blog.html 200
 /reviews /reviews.html 200
 /refer /refer.html 200
