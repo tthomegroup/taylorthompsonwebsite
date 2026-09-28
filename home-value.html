@@ -48,9 +48,16 @@
   .trust-icon{font-size:18px;}
 
   /* HERO IMAGE */
-  .hero-right{background:var(--tan-pale);position:relative;overflow:hidden;min-height:600px;padding:0;}
-  .hero-right-img{position:relative;width:100%;height:100%;min-height:600px;background:url('/assets/images/mfarmhouse.jpg') center/cover no-repeat;}
+  .hero-right{background:var(--tan-pale);position:relative;overflow:hidden;min-height:600px;padding:48px;display:flex;align-items:center;justify-content:center;}
+  .hero-right-img{position:absolute;inset:0;background:url('/assets/images/mfarmhouse.jpg') center/cover no-repeat;}
   .hero-right-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,0.28),rgba(0,0,0,0.02));pointer-events:none;}
+  .hero-value-card{position:relative;z-index:1;width:min(100%,520px);padding:48px;background:rgba(255,255,255,0.95);box-shadow:0 24px 60px rgba(0,0,0,0.2);}
+  .hero-value-eyebrow{font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--tan);margin-bottom:14px;}
+  .hero-value-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,52px);font-weight:300;line-height:1.08;color:var(--dark);margin-bottom:18px;}
+  .hero-value-title em{font-style:italic;color:var(--tan);}
+  .hero-value-copy{font-size:14px;font-weight:300;line-height:1.75;color:var(--mid);margin-bottom:28px;}
+  .hero-value-button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 28px;background:var(--tan);border:1px solid var(--tan);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:background 0.2s,border-color 0.2s;}
+  .hero-value-button:hover{background:var(--dark);border-color:var(--dark);}
   .val-form-wrap{width:100%;max-width:480px;}
   .val-form-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dark);margin-bottom:6px;}
   .val-form-title em{font-style:italic;color:var(--tan);}
@@ -140,34 +147,13 @@
   .fade-up{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
   .fade-up.visible{opacity:1;transform:translateY(0);}
 
-  /* HIFELLO EMBED */
-  .hifello-embed-section{background:var(--tan-pale);padding:56px 0 0;border-bottom:1px solid rgba(166,128,104,0.28);}
-  .hifello-embed-header{max-width:920px;margin:0 auto 28px;text-align:center;}
-  .hifello-embed-header .section-eyebrow{margin-bottom:10px;}
-  .hifello-embed-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,46px);font-weight:300;line-height:1.12;color:var(--brown);margin-bottom:10px;}
-  .hifello-embed-title em{font-style:italic;color:var(--tan);}
-  .hifello-embed-copy{max-width:660px;margin:0 auto;color:var(--mid);font-size:15px;font-weight:300;line-height:1.75;}
-  .hifello-launch{display:flex;justify-content:center;padding:0 20px 28px;}
-  .hifello-launch-link{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:14px 30px;background:var(--tan);color:var(--white);font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;border:1px solid var(--tan);transition:background 0.2s,color 0.2s;}
-  .hifello-launch-link:hover{background:var(--dark);border-color:var(--dark);}
-  .hifello-frame-card{width:100%;height:1320px;margin:0;background:var(--tan-pale);border-top:1px solid rgba(194,168,148,0.38);overflow:hidden;}
-  .hifello-frame{display:block;width:100%;height:1320px;border:0;background:var(--tan-pale);}
-  .hifello-frame-fallback{padding:22px;text-align:center;color:var(--mid);font-size:14px;font-weight:300;line-height:1.7;}
-  .hifello-frame-fallback a{color:var(--tan);font-weight:700;text-decoration:none;}
-
   @media(max-width:900px){
     nav{padding:0 24px;}.nav-links{display:none;}
-    .hifello-embed-section{padding:36px 0 0;}
-    .hifello-embed-header{text-align:left;padding:0 20px;}
-    .hifello-embed-copy{margin:0;}
-    .hifello-launch{justify-content:flex-start;padding:0 20px 24px;}
-    .hifello-launch-link{width:100%;}
-    .hifello-frame-card{height:1500px;margin:0;}
-    .hifello-frame{height:1500px;}
     .hero{grid-template-columns:1fr;min-height:unset;}
     .hero-left{padding:60px 32px;}
-    .hero-right{min-height:380px;}
-    .hero-right-img{min-height:380px;}
+    .hero-right{min-height:560px;padding:32px 20px;}
+    .hero-value-card{padding:34px 26px;}
+    .hero-value-button{width:100%;}
     .why-section,.how-section,.testimonial-section{padding:64px 32px;}
     .why-grid{grid-template-columns:1fr;}
     .how-steps{grid-template-columns:1fr 1fr;}.how-steps::before{display:none;}
@@ -219,33 +205,13 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
  <div class="hero-right">
   <div class="hero-right-img" role="img" aria-label="California home exterior"></div>
+  <div class="hero-value-card">
+    <p class="hero-value-eyebrow">Instant Home Value</p>
+    <h2 class="hero-value-title">Find Out What Your Home Is <em>Worth Today</em></h2>
+    <p class="hero-value-copy">Use our quick home value tool to receive a personalized estimate, then get local Central Valley insight from Taylor Thompson Home Group.</p>
+    <a class="hero-value-button" href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e">Find Out Now</a>
+  </div>
  </div>
-</section>
-
-<section class="hifello-embed-section" aria-labelledby="hifello-embed-title">
-  <div class="hifello-embed-header">
-    <p class="section-eyebrow">Instant Home Value</p>
-    <h2 class="hifello-embed-title" id="hifello-embed-title">Find Out What Your Home Is <em>Worth Today</em></h2>
-    <p class="hifello-embed-copy">Start with our quick home value tool, then Taylor Thompson Home Group will follow up with local Central Valley insight, not a generic online estimate.</p>
-  </div>
-  <div class="hifello-launch">
-    <a class="hifello-launch-link" href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">Open Full Valuation &amp; See My Result</a>
-  </div>
-  <div class="hifello-frame-card">
-    <iframe
-      class="hifello-frame"
-      src="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e?framed=1"
-      title="Taylor Thompson Home Group instant home value form"
-      loading="eager"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allow="clipboard-write; geolocation; storage-access"
-    >
-      <p class="hifello-frame-fallback">
-        The home value form is loading. If it does not appear, open the
-        <a href="https://taylorthompsonhomegroup.hifello.com/lp/6a887b2fbe5deef45d25bf9e" target="_blank" rel="noopener">instant valuation form</a>.
-      </p>
-    </iframe>
-  </div>
 </section>
 
 <!-- WHY GET A VALUATION -->
