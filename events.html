@@ -87,10 +87,17 @@
 .type-card-img{
   aspect-ratio:4/5;
   width:100%;
-  background-size:cover;
-  background-position:center;
   position:relative;
   background-color:var(--tan-pale);
+  overflow:hidden;
+}
+
+.type-card-img img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  object-position:center;
 }
 
 .type-card-img-placeholder{
@@ -144,6 +151,14 @@
   font-weight:300;
   line-height:1.85;
   color:var(--mid);
+}
+
+.events-empty{
+  grid-column:1/-1;
+  padding:48px;
+  background:var(--white);
+  color:var(--mid);
+  text-align:center;
 }
 
 @media(max-width:1100px){
@@ -320,90 +335,43 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 <!-- EVENT TYPES -->
 
 
-<section class="types-section">
-
+<section class="types-section" id="events">
   <div class="types-grid">
-
-    <!-- EVENT 1 -->
-    <div class="type-card fade-up">
-
-      <div 
-        class="type-card-img"
-        style="background-image:url('/assets/images/events/event-1.jpg');">
+    <!-- FEATURED_EVENTS_START -->
+    <article class="type-card fade-up">
+      <div class="type-card-img">
+        <img src="/assets/images/events/event-1.jpg" alt="Vision Board Event event poster" loading="lazy">
       </div>
-
       <div class="type-card-body">
-
-        <span class="type-card-tag">
-          KICK-OFF EVENT
-        </span>
-
-        <div class="type-card-title">
-          Vision Board Event
-        </div>
-
-        <p class="type-card-desc">
-          Our Vision Board Event was such a special night of goal setting, inspiration, and meaningful connection as everyone came together to dream big for the year ahead.
-        </p>
-
+        <span class="type-card-tag">Kick-Off Event</span>
+        <h3 class="type-card-title">Vision Board Event</h3>
+        <p class="type-card-desc">Our Vision Board Event was such a special night of goal setting, inspiration, and meaningful connection as everyone came together to dream big for the year ahead.</p>
       </div>
+    </article>
 
-    </div>
-
-    <!-- EVENT 2 -->
-    <div class="type-card fade-up">
-
-      <div 
-        class="type-card-img"
-        style="background-image:url('/assets/images/events/event-2.jpg');">
+    <article class="type-card fade-up">
+      <div class="type-card-img">
+        <img src="/assets/images/events/event-2.jpg" alt="Client Photo Session event poster" loading="lazy">
       </div>
-
       <div class="type-card-body">
-
-        <span class="type-card-tag">
-          Client Event
-        </span>
-
-        <div class="type-card-title">
-          Client Photo Session
-        </div>
-
-        <p class="type-card-desc">
-          The Client Photo Smiles, laughter, and lots of sweet moments made the Client Photo Session such a fun day celebrating the people who continue to support us year after year.
-        </p>
-
+        <span class="type-card-tag">Client Event</span>
+        <h3 class="type-card-title">Client Photo Session</h3>
+        <p class="type-card-desc">Smiles, laughter, and lots of sweet moments made the Client Photo Session such a fun day celebrating the people who continue to support us year after year.</p>
       </div>
+    </article>
 
-    </div>
-
-    <!-- EVENT 3 -->
-    <div class="type-card fade-up">
-
-      <div 
-        class="type-card-img"
-        style="background-image:url('/assets/images/events/event-3.jpg');">
+    <article class="type-card fade-up">
+      <div class="type-card-img">
+        <img src="/assets/images/events/event-3.jpg" alt="Thanksgiving Pie Giveaway! event poster" loading="lazy">
       </div>
-
       <div class="type-card-body">
-
-        <span class="type-card-tag">
-          Holiday Event
-        </span>
-
-        <div class="type-card-title">
-          Thanks Giving Pie Giveaway!
-        </div>
-
-        <p class="type-card-desc">
-          Nothing says Thanksgiving season like fresh pies and grateful hearts. The Thanksgiving Pie Giveaway was one of our favorite ways to celebrate and give back to our amazing community.
-        </p>
-
+        <span class="type-card-tag">Holiday Event</span>
+        <h3 class="type-card-title">Thanksgiving Pie Giveaway!</h3>
+        <p class="type-card-desc">Nothing says Thanksgiving season like fresh pies and grateful hearts. The Thanksgiving Pie Giveaway was one of our favorite ways to celebrate and give back to our amazing community.</p>
       </div>
-
-    </div>
-
+    </article>
+    <!-- FEATURED_EVENTS_END -->
   </div>
-
 </section>
 
 

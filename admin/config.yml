@@ -136,6 +136,38 @@ collections:
           - label: "1 Star"
             value: 1
 
+  - name: "events"
+    label: "Featured Events"
+    label_singular: "Featured Event"
+    folder: "content/events"
+    create: true
+    identifier_field: "title"
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}-{{minute}}-{{second}}-{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{title}} - {{eventType}}"
+    editor:
+      preview: false
+    fields:
+      - label: "Event Poster / Photo"
+        name: "image"
+        widget: "image"
+        hint: "Upload the event poster or the main event photo."
+
+      - label: "Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Event Type"
+        name: "eventType"
+        widget: "string"
+        hint: "Examples: Client Event, Holiday Event, or Kick-Off Event."
+
+      - label: "Short Description"
+        name: "description"
+        widget: "text"
+        hint: "Keep this to one short paragraph."
+
   - name: "blog"
     label: "Blog Posts"
     label_singular: "Blog Post"
