@@ -192,6 +192,15 @@ collections:
         name: "title"
         widget: "string"
 
+      - label: "Custom URL Slug (Optional)"
+        name: "slug"
+        widget: "string"
+        required: false
+        hint: "The text after /blog/ in this post's link. Use lowercase letters, numbers, and dashes only, for example: manteca-home-buying-guide. Leave blank to create it automatically from the title. Once a post is live, avoid changing this because its link will change."
+        pattern:
+          - "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          - "Use lowercase letters, numbers, and dashes only. Example: manteca-home-buying-guide"
+
       - label: "When should this post go live?"
         name: "publishTiming"
         widget: "select"
