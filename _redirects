@@ -22,10 +22,11 @@
 /sell /sell/index.html 200
 /cash-offer /cash-offer/index.html 200
 /listings /listings/index.html 200
+/blog/:slug.html /blog/:slug/ 301
+/blogs/:slug /blog/:slug/ 301
+/post/:slug /blog/:slug/ 301
+/posts/:slug /blog/:slug/ 301
+/blog-posts/:slug /blog/:slug/ 301
 /blog/:slug /blog-post.html?slug=:slug 200
-/blogs/:slug /blog-post.html?slug=:slug 200
-/post/:slug /blog-post.html?slug=:slug 200
-/posts/:slug /blog-post.html?slug=:slug 200
-/blog-posts/:slug /blog-post.html?slug=:slug 200
 
 /thank-you /thank-you.html 200

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Los Banos Homes for Sale | Taylor Thompson Home Group</title>
+  <meta name="description" content="Search Los Banos homes for sale and explore neighborhoods, lifestyle, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
+  <style>
+    :root{--cream:#faf6f1;--white:#fff;--ink:#050505;--mid:#765f50;--tan:#a68068;--tan-light:#c2a894;--tan-pale:#ddcebe;--line:#d9cec5;}
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;line-height:1.75;overflow-x:hidden;}
+    a{color:inherit;}
+    .landing-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);min-height:650px;background:#000;color:#fff;}
+    .landing-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(60px,7vw,100px) clamp(28px,6vw,84px);}
+    .landing-hero__image{min-height:420px;background:linear-gradient(135deg,rgba(0,0,0,.16),rgba(0,0,0,.05)),url("/assets/images/uploads/los-banos-homes-for-sale.jpg") center/cover no-repeat;}
+    .section-eyebrow{margin:0 0 16px;color:var(--tan-light);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;}
+    .hero-title,.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.08;}
+    .hero-title{max-width:760px;margin:0 0 22px;font-size:clamp(46px,6vw,78px);}
+    .hero-title em,.section-title em{color:var(--tan-light);font-style:italic;}
+    .hero-intro{max-width:620px;margin:0 0 34px;color:rgba(255,255,255,.72);font-size:17px;font-weight:300;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--tan);border:1px solid var(--tan);color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;text-decoration:none;text-transform:uppercase;}
+    .btn--light{background:transparent;border-color:rgba(255,255,255,.38);color:#fff;}
+    .neighborhood-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);}
+    .stat-card{background:#fff;padding:28px 24px;text-align:center;}
+    .stat-card span{display:block;margin-bottom:8px;color:var(--mid);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;}
+    .stat-card strong{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--ink);}
+    .content-section,.idx-section,.cta-section{padding:clamp(64px,8vw,104px) clamp(24px,6vw,80px);}
+    .content-section{background:var(--cream);}
+    .content-section:nth-of-type(even){background:#fff;}
+    .section-header{max-width:760px;margin:0 auto 36px;text-align:center;}
+    .section-title{margin:0;color:var(--ink);font-size:clamp(34px,4vw,52px);}
+    .section-body{max-width:640px;margin:14px auto 0;color:var(--mid);font-size:15px;font-weight:300;}
+    .rich-text{max-width:860px;margin:0 auto;color:var(--mid);font-size:16px;font-weight:300;}
+    .rich-text h2,.rich-text h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-weight:400;line-height:1.15;}
+    .rich-text h2{font-size:34px;margin:38px 0 14px;}
+    .rich-text h3{font-size:28px;margin:30px 0 12px;}
+    .rich-text p,.rich-text li{margin:0 0 18px;}
+    .rich-text ul,.rich-text ol{padding-left:24px;margin:0 0 22px;}
+    .idx-section{background:#000;color:#fff;}
+    .idx-section .section-title{color:#fff;}
+    .idx-embed{width:min(1280px,100%);margin:0 auto;background:#fff;border:1px solid rgba(255,255,255,.14);color:var(--ink);min-height:260px;padding:24px;}
+    .idx-placeholder{display:flex;align-items:center;justify-content:center;min-height:220px;border:1px dashed var(--tan-pale);color:var(--mid);text-align:center;}
+    .area-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1120px;margin:0 auto;}
+    .area-card{background:#fff;border-top:3px solid var(--tan);padding:30px 28px;}
+    .area-card h3{margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;}
+    .area-card p{margin:0;color:var(--mid);font-weight:300;}
+    .cta-section{background:var(--tan-pale);text-align:center;}
+    .cta-section .section-title{margin-bottom:14px;}
+    .cta-section p{max-width:620px;margin:0 auto 28px;color:var(--mid);}
+    @media(max-width:920px){.landing-hero{grid-template-columns:1fr;}.landing-hero__image{min-height:340px;order:-1}.neighborhood-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.area-grid{grid-template-columns:1fr;}.idx-embed{padding:14px;}}
+    @media(max-width:560px){.landing-hero__copy{padding:46px 24px}.hero-actions .btn{width:100%;}.neighborhood-stats{grid-template-columns:1fr;}.content-section,.idx-section,.cta-section{padding:52px 22px;}.idx-embed{margin:0 -6px;width:calc(100% + 12px);}}
+  </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WB14XQV0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2WB14XQV0B');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
+  <div data-include="/includes/header.html"></div>
+  <main>
+    <section class="landing-hero">
+      <div class="landing-hero__copy">
+        <p class="section-eyebrow">Los Banos Real Estate</p>
+        <h1 class="hero-title">Los Banos Homes for <em>Sale</em></h1>
+        <p class="hero-intro">Explore homes for sale in Los Banos, compare local neighborhoods, and discover why this growing Merced County community is a popular choice for buyers seeking more space, convenient commuting, and a relaxed Central Valley lifestyle.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#homes-for-sale">Search Homes</a>
+          <a class="btn btn--light" href="/contact">Contact Taylor</a>
+        </div>
+      </div>
+      <div class="landing-hero__image" role="img" aria-label="Los Banos aerial view"></div>
+    </section>
+    
+    <section class="neighborhood-stats" aria-label="Quick facts">
+      
+        <div class="stat-card">
+          <span>County</span>
+          <strong>Merced County</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>Population</span>
+          <strong>Approximately 45,000 Residents</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>Known for</span>
+          <strong>Family Friendly Neighborhoods, Agriculture, and Outdoor Recreation</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>Major Employers</span>
+          <strong>Agriculture, Healthcare, Education, Retail, and Manufacturing</strong>
+        </div>
+      
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Area Guide</p>
+        <h2 class="section-title">Looking for a Home in <em>Los Banos?</em></h2>
+      </div>
+      <div class="rich-text"><p>Los Banos offers buyers a relaxed Central Valley lifestyle with established neighborhoods, newer communities, local parks, shopping, dining, and convenient access to regional commuter routes. Its location in western Merced County makes it an appealing option for buyers looking for more space while staying connected to nearby employment centers.</p>
+<p>Whether you are searching for your first home, upgrading to more space, or relocating within Merced County, Los Banos offers a variety of homes and neighborhoods to explore.</p></div>
+    </section>
+  
+    
+    <section class="idx-section" id="homes-for-sale">
+      <div class="section-header">
+        <p class="section-eyebrow">Homes for Sale</p>
+        <h2 class="section-title">Search Los Banos Homes for Sale</h2>
+        <p class="section-body">Browse current homes for sale in Los Banos using the live property search below. Explore available listings, compare home features, and discover opportunities throughout the community.</p>
+      </div>
+      <div class="idx-embed">
+        <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-167943" src="//taylorthompsonhomegroup.idxbroker.com/idx/widgets/167943"></script>
+      </div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Local Areas</p>
+        <h2 class="section-title">Neighborhoods and Areas to <em>Know</em></h2>
+      </div>
+      <div class="area-grid">
+        
+          <article class="area-card">
+            <h3>Stone Creek</h3>
+            <p>Newer homes, family friendly streets, and convenient access to parks and everyday amenities.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>Silver Oaks</h3>
+            <p>Well maintained homes, quiet streets, and a comfortable residential atmosphere.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>Pacheco Village</h3>
+            <p>Established homes, mature landscaping, and convenient access to schools and local shopping.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>The Meadows</h3>
+            <p>Family friendly neighborhoods, spacious homes, and easy access to community amenities.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>Downtown Los Banos</h3>
+            <p>Local shops, restaurants, community events, and established residential streets nearby.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>North Los Banos</h3>
+            <p>Newer residential areas, larger homes, and convenient access to major commuter routes.</p>
+          </article>
+        
+      </div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Lifestyle</p>
+        <h2 class="section-title">What Makes Los Banos Appealing</h2>
+      </div>
+      <div class="rich-text"><p>Los Banos offers a comfortable Central Valley lifestyle with local parks, restaurants, shopping, community events, and plenty of opportunities to enjoy the outdoors. Its location also provides access to nearby recreation areas, making it appealing to buyers who appreciate both everyday convenience and outdoor activities.</p>
+<p>For many buyers, Los Banos offers more space and a quieter pace of life while still providing convenient connections to Merced, the Central Valley, and Bay Area commuter routes.</p></div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Market Notes</p>
+        <h2 class="section-title">Los Banos Market Notes</h2>
+      </div>
+      <div class="rich-text"><p>The Los Banos real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, parks, shopping, and commuter routes. A newer home in one part of the city may offer different features and value than an established property nearby.</p>
+<p>If you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales when evaluating your options.</p></div>
+    </section>
+  
+    <section class="cta-section">
+      <h2 class="section-title">Thinking About Buying or Selling in <em>Los Banos?</em></h2>
+      <p>Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.</p>
+      <a class="btn" href="/contact">Contact Taylor</a>
+    </section>
+  </main>
+  <div data-include="/includes/footer.html"></div>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

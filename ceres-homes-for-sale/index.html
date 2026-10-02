@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ceres Homes for Sale | Taylor Thompson Home Group</title>
+  <meta name="description" content="Search Ceres homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/nav-footer.css">
+  <style>
+    :root{--cream:#faf6f1;--white:#fff;--ink:#050505;--mid:#765f50;--tan:#a68068;--tan-light:#c2a894;--tan-pale:#ddcebe;--line:#d9cec5;}
+    *{box-sizing:border-box;}
+    body{margin:0;background:var(--cream);color:var(--ink);font-family:'Jost',sans-serif;line-height:1.75;overflow-x:hidden;}
+    a{color:inherit;}
+    .landing-hero{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(320px,.98fr);min-height:650px;background:#000;color:#fff;}
+    .landing-hero__copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(60px,7vw,100px) clamp(28px,6vw,84px);}
+    .landing-hero__image{min-height:420px;background:linear-gradient(135deg,rgba(0,0,0,.16),rgba(0,0,0,.05)),url("/assets/images/uploads/ceres.jpg") center/cover no-repeat;}
+    .section-eyebrow{margin:0 0 16px;color:var(--tan-light);font-size:11px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;}
+    .hero-title,.section-title{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.08;}
+    .hero-title{max-width:760px;margin:0 0 22px;font-size:clamp(46px,6vw,78px);}
+    .hero-title em,.section-title em{color:var(--tan-light);font-style:italic;}
+    .hero-intro{max-width:620px;margin:0 0 34px;color:rgba(255,255,255,.72);font-size:17px;font-weight:300;}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 26px;background:var(--tan);border:1px solid var(--tan);color:#fff;font-size:12px;font-weight:800;letter-spacing:.14em;text-decoration:none;text-transform:uppercase;}
+    .btn--light{background:transparent;border-color:rgba(255,255,255,.38);color:#fff;}
+    .neighborhood-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);}
+    .stat-card{background:#fff;padding:28px 24px;text-align:center;}
+    .stat-card span{display:block;margin-bottom:8px;color:var(--mid);font-size:10px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;}
+    .stat-card strong{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;color:var(--ink);}
+    .content-section,.idx-section,.cta-section{padding:clamp(64px,8vw,104px) clamp(24px,6vw,80px);}
+    .content-section{background:var(--cream);}
+    .content-section:nth-of-type(even){background:#fff;}
+    .section-header{max-width:760px;margin:0 auto 36px;text-align:center;}
+    .section-title{margin:0;color:var(--ink);font-size:clamp(34px,4vw,52px);}
+    .section-body{max-width:640px;margin:14px auto 0;color:var(--mid);font-size:15px;font-weight:300;}
+    .rich-text{max-width:860px;margin:0 auto;color:var(--mid);font-size:16px;font-weight:300;}
+    .rich-text h2,.rich-text h3{font-family:'Cormorant Garamond',serif;color:var(--ink);font-weight:400;line-height:1.15;}
+    .rich-text h2{font-size:34px;margin:38px 0 14px;}
+    .rich-text h3{font-size:28px;margin:30px 0 12px;}
+    .rich-text p,.rich-text li{margin:0 0 18px;}
+    .rich-text ul,.rich-text ol{padding-left:24px;margin:0 0 22px;}
+    .idx-section{background:#000;color:#fff;}
+    .idx-section .section-title{color:#fff;}
+    .idx-embed{width:min(1280px,100%);margin:0 auto;background:#fff;border:1px solid rgba(255,255,255,.14);color:var(--ink);min-height:260px;padding:24px;}
+    .idx-placeholder{display:flex;align-items:center;justify-content:center;min-height:220px;border:1px dashed var(--tan-pale);color:var(--mid);text-align:center;}
+    .area-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;max-width:1120px;margin:0 auto;}
+    .area-card{background:#fff;border-top:3px solid var(--tan);padding:30px 28px;}
+    .area-card h3{margin:0 0 10px;font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:400;}
+    .area-card p{margin:0;color:var(--mid);font-weight:300;}
+    .cta-section{background:var(--tan-pale);text-align:center;}
+    .cta-section .section-title{margin-bottom:14px;}
+    .cta-section p{max-width:620px;margin:0 auto 28px;color:var(--mid);}
+    @media(max-width:920px){.landing-hero{grid-template-columns:1fr;}.landing-hero__image{min-height:340px;order:-1}.neighborhood-stats{grid-template-columns:repeat(2,minmax(0,1fr));}.area-grid{grid-template-columns:1fr;}.idx-embed{padding:14px;}}
+    @media(max-width:560px){.landing-hero__copy{padding:46px 24px}.hero-actions .btn{width:100%;}.neighborhood-stats{grid-template-columns:1fr;}.content-section,.idx-section,.cta-section{padding:52px 22px;}.idx-embed{margin:0 -6px;width:calc(100% + 12px);}}
+  </style>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2WB14XQV0B"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-2WB14XQV0B');
+</script>
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4531065853843983');
+fbq('track', 'PageView');
+</script>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+  <noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
+/></noscript>
+  <div data-include="/includes/header.html"></div>
+  <main>
+    <section class="landing-hero">
+      <div class="landing-hero__copy">
+        <p class="section-eyebrow">Ceres Real Estate</p>
+        <h1 class="hero-title">Ceres Homes for <em>Sale</em></h1>
+        <p class="hero-intro">Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#homes-for-sale">Search Homes</a>
+          <a class="btn btn--light" href="/contact">Contact Taylor</a>
+        </div>
+      </div>
+      <div class="landing-hero__image" role="img" aria-label="Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today."></div>
+    </section>
+    
+    <section class="neighborhood-stats" aria-label="Quick facts">
+      
+        <div class="stat-card">
+          <span>Population</span>
+          <strong>Approximately 49,000</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>County</span>
+          <strong>Stanislaus County</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>Median Home Value</span>
+          <strong>Approximately $424,800</strong>
+        </div>
+      
+        <div class="stat-card">
+          <span>Average Commute</span>
+          <strong>33.8 Minutes</strong>
+        </div>
+      
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Area Guide</p>
+        <h2 class="section-title">Looking for a Home in <em>Ceres?</em></h2>
+      </div>
+      <div class="rich-text"><p>Located in southern Stanislaus County, Ceres offers homebuyers a convenient location just minutes from Modesto while maintaining a strong community atmosphere. Buyers are attracted to Ceres for its relatively affordable home prices, family friendly neighborhoods, newer housing developments, and easy Highway 99 access. With a population of approximately 49,000 residents, Ceres continues to grow while remaining one of the Central Valley&#039;s most accessible housing markets.</p></div>
+    </section>
+  
+    
+    <section class="idx-section" id="homes-for-sale">
+      <div class="section-header">
+        <p class="section-eyebrow">Homes for Sale</p>
+        <h2 class="section-title">Search All Ceres Homes</h2>
+        
+      </div>
+      <div class="idx-embed">
+        <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-157057" src="//taylorthompsonhomegroup.idxbroker.com/idx/widgets/157057"></script>
+      </div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Local Areas</p>
+        <h2 class="section-title">Neighborhoods and Areas to <em>Know</em></h2>
+      </div>
+      <div class="area-grid">
+        
+          <article class="area-card">
+            <h3>Eastgate</h3>
+            <p>Known for well maintained homes, convenient shopping access, and family oriented streets.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>Mayfield</h3>
+            <p>Offers newer construction homes and proximity to parks and schools.</p>
+          </article>
+        
+          <article class="area-card">
+            <h3>East Ceres</h3>
+            <p>Popular among buyers looking for larger lots and newer developments.</p>
+          </article>
+        
+      </div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Lifestyle</p>
+        <h2 class="section-title">What is the average home price in Ceres?</h2>
+      </div>
+      <div class="rich-text"><p>Current listing prices are around $499,500, though prices vary by neighborhood and property type.</p></div>
+    </section>
+  
+    
+    <section class="content-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Market Notes</p>
+        <h2 class="section-title">Ceres Real Estate Market</h2>
+      </div>
+      <div class="rich-text"><p>The Ceres housing market continues to attract buyers looking for affordability, convenience, and a strong sense of community. From charming established neighborhoods to newer construction opportunities, there is something for a wide range of lifestyles and budgets.</p>
+<p>Whether you are purchasing your first home, upgrading to a larger property, or relocating to the Central Valley, understanding local market conditions can help you make a more informed decision. Comparing similar homes, neighborhood trends, and property features is often more valuable than focusing solely on price.</p></div>
+    </section>
+  
+    <section class="cta-section">
+      <h2 class="section-title">Thinking About Buying or Selling in <em>Ceres?</em></h2>
+      <p>Whether you&#039;re buying your first home, relocating to the Central Valley, or searching for more space, Taylor Thompson Home Group can help you navigate the Ceres real estate market with confidence.</p>
+      <a class="btn" href="/contact">Contact Taylor</a>
+    </section>
+  </main>
+  <div data-include="/includes/footer.html"></div>
+  <script src="/assets/js/includes.js" defer></script>
+  <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>

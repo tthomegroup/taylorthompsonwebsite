@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://taylorthompsonhomegroup.netlify.app/sitemap.xml
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://taylorthompsonhomegroup.com/sitemap.xml

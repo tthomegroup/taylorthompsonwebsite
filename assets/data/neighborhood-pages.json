@@ -1,16 +1,166 @@
 [
   {
+    "heroImage": "/assets/images/uploads/ceres.jpg",
+    "lifestyleText": "Current listing prices are around $499,500, though prices vary by neighborhood and property type.",
+    "idxHeading": "Search All Ceres Homes",
+    "neighborhoods": [
+      {
+        "name": "Eastgate",
+        "description": "Known for well maintained homes, convenient shopping access, and family oriented streets."
+      },
+      {
+        "name": "Mayfield",
+        "description": "Offers newer construction homes and proximity to parks and schools."
+      },
+      {
+        "name": "East Ceres",
+        "description": "Popular among buyers looking for larger lots and newer developments."
+      }
+    ],
+    "marketHeading": "Ceres Real Estate Market",
+    "heroImageAlt": "Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today.",
+    "marketText": "The Ceres housing market continues to attract buyers looking for affordability, convenience, and a strong sense of community. From charming established neighborhoods to newer construction opportunities, there is something for a wide range of lifestyles and budgets.\n\nWhether you are purchasing your first home, upgrading to a larger property, or relocating to the Central Valley, understanding local market conditions can help you make a more informed decision. Comparing similar homes, neighborhood trends, and property features is often more valuable than focusing solely on price.",
+    "eyebrow": "Ceres Real Estate",
+    "county": "Stanislaus County",
+    "city": "Ceres",
+    "slug": "ceres-homes-for-sale",
+    "lifestyleHeading": "What is the average home price in Ceres?",
     "published": true,
-    "title": "Manteca Homes for Sale",
-    "slug": "manteca-homes-for-sale",
-    "metaDescription": "Search Manteca homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.",
-    "city": "Manteca",
-    "county": "San Joaquin County",
-    "eyebrow": "Manteca Real Estate",
-    "heroTitle": "Manteca Homes for *Sale*",
-    "heroIntro": "Explore homes for sale in Manteca, compare local neighborhoods, and get a feel for what makes this San Joaquin County city a popular choice for Central Valley buyers.",
-    "heroImage": "/assets/images/manteca.jpg",
+    "ctaButtonText": "Contact Taylor",
+    "ctaHeading": "Thinking About Buying or Selling in *Ceres?*",
+    "heroIntro": "Browse Ceres homes for sale and discover neighborhoods, schools, market trends, and local insights. Search available Ceres real estate listings today.",
+    "introHeading": "Looking for a Home in *Ceres?*",
+    "metaDescription": "Search Ceres homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.",
+    "title": "Ceres Homes for Sale",
+    "introText": "Located in southern Stanislaus County, Ceres offers homebuyers a convenient location just minutes from Modesto while maintaining a strong community atmosphere. Buyers are attracted to Ceres for its relatively affordable home prices, family friendly neighborhoods, newer housing developments, and easy Highway 99 access. With a population of approximately 49,000 residents, Ceres continues to grow while remaining one of the Central Valley's most accessible housing markets.",
+    "quickFacts": [
+      {
+        "label": "Population",
+        "value": "Approximately 49,000"
+      },
+      {
+        "value": "Stanislaus County",
+        "label": "County"
+      },
+      {
+        "label": "Median Home Value",
+        "value": "Approximately $424,800"
+      },
+      {
+        "label": "Average Commute",
+        "value": "33.8 Minutes"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Whether you're buying your first home, relocating to the Central Valley, or searching for more space, Taylor Thompson Home Group can help you navigate the Ceres real estate market with confidence.",
+    "heroTitle": "Ceres Homes for *Sale*",
+    "url": "/ceres-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/los-banos-homes-for-sale.jpg",
+    "lifestyleText": "\n\n\nLos Banos offers a comfortable Central Valley lifestyle with local parks, restaurants, shopping, community events, and plenty of opportunities to enjoy the outdoors. Its location also provides access to nearby recreation areas, making it appealing to buyers who appreciate both everyday convenience and outdoor activities.\n\nFor many buyers, Los Banos offers more space and a quieter pace of life while still providing convenient connections to Merced, the Central Valley, and Bay Area commuter routes.",
+    "idxHeading": "Search Los Banos Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Stone Creek",
+        "description": "Newer homes, family friendly streets, and convenient access to parks and everyday amenities."
+      },
+      {
+        "name": "Silver Oaks",
+        "description": "Well maintained homes, quiet streets, and a comfortable residential atmosphere."
+      },
+      {
+        "name": "Pacheco Village",
+        "description": "Established homes, mature landscaping, and convenient access to schools and local shopping."
+      },
+      {
+        "name": "The Meadows",
+        "description": "Family friendly neighborhoods, spacious homes, and easy access to community amenities."
+      },
+      {
+        "name": "Downtown Los Banos",
+        "description": "Local shops, restaurants, community events, and established residential streets nearby."
+      },
+      {
+        "name": "North Los Banos",
+        "description": "Newer residential areas, larger homes, and convenient access to major commuter routes."
+      }
+    ],
+    "marketHeading": "Los Banos Market Notes",
+    "heroImageAlt": "Los Banos aerial view",
+    "marketText": "\n\n\nThe Los Banos real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, parks, shopping, and commuter routes. A newer home in one part of the city may offer different features and value than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales when evaluating your options.",
+    "eyebrow": "Los Banos Real Estate",
+    "county": "Merced County",
+    "city": "Los Banos",
+    "slug": "los-banos-homes-for-sale",
+    "lifestyleHeading": "What Makes Los Banos Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Los Banos using the live property search below. Explore available listings, compare home features, and discover opportunities throughout the community.",
+    "ctaHeading": "Thinking About Buying or Selling in *Los Banos?*",
+    "heroIntro": "Explore homes for sale in Los Banos, compare local neighborhoods, and discover why this growing Merced County community is a popular choice for buyers seeking more space, convenient commuting, and a relaxed Central Valley lifestyle.",
+    "introHeading": "Looking for a Home in *Los Banos?*",
+    "metaDescription": "Search Los Banos homes for sale and explore neighborhoods, lifestyle, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Los Banos Homes for Sale",
+    "introText": "\n\n\nLos Banos offers buyers a relaxed Central Valley lifestyle with established neighborhoods, newer communities, local parks, shopping, dining, and convenient access to regional commuter routes. Its location in western Merced County makes it an appealing option for buyers looking for more space while staying connected to nearby employment centers.\n\nWhether you are searching for your first home, upgrading to more space, or relocating within Merced County, Los Banos offers a variety of homes and neighborhoods to explore.",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "Merced County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 45,000 Residents"
+      },
+      {
+        "label": "Known for",
+        "value": "Family Friendly Neighborhoods, Agriculture, and Outdoor Recreation"
+      },
+      {
+        "label": "Major Employers",
+        "value": "Agriculture, Healthcare, Education, Retail, and Manufacturing"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Los Banos Homes for *Sale*",
+    "url": "/los-banos-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/living-in-manteca-california-aerial-view.png",
+    "lifestyleText": "Manteca is often a good fit for buyers who want a Central Valley lifestyle while still staying connected to larger job centers. Local parks, shopping, restaurants, and community amenities give the city a practical everyday feel.\n\nFor many buyers, the appeal is simple: more room, more options, and a location that can work for both local and commuter lifestyles.",
+    "idxHeading": "Search Manteca Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Woodward Park Area",
+        "description": "Known for newer homes, parks, and a suburban feel with convenient access to shopping and daily amenities."
+      },
+      {
+        "name": "Central Manteca",
+        "description": "A practical option for buyers who want access to established neighborhoods, local services, and commute routes."
+      },
+      {
+        "name": "South Manteca",
+        "description": "Popular with buyers looking for residential communities and access toward Highway 120 and nearby cities."
+      }
+    ],
+    "marketHeading": "Manteca Market Notes",
     "heroImageAlt": "Homes and neighborhoods in Manteca, California",
+    "marketText": "The Manteca real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to commuter routes. A newer home in one part of town may perform differently than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales.",
+    "eyebrow": "Manteca Real Estate",
+    "county": "San Joaquin County",
+    "city": "Manteca",
+    "slug": "manteca-homes-for-sale",
+    "lifestyleHeading": "What Makes Manteca Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Use the live IDX search below to browse current Manteca listings. You can paste the city-specific IDX Broker embed for Manteca into this page from the admin dashboard.",
+    "ctaHeading": "Thinking About Buying or Selling in *Manteca?*",
+    "heroIntro": "Explore homes for sale in Manteca, compare local neighborhoods, and get a feel for what makes this San Joaquin County city a popular choice for Central Valley buyers.",
+    "introHeading": "Looking for a Home in *Manteca?*",
+    "metaDescription": "Search Manteca homes for sale and learn about neighborhoods, lifestyle, and local real estate with Taylor Thompson Home Group.",
+    "title": "Manteca Homes for Sale",
+    "introText": "Manteca offers a convenient Central Valley location with access to shopping, commuter routes, parks, and established neighborhoods. Buyers are often drawn to the area for its mix of suburban comfort, newer communities, and proximity to both the Bay Area and nearby Central Valley cities.\n\nWhether you are looking for your first home, more space, or a strategic move within San Joaquin County, this page can be used as a local search hub for current Manteca listings.",
     "quickFacts": [
       {
         "label": "County",
@@ -29,32 +179,381 @@
         "value": "IDX Search"
       }
     ],
-    "introHeading": "Looking for a Home in *Manteca?*",
-    "introText": "Manteca offers a convenient Central Valley location with access to shopping, commuter routes, parks, and established neighborhoods. Buyers are often drawn to the area for its mix of suburban comfort, newer communities, and proximity to both the Bay Area and nearby Central Valley cities.\n\nWhether you are looking for your first home, more space, or a strategic move within San Joaquin County, this page can be used as a local search hub for current Manteca listings.",
-    "idxHeading": "Search Manteca Homes for Sale",
-    "idxIntro": "Use the live IDX search below to browse current Manteca listings. You can paste the city-specific IDX Broker embed for Manteca into this page from the admin dashboard.",
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Manteca Homes for *Sale*",
+    "url": "/manteca-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/modesto-landing.jpg",
+    "lifestyleText": "Modesto offers a blend of everyday convenience, established neighborhoods, local businesses, and community events that appeal to a wide range of homebuyers. Residents enjoy access to parks, shopping centers, dining, entertainment, and recreational opportunities throughout the city.\n\nFor many buyers, Modesto provides the flexibility of larger city amenities while maintaining a strong sense of community. Its central location, variety of housing options, and access to major transportation routes continue to make it a popular choice throughout the Central Valley.",
+    "idxHeading": "Search Modesto Homes for Sale",
     "neighborhoods": [
       {
-        "name": "Woodward Park Area",
-        "description": "Known for newer homes, parks, and a suburban feel with convenient access to shopping and daily amenities."
+        "name": "College Area",
+        "description": "Known for character homes, mature trees, and proximity to schools and downtown amenities.\n"
       },
       {
-        "name": "Central Manteca",
-        "description": "A practical option for buyers who want access to established neighborhoods, local services, and commute routes."
+        "name": "Village One",
+        "description": "Popular for newer homes, family friendly streets, and convenient access to shopping and parks.\n"
       },
       {
-        "name": "South Manteca",
-        "description": "Popular with buyers looking for residential communities and access toward Highway 120 and nearby cities."
+        "name": "Del Rio",
+        "description": "Known for larger homes, golf course living, and one of Modesto's most established upscale communities."
       }
     ],
-    "lifestyleHeading": "What Makes Manteca Appealing",
-    "lifestyleText": "Manteca is often a good fit for buyers who want a Central Valley lifestyle while still staying connected to larger job centers. Local parks, shopping, restaurants, and community amenities give the city a practical everyday feel.\n\nFor many buyers, the appeal is simple: more room, more options, and a location that can work for both local and commuter lifestyles.",
-    "marketHeading": "Manteca Market Notes",
-    "marketText": "The Manteca real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to commuter routes. A newer home in one part of town may perform differently than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales.",
-    "ctaHeading": "Thinking About Buying or Selling in *Manteca?*",
-    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "marketHeading": "Modesto Market Notes",
+    "heroImageAlt": "Homes and neighborhoods in Modesto, California",
+    "marketText": "The Modesto real estate market can vary by neighborhood, home age, lot size, upgrades, and location throughout the city. A property in one area may offer a different experience and value proposition than a similar home elsewhere in Modesto.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, neighborhood characteristics, days on market, and recent comparable sales when evaluating opportunities.",
+    "eyebrow": "Modesto Real Estate",
+    "county": "Stanislaus County",
+    "city": "Modesto",
+    "slug": "modesto-homes-for-sale",
+    "lifestyleHeading": "What Makes Modesto Appealing",
+    "published": true,
     "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Modesto using the live property search below. Explore available listings, compare home features, and discover opportunities across a variety of neighborhoods throughout the city.",
+    "ctaHeading": "Thinking About Buying or Selling in *Modesto?*",
+    "heroIntro": "Explore homes for sale in Modesto, compare local neighborhoods, and discover what makes this vibrant Stanislaus County city one of the Central Valley's most popular places to call home.",
+    "introHeading": "Looking for a Home in *Modesto?*",
+    "metaDescription": "Search Modesto homes for sale and explore neighborhoods, lifestyle, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Modesto Homes for Sale",
+    "introText": "Modesto offers a diverse selection of homes, established neighborhoods, local shopping, dining, parks, and convenient access throughout the Central Valley. As the largest city in Stanislaus County, it continues to attract buyers looking for a balance of amenities, opportunity, and community.\n\nWhether you are searching for your first home, upgrading to more space, or relocating within the region, Modesto provides a variety of housing options and neighborhoods to explore.",
+    "quickFacts": [
+      {
+        "label": "Population",
+        "value": "Approximately 220,000 Residents"
+      },
+      {
+        "label": "Known For",
+        "value": "Family Friendly Neighborhoods, Agriculture, and Community Events"
+      },
+      {
+        "label": "Major Employer",
+        "value": "Healthcare, Education, Agriculture, Manufacturing, and Logistics"
+      },
+      {
+        "label": "Life Style",
+        "value": "Urban Amenities with a Strong Community Feel"
+      }
+    ],
     "ctaButtonLink": "/contact",
-    "url": "/manteca-homes-for-sale/"
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Modesto Homes for *Sale*",
+    "url": "/modesto-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/ripon.jpg",
+    "lifestyleText": "\n\n\nRipon offers a relaxed pace of life while providing easy access to shopping, dining, parks, and nearby employment centers. Residents enjoy community events, recreational opportunities, and one of the area's most respected school districts.\n\nFor many buyers, the appeal is simple: safe neighborhoods, excellent schools, strong community pride, and a location that offers both convenience and a quieter lifestyle.",
+    "idxHeading": "Search Ripon Homes for Sale",
+    "neighborhoods": [
+      {
+        "description": "Well maintained homes, quiet streets, and convenient access to schools and parks.",
+        "name": "Spring Creek"
+      },
+      {
+        "name": "West Ripon",
+        "description": "Larger homes, spacious lots, and a peaceful residential atmosphere."
+      },
+      {
+        "name": "Downtown Ripon",
+        "description": "Historic charm, walkable streets, and easy access to local shops and restaurants."
+      },
+      {
+        "name": "Jack Tone Area",
+        "description": "Custom homes, rural surroundings, and larger properties with added privacy."
+      },
+      {
+        "name": "Harvest Crossing",
+        "description": "Newer homes, family friendly streets, and convenient access to everyday amenities."
+      },
+      {
+        "name": "The Bluffs",
+        "description": "Beautiful homes, attractive landscaping, and a desirable neighborhood setting."
+      }
+    ],
+    "marketHeading": "Ripon Market Notes",
+    "heroImageAlt": "Homes and neighborhoods in Ripon, California",
+    "marketText": "\n\n\nThe Ripon real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools and commuter routes. Newer homes may offer different features and pricing than established properties throughout the city.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales when evaluating your options.",
+    "eyebrow": "Ripon Real Estate",
+    "county": "San Joaquin County",
+    "city": "Ripon",
+    "slug": "ripon-homes-for-sale",
+    "lifestyleHeading": "What Makes Ripon Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Ripon using the live property search below. Compare available listings, explore neighborhood options, and discover homes that fit your lifestyle and budget.",
+    "ctaHeading": "Thinking About Buying or Selling in *Ripon?*",
+    "heroIntro": "Explore homes for sale in Ripon, compare local neighborhoods, and discover why this charming San Joaquin County community is a favorite among buyers seeking small town living, excellent schools, and a strong sense of community.",
+    "introHeading": "Looking for a Home in *Ripon?*",
+    "metaDescription": "Search Ripon homes for sale and explore neighborhoods, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Ripon Homes for Sale",
+    "introText": "\n\n\nRipon is known for its welcoming atmosphere, highly regarded schools, and beautifully maintained neighborhoods. Buyers are often drawn to the city for its small town charm, community pride, and convenient location in the Central Valley.\n\nWhether you are searching for your first home, upgrading to more space, or relocating within San Joaquin County, Ripon offers a variety of homes that appeal to families, professionals, and retirees alike.",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "San Joaquin County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 18,000 Residents"
+      },
+      {
+        "label": "Known for",
+        "value": "Award Winning Schools, Small Town Charm, and Community Events"
+      },
+      {
+        "label": "Lifestyle",
+        "value": "Quiet Community with Excellent Parks and Family Friendly Neighborhoods"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Ripon Homes for *Sale*",
+    "url": "/ripon-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/riverbank-homes-for-sale.jpg",
+    "lifestyleText": "\n\n\nRiverbank combines the charm of a smaller community with convenient access to larger neighboring cities. Residents enjoy parks, walking trails, local restaurants, shopping, and recreational opportunities along the Stanislaus River, creating a comfortable lifestyle for families and professionals alike.\n\nFor many buyers, Riverbank offers more space, a strong sense of community, and a location that provides easy access to employment centers throughout the Central Valley while maintaining a quieter residential feel.",
+    "idxHeading": "Search Riverbank Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Crossroads",
+        "description": "Modern homes, family friendly streets, and convenient access to schools and shopping."
+      },
+      {
+        "name": "River Heights",
+        "description": "Established homes, mature landscaping, and close proximity to parks and recreation."
+      },
+      {
+        "name": "Briarwood",
+        "description": "Well maintained homes, quiet residential streets, and easy access to local amenities."
+      },
+      {
+        "name": "Sunrise Estates",
+        "description": "Newer homes, spacious floor plans, and a welcoming neighborhood atmosphere."
+      }
+    ],
+    "marketHeading": "Riverbank Market Notes",
+    "heroImageAlt": "Homes and neighborhoods in Riverbank, California",
+    "marketText": "\n\n\nThe Riverbank real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, parks, and commuter routes. A newer home in one part of the city may offer different features and value than an established property nearby.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales to better understand the local market.",
+    "eyebrow": "Central Valley Homes",
+    "county": "Stanislaus County",
+    "city": "Riverbank",
+    "slug": "riverbank-homes-for-sale",
+    "lifestyleHeading": "What Makes Riverbank Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Riverbank using the live property search below. Explore available listings, compare home features, and discover opportunities throughout one of Stanislaus County's growing communities.",
+    "ctaHeading": "Thinking About Buying or Selling in *Riverbank?*",
+    "heroIntro": "Explore homes for sale in Riverbank, compare local neighborhoods, and discover why this growing Stanislaus County community is a popular choice for buyers looking for small town charm with convenient access to everything the Central Valley has to offer.",
+    "introHeading": "Looking for a Home in *Riverbank?*",
+    "metaDescription": "Search Riverbank homes for sale and explore neighborhoods, lifestyle, parks, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Riverbank Homes for Sale",
+    "introText": "\n\n\nRiverbank offers buyers a relaxed Central Valley lifestyle with established neighborhoods, newer home communities, local parks, and convenient access to Modesto. Its welcoming atmosphere, scenic location along the Stanislaus River, and growing amenities continue to attract first time buyers, growing families, and those looking for a quieter place to call home.\n\nWhether you are purchasing your first home, looking for more space, or relocating within Stanislaus County, Riverbank offers a variety of housing options to fit different lifestyles and budgets",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "Stanislaus County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 25,000 Residents"
+      },
+      {
+        "label": "Known for",
+        "value": "Small Town Charm, Riverfront Parks, and Family Friendly Neighborhoods"
+      },
+      {
+        "label": "Major employer",
+        "value": "Healthcare, Retail, Education, Agriculture, and Manufacturing"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Riverbank Real Estate",
+    "url": "/riverbank-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/living-in-salida.jpg",
+    "lifestyleText": "\n\n\nSalida offers buyers the convenience of suburban living while remaining close to the shopping, dining, healthcare, and entertainment available in nearby Modesto. Local parks, schools, and neighborhood amenities make it an attractive community for families, professionals, and retirees alike.\n\nFor many buyers, Salida provides more space, a quieter pace of life, and excellent commuter access, making it an appealing place to call home in the Central Valley.",
+    "idxHeading": "Search Salida Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Vintage Estates",
+        "description": "Well maintained homes, quiet streets, and convenient access to parks and schools."
+      },
+      {
+        "name": "Sterling Ranch",
+        "description": "Modern homes, family friendly neighborhoods, and nearby shopping."
+      },
+      {
+        "name": "Broadway Corridor",
+        "description": "Established homes with convenient access to local businesses and commuter routes."
+      }
+    ],
+    "marketHeading": "Salida Market Notes",
+    "heroImageAlt": "Community parks and green spaces in Salida",
+    "marketText": "\n\n\nThe Salida real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, shopping, and commuter routes. Newer developments may offer different features and pricing than established neighborhoods throughout the community.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales to better understand the local market.",
+    "eyebrow": "Salida Real Estate",
+    "county": "Stanislaus County",
+    "city": "Salida",
+    "slug": "salida-homes-for-sale",
+    "lifestyleHeading": "What Makes Salida Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Salida using the live property search below. Explore available listings, compare home features, and discover opportunities throughout this conveniently located Central Valley community.",
+    "ctaHeading": "Thinking About Buying or Selling in *Salida?*",
+    "heroIntro": "Explore homes for sale in Salida, compare local neighborhoods, and discover why this growing Stanislaus County community is a popular choice for buyers seeking suburban comfort, convenient commuting, and Central Valley living.",
+    "introHeading": "Looking for a Home in *Salida?*",
+    "metaDescription": "Search Salida homes for sale and explore neighborhoods, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Salida Homes for Sale",
+    "introText": "\n\n\nSalida offers a comfortable suburban lifestyle with convenient access to shopping, parks, schools, and major commuter routes. Located just north of Modesto, the community continues to attract buyers looking for more space while remaining close to employment centers throughout the Central Valley.\n\nWhether you are purchasing your first home, upgrading to a larger property, or relocating within Stanislaus County, Salida provides a variety of homes and neighborhoods to fit different lifestyles and budgets.",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "Stanislaus County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 14,000 Residents"
+      },
+      {
+        "label": "Known For",
+        "value": "Family Friendly Neighborhoods, Convenient Location, and Commuter Access"
+      },
+      {
+        "label": "Major Employers",
+        "value": "Healthcare, Retail, Education, Agriculture, and Distribution"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Salida Homes for *Sale*",
+    "url": "/salida-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/stockton-waterfront-and-downtown-aerial-view.jpg",
+    "lifestyleText": "\n\n\nStockton offers a diverse Central Valley lifestyle with waterfront recreation, parks, shopping, restaurants, cultural attractions, and a wide variety of community amenities. Residents can enjoy everything from boating and fishing to local arts, sports, festivals, and events throughout the year.\n\nFor many buyers, Stockton offers more housing choices and space while providing convenient access to employment centers throughout San Joaquin County, the Central Valley, and the greater Northern California region.",
+    "idxHeading": "Search Stockton Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Brookside",
+        "description": "Upscale homes, golf course living, and attractive neighborhoods near the San Joaquin River."
+      },
+      {
+        "name": "Lincoln Village",
+        "description": "Established homes, mature landscaping, and convenient access to shopping and everyday amenities."
+      },
+      {
+        "name": "Miracle Mile",
+        "description": "Historic character, locally owned businesses, restaurants, and a vibrant neighborhood atmosphere."
+      }
+    ],
+    "marketHeading": "Stockton Market Notes",
+    "heroImageAlt": "Homes and neighborhoods in Stockton, California",
+    "marketText": "\n\n\nThe Stockton real estate market can vary significantly by neighborhood, home age, lot size, upgrades, and proximity to schools, waterfront areas, shopping, and commuter routes. A home in an established neighborhood may offer a very different value proposition than a newer property in another part of the city.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, neighborhood characteristics, and recent comparable sales when evaluating your options.",
+    "eyebrow": "Stockton Real Estate",
+    "county": "San Joaquin County",
+    "city": "Stockton",
+    "slug": "stockton-homes-for-sale",
+    "lifestyleHeading": "What Makes Stockton Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Stockton using the live property search below. Explore available listings, compare home features, and discover properties across neighborhoods throughout the city.",
+    "ctaHeading": "Thinking About Buying or Selling in *Stockton?*",
+    "heroIntro": "Explore homes for sale in Stockton, compare local neighborhoods, and discover what makes this diverse San Joaquin County city an appealing option for Central Valley buyers looking for value, amenities, and convenient access to major employment centers.",
+    "introHeading": "Looking for a Home in *Stockton?*",
+    "metaDescription": "Search Stockton homes for sale and explore neighborhoods, lifestyle, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Stockton Homes for Sale",
+    "introText": "\n\n\nStockton offers a wide variety of housing options, established neighborhoods, waterfront recreation, shopping, dining, and convenient access to major highways throughout Northern California. As one of the largest cities in the Central Valley, Stockton gives buyers plenty of choices when it comes to finding a home that fits their lifestyle and budget.\n\nWhether you are searching for your first home, looking for more space, or relocating within San Joaquin County, Stockton offers diverse neighborhoods and housing opportunities to explore.",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "San Joaquin County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 320,000 Residents"
+      },
+      {
+        "label": "Known for",
+        "value": "Waterfront Living, Diverse Neighborhoods, Agriculture, and Community Events"
+      },
+      {
+        "label": "Major Employers",
+        "value": "Healthcare, Education, Agriculture, Logistics, Government, and Retail"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Stockton Homes for *Sale*",
+    "url": "/stockton-homes-for-sale/"
+  },
+  {
+    "heroImage": "/assets/images/uploads/turlock-homes-for-sale.jpg",
+    "lifestyleText": "\n\n\nTurlock combines the convenience of a growing city with the welcoming feel of a close knit community. Residents enjoy beautiful parks, community events, local farmers markets, excellent dining, and a lively downtown district that brings people together throughout the year.\n\nFor many buyers, Turlock offers outstanding schools, diverse housing options, and a central location that provides convenient access to employment, recreation, and everything the Central Valley has to offer.",
+    "idxHeading": "Search Turlock Homes for Sale",
+    "neighborhoods": [
+      {
+        "name": "Northeast Turlock",
+        "description": "Modern homes, excellent schools, and convenient access to shopping and parks."
+      },
+      {
+        "name": "East Turlock",
+        "description": "Well established neighborhoods with mature trees and spacious homes."
+      },
+      {
+        "name": "Village One at Turlock",
+        "description": "Newer construction, family friendly streets, and nearby community amenities."
+      },
+      {
+        "name": "Downtown Turlock",
+        "description": "Historic charm, walkable streets, and easy access to local dining and shopping."
+      },
+      {
+        "name": "Monte Vista Crossings",
+        "description": "Popular location with nearby retail, restaurants, and newer residential communities."
+      }
+    ],
+    "marketHeading": "Turlock Market Notes",
+    "heroImageAlt": "Homes and neighborhoods in Turlock, California",
+    "marketText": "\n\n\nThe Turlock real estate market can vary by neighborhood, home age, lot size, upgrades, and proximity to schools, shopping, and commuter routes. A newer home in one area may offer different features and value than an established property elsewhere in the city.\n\nIf you are comparing homes here, it helps to look beyond the list price and consider condition, location, days on market, and recent comparable sales to better understand the local market.",
+    "eyebrow": "Turlock Real Estate",
+    "county": "Stanislaus County",
+    "city": "Turlock",
+    "slug": "turlock-homes-for-sale",
+    "lifestyleHeading": "What Makes Turlock Appealing",
+    "published": true,
+    "ctaButtonText": "Contact Taylor",
+    "idxIntro": "Browse current homes for sale in Turlock using the live property search below. Explore available listings, compare home features, and discover opportunities throughout one of Stanislaus County's most desirable communities.",
+    "ctaHeading": "Thinking About Buying or Selling in *Turlock?*",
+    "heroIntro": "Explore homes for sale in Turlock, compare local neighborhoods, and discover why this vibrant Stanislaus County city continues to attract buyers looking for excellent schools, a strong sense of community, and a high quality of life in the Central Valley.",
+    "introHeading": "Looking for a Home in *Turlock?*",
+    "metaDescription": "Search Turlock homes for sale and explore neighborhoods, lifestyle, parks, schools, and local real estate opportunities with Taylor Thompson Home Group.",
+    "title": "Turlock Homes for Sale",
+    "introText": "\n\n\nTurlock offers a unique blend of small town charm, modern amenities, and a thriving local community. Buyers appreciate its well maintained neighborhoods, excellent schools, beautiful parks, and vibrant downtown filled with local restaurants and shops.\n\nWhether you are purchasing your first home, relocating to the Central Valley, or searching for more space, Turlock offers a wide range of housing options to fit different lifestyles and budgets.",
+    "quickFacts": [
+      {
+        "label": "County",
+        "value": "Stanislaus County"
+      },
+      {
+        "label": "Population",
+        "value": "Approximately 75,000 Residents"
+      },
+      {
+        "label": "Known for",
+        "value": "California State University, Stanislaus, agriculture, and vibrant downtown"
+      },
+      {
+        "label": "Housing information",
+        "value": "Historic homes, established neighborhoods, new construction, and custom homes"
+      }
+    ],
+    "ctaButtonLink": "/contact",
+    "ctaText": "Taylor Thompson Home Group can help you compare neighborhoods, understand current market activity, and make a confident plan.",
+    "heroTitle": "Turlock Homes for *Sale*",
+    "url": "/turlock-homes-for-sale/"
   }
 ]

@@ -1,22 +1,32 @@
 [
   {
-    "id": "cheri-coffee",
-    "author": "Cheri Coffee",
-    "text": "Taylor was pretty amazing as she worked with us throughout the sale of our family ranch. From start to finish she was very professional but at the same time had a great since of humor which made the process fun. Taylor and her staff were there to answer every question and give us great advise as needed. I highly recommend Taylor for any Real Estate needs you may have.",
-    "detail": "",
-    "source": "Google",
-    "placement": "featured",
-    "order": 1,
-    "rating": 5
-  },
-  {
     "id": "heather",
     "author": "Heather",
     "text": "Taylor did an excellent job helping me and my partner through the home buying process. Most importantly she was flexible and available with meeting with us due to my complicated schedule…",
     "detail": "Bought a Single Family Home · Turlock, CA · December 2025",
     "source": "Zillow",
     "placement": "featured",
+    "order": 1,
+    "rating": 5
+  },
+  {
+    "id": "cheri-coffee",
+    "author": "Cheri Coffee",
+    "text": "Taylor was pretty amazing as she worked with us throughout the sale of our family ranch. From start to finish she was very professional but at the same time had a great since of humor which made the process fun. Taylor and her staff were there to answer every question and give us great advise as needed. I highly recommend Taylor for any Real Estate needs you may have.",
+    "detail": "",
+    "source": "Google",
+    "placement": "featured",
     "order": 2,
+    "rating": 5
+  },
+  {
+    "id": "elycia-armienta",
+    "author": "Elycia Armienta",
+    "text": "Definitely recommend contacting Taylor if you're trying to buy a house! She's super friendly and always willing to work around your schedule. She also points out things some would never know to look for. Will definitely be working with her again in the future.",
+    "detail": "",
+    "source": "Google",
+    "placement": "featured",
+    "order": 3,
     "rating": 5
   },
   {
@@ -25,7 +35,27 @@
     "text": "Taylor was amazing at selling our Grandmother's house. She came in and really listened to what we wanted and genuinely cared about what we were doing. We connected with her right away…",
     "detail": "Sold a Single Family Home · Merced, CA · December 2023",
     "source": "Zillow",
-    "placement": "featured",
+    "placement": "more",
+    "order": 1,
+    "rating": 5
+  },
+  {
+    "id": "blessed-favoured",
+    "author": "Blessed Favoured",
+    "text": "Taylor is the best! She is very professional and knowledgeable. She was very supportive and patient in our process, despite the challenges that came up. She went above and beyond expectations to make sure we got the desired end. I would recommend her 100%\nThank you so much Taylor.",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 2,
+    "rating": 5
+  },
+  {
+    "id": "angela-walton",
+    "author": "Angela Walton",
+    "text": "Taylor was amazing to work with. She knows her stuff and is such a sweetheart. I can’t recommend her enough, she’s the only realtor I ever want to use.",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
     "order": 3,
     "rating": 5
   },
@@ -36,7 +66,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 1,
+    "order": 4,
     "rating": 5
   },
   {
@@ -46,7 +76,7 @@
     "detail": "Sold a Single Family Home · Oakdale, CA · July 2025",
     "source": "Zillow",
     "placement": "more",
-    "order": 2,
+    "order": 5,
     "rating": 5
   },
   {
@@ -56,7 +86,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 3,
+    "order": 6,
     "rating": 5
   },
   {
@@ -66,7 +96,7 @@
     "detail": "Bought a Single Family Home · Merced, CA · May 2025",
     "source": "Zillow",
     "placement": "more",
-    "order": 4,
+    "order": 7,
     "rating": 5
   },
   {
@@ -76,7 +106,7 @@
     "detail": "Sold a Single Family Home · Turlock, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 5,
+    "order": 8,
     "rating": 5
   },
   {
@@ -86,7 +116,7 @@
     "detail": "Sold a Single Family Home · Modesto, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 6,
+    "order": 9,
     "rating": 5
   },
   {
@@ -96,7 +126,7 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
-    "order": 7,
+    "order": 10,
     "rating": 5
   },
   {
@@ -106,7 +136,7 @@
     "detail": "Sold a Condo · Lodi, CA · September 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 8,
+    "order": 11,
     "rating": 5
   },
   {
@@ -116,7 +146,7 @@
     "detail": "Sold a Single Family Home · Manteca, CA · August 2023",
     "source": "Zillow",
     "placement": "more",
-    "order": 9,
+    "order": 12,
     "rating": 5
   },
   {
@@ -126,47 +156,7 @@
     "detail": "",
     "source": "Facebook",
     "placement": "more",
-    "order": 10,
-    "rating": 5
-  },
-  {
-    "id": "juan-hernandez",
-    "author": "Juan Hernandez",
-    "text": "Taylor and team helped us not only purchase our dream home, but also successfully sell the home where we raised our boys and created so many memories. This was a huge and emotional transition for our family, and your guidance, patience, and expertise made the entire process smooth and stress-free.",
-    "detail": "",
-    "source": "Google",
-    "placement": "more",
-    "order": 11,
-    "rating": 5
-  },
-  {
-    "id": "justin-raybould",
-    "author": "Justin Raybould",
-    "text": "Very knowledgeable and friendly person to work with .",
-    "detail": "",
-    "source": "Google",
-    "placement": "more",
-    "order": 12,
-    "rating": 5
-  },
-  {
-    "id": "kirill-legkiy",
-    "author": "Kirill Legkiy",
-    "text": "Taylor Thompson made selling my home a seamless experience! Her market-savvy pricing, staging advice, and pro photos attracted buyers quickly. Super responsive even weekends and her negotiation sealed a full-price deal with concessions covering closing costs. We closed quickly, stress-free! Taylor's professional, energetic, and results-driven highly recommend for selling (or buying)!",
-    "detail": "",
-    "source": "Google",
-    "placement": "more",
     "order": 13,
-    "rating": 5
-  },
-  {
-    "id": "lindsey-gonsales",
-    "author": "Lindsey Gonsales",
-    "text": "Taylor is very kind and patient. She did an excellent job guiding me through the home buying process. I would recommend her to anyone buying or selling a home.",
-    "detail": "Bought a Single Family Home · Modesto, CA · April 2025",
-    "source": "Zillow",
-    "placement": "more",
-    "order": 14,
     "rating": 5
   },
   {
@@ -176,7 +166,47 @@
     "detail": "",
     "source": "Google",
     "placement": "more",
+    "order": 14,
+    "rating": 5
+  },
+  {
+    "id": "juan-hernandez",
+    "author": "Juan Hernandez",
+    "text": "Taylor and team helped us not only purchase our dream home, but also successfully sell the home where we raised our boys and created so many memories. This was a huge and emotional transition for our family, and your guidance, patience, and expertise made the entire process smooth and stress-free.",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
     "order": 15,
+    "rating": 5
+  },
+  {
+    "id": "justin-raybould",
+    "author": "Justin Raybould",
+    "text": "Very knowledgeable and friendly person to work with .",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 16,
+    "rating": 5
+  },
+  {
+    "id": "kirill-legkiy",
+    "author": "Kirill Legkiy",
+    "text": "Taylor Thompson made selling my home a seamless experience! Her market-savvy pricing, staging advice, and pro photos attracted buyers quickly. Super responsive even weekends and her negotiation sealed a full-price deal with concessions covering closing costs. We closed quickly, stress-free! Taylor's professional, energetic, and results-driven highly recommend for selling (or buying)!",
+    "detail": "",
+    "source": "Google",
+    "placement": "more",
+    "order": 17,
+    "rating": 5
+  },
+  {
+    "id": "lindsey-gonsales",
+    "author": "Lindsey Gonsales",
+    "text": "Taylor is very kind and patient. She did an excellent job guiding me through the home buying process. I would recommend her to anyone buying or selling a home.",
+    "detail": "Bought a Single Family Home · Modesto, CA · April 2025",
+    "source": "Zillow",
+    "placement": "more",
+    "order": 18,
     "rating": 5
   }
 ]

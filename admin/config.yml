@@ -314,6 +314,29 @@ collections:
         widget: "text"
         required: false
 
+      - label: "SEO Title (Optional)"
+        name: "seoTitle"
+        widget: "string"
+        required: false
+        hint: "Optional Google result title. Aim for about 50-60 characters. Leave blank to use the blog title plus Taylor Thompson Home Group."
+
+      - label: "Meta Description"
+        name: "metaDescription"
+        widget: "text"
+        required: false
+        hint: "Write a clear 1-2 sentence Google description, ideally around 140-160 characters. If blank, the excerpt is used automatically."
+
+      - label: "Author"
+        name: "author"
+        widget: "string"
+        default: "Taylor Thompson"
+        required: false
+
+      - label: "Author Page"
+        name: "authorUrl"
+        widget: "hidden"
+        default: "https://taylorthompsonhomegroup.com/about/"
+
       - label: "Featured Image"
         name: "featuredImage"
         widget: "image"
