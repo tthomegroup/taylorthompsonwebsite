@@ -143,7 +143,7 @@
     }
 
     .listings-section {
-      padding: 80px 40px;
+      padding: 80px 40px 0;
     }
 
     .listings-container {
@@ -188,6 +188,7 @@
 
     .popular-searches {
       margin-top: 40px;
+      padding-bottom: 72px;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -417,7 +418,11 @@
       }
 
       .listings-section {
-        padding: 60px 20px;
+        padding: 60px 20px 0;
+      }
+
+      .popular-searches {
+        padding-bottom: 52px;
       }
 
       .hero {
@@ -578,6 +583,87 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
   </section>
 
   <!-- LISTING_VIDEO_SHOWCASE_START -->
+  <section class="listing-video-showcase" id="listing-videos" aria-labelledby="listing-video-title" data-listing-video-carousel>
+    <div class="listing-video-showcase__inner">
+      <header class="listing-video-showcase__header">
+        <p class="section-eyebrow">Listing Video Tours</p>
+        <h2 id="listing-video-title">Step Inside Our Featured Listings</h2>
+        <p>Watch short video tours for a closer look at homes represented by Taylor Thompson Home Group.</p>
+      </header>
+      <div class="listing-video-showcase__viewport" data-listing-video-viewport tabindex="0" aria-label="Listing videos">
+        <div class="listing-video-showcase__track">
+        <article class="listing-video-card" data-listing-video-card>
+          <div class="listing-video-card__media">
+            <iframe src="https://www.youtube-nocookie.com/embed/5NftFqjOv84?rel=0" title="Do you…….even like houses?! 🤣" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="listing-video-card__copy">
+            <p class="listing-video-card__number">Video 01</p>
+            <h3>Do you…….even like houses?! 🤣</h3>
+          </div>
+        </article>
+        <article class="listing-video-card" data-listing-video-card>
+          <div class="listing-video-card__media">
+            <iframe src="https://www.youtube-nocookie.com/embed/QQ0pL24HkzI?rel=0" title="This delivery came with a BOW on top! 🎀🏡 #ModestoRealEstate" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="listing-video-card__copy">
+            <p class="listing-video-card__number">Video 02</p>
+            <h3>This delivery came with a BOW on top! 🎀🏡 #ModestoRealEstate</h3>
+          </div>
+        </article>
+        <article class="listing-video-card" data-listing-video-card>
+          <div class="listing-video-card__media">
+            <iframe src="https://www.youtube-nocookie.com/embed/dS0nhAmpw34?rel=0" title="Move in ready + RV access + solar?! ☀️🚐🏡 #OakdaleRealEstate" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="listing-video-card__copy">
+            <p class="listing-video-card__number">Video 03</p>
+            <h3>Move in ready + RV access + solar?! ☀️🚐🏡 #OakdaleRealEstate</h3>
+          </div>
+        </article>
+        </div>
+      </div>
+      <div class="listing-video-showcase__controls" data-listing-video-controls aria-label="Listing video carousel controls">
+        <button type="button" data-listing-video-prev aria-label="Previous listing video">&#8592;</button>
+        <p aria-live="polite"><span data-listing-video-current>1</span> / 3</p>
+        <button type="button" data-listing-video-next aria-label="Next listing video">&#8594;</button>
+      </div>
+    </div>
+  </section>
+  <script>
+    (function () {
+      document.querySelectorAll("[data-listing-video-carousel]").forEach(function (carousel) {
+        var viewport = carousel.querySelector("[data-listing-video-viewport]");
+        var cards = Array.prototype.slice.call(carousel.querySelectorAll("[data-listing-video-card]"));
+        var previous = carousel.querySelector("[data-listing-video-prev]");
+        var next = carousel.querySelector("[data-listing-video-next]");
+        var controls = carousel.querySelector("[data-listing-video-controls]");
+        var current = carousel.querySelector("[data-listing-video-current]");
+        if (!viewport || cards.length < 2 || !previous || !next) return;
+
+        function cardStep() {
+          if (cards.length < 2) return cards[0] ? cards[0].getBoundingClientRect().width : 0;
+          return cards[1].offsetLeft - cards[0].offsetLeft;
+        }
+
+        function update() {
+          var maximum = Math.max(0, viewport.scrollWidth - viewport.clientWidth);
+          previous.disabled = viewport.scrollLeft <= 4;
+          next.disabled = viewport.scrollLeft >= maximum - 4;
+          if (controls) controls.hidden = maximum <= 4;
+          if (current) current.textContent = String(Math.min(cards.length, Math.round(viewport.scrollLeft / Math.max(1, cardStep())) + 1));
+        }
+
+        previous.addEventListener("click", function () {
+          viewport.scrollBy({ left: -cardStep(), behavior: "smooth" });
+        });
+        next.addEventListener("click", function () {
+          viewport.scrollBy({ left: cardStep(), behavior: "smooth" });
+        });
+        viewport.addEventListener("scroll", function () { window.requestAnimationFrame(update); }, { passive: true });
+        window.addEventListener("resize", update);
+        update();
+      });
+    }());
+  </script>
 <!-- LISTING_VIDEO_SHOWCASE_END -->
 
   <section class="cta-section">

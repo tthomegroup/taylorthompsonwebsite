@@ -121,8 +121,8 @@ function renderCard(video, index) {
           </div>
           <div class="listing-video-card__copy">
             <p class="listing-video-card__number">Video ${String(index + 1).padStart(2, "0")}</p>
-            <h3>${escapeHtml(video.title)}</h3>
-            ${video.caption ? `<p>${escapeHtml(video.caption)}</p>` : ""}
+            <h3>${escapeHtml(video.title)}</h3>${video.caption ? `
+            <p>${escapeHtml(video.caption)}</p>` : ""}
           </div>
         </article>`;
 }
