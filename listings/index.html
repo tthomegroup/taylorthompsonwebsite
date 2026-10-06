@@ -363,6 +363,34 @@
       text-align: center;
     }
 
+    .listing-video-showcase__more {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .listing-video-showcase__more a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      padding: 14px 30px;
+      border: 1px solid var(--tan-light);
+      background: var(--tan-light);
+      color: var(--black);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .17em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .listing-video-showcase__more a:hover {
+      background: transparent;
+      color: var(--white);
+    }
+
     .cta-section {
       background: var(--tan);
       color: white;
@@ -625,6 +653,9 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
         <button type="button" data-listing-video-prev aria-label="Previous listing video">&#8592;</button>
         <p aria-live="polite"><span data-listing-video-current>1</span> / 3</p>
         <button type="button" data-listing-video-next aria-label="Next listing video">&#8594;</button>
+      </div>
+      <div class="listing-video-showcase__more">
+        <a href="https://www.youtube.com/@Soldby.taylor/shorts" target="_blank" rel="noopener noreferrer">See More Videos</a>
       </div>
     </div>
   </section>

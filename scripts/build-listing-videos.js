@@ -151,6 +151,9 @@ function renderShowcase(data) {
 ${videos.map(renderCard).join("\n")}
         </div>
       </div>${controls}
+      <div class="listing-video-showcase__more">
+        <a href="https://www.youtube.com/@Soldby.taylor/shorts" target="_blank" rel="noopener noreferrer">See More Videos</a>
+      </div>
     </div>
   </section>
   <script>
