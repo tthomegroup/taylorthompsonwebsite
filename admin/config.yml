@@ -168,6 +168,67 @@ collections:
         widget: "text"
         hint: "Keep this to one short paragraph."
 
+  - name: "listing_video_showcase"
+    label: "Listing Video Showcase"
+    files:
+      - label: "Manage Listing Videos"
+        name: "listing-videos"
+        file: "content/listing-videos.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Section Label"
+            name: "eyebrow"
+            widget: "string"
+            default: "Listing Video Tours"
+
+          - label: "Section Heading"
+            name: "heading"
+            widget: "string"
+            default: "Step Inside Our Featured Listings"
+
+          - label: "Section Introduction"
+            name: "intro"
+            widget: "text"
+            required: false
+
+          - label: "Videos"
+            name: "videos"
+            widget: "list"
+            required: false
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.title}}"
+            hint: "Drag videos into display order. With no active videos, the entire section disappears. One video is centered; multiple videos become a carousel."
+            fields:
+              - label: "Show This Video"
+                name: "visible"
+                widget: "boolean"
+                default: true
+
+              - label: "Video Title"
+                name: "title"
+                widget: "string"
+                hint: "Example: Modern Turlock Home Tour"
+
+              - label: "Short Caption"
+                name: "caption"
+                widget: "text"
+                required: false
+                hint: "Optional property address, city, status, or one-sentence description."
+
+              - label: "Video Link"
+                name: "videoUrl"
+                widget: "string"
+                required: false
+                hint: "Recommended. Paste a YouTube, YouTube Shorts, Vimeo, Instagram Reel, TikTok, or direct MP4/WebM link."
+
+              - label: "Iframe Embed Code"
+                name: "embedCode"
+                widget: "text"
+                required: false
+                hint: "Optional alternative to Video Link. Paste an iframe embed code; when both are supplied, this embed is used first."
+
   - name: "blog"
     label: "Blog Posts"
     label_singular: "Blog Post"
