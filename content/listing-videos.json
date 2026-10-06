@@ -2,5 +2,21 @@
   "eyebrow": "Listing Video Tours",
   "heading": "Step Inside Our Featured Listings",
   "intro": "Watch short video tours for a closer look at homes represented by Taylor Thompson Home Group.",
-  "videos": []
+  "videos": [
+    {
+      "visible": true,
+      "videoUrl": "https://www.youtube.com/shorts/5NftFqjOv84",
+      "title": "Do you…….even like houses?! 🤣"
+    },
+    {
+      "visible": true,
+      "videoUrl": "https://www.youtube.com/shorts/QQ0pL24HkzI",
+      "title": "This delivery came with a BOW on top! 🎀🏡 #ModestoRealEstate"
+    },
+    {
+      "visible": true,
+      "videoUrl": "https://www.youtube.com/shorts/dS0nhAmpw34",
+      "title": "Move in ready + RV access + solar?! ☀️🚐🏡 #OakdaleRealEstate"
+    }
+  ]
 }
