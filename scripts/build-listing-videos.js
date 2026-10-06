@@ -139,7 +139,7 @@ function renderShowcase(data) {
         <button type="button" data-listing-video-next aria-label="Next listing video">&#8594;</button>
       </div>` : "";
 
-  return `  <section class="listing-video-showcase${stateClass}" aria-labelledby="listing-video-title" data-listing-video-carousel>
+  return `  <section class="listing-video-showcase${stateClass}" id="listing-videos" aria-labelledby="listing-video-title" data-listing-video-carousel>
     <div class="listing-video-showcase__inner">
       <header class="listing-video-showcase__header">
         <p class="section-eyebrow">${escapeHtml(data.eyebrow || "Listing Video Tours")}</p>
