@@ -145,53 +145,6 @@ textarea[name="body"],
   white-space: pre-wrap !important;
 }
 
-.admin-markdown-field {
-  --admin-toolbar-offset: 104px;
-}
-
-.admin-markdown-field .editor-toolbar,
-.admin-markdown-field [class*="toolbar"],
-.admin-markdown-toolbar {
-  z-index: 2 !important;
-}
-
-.admin-format-helper {
-  margin-left: 14px !important;
-  padding: 8px 12px !important;
-  border: 1px solid var(--admin-tan) !important;
-  border-radius: 999px !important;
-  background: var(--admin-white) !important;
-  color: var(--admin-muted) !important;
-  cursor: pointer !important;
-  font-size: 11px !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.08em !important;
-  text-transform: uppercase !important;
-}
-
-.admin-format-helper:hover {
-  background: var(--admin-tan) !important;
-  color: var(--admin-dark) !important;
-}
-
-.admin-markdown-field .CodeMirror {
-  min-height: 520px !important;
-}
-
-.admin-markdown-field .CodeMirror-scroll {
-  padding-top: var(--admin-toolbar-offset) !important;
-}
-
-.admin-markdown-field .CodeMirror-sizer,
-.admin-markdown-field .CodeMirror-lines {
-  margin-top: var(--admin-toolbar-offset) !important;
-  padding-top: var(--admin-toolbar-offset) !important;
-}
-
-.admin-markdown-field .CodeMirror-code {
-  padding-top: var(--admin-toolbar-offset) !important;
-}
-
 a,
 [role="button"] {
   transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease !important;

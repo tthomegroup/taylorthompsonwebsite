@@ -427,9 +427,9 @@ collections:
 
       - label: "Body"
         name: "body"
-        widget: "markdown"
+        widget: "richtext"
         required: false
-        hint: "Paste paragraphs and bullet lists here. Copied bullets from Google Docs, Word, or websites are automatically converted into blog-friendly Markdown."
+        hint: "Paste plain or formatted text here. Use Markdown mode when pasting content that already contains Markdown links such as [link text](https://example.com)."
         buttons:
           - bold
           - italic
@@ -444,6 +444,7 @@ collections:
           - image
         modes:
           - rich_text
+          - raw
 
   - name: "neighborhood_pages"
     label: "Neighborhood / IDX Landing Pages"

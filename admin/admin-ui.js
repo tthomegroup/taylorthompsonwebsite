@@ -105,81 +105,6 @@
     });
   }
 
-  function decorateMarkdownEditor() {
-    Array.prototype.forEach.call(document.querySelectorAll(".CodeMirror"), function (editor) {
-      var field = editor.closest('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]');
-      if (!field) return;
-
-      var toolbar = field.querySelector(".editor-toolbar, [class*='toolbar'], [class*='Toolbar']");
-      if (!toolbar) return;
-
-      var toolbarHeight = Math.max(96, Math.ceil(toolbar.getBoundingClientRect().height) + 34);
-      field.classList.add("admin-markdown-field");
-      toolbar.classList.add("admin-markdown-toolbar");
-      field.style.setProperty("--admin-toolbar-offset", toolbarHeight + "px");
-
-      [".CodeMirror-scroll", ".CodeMirror-sizer", ".CodeMirror-lines", ".CodeMirror-code"].forEach(function (selector) {
-        Array.prototype.forEach.call(field.querySelectorAll(selector), function (part) {
-          part.style.setProperty("padding-top", toolbarHeight + "px", "important");
-        });
-      });
-    });
-  }
-
-  function fieldLabelText(field) {
-    if (!field) return "";
-    var label = field.querySelector("label");
-    return (label ? label.textContent : field.textContent || "").toLowerCase();
-  }
-
-  function getBodyField() {
-    var fields = Array.prototype.slice.call(document.querySelectorAll('[class*="MarkdownControl"], [class*="ControlContainer"], [class*="EditorControl"]'));
-    return fields.find(function (field) {
-      return fieldLabelText(field).indexOf("body") !== -1;
-    });
-  }
-
-  function getPlainEditorText(field) {
-    if (!field) return "";
-    var textArea = field.querySelector("textarea");
-    if (textArea && textArea.value) return textArea.value;
-    var lines = Array.prototype.slice.call(field.querySelectorAll(".CodeMirror-line, [contenteditable='true'] p, [contenteditable='true'] div"));
-    return lines.map(function (line) { return line.textContent; }).join("\n");
-  }
-
-  function setEditorHtml(field, html) {
-    var editable = field && field.querySelector("[contenteditable='true']");
-    if (!editable) return false;
-    editable.innerHTML = html;
-    editable.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertText", data: "" }));
-    editable.dispatchEvent(new Event("change", { bubbles: true }));
-    return true;
-  }
-
-  function addFormatHelper() {
-    var field = getBodyField();
-    if (!field || field.querySelector(".admin-format-helper")) return;
-
-    var helper = document.createElement("button");
-    helper.type = "button";
-    helper.className = "admin-format-helper";
-    helper.textContent = "Format pasted blog text";
-    helper.addEventListener("click", function () {
-      var markdown = getPlainEditorText(field);
-      var html = markdownToHtml(markdown);
-      if (html && setEditorHtml(field, html)) {
-        helper.textContent = "Formatted";
-        window.setTimeout(function () {
-          helper.textContent = "Format pasted blog text";
-        }, 1600);
-      }
-    });
-
-    var toolbar = field.querySelector(".editor-toolbar, [class*='toolbar'], [class*='Toolbar']");
-    if (toolbar) toolbar.appendChild(helper);
-    else field.insertBefore(helper, field.firstChild);
-  }
-
   function registerBlogPreview() {
     if (!window.CMS || window.__tthgBlogPreviewRegistered) return;
     window.__tthgBlogPreviewRegistered = true;
@@ -215,8 +140,6 @@
 
   function decorateAdmin() {
     decorateReviewOrder();
-    decorateMarkdownEditor();
-    addFormatHelper();
     registerBlogPreview();
   }
 
