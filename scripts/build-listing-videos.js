@@ -114,13 +114,12 @@ function normalizeVideos(data) {
     .filter((video) => video.media);
 }
 
-function renderCard(video, index) {
+function renderCard(video) {
   return `        <article class="listing-video-card" data-listing-video-card>
           <div class="listing-video-card__media">
             ${renderMedia(video.media, video.title)}
           </div>
           <div class="listing-video-card__copy">
-            <p class="listing-video-card__number">Video ${String(index + 1).padStart(2, "0")}</p>
             <h3>${escapeHtml(video.title)}</h3>${video.caption ? `
             <p>${escapeHtml(video.caption)}</p>` : ""}
           </div>

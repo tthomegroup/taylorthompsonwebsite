@@ -229,6 +229,34 @@ collections:
                 required: false
                 hint: "Optional alternative to Video Link. Paste an iframe embed code; when both are supplied, this embed is used first."
 
+  - name: "homepage_video_showcase"
+    label: "Homepage Featured Videos"
+    files:
+      - label: "Manage Homepage Videos"
+        name: "home-videos"
+        file: "content/home-videos.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Featured Videos"
+            name: "videos"
+            widget: "list"
+            min: 5
+            max: 5
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.title}}"
+            hint: "The homepage always displays exactly five videos. Edit a title or link to replace a video, and drag entries to change their order."
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Video Link"
+                name: "videoUrl"
+                widget: "string"
+                hint: "Paste a YouTube, YouTube Shorts, Vimeo, Instagram Reel, TikTok, or direct MP4/WebM link."
+
   - name: "blog"
     label: "Blog Posts"
     label_singular: "Blog Post"
