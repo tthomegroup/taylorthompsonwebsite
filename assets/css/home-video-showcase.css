@@ -1,0 +1,201 @@
+.home-video-showcase {
+  overflow: hidden;
+  padding: 96px 40px;
+  border-top: 1px solid var(--tan-pale, #ddcebe);
+  background: var(--cream, #faf6f1);
+  color: var(--dark, #000);
+}
+
+.home-video-showcase__inner {
+  width: min(1380px, 100%);
+  margin: 0 auto;
+}
+
+.home-video-showcase__header {
+  max-width: 780px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.home-video-showcase__eyebrow {
+  margin-bottom: 14px;
+  color: var(--tan, #a68068);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+}
+
+.home-video-showcase__header h2 {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 300;
+  line-height: 1.02;
+}
+
+.home-video-showcase__header h2 em {
+  color: var(--tan, #a68068);
+  font-weight: 300;
+}
+
+.home-video-showcase__viewport {
+  width: 100%;
+}
+
+.home-video-showcase__track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.home-video-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--tan-pale, #ddcebe);
+  background: var(--white, #fff);
+  scroll-snap-align: start;
+}
+
+.home-video-card__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: #111;
+}
+
+.home-video-card__media iframe,
+.home-video-card__media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+}
+
+.home-video-card h3 {
+  min-height: 84px;
+  margin: 0;
+  padding: 20px 18px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(20px, 1.7vw, 25px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.home-video-showcase__controls {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.home-video-showcase__controls[hidden] {
+  display: none;
+}
+
+.home-video-showcase__controls button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--tan, #a68068);
+  background: transparent;
+  color: var(--dark, #000);
+  cursor: pointer;
+  font-size: 20px;
+  transition: background .2s ease, color .2s ease, opacity .2s ease;
+}
+
+.home-video-showcase__controls button:hover:not(:disabled) {
+  background: var(--tan, #a68068);
+  color: var(--white, #fff);
+}
+
+.home-video-showcase__controls button:disabled {
+  cursor: default;
+  opacity: .28;
+}
+
+.home-video-showcase__channel {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.home-video-showcase__channel a {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 30px;
+  border: 1px solid var(--dark, #000);
+  background: var(--dark, #000);
+  color: var(--white, #fff);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .17em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background .2s ease, color .2s ease;
+}
+
+.home-video-showcase__channel a:hover {
+  background: transparent;
+  color: var(--dark, #000);
+}
+
+@media (max-width: 1100px) {
+  .home-video-showcase__viewport {
+    overflow-x: auto;
+    padding: 3px 2px 18px;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: var(--tan, #a68068) rgba(166, 128, 104, .16);
+    scrollbar-width: thin;
+  }
+
+  .home-video-showcase__track {
+    display: flex;
+    width: max-content;
+  }
+
+  .home-video-card {
+    flex: 0 0 min(276px, 72vw);
+    width: min(276px, 72vw);
+  }
+
+  .home-video-showcase__controls {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-video-showcase {
+    padding: 72px 20px;
+  }
+
+  .home-video-showcase__header {
+    margin-bottom: 34px;
+  }
+
+  .home-video-showcase__header h2 {
+    font-size: clamp(38px, 13vw, 52px);
+  }
+
+  .home-video-card {
+    flex-basis: min(292px, 82vw);
+    width: min(292px, 82vw);
+  }
+
+  .home-video-card h3 {
+    min-height: 76px;
+    font-size: 23px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-video-showcase__viewport {
+    scroll-behavior: auto;
+  }
+}
