@@ -256,6 +256,9 @@ collections:
                 name: "videoUrl"
                 widget: "string"
                 hint: "Paste a YouTube, YouTube Shorts, Vimeo, Instagram Reel, TikTok, or direct MP4/WebM link."
+                pattern:
+                  - "^https://.+"
+                  - "Enter the full video URL beginning with https://"
 
   - name: "blog"
     label: "Blog Posts"

@@ -91,7 +91,6 @@ ${videos.map(renderCard).join("\n")}
 }
 
 function buildHomeVideos() {
-  const videos = normalizeVideos(readVideos());
   const html = fs.readFileSync(HOME_PAGE, "utf8");
   const startIndex = html.indexOf(START_MARKER);
   const endIndex = html.indexOf(END_MARKER);
@@ -100,12 +99,22 @@ function buildHomeVideos() {
     throw new Error("Homepage video showcase markers are missing from index.html");
   }
 
+  let videos;
+  try {
+    videos = normalizeVideos(readVideos());
+  } catch (error) {
+    console.warn(`Homepage video showcase was not updated: ${error.message}`);
+    console.warn("Keeping the last valid five-video homepage so the rest of the site can still deploy.");
+    return false;
+  }
+
   const section = renderShowcase(videos);
   const replacement = `${START_MARKER}\n${section}\n${END_MARKER}`;
   const output = `${html.slice(0, startIndex)}${replacement}${html.slice(endIndex + END_MARKER.length)}`;
   fs.writeFileSync(HOME_PAGE, output);
 
   console.log(`Built homepage video showcase with ${videos.length} videos.`);
+  return true;
 }
 
 if (require.main === module) buildHomeVideos();
