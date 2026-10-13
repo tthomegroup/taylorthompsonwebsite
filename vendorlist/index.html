@@ -258,6 +258,21 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .vendor-entry__name--link {
+      text-decoration: underline;
+      text-decoration-color: var(--vendor-tan);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+      transition: color 160ms ease, text-decoration-color 160ms ease;
+    }
+
+    .vendor-entry__name--link:hover,
+    .vendor-entry__name--link:focus-visible {
+      color: var(--vendor-tan-dark);
+      text-decoration-color: var(--vendor-tan-dark);
     }
 
     .vendor-entry__phone {
@@ -409,6 +424,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
         </div>
 
         <div class="vendor-grid" id="vendor-grid">
+          <!-- VENDOR_DIRECTORY_START -->
           <article class="vendor-card" id="utilities" style="--vendor-card-image:url('/assets/images/vendor-categories/utilities.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">01</span><h3>UTILITIES</h3></header>
             <div class="vendor-card__list">
@@ -458,25 +474,31 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
           <article class="vendor-card" id="garage-door-repair" style="--vendor-card-image:url('/assets/images/vendor-categories/garage-door-repair.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">06</span><h3>GARAGE DOOR REPAIR</h3></header>
-            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Barton Overhead Doors</span><a class="vendor-entry__phone" href="tel:+12095713667">209-571-3667</a></div></div>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Barton Overhead Doors</span><a class="vendor-entry__phone" href="tel:+12095713667">209-571-3667</a></div>
+            </div>
           </article>
 
           <article class="vendor-card" id="movers" style="--vendor-card-image:url('/assets/images/vendor-categories/movers.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">07</span><h3>MOVERS</h3></header>
             <div class="vendor-card__list">
-              <div class="vendor-entry"><span class="vendor-entry__name">Brewer's Moving</span><a class="vendor-entry__phone" href="tel:+12099233827">209-923-3827</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Brewer&#39;s Moving</span><a class="vendor-entry__phone" href="tel:+12099233827">209-923-3827</a></div>
               <div class="vendor-entry"><span class="vendor-entry__name">PODS</span><a class="vendor-entry__phone" href="tel:+18777707637">877-770-7637</a></div>
             </div>
           </article>
 
           <article class="vendor-card" id="real-estate-attorneys" style="--vendor-card-image:url('/assets/images/vendor-categories/real-estate-attorneys.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">08</span><h3>REAL ESTATE ATTORNEYS</h3></header>
-            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Chad Wood, Wilbanks &amp; Wood PLC</span><a class="vendor-entry__phone" href="tel:+12098309191">209-830-9191</a></div></div>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Chad Wood, Wilbanks &amp; Wood PLC</span><a class="vendor-entry__phone" href="tel:+12098309191">209-830-9191</a></div>
+            </div>
           </article>
 
           <article class="vendor-card" id="accountants" style="--vendor-card-image:url('/assets/images/vendor-categories/accountants.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">09</span><h3>ACCOUNTANTS</h3></header>
-            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Tim Wheeler, CPA</span><a class="vendor-entry__phone" href="tel:+12093258500">209-325-8500</a></div></div>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Tim Wheeler, CPA</span><a class="vendor-entry__phone" href="tel:+12093258500">209-325-8500</a></div>
+            </div>
           </article>
 
           <article class="vendor-card" id="house-cleaners" style="--vendor-card-image:url('/assets/images/vendor-categories/house-cleaners.jpg');">
@@ -484,7 +506,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
             <div class="vendor-card__list">
               <div class="vendor-entry"><span class="vendor-entry__name">Absolutely Cleaning Services</span><a class="vendor-entry__phone" href="tel:+12095521988">209-552-1988</a></div>
               <div class="vendor-entry"><span class="vendor-entry__name">Advance Carpet Cleaning</span><a class="vendor-entry__phone" href="tel:+12096680967">209-668-0967</a></div>
-              <div class="vendor-entry"><span class="vendor-entry__name">Norma's House Cleaning</span><a class="vendor-entry__phone" href="tel:+16507859124">650-785-9124</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Norma&#39;s House Cleaning</span><a class="vendor-entry__phone" href="tel:+16507859124">650-785-9124</a></div>
               <div class="vendor-entry"><span class="vendor-entry__name">The Cleaning Gals Services</span><a class="vendor-entry__phone" href="tel:+12094090142">209-409-0142</a></div>
             </div>
           </article>
@@ -503,7 +525,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           <article class="vendor-card" id="roofing" style="--vendor-card-image:url('/assets/images/vendor-categories/roofing.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">12</span><h3>ROOFING</h3></header>
             <div class="vendor-card__list">
-              <div class="vendor-entry"><span class="vendor-entry__name">David's Roofing</span><a class="vendor-entry__phone" href="tel:+12095270187">209-527-0187</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">David&#39;s Roofing</span><a class="vendor-entry__phone" href="tel:+12095270187">209-527-0187</a></div>
               <div class="vendor-entry"><span class="vendor-entry__name">Landreth Roofing</span><a class="vendor-entry__phone" href="tel:+12095992371">209-599-2371</a></div>
               <div class="vendor-entry"><span class="vendor-entry__name">JAG Roofing</span><a class="vendor-entry__phone" href="tel:+12096069742">209-606-9742</a></div>
             </div>
@@ -538,12 +560,16 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
           <article class="vendor-card" id="appliance-repair" style="--vendor-card-image:url('/assets/images/vendor-categories/appliance-repair.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">16</span><h3>APPLIANCE REPAIR</h3></header>
-            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Turlock Appliance</span><a class="vendor-entry__phone" href="tel:+12096329323">209-632-9323</a></div></div>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Turlock Appliance</span><a class="vendor-entry__phone" href="tel:+12096329323">209-632-9323</a></div>
+            </div>
           </article>
 
           <article class="vendor-card" id="pool-services" style="--vendor-card-image:url('/assets/images/vendor-categories/pool-services.jpg');">
             <header class="vendor-card__header"><span class="vendor-card__number">17</span><h3>POOL SERVICES</h3></header>
-            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">The Pool Guys</span><a class="vendor-entry__phone" href="tel:+12097650237">209-765-0237</a></div></div>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">The Pool Guys</span><a class="vendor-entry__phone" href="tel:+12097650237">209-765-0237</a></div>
+            </div>
           </article>
 
           <article class="vendor-card" id="title-services" style="--vendor-card-image:url('/assets/images/vendor-categories/title-services.jpg');">
@@ -598,6 +624,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
               <div class="vendor-entry"><span class="vendor-entry__name">Mary, Central Valley Estate Sales</span><a class="vendor-entry__phone" href="tel:+12097655262">209-765-5262</a></div>
             </div>
           </article>
+          <!-- VENDOR_DIRECTORY_END -->
 
         </div>
       </div>

@@ -260,6 +260,63 @@ collections:
                   - "^https://.+"
                   - "Enter the full video URL beginning with https://"
 
+  - name: "vendor_directory"
+    label: "Vendor Directory"
+    files:
+      - label: "Manage Vendor Directory"
+        name: "vendor-directory"
+        file: "content/vendor-directory.json"
+        editor:
+          preview: false
+        fields:
+          - label: "Vendor Categories"
+            name: "categories"
+            widget: "list"
+            collapsed: true
+            minimize_collapsed: true
+            summary: "{{fields.title}}"
+            hint: "Add, remove, or drag categories into the order they should appear on the Vendor List page."
+            fields:
+              - label: "Internal Category ID"
+                name: "id"
+                widget: "hidden"
+                required: false
+
+              - label: "Category Heading / Title"
+                name: "title"
+                widget: "string"
+                hint: "Examples: Roofing, Mortgage Lenders, or Pool Services."
+
+              - label: "Category Image"
+                name: "image"
+                widget: "image"
+                hint: "Recommended size: 1200 x 800 px (3:2). Larger, smaller, portrait, or differently shaped images are automatically center-cropped to fill the card."
+
+              - label: "Companies"
+                name: "companies"
+                widget: "list"
+                min: 1
+                collapsed: true
+                minimize_collapsed: true
+                summary: "{{fields.name}}"
+                hint: "Add, remove, or drag companies into the order they should appear in this category."
+                fields:
+                  - label: "Company Name"
+                    name: "name"
+                    widget: "string"
+
+                  - label: "Phone Number (Optional)"
+                    name: "phone"
+                    widget: "string"
+                    required: false
+                    hint: "Example: 209-555-0123 or 619-555-0123 Ext 217."
+
+                  - label: "Company Website URL (Optional)"
+                    name: "url"
+                    widget: "string"
+                    required: false
+                    hint: "Add a website address, such as https://example.com. When present, the company name becomes clickable. Leave blank for plain text."
+
   - name: "blog"
     label: "Blog Posts"
     label_singular: "Blog Post"

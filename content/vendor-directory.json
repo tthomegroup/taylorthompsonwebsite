@@ -1,0 +1,227 @@
+{
+  "categories": [
+    {
+      "id": "utilities",
+      "title": "UTILITIES",
+      "image": "/assets/images/vendor-categories/utilities.jpg",
+      "companies": [
+        { "name": "PG&E", "phone": "800-743-5000", "url": "" },
+        { "name": "MID", "phone": "209-526-7337", "url": "" },
+        { "name": "TID", "phone": "209-883-8222", "url": "" },
+        { "name": "Gilton Waste Management", "phone": "209-527-3781", "url": "" }
+      ]
+    },
+    {
+      "id": "mortgage-lenders",
+      "title": "MORTGAGE LENDERS",
+      "image": "/assets/images/vendor-categories/mortgage-lenders.jpg",
+      "companies": [
+        { "name": "Will Patterson, Guild Mortgage", "phone": "209-605-7118", "url": "" },
+        { "name": "Wendy Kaiser, RATE", "phone": "209-595-3898", "url": "" },
+        { "name": "Kristina Cornejo, The Mortgage Dr", "phone": "209-602-8614", "url": "" },
+        { "name": "Chrisy Coons, Rocket City Mortgage", "phone": "256-797-0469", "url": "" },
+        { "name": "Jessica Castanon, The Mortgage Dr", "phone": "209-648-9209", "url": "" }
+      ]
+    },
+    {
+      "id": "insurance",
+      "title": "INSURANCE",
+      "image": "/assets/images/vendor-categories/insurance.jpg",
+      "companies": [
+        { "name": "Nathan Dabulewicz, GDI Insurance", "phone": "209-918-0192", "url": "" },
+        { "name": "Lana Clayton, Farmers Insurance", "phone": "209-613-2715", "url": "" },
+        { "name": "Katie Silva, TSM Insurance", "phone": "209-579-3639", "url": "" }
+      ]
+    },
+    {
+      "id": "home-inspectors",
+      "title": "HOME INSPECTORS",
+      "image": "/assets/images/vendor-categories/home-inspectors.jpg",
+      "companies": [
+        { "name": "Richard Bonander, Eagle One Home Inspections", "phone": "209-620-6648", "url": "" },
+        { "name": "Home Guard Incorporated", "phone": "855-331-1900", "url": "" },
+        { "name": "Baker Inspection Group", "phone": "209-522-5320", "url": "" }
+      ]
+    },
+    {
+      "id": "appraisers",
+      "title": "APPRAISERS",
+      "image": "/assets/images/vendor-categories/appraisers.jpg",
+      "companies": [
+        { "name": "Horacio (Ross) Silva, Executive Appraisals, Inc.", "phone": "209-678-1237", "url": "" },
+        { "name": "Jerry Ridenour", "phone": "209-505-0649", "url": "" }
+      ]
+    },
+    {
+      "id": "garage-door-repair",
+      "title": "GARAGE DOOR REPAIR",
+      "image": "/assets/images/vendor-categories/garage-door-repair.jpg",
+      "companies": [
+        { "name": "Barton Overhead Doors", "phone": "209-571-3667", "url": "" }
+      ]
+    },
+    {
+      "id": "movers",
+      "title": "MOVERS",
+      "image": "/assets/images/vendor-categories/movers.jpg",
+      "companies": [
+        { "name": "Brewer's Moving", "phone": "209-923-3827", "url": "" },
+        { "name": "PODS", "phone": "877-770-7637", "url": "" }
+      ]
+    },
+    {
+      "id": "real-estate-attorneys",
+      "title": "REAL ESTATE ATTORNEYS",
+      "image": "/assets/images/vendor-categories/real-estate-attorneys.jpg",
+      "companies": [
+        { "name": "Chad Wood, Wilbanks & Wood PLC", "phone": "209-830-9191", "url": "" }
+      ]
+    },
+    {
+      "id": "accountants",
+      "title": "ACCOUNTANTS",
+      "image": "/assets/images/vendor-categories/accountants.jpg",
+      "companies": [
+        { "name": "Tim Wheeler, CPA", "phone": "209-325-8500", "url": "" }
+      ]
+    },
+    {
+      "id": "house-cleaners",
+      "title": "HOUSE CLEANERS",
+      "image": "/assets/images/vendor-categories/house-cleaners.jpg",
+      "companies": [
+        { "name": "Absolutely Cleaning Services", "phone": "209-552-1988", "url": "" },
+        { "name": "Advance Carpet Cleaning", "phone": "209-668-0967", "url": "" },
+        { "name": "Norma's House Cleaning", "phone": "650-785-9124", "url": "" },
+        { "name": "The Cleaning Gals Services", "phone": "209-409-0142", "url": "" }
+      ]
+    },
+    {
+      "id": "building-contractors",
+      "title": "BUILDING CONTRACTORS",
+      "image": "/assets/images/vendor-categories/building-contractors.jpg",
+      "companies": [
+        { "name": "Brad Reisz, Reisz Construction", "phone": "209-988-9374", "url": "" },
+        { "name": "Rui Esteeves, REI Construction", "phone": "209-595-7467", "url": "" },
+        { "name": "Jose Brambilla, Flooring Installer", "phone": "209-409-5115", "url": "" },
+        { "name": "Philip with Elegant Granite, Countertops", "phone": "209-818-6080", "url": "" },
+        { "name": "Hermiz, Custom Cabinets", "phone": "209-534-4514", "url": "" }
+      ]
+    },
+    {
+      "id": "roofing",
+      "title": "ROOFING",
+      "image": "/assets/images/vendor-categories/roofing.jpg",
+      "companies": [
+        { "name": "David's Roofing", "phone": "209-527-0187", "url": "" },
+        { "name": "Landreth Roofing", "phone": "209-599-2371", "url": "" },
+        { "name": "JAG Roofing", "phone": "209-606-9742", "url": "" }
+      ]
+    },
+    {
+      "id": "landscaping",
+      "title": "LANDSCAPING/LAWN MAINTENANCE",
+      "image": "/assets/images/vendor-categories/landscaping.jpg",
+      "companies": [
+        { "name": "Edward, Mahogany Landscaping", "phone": "209-201-1007", "url": "" },
+        { "name": "Nathan Ruiz, Ruiz Xeriscape", "phone": "209-470-5102", "url": "" },
+        { "name": "The Tree Guys", "phone": "209-589-5721", "url": "" }
+      ]
+    },
+    {
+      "id": "plumbing",
+      "title": "PLUMBING",
+      "image": "/assets/images/vendor-categories/plumbing.jpg",
+      "companies": [
+        { "name": "Thrifty Plumbing", "phone": "209-988-8144", "url": "" },
+        { "name": "Mr. Rooter", "phone": "209-833-3841", "url": "" }
+      ]
+    },
+    {
+      "id": "painters",
+      "title": "PAINTERS",
+      "image": "/assets/images/vendor-categories/painters.jpg",
+      "companies": [
+        { "name": "Crown Painting", "phone": "209-322-3275", "url": "" },
+        { "name": "Micky Wall Painting", "phone": "209-669-0557", "url": "" },
+        { "name": "Best Bros Painting", "phone": "209-876-0018", "url": "" },
+        { "name": "Vicente", "phone": "574-538-9151", "url": "" }
+      ]
+    },
+    {
+      "id": "appliance-repair",
+      "title": "APPLIANCE REPAIR",
+      "image": "/assets/images/vendor-categories/appliance-repair.jpg",
+      "companies": [
+        { "name": "Turlock Appliance", "phone": "209-632-9323", "url": "" }
+      ]
+    },
+    {
+      "id": "pool-services",
+      "title": "POOL SERVICES",
+      "image": "/assets/images/vendor-categories/pool-services.jpg",
+      "companies": [
+        { "name": "The Pool Guys", "phone": "209-765-0237", "url": "" }
+      ]
+    },
+    {
+      "id": "title-services",
+      "title": "TITLE SERVICES",
+      "image": "/assets/images/vendor-categories/title-services.jpg",
+      "companies": [
+        { "name": "WFG National Title Company", "phone": "209-664-9723", "url": "" },
+        { "name": "First American Title Company", "phone": "209-238-9580", "url": "" },
+        { "name": "Old Republic Title Company", "phone": "209-544-1823", "url": "" }
+      ]
+    },
+    {
+      "id": "pest-control",
+      "title": "PEST CONTROL SERVICES",
+      "image": "/assets/images/vendor-categories/pest-control.jpg",
+      "companies": [
+        { "name": "Gauden Exterminating", "phone": "209-599-3692", "url": "" },
+        { "name": "Best Pest Management", "phone": "209-497-5777", "url": "" },
+        { "name": "Clark Pest Control", "phone": "209-207-0050", "url": "" }
+      ]
+    },
+    {
+      "id": "heating-ac",
+      "title": "HEATING/AC SERVICES",
+      "image": "/assets/images/vendor-categories/heating-ac.jpg",
+      "companies": [
+        { "name": "Virginia Mechanical", "phone": "209-832-2966", "url": "" },
+        { "name": "Wally Falkes Heathing and Air Conditioning", "phone": "209-427-1828", "url": "" },
+        { "name": "Thorsens Norquist Inc", "phone": "209-778-3960", "url": "" },
+        { "name": "Affordable Heating & Cooling", "phone": "925-483-0521", "url": "" }
+      ]
+    },
+    {
+      "id": "electricians",
+      "title": "ELECTRICIANS",
+      "image": "/assets/images/vendor-categories/electricians.jpg",
+      "companies": [
+        { "name": "Kirkes Electric", "phone": "209-634-9301", "url": "" },
+        { "name": "Wells Electric", "phone": "209-543-2357", "url": "" }
+      ]
+    },
+    {
+      "id": "exchange-companies",
+      "title": "1031 EXCHANGE COMPANIES",
+      "image": "/assets/images/vendor-categories/exchange-companies.jpg",
+      "companies": [
+        { "name": "Exchange Resources Inc", "phone": "619-528-1031 Ext 217", "url": "" },
+        { "name": "Asset Preservation Incorporated", "phone": "916-791-5991", "url": "" }
+      ]
+    },
+    {
+      "id": "estate-auction-sales",
+      "title": "ESTATE & AUCTION SALES",
+      "image": "/assets/images/vendor-categories/estate-auction-sales.jpg",
+      "companies": [
+        { "name": "Alex, Grace & Sons Estate Sales", "phone": "209-402-3560", "url": "" },
+        { "name": "Dave, ABC Sales", "phone": "209-535-4309", "url": "" },
+        { "name": "Mary, Central Valley Estate Sales", "phone": "209-765-5262", "url": "" }
+      ]
+    }
+  ]
+}
