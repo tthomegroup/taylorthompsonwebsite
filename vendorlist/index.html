@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trusted Vendor List | Taylor Thompson Home Group</title>
-  <meta name="description" content="Browse Taylor Thompson Home Group's trusted Central Valley vendor list for home services, lending, inspections, repairs, moving, and more.">
+  <title>Trusted Central Valley Vendor List | Taylor Thompson Home Group</title>
+  <meta name="description" content="Find Taylor Thompson Home Group's trusted Central Valley vendors for utilities, lending, insurance, inspections, contractors, repairs, moving, title services, and more.">
   <link rel="canonical" href="https://taylorthompsonhomegroup.com/vendorlist/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://app.highnote.io">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" href="/assets/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="/assets/css/nav-footer.css">
   <style>
     :root {
       --vendor-black: #050505;
-      --vendor-tan: #c9ad99;
-      --vendor-cream: #f8f3ed;
+      --vendor-brown: #765f50;
+      --vendor-tan: #c8ad9a;
+      --vendor-tan-dark: #a68068;
+      --vendor-cream: #f7f2ed;
       --vendor-white: #ffffff;
-      --vendor-text: #765f50;
+      --vendor-line: #d9cec5;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -33,19 +33,25 @@
       font-family: "Jost", sans-serif;
     }
 
+    button, input { font: inherit; }
+
     .vendor-hero {
-      padding: clamp(64px, 8vw, 112px) clamp(20px, 6vw, 88px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(420px, 1.08fr);
+      min-height: min(690px, calc(100vh - 78px));
       background: var(--vendor-black);
+    }
+
+    .vendor-hero__content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(64px, 8vw, 128px) clamp(28px, 6vw, 96px);
       color: var(--vendor-white);
-      text-align: center;
     }
 
-    .vendor-hero__inner {
-      width: min(900px, 100%);
-      margin: 0 auto;
-    }
-
-    .vendor-eyebrow {
+    .vendor-eyebrow,
+    .section-eyebrow {
       margin: 0 0 18px;
       color: var(--vendor-tan);
       font-size: 11px;
@@ -55,88 +61,439 @@
     }
 
     .vendor-hero h1 {
+      max-width: 670px;
       margin: 0;
       font-family: "Cormorant Garamond", serif;
-      font-size: clamp(46px, 7vw, 78px);
+      font-size: clamp(50px, 5.7vw, 82px);
       font-weight: 300;
-      line-height: 1;
+      line-height: 0.98;
     }
 
-    .vendor-hero h1 em {
+    .vendor-hero h1 em,
+    .vendor-tools h2 em,
+    .vendor-directory__heading h2 em,
+    .vendor-disclaimer h2 em,
+    .vendor-cta h2 em {
       color: var(--vendor-tan);
       font-weight: 300;
     }
 
-    .vendor-intro {
-      max-width: 690px;
-      margin: 24px auto 0;
+    .vendor-hero__intro {
+      max-width: 660px;
+      margin: 28px 0 0;
       color: rgba(255, 255, 255, 0.72);
       font-size: 15px;
       font-weight: 300;
-      line-height: 1.8;
+      line-height: 1.85;
     }
 
-    .vendor-open-link {
+    .vendor-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .vendor-button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 48px;
-      margin-top: 30px;
-      padding: 13px 26px;
+      min-height: 50px;
+      padding: 14px 26px;
       border: 1px solid var(--vendor-tan);
       background: var(--vendor-tan);
       color: var(--vendor-black);
+      cursor: pointer;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      letter-spacing: 0.15em;
       text-decoration: none;
       text-transform: uppercase;
       transition: background 180ms ease, color 180ms ease;
     }
 
-    .vendor-open-link:hover,
-    .vendor-open-link:focus-visible {
-      background: transparent;
-      color: var(--vendor-white);
+    .vendor-button:hover,
+    .vendor-button:focus-visible {
+      border-color: var(--vendor-white);
+      background: var(--vendor-white);
+    }
+
+    .vendor-button--outline { background: transparent; color: var(--vendor-white); }
+    .vendor-button--outline:hover,
+    .vendor-button--outline:focus-visible { color: var(--vendor-black); }
+
+    .vendor-hero__visual {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(5,5,5,0.08), rgba(5,5,5,0.3)), url("/assets/images/modernfarmhouse.jpg") center / cover no-repeat;
+    }
+
+    .vendor-hero__visual::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background: linear-gradient(90deg, rgba(5,5,5,0.2), transparent 35%);
+    }
+
+    .vendor-hero__stat {
+      position: absolute;
+      right: clamp(24px, 5vw, 76px);
+      bottom: clamp(24px, 6vw, 72px);
+      z-index: 1;
+      width: min(280px, calc(100% - 48px));
+      padding: 28px 30px;
+      background: rgba(200, 173, 154, 0.94);
+      color: var(--vendor-black);
+    }
+
+    .vendor-hero__stat strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 42px;
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .vendor-hero__stat span {
+      display: block;
+      margin-top: 8px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .vendor-tools {
+      position: relative;
+      z-index: 2;
+      width: min(1160px, calc(100% - 40px));
+      margin: -52px auto 0;
+      padding: clamp(28px, 4vw, 44px);
+      background: var(--vendor-white);
+      border: 1px solid var(--vendor-line);
+      box-shadow: 0 18px 48px rgba(5,5,5,0.09);
+    }
+
+    .vendor-tools__heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+      align-items: end;
+      gap: 44px;
+    }
+
+    .vendor-tools h2,
+    .vendor-directory__heading h2,
+    .vendor-disclaimer h2,
+    .vendor-cta h2 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(36px, 4vw, 54px);
+      font-weight: 300;
+      line-height: 1.05;
+    }
+
+    .vendor-tools h2 em,
+    .vendor-directory__heading h2 em,
+    .vendor-disclaimer h2 em,
+    .vendor-cta h2 em { color: var(--vendor-tan-dark); }
+
+    .vendor-search { position: relative; }
+
+    .vendor-search label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--vendor-brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .vendor-search input {
+      width: 100%;
+      min-height: 52px;
+      padding: 13px 46px 13px 17px;
+      border: 1px solid var(--vendor-line);
+      border-radius: 0;
+      outline: none;
+      background: var(--vendor-cream);
+      color: var(--vendor-black);
+      font-size: 14px;
+    }
+
+    .vendor-search input:focus {
+      border-color: var(--vendor-tan-dark);
+      box-shadow: 0 0 0 3px rgba(166,128,104,0.12);
+    }
+
+    .vendor-search::after {
+      position: absolute;
+      right: 17px;
+      bottom: 15px;
+      content: "";
+      width: 14px;
+      height: 14px;
+      border: 2px solid var(--vendor-brown);
+      border-radius: 50%;
+    }
+
+    .vendor-search::before {
+      position: absolute;
+      right: 13px;
+      bottom: 12px;
+      z-index: 1;
+      content: "";
+      width: 7px;
+      height: 2px;
+      background: var(--vendor-brown);
+      transform: rotate(45deg);
+      transform-origin: left center;
+    }
+
+    .vendor-index {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 30px;
+      padding-top: 26px;
+      border-top: 1px solid var(--vendor-line);
+    }
+
+    .vendor-index a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 8px 12px;
+      border: 1px solid var(--vendor-line);
+      color: var(--vendor-brown);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+    }
+
+    .vendor-index a:hover,
+    .vendor-index a:focus-visible {
+      border-color: var(--vendor-tan);
+      background: var(--vendor-tan);
+      color: var(--vendor-black);
     }
 
     .vendor-directory {
-      padding: clamp(30px, 5vw, 64px) clamp(14px, 4vw, 64px) clamp(56px, 7vw, 96px);
+      padding: clamp(82px, 9vw, 132px) clamp(20px, 5vw, 72px);
       background: var(--vendor-cream);
     }
 
-    .vendor-frame-shell {
-      width: min(1400px, 100%);
-      margin: 0 auto;
-      overflow: hidden;
-      border: 1px solid rgba(118, 95, 80, 0.25);
-      background: var(--vendor-white);
-      box-shadow: 0 18px 55px rgba(54, 39, 30, 0.12);
+    .vendor-directory__inner { width: min(1160px, 100%); margin: 0 auto; }
+
+    .vendor-directory__heading {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(280px, 0.48fr);
+      align-items: end;
+      gap: 50px;
+      margin-bottom: 48px;
     }
 
-    .vendor-frame {
-      display: block;
-      width: 100%;
-      height: min(82vh, 980px);
-      min-height: 760px;
-      border: 0;
-      background: var(--vendor-white);
+    .vendor-directory__heading p:last-child {
+      margin: 0;
+      color: var(--vendor-brown);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
     }
 
-    .vendor-frame-fallback {
-      padding: 28px;
-      color: var(--vendor-text);
+    .vendor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .vendor-card {
+      position: relative;
+      min-width: 0;
+      padding: clamp(26px, 3vw, 38px);
+      scroll-margin-top: 108px;
+      background: var(--vendor-white);
+      border: 1px solid var(--vendor-line);
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .vendor-card:hover,
+    .vendor-card:target {
+      border-color: var(--vendor-tan-dark);
+      box-shadow: 0 16px 40px rgba(65,43,28,0.08);
+      transform: translateY(-2px);
+    }
+
+    .vendor-card[hidden], .vendor-entry[hidden], .vendor-no-results[hidden] { display: none; }
+
+    .vendor-card__header {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      min-height: 60px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--vendor-line);
+    }
+
+    .vendor-card__number {
+      min-width: 38px;
+      color: var(--vendor-tan-dark);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    .vendor-card h3 {
+      margin: 0;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(24px, 2.2vw, 31px);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .vendor-card__list { display: grid; gap: 0; margin-top: 8px; }
+
+    .vendor-entry {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 22px;
+      min-height: 56px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(217,206,197,0.72);
+    }
+
+    .vendor-entry:last-child { border-bottom: 0; }
+
+    .vendor-entry__name {
+      min-width: 0;
+      color: var(--vendor-black);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .vendor-entry__phone {
+      color: var(--vendor-brown);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.035em;
+      line-height: 1.35;
+      text-align: right;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .vendor-entry__phone:hover,
+    .vendor-entry__phone:focus-visible {
+      color: var(--vendor-tan-dark);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .vendor-no-results {
+      grid-column: 1 / -1;
+      padding: 54px 28px;
+      background: var(--vendor-white);
+      border: 1px solid var(--vendor-line);
+      color: var(--vendor-brown);
       text-align: center;
     }
 
-    .vendor-frame-fallback a { color: var(--vendor-text); }
+    .vendor-disclaimer {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.4fr) minmax(0, 1fr);
+      gap: clamp(38px, 7vw, 110px);
+      padding: clamp(70px, 8vw, 112px) clamp(24px, 7vw, 112px);
+      background: var(--vendor-white);
+      border-top: 1px solid var(--vendor-line);
+    }
 
-    @media (max-width: 700px) {
-      .vendor-hero { padding: 58px 22px; }
-      .vendor-intro { font-size: 14px; }
-      .vendor-directory { padding: 20px 0 48px; }
-      .vendor-frame-shell { border-right: 0; border-left: 0; box-shadow: none; }
-      .vendor-frame { height: 78vh; min-height: 650px; }
+    .vendor-disclaimer p {
+      max-width: 850px;
+      margin: 0;
+      color: var(--vendor-brown);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.95;
+    }
+
+    .vendor-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+      padding: clamp(62px, 8vw, 96px) clamp(24px, 7vw, 112px);
+      background: var(--vendor-black);
+      color: var(--vendor-white);
+    }
+
+    .vendor-cta__copy { max-width: 720px; }
+
+    .vendor-cta p {
+      max-width: 650px;
+      margin: 18px 0 0;
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 960px) {
+      .vendor-hero { grid-template-columns: 1fr; }
+      .vendor-hero__visual { min-height: 440px; }
+      .vendor-tools { margin-top: -36px; }
+      .vendor-tools__heading,
+      .vendor-directory__heading,
+      .vendor-disclaimer { grid-template-columns: 1fr; }
+      .vendor-tools__heading,
+      .vendor-directory__heading { gap: 28px; }
+      .vendor-disclaimer { gap: 24px; }
+    }
+
+    @media (max-width: 760px) {
+      .vendor-hero { min-height: auto; }
+      .vendor-hero__content { padding: 64px 24px 58px; }
+      .vendor-hero h1 { font-size: clamp(45px, 13vw, 64px); }
+      .vendor-hero__visual { min-height: 340px; }
+      .vendor-hero__stat { right: 20px; bottom: 20px; }
+      .vendor-tools { width: calc(100% - 28px); padding: 28px 20px; }
+      .vendor-index {
+        flex-wrap: nowrap;
+        margin-right: -20px;
+        padding-right: 20px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+      }
+      .vendor-index a { flex: 0 0 auto; }
+      .vendor-directory { padding: 76px 14px; }
+      .vendor-grid { grid-template-columns: 1fr; gap: 14px; }
+      .vendor-card { padding: 26px 22px; }
+      .vendor-entry { grid-template-columns: 1fr; gap: 6px; }
+      .vendor-entry__phone { justify-self: start; text-align: left; }
+      .vendor-disclaimer, .vendor-cta { padding: 64px 24px; }
+      .vendor-cta { align-items: flex-start; flex-direction: column; gap: 28px; }
+      .vendor-cta .vendor-button { width: 100%; }
+    }
+
+    @media print {
+      body { padding-top: 0 !important; background: #fff; }
+      .site-header, .site-footer, .vendor-hero__visual, .vendor-hero__actions,
+      .vendor-search, .vendor-index, .vendor-cta, #tidio-chat, #tidio-chat-code { display: none !important; }
+      .vendor-hero { display: block; min-height: 0; background: #fff; color: #000; }
+      .vendor-hero__content { padding: 24px 0; color: #000; }
+      .vendor-hero__intro { color: #333; }
+      .vendor-tools { width: 100%; margin: 0; padding: 16px 0; border: 0; box-shadow: none; }
+      .vendor-tools__heading { display: block; }
+      .vendor-directory { padding: 20px 0; background: #fff; }
+      .vendor-grid { grid-template-columns: 1fr 1fr; }
+      .vendor-card { break-inside: avoid; box-shadow: none !important; transform: none !important; }
+      .vendor-disclaimer { padding: 30px 0; }
     }
   </style>
   <!-- Google tag (gtag.js) -->
@@ -171,44 +528,303 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
   <main>
     <section class="vendor-hero" aria-labelledby="vendor-page-title">
-      <div class="vendor-hero__inner">
-        <p class="vendor-eyebrow">Local Resources</p>
-        <h1 id="vendor-page-title">Our Trusted <em>Vendor List</em></h1>
-        <p class="vendor-intro">Find local professionals and home-service resources collected by Taylor Thompson Home Group for Central Valley clients.</p>
-        <a class="vendor-open-link" href="https://app.highnote.io/c/p/b0f87e71/taylor-thompson-home-group-vendor-list?cp=link" target="_blank" rel="noopener noreferrer">Open Vendor List Full Screen</a>
+      <div class="vendor-hero__content">
+        <p class="vendor-eyebrow">Taylor Thompson Home Group Vendor List</p>
+        <h1 id="vendor-page-title">Trusted Help for Every <em>Part of Homeownership</em></h1>
+        <p class="vendor-hero__intro">Discover Taylor Thompson Home Group's curated Vendor List below, exclusively tailored for clients. Our comprehensive list features trusted professionals from home inspectors, contractors, movers, and electricians - all vetted for excellence. Count on our handpicked experts for a seamless and exceptional real estate experience!</p>
+        <div class="vendor-hero__actions">
+          <a class="vendor-button" href="#vendor-directory">Browse Vendors</a>
+          <button class="vendor-button vendor-button--outline" type="button" data-print-vendors>Print Vendor List</button>
+        </div>
+      </div>
+      <div class="vendor-hero__visual" role="img" aria-label="Modern Central Valley home exterior">
+        <div class="vendor-hero__stat"><strong>23</strong><span>Home and Professional Service Categories</span></div>
       </div>
     </section>
 
-    <section class="vendor-directory" aria-label="Taylor Thompson Home Group vendor directory">
-      <div class="vendor-frame-shell">
-        <iframe
-          class="vendor-frame"
-          src="https://app.highnote.io/c/p/b0f87e71/taylor-thompson-home-group-vendor-list?cp=link"
-          title="Taylor Thompson Home Group vendor list"
-          loading="eager"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="clipboard-write; fullscreen"
-        >
-          <p class="vendor-frame-fallback">The vendor list is loading. You can also <a href="https://app.highnote.io/c/p/b0f87e71/taylor-thompson-home-group-vendor-list?cp=link">open the complete vendor list here</a>.</p>
-        </iframe>
+    <section class="vendor-tools" aria-labelledby="vendor-tools-title">
+      <div class="vendor-tools__heading">
+        <div>
+          <p class="section-eyebrow">Quick Directory</p>
+          <h2 id="vendor-tools-title">Find the Right <em>Professional</em></h2>
+        </div>
+        <div class="vendor-search">
+          <label for="vendor-search-input">Search the vendor list</label>
+          <input id="vendor-search-input" type="search" placeholder="Search by service, company, or name" autocomplete="off" aria-controls="vendor-grid">
+        </div>
       </div>
+      <nav class="vendor-index" aria-label="Vendor categories">
+        <a href="#utilities">Utilities</a><a href="#mortgage-lenders">Mortgage Lenders</a><a href="#insurance">Insurance</a><a href="#home-inspectors">Home Inspectors</a><a href="#appraisers">Appraisers</a><a href="#garage-door-repair">Garage Doors</a><a href="#movers">Movers</a><a href="#real-estate-attorneys">Attorneys</a><a href="#accountants">Accountants</a><a href="#house-cleaners">House Cleaners</a><a href="#building-contractors">Contractors</a><a href="#roofing">Roofing</a><a href="#landscaping">Landscaping</a><a href="#plumbing">Plumbing</a><a href="#painters">Painters</a><a href="#appliance-repair">Appliance Repair</a><a href="#pool-services">Pool Services</a><a href="#title-services">Title Services</a><a href="#pest-control">Pest Control</a><a href="#heating-ac">Heating and AC</a><a href="#electricians">Electricians</a><a href="#exchange-companies">1031 Exchange</a><a href="#estate-auction-sales">Estate Sales</a>
+      </nav>
+    </section>
+
+    <section class="vendor-directory" id="vendor-directory" aria-labelledby="vendor-directory-title">
+      <div class="vendor-directory__inner">
+        <div class="vendor-directory__heading">
+          <div><p class="section-eyebrow">Local Resources</p><h2 id="vendor-directory-title">Our Complete <em>Vendor List</em></h2></div>
+          <p>Tap any phone number to call directly. Use the search above to find a service, company, or professional.</p>
+        </div>
+
+        <div class="vendor-grid" id="vendor-grid">
+          <article class="vendor-card" id="utilities">
+            <header class="vendor-card__header"><span class="vendor-card__number">01</span><h3>UTILITIES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">PG&amp;E</span><a class="vendor-entry__phone" href="tel:+18007435000">800-743-5000</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">MID</span><a class="vendor-entry__phone" href="tel:+12095267337">209-526-7337</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">TID</span><a class="vendor-entry__phone" href="tel:+12098838222">209-883-8222</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Gilton Waste Management</span><a class="vendor-entry__phone" href="tel:+12095273781">209-527-3781</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="mortgage-lenders">
+            <header class="vendor-card__header"><span class="vendor-card__number">02</span><h3>MORTGAGE LENDERS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Will Patterson, Guild Mortgage</span><a class="vendor-entry__phone" href="tel:+12096057118">209-605-7118</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Wendy Kaiser, RATE</span><a class="vendor-entry__phone" href="tel:+12095953898">209-595-3898</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Kristina Cornejo, The Mortgage Dr</span><a class="vendor-entry__phone" href="tel:+12096028614">209-602-8614</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Chrisy Coons, Rocket City Mortgage</span><a class="vendor-entry__phone" href="tel:+12567970469">256-797-0469</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Jessica Castanon, The Mortgage Dr</span><a class="vendor-entry__phone" href="tel:+12096489209">209-648-9209</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="insurance">
+            <header class="vendor-card__header"><span class="vendor-card__number">03</span><h3>INSURANCE</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Nathan Dabulewicz, GDI Insurance</span><a class="vendor-entry__phone" href="tel:+12099180192">209-918-0192</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Lana Clayton, Farmers Insurance</span><a class="vendor-entry__phone" href="tel:+12096132715">209-613-2715</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Katie Silva, TSM Insurance</span><a class="vendor-entry__phone" href="tel:+12095793639">209-579-3639</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="home-inspectors">
+            <header class="vendor-card__header"><span class="vendor-card__number">04</span><h3>HOME INSPECTORS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Richard Bonander, Eagle One Home Inspections</span><a class="vendor-entry__phone" href="tel:+12096206648">209-620-6648</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Home Guard Incorporated</span><a class="vendor-entry__phone" href="tel:+18553311900">855-331-1900</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Baker Inspection Group</span><a class="vendor-entry__phone" href="tel:+12095225320">209-522-5320</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="appraisers">
+            <header class="vendor-card__header"><span class="vendor-card__number">05</span><h3>APPRAISERS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Horacio (Ross) Silva, Executive Appraisals, Inc.</span><a class="vendor-entry__phone" href="tel:+12096781237">209-678-1237</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Jerry Ridenour</span><a class="vendor-entry__phone" href="tel:+12095050649">209-505-0649</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="garage-door-repair">
+            <header class="vendor-card__header"><span class="vendor-card__number">06</span><h3>GARAGE DOOR REPAIR</h3></header>
+            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Barton Overhead Doors</span><a class="vendor-entry__phone" href="tel:+12095713667">209-571-3667</a></div></div>
+          </article>
+
+          <article class="vendor-card" id="movers">
+            <header class="vendor-card__header"><span class="vendor-card__number">07</span><h3>MOVERS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Brewer's Moving</span><a class="vendor-entry__phone" href="tel:+12099233827">209-923-3827</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">PODS</span><a class="vendor-entry__phone" href="tel:+18777707637">877-770-7637</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="real-estate-attorneys">
+            <header class="vendor-card__header"><span class="vendor-card__number">08</span><h3>REAL ESTATE ATTORNEYS</h3></header>
+            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Chad Wood, Wilbanks &amp; Wood PLC</span><a class="vendor-entry__phone" href="tel:+12098309191">209-830-9191</a></div></div>
+          </article>
+
+          <article class="vendor-card" id="accountants">
+            <header class="vendor-card__header"><span class="vendor-card__number">09</span><h3>ACCOUNTANTS</h3></header>
+            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Tim Wheeler, CPA</span><a class="vendor-entry__phone" href="tel:+12093258500">209-325-8500</a></div></div>
+          </article>
+
+          <article class="vendor-card" id="house-cleaners">
+            <header class="vendor-card__header"><span class="vendor-card__number">10</span><h3>HOUSE CLEANERS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Absolutely Cleaning Services</span><a class="vendor-entry__phone" href="tel:+12095521988">209-552-1988</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Advance Carpet Cleaning</span><a class="vendor-entry__phone" href="tel:+12096680967">209-668-0967</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Norma's House Cleaning</span><a class="vendor-entry__phone" href="tel:+16507859124">650-785-9124</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">The Cleaning Gals Services</span><a class="vendor-entry__phone" href="tel:+12094090142">209-409-0142</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="building-contractors">
+            <header class="vendor-card__header"><span class="vendor-card__number">11</span><h3>BUILDING CONTRACTORS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Brad Reisz, Reisz Construction</span><a class="vendor-entry__phone" href="tel:+12099889374">209-988-9374</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Rui Esteeves, REI Construction</span><a class="vendor-entry__phone" href="tel:+12095957467">209-595-7467</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Jose Brambilla, Flooring Installer</span><a class="vendor-entry__phone" href="tel:+12094095115">209-409-5115</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Philip with Elegant Granite, Countertops</span><a class="vendor-entry__phone" href="tel:+12098186080">209-818-6080</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Hermiz, Custom Cabinets</span><a class="vendor-entry__phone" href="tel:+12095344514">209-534-4514</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="roofing">
+            <header class="vendor-card__header"><span class="vendor-card__number">12</span><h3>ROOFING</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">David's Roofing</span><a class="vendor-entry__phone" href="tel:+12095270187">209-527-0187</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Landreth Roofing</span><a class="vendor-entry__phone" href="tel:+12095992371">209-599-2371</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">JAG Roofing</span><a class="vendor-entry__phone" href="tel:+12096069742">209-606-9742</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="landscaping">
+            <header class="vendor-card__header"><span class="vendor-card__number">13</span><h3>LANDSCAPING/LAWN MAINTENANCE</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Edward, Mahogany Landscaping</span><a class="vendor-entry__phone" href="tel:+12092011007">209-201-1007</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Nathan Ruiz, Ruiz Xeriscape</span><a class="vendor-entry__phone" href="tel:+12094705102">209-470-5102</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">The Tree Guys</span><a class="vendor-entry__phone" href="tel:+12095895721">209-589-5721</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="plumbing">
+            <header class="vendor-card__header"><span class="vendor-card__number">14</span><h3>PLUMBING</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Thrifty Plumbing</span><a class="vendor-entry__phone" href="tel:+12099888144">209-988-8144</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Mr. Rooter</span><a class="vendor-entry__phone" href="tel:+12098333841">209-833-3841</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="painters">
+            <header class="vendor-card__header"><span class="vendor-card__number">15</span><h3>PAINTERS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Crown Painting</span><a class="vendor-entry__phone" href="tel:+12093223275">209-322-3275</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Micky Wall Painting</span><a class="vendor-entry__phone" href="tel:+12096690557">209-669-0557</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Best Bros Painting</span><a class="vendor-entry__phone" href="tel:+12098760018">209-876-0018</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Vicente</span><a class="vendor-entry__phone" href="tel:+15745389151">574-538-9151</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="appliance-repair">
+            <header class="vendor-card__header"><span class="vendor-card__number">16</span><h3>APPLIANCE REPAIR</h3></header>
+            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">Turlock Appliance</span><a class="vendor-entry__phone" href="tel:+12096329323">209-632-9323</a></div></div>
+          </article>
+
+          <article class="vendor-card" id="pool-services">
+            <header class="vendor-card__header"><span class="vendor-card__number">17</span><h3>POOL SERVICES</h3></header>
+            <div class="vendor-card__list"><div class="vendor-entry"><span class="vendor-entry__name">The Pool Guys</span><a class="vendor-entry__phone" href="tel:+12097650237">209-765-0237</a></div></div>
+          </article>
+
+          <article class="vendor-card" id="title-services">
+            <header class="vendor-card__header"><span class="vendor-card__number">18</span><h3>TITLE SERVICES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">WFG National Title Company</span><a class="vendor-entry__phone" href="tel:+12096649723">209-664-9723</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">First American Title Company</span><a class="vendor-entry__phone" href="tel:+12092389580">209-238-9580</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Old Republic Title Company</span><a class="vendor-entry__phone" href="tel:+12095441823">209-544-1823</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="pest-control">
+            <header class="vendor-card__header"><span class="vendor-card__number">19</span><h3>PEST CONTROL SERVICES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Gauden Exterminating</span><a class="vendor-entry__phone" href="tel:+12095993692">209-599-3692</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Best Pest Management</span><a class="vendor-entry__phone" href="tel:+12094975777">209-497-5777</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Clark Pest Control</span><a class="vendor-entry__phone" href="tel:+12092070050">209-207-0050</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="heating-ac">
+            <header class="vendor-card__header"><span class="vendor-card__number">20</span><h3>HEATING/AC SERVICES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Virginia Mechanical</span><a class="vendor-entry__phone" href="tel:+12098322966">209-832-2966</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Wally Falkes Heathing and Air Conditioning</span><a class="vendor-entry__phone" href="tel:+12094271828">209-427-1828</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Thorsens Norquist Inc</span><a class="vendor-entry__phone" href="tel:+12097783960">209-778-3960</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Affordable Heating &amp; Cooling</span><a class="vendor-entry__phone" href="tel:+19254830521">925-483-0521</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="electricians">
+            <header class="vendor-card__header"><span class="vendor-card__number">21</span><h3>ELECTRICIANS</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Kirkes Electric</span><a class="vendor-entry__phone" href="tel:+12096349301">209-634-9301</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Wells Electric</span><a class="vendor-entry__phone" href="tel:+12095432357">209-543-2357</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="exchange-companies">
+            <header class="vendor-card__header"><span class="vendor-card__number">22</span><h3>1031 EXCHANGE COMPANIES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Exchange Resources Inc</span><a class="vendor-entry__phone" href="tel:+16195281031;ext=217">619-528-1031 Ext 217</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Asset Preservation Incorporated</span><a class="vendor-entry__phone" href="tel:+19167915991">916-791-5991</a></div>
+            </div>
+          </article>
+
+          <article class="vendor-card" id="estate-auction-sales">
+            <header class="vendor-card__header"><span class="vendor-card__number">23</span><h3>ESTATE &amp; AUCTION SALES</h3></header>
+            <div class="vendor-card__list">
+              <div class="vendor-entry"><span class="vendor-entry__name">Alex, Grace &amp; Sons Estate Sales</span><a class="vendor-entry__phone" href="tel:+12094023560">209-402-3560</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Dave, ABC Sales</span><a class="vendor-entry__phone" href="tel:+12095354309">209-535-4309</a></div>
+              <div class="vendor-entry"><span class="vendor-entry__name">Mary, Central Valley Estate Sales</span><a class="vendor-entry__phone" href="tel:+12097655262">209-765-5262</a></div>
+            </div>
+          </article>
+
+          <p class="vendor-no-results" id="vendor-no-results" hidden>No vendors match your search. Try a different service, company, or name.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="vendor-disclaimer" aria-labelledby="vendor-disclaimer-title">
+      <div><p class="section-eyebrow">Important Information</p><h2 id="vendor-disclaimer-title">Vendor List <em>Disclosure</em></h2></div>
+      <p>Taylor Thompson Home Group may have a business relationship with some or all of the companies listed below. Any fees charged by these institutions are the full amount of fees due to the service provider for plan administration and provision of service. Other service providers are available with similar services and you are not obligated to use any specific company. Taylor Thompson Home Group recommends that you shop around for rates and services deemed acceptable.</p>
+    </section>
+
+    <section class="vendor-cta">
+      <div class="vendor-cta__copy">
+        <p class="section-eyebrow">Need More Guidance?</p>
+        <h2>Talk With Our <em>Local Team</em></h2>
+        <p>Have a question about a vendor, a home project, or your next real estate move? Reach out to Taylor Thompson Home Group.</p>
+      </div>
+      <a class="vendor-button" href="/contact/#contact-form">Contact Our Team</a>
     </section>
   </main>
 
   <div data-include="/includes/footer.html"></div>
   <script src="/assets/js/includes.js" defer></script>
+  <script>
+    (function () {
+      var searchInput = document.getElementById('vendor-search-input');
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.vendor-card'));
+      var noResults = document.getElementById('vendor-no-results');
+      var printButton = document.querySelector('[data-print-vendors]');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', function () {
+          var query = searchInput.value.trim().toLowerCase();
+          var visibleCards = 0;
+          cards.forEach(function (card) {
+            var heading = card.querySelector('h3');
+            var entries = Array.prototype.slice.call(card.querySelectorAll('.vendor-entry'));
+            var categoryMatches = !query || (heading && heading.textContent.toLowerCase().indexOf(query) !== -1);
+            var visibleEntries = 0;
+            entries.forEach(function (entry) {
+              var matches = categoryMatches || entry.textContent.toLowerCase().indexOf(query) !== -1;
+              entry.hidden = !matches;
+              if (matches) visibleEntries += 1;
+            });
+            card.hidden = visibleEntries === 0;
+            if (!card.hidden) visibleCards += 1;
+          });
+          if (noResults) noResults.hidden = visibleCards !== 0;
+        });
+      }
+
+      document.querySelectorAll('.vendor-index a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          if (!searchInput || !searchInput.value) return;
+          searchInput.value = '';
+          searchInput.dispatchEvent(new Event('input'));
+        });
+      });
+
+      if (printButton) printButton.addEventListener('click', function () { window.print(); });
+    }());
+  </script>
   <script src="//code.tidio.co/hhc4vboniih3fkjzb7pz1uksqe22ywym.js" async></script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on('init', user => {
-      if (!user) {
-        window.netlifyIdentity.on('login', () => {
-          document.location.href = '/admin/';
-        });
-      }
-    });
-  }
-</script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+      });
+    }
+  </script>
 </body>
 </html>
