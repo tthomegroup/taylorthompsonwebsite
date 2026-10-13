@@ -135,35 +135,6 @@
       background: linear-gradient(90deg, rgba(5,5,5,0.2), transparent 35%);
     }
 
-    .vendor-hero__stat {
-      position: absolute;
-      right: clamp(24px, 5vw, 76px);
-      bottom: clamp(24px, 6vw, 72px);
-      z-index: 1;
-      width: min(280px, calc(100% - 48px));
-      padding: 28px 30px;
-      background: rgba(200, 173, 154, 0.94);
-      color: var(--vendor-black);
-    }
-
-    .vendor-hero__stat strong {
-      display: block;
-      font-family: "Cormorant Garamond", serif;
-      font-size: 42px;
-      font-weight: 400;
-      line-height: 1;
-    }
-
-    .vendor-hero__stat span {
-      display: block;
-      margin-top: 8px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      line-height: 1.5;
-      text-transform: uppercase;
-    }
-
     .vendor-directory__heading h2,
     .vendor-disclaimer h2,
     .vendor-cta h2 {
@@ -360,7 +331,6 @@
       .vendor-hero__content { padding: 64px 24px 58px; }
       .vendor-hero h1 { font-size: clamp(45px, 13vw, 64px); }
       .vendor-hero__visual { min-height: 340px; }
-      .vendor-hero__stat { right: 20px; bottom: 20px; }
       .vendor-directory { padding: 76px 14px; }
       .vendor-grid { grid-template-columns: 1fr; gap: 14px; }
       .vendor-card { --vendor-card-offset: -22px; --vendor-card-pad: 22px; }
@@ -428,9 +398,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
           <button class="vendor-button vendor-button--outline" type="button" data-print-vendors>Print Vendor List</button>
         </div>
       </div>
-      <div class="vendor-hero__visual" role="img" aria-label="Modern Central Valley home exterior">
-        <div class="vendor-hero__stat"><strong>23</strong><span>Home and Professional Service Categories</span></div>
-      </div>
+      <div class="vendor-hero__visual" role="img" aria-label="Modern Central Valley home exterior"></div>
     </section>
 
     <section class="vendor-directory" id="vendor-directory" aria-labelledby="vendor-directory-title">
