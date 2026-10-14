@@ -6,7 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Local Spotlight
-seoKeywords: ["Living in Ceres, CA: Small Town Charm With Big Opportunities","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Ceres California","Ceres real estate","first-time home buyer guide"]
+seoKeywords: ["Living in Ceres CA: Small Town Charm With Big Opportunities","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Ceres California","Ceres real estate","first-time home buyer guide"]
 excerpt: >-
   If you're looking for a community that offers a slower pace of life while
   keeping you close to everything the Central Valley has to offer, Ceres

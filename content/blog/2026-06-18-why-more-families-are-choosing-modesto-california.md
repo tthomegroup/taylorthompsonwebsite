@@ -6,7 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Local Spotlight
-seoKeywords: ["Why More Families Are Choosing Modesto, California","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley"]
+seoKeywords: ["Why More Families Are Choosing Modesto California","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley"]
 excerpt: >-
   For many people, Modesto offers something that is becoming harder to find in
   California: a strong sense of community, more space, and a lifestyle that

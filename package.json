@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "build": "node scripts/update-city-pages.js && node scripts/build-neighborhood-pages.js && node scripts/build-blog.js && node scripts/build-reviews.js && node scripts/build-events.js && node scripts/build-listing-videos.js && node scripts/build-home-videos.js && node scripts/build-vendor-directory.js && node scripts/apply-shared-layout.js",
+    "build": "node scripts/update-city-pages.js && node scripts/build-neighborhood-pages.js && node scripts/build-blog.js && node scripts/build-reviews.js && node scripts/build-events.js && node scripts/build-listing-videos.js && node scripts/build-home-videos.js && node scripts/build-vendor-directory.js && node scripts/apply-shared-layout.js && node scripts/validate-admin-ui.js",
+    "admin:validate": "node scripts/validate-admin-ui.js",
     "blog:build": "node scripts/build-blog.js",
     "blog:validate": "node scripts/validate-blog-build.js",
     "blog:keywords": "node scripts/populate-blog-seo-keywords.js",
+    "blog:normalize-keywords": "node scripts/normalize-blog-seo-keywords.js",
     "blog:migrate": "node scripts/migrate-blog-json.js",
     "reviews:build": "node scripts/build-reviews.js",
     "neighborhoods:build": "node scripts/build-neighborhood-pages.js",

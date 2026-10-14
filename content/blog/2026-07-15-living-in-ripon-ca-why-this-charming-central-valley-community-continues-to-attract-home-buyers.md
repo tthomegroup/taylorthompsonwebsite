@@ -7,7 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Market Updates
-seoKeywords: ["Living in Ripon, CA: Why This Charming Central Valley Community Continues to Attract Home Buyers","Central Valley real estate market","California housing market update","Ripon California","Ripon real estate","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley"]
+seoKeywords: ["Living in Ripon CA: Why This Charming Central Valley Community Continues to Attract Home Buyers","Central Valley real estate market","California housing market update","Ripon California","Ripon real estate","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley"]
 excerpt: Thinking about moving to Ripon, California? Discover why this charming
   Central Valley community is known for its welcoming neighborhoods, family
   friendly atmosphere, beautiful parks, and exceptional quality of life.

@@ -56,6 +56,13 @@ function cleanValue(value) {
     .trim();
 }
 
+function cleanKeyword(value) {
+  return cleanValue(value)
+    .replace(/\s*,\s*/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function parseScalarFields(frontmatter) {
   const data = {};
   const lines = frontmatter.split(/\r?\n/);
@@ -82,7 +89,7 @@ function parseScalarFields(frontmatter) {
 
 function addUnique(target, values) {
   values.forEach((value) => {
-    const clean = cleanValue(value);
+    const clean = cleanKeyword(value);
     if (!clean) return;
     if (target.some((existing) => existing.toLowerCase() === clean.toLowerCase())) return;
     target.push(clean);

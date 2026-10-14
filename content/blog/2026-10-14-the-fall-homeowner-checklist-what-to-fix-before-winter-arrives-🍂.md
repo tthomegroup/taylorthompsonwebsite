@@ -17,10 +17,11 @@ metaDescription: Prepare your Modesto area home for winter with seven fall
   maintenance tips covering gutters, roofing, heating, windows, landscaping, and
   home safety.
 seoKeywords:
-  - fall home maintenance checklist
-  - Central Valley home maintenance
-  - Modesto homeowner tips
-  - Turlock home maintenance, winterize your home California
+  - "fall home maintenance checklist"
+  - "Central Valley home maintenance"
+  - "Modesto homeowner tips"
+  - "Turlock home maintenance"
+  - "winterize your home California"
 author: Taylor Thompson
 authorUrl: https://taylorthompsonhomegroup.com/about/
 featuredImage: /assets/images/uploads/fall-home-maintenance-checklist-central-valley.jpg

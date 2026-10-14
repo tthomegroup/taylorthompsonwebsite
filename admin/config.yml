@@ -492,11 +492,7 @@ collections:
         required: true
         min: 4
         max: 8
-        hint: "Add 4-8 natural phrases people may search for, one at a time. These power the blog search and article topic data. Use specific phrases such as Modesto home selling tips rather than repeating single words."
-        field:
-          label: "Keyword or Search Phrase"
-          name: "keyword"
-          widget: "string"
+        hint: "Enter 4-8 natural search phrases in one box, separated by commas. Example: Modesto home selling tips, Central Valley real estate, preparing a home for sale."
 
       - label: "Author"
         name: "author"

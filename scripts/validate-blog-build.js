@@ -15,6 +15,9 @@ posts.forEach((post) => {
   if (!Array.isArray(post.seoKeywords) || post.seoKeywords.length < 4) {
     errors.push(`${post.slug}: requires at least four SEO and search keyword phrases`);
   }
+  if (Array.isArray(post.seoKeywords) && post.seoKeywords.some((keyword) => String(keyword).includes(","))) {
+    errors.push(`${post.slug}: SEO and search keyword phrases cannot contain commas because commas separate phrases in admin`);
+  }
 
   const pagePath = path.join(ROOT_DIR, "blog", post.slug, "index.html");
   if (!fs.existsSync(pagePath)) {

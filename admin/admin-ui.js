@@ -1,4 +1,116 @@
 (function () {
+  var PUBLISH_AND_NEW_INTENT_KEY = "tthg.blogPublishAndCreateNew";
+  var PUBLISH_AND_NEW_SUCCESS_KEY = "tthg.blogPublishAndCreateNewSuccess";
+  var PUBLISH_AND_NEW_MAX_AGE = 5 * 60 * 1000;
+
+  function readSessionValue(key) {
+    try {
+      return window.sessionStorage.getItem(key);
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function writeSessionValue(key, value) {
+    try {
+      window.sessionStorage.setItem(key, value);
+    } catch (error) {
+      // Publishing still works when storage is unavailable; only the reset helper is skipped.
+    }
+  }
+
+  function removeSessionValue(key) {
+    try {
+      window.sessionStorage.removeItem(key);
+    } catch (error) {
+      // Ignore storage restrictions in private or locked-down browser sessions.
+    }
+  }
+
+  function isBlogEntryRoute() {
+    return /^#\/collections\/blog\/(?:new(?:[/?]|$)|entries\/)/.test(window.location.hash || "");
+  }
+
+  function actionLabel(target) {
+    if (!target || typeof target.closest !== "function") return "";
+    var action = target.closest("button, [role='button'], [role='menuitem']");
+    return action ? action.textContent.replace(/\s+/g, " ").trim().toLowerCase() : "";
+  }
+
+  function openFreshBlogEditor() {
+    var basePath = (window.location.pathname || "/admin/").replace(/\/?$/, "/");
+    window.location.replace(basePath + "?fresh=" + Date.now() + "#/collections/blog/new");
+  }
+
+  function showPublishSuccessNotice() {
+    if (!readSessionValue(PUBLISH_AND_NEW_SUCCESS_KEY)) return;
+    removeSessionValue(PUBLISH_AND_NEW_SUCCESS_KEY);
+
+    var notice = document.createElement("div");
+    notice.className = "admin-publish-success";
+    notice.setAttribute("role", "status");
+    notice.textContent = "Published successfully. A new blank blog post is ready.";
+    document.body.appendChild(notice);
+
+    window.setTimeout(function () {
+      notice.classList.add("admin-publish-success--leaving");
+      window.setTimeout(function () {
+        if (notice.parentNode) notice.parentNode.removeChild(notice);
+      }, 250);
+    }, 7000);
+  }
+
+  function registerPublishAndCreateNewFix() {
+    if (!window.CMS || window.__tthgPublishAndCreateNewRegistered) return;
+    window.__tthgPublishAndCreateNewRegistered = true;
+
+    document.addEventListener("click", function (event) {
+      var label = actionLabel(event.target);
+
+      if (label.indexOf("publish and create new") !== -1 && isBlogEntryRoute()) {
+        writeSessionValue(PUBLISH_AND_NEW_INTENT_KEY, JSON.stringify({
+          collection: "blog",
+          createdAt: Date.now()
+        }));
+        return;
+      }
+
+      if (label.indexOf("publish now") !== -1 || label.indexOf("publish and duplicate") !== -1) {
+        removeSessionValue(PUBLISH_AND_NEW_INTENT_KEY);
+      }
+    }, true);
+
+    window.CMS.registerEventListener({
+      name: "postPublish",
+      handler: function (event) {
+        var rawIntent = readSessionValue(PUBLISH_AND_NEW_INTENT_KEY);
+        if (!rawIntent) return;
+
+        var intent;
+        try {
+          intent = JSON.parse(rawIntent);
+        } catch (error) {
+          removeSessionValue(PUBLISH_AND_NEW_INTENT_KEY);
+          return;
+        }
+
+        var isRecent = intent.createdAt && Date.now() - intent.createdAt < PUBLISH_AND_NEW_MAX_AGE;
+        var entry = event && event.entry;
+        var publishedCollection = entry && typeof entry.get === "function" ? entry.get("collection") : "";
+        var publishedCollectionName = publishedCollection && typeof publishedCollection.get === "function"
+          ? publishedCollection.get("name")
+          : publishedCollection;
+        var isBlogPublish = !publishedCollectionName || publishedCollectionName === "blog";
+
+        removeSessionValue(PUBLISH_AND_NEW_INTENT_KEY);
+        if (!isRecent || intent.collection !== "blog" || !isBlogPublish) return;
+
+        writeSessionValue(PUBLISH_AND_NEW_SUCCESS_KEY, "1");
+        window.setTimeout(openFreshBlogEditor, 75);
+      }
+    });
+  }
+
   function escapeHtml(value) {
     return String(value || "")
       .replace(/&/g, "&amp;")
@@ -141,9 +253,11 @@
   function decorateAdmin() {
     decorateReviewOrder();
     registerBlogPreview();
+    registerPublishAndCreateNewFix();
   }
 
   var observer = new MutationObserver(decorateAdmin);
   observer.observe(document.documentElement, { childList: true, subtree: true });
   decorateAdmin();
+  showPublishSuccessNotice();
 })();

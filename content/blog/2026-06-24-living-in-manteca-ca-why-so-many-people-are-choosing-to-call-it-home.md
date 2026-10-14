@@ -6,7 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
-seoKeywords: ["Living in Manteca, CA: Why So Many People Are Choosing to Call It Home","Central Valley local guide","living in California's Central Valley","Manteca California","Manteca real estate","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley"]
+seoKeywords: ["Living in Manteca CA: Why So Many People Are Choosing to Call It Home","Central Valley local guide","living in California's Central Valley","Manteca California","Manteca real estate","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley"]
 excerpt: >-
   Manteca has become one of the fastest-growing communities in the Central
   Valley, and it is easy to see why.

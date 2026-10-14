@@ -6,7 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Buyer Tips
-seoKeywords: ["Why Your Home Search Should Start With a Monthly Payment, Not a Price","Why Your Home Search Should Start With a Monthly Payment","Central Valley home buying tips","buying a home in California","home buying costs","mortgage payment planning","buying a home in the Central Valley","Central Valley home buyers"]
+seoKeywords: ["Why Your Home Search Should Start With a Monthly Payment Not a Price","Why Your Home Search Should Start With a Monthly Payment","Central Valley home buying tips","buying a home in California","home buying costs","mortgage payment planning","buying a home in the Central Valley","Central Valley home buyers"]
 excerpt: Shopping for a home by price alone can make your search confusing. A
   home’s purchase price is only part of the equation. Starting with a monthly
   payment that feels comfortable can help you focus on homes that actually fit
