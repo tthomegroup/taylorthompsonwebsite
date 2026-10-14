@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Buyer Tips
+seoKeywords: ["Before You Buy: 12 Questions to Ask About the Neighborhood, Not the House","Central Valley home buying tips","buying a home in California","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley","Central Valley communities","Modesto schools"]
 excerpt: You found the house. You love the kitchen, the backyard is perfect, and
   you're already imagining where the couch is going. But before you fall
   completely in love, take a closer look at everything outside the property

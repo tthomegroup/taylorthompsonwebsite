@@ -4,6 +4,7 @@ title: Who You Work With Matters More Than Ever
 date: 2026-05-19
 readTime: 5 Min Read
 category: First-Time Buyers
+seoKeywords: ["Who You Work With Matters More Than Ever","first-time home buyer tips","Central Valley first-time home buyers","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: A closer look at the 2025 NAR numbers and what they really mean for
   buyers and sellers
 featuredImage: /assets/images/uploads/website-new-blog-images-1-.jpg

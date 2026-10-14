@@ -466,6 +466,8 @@ collections:
             value: "Investment"
           - label: "LOCAL SPOTLIGHT"
             value: "Local Spotlight"
+          - label: "HOMEOWNER TIPS"
+            value: "Homeowner Tips"
 
       - label: "Excerpt"
         name: "excerpt"
@@ -483,6 +485,18 @@ collections:
         widget: "text"
         required: false
         hint: "Write a clear 1-2 sentence Google description, ideally around 140-160 characters. If blank, the excerpt is used automatically."
+
+      - label: "SEO & Search Keywords"
+        name: "seoKeywords"
+        widget: "list"
+        required: true
+        min: 4
+        max: 8
+        hint: "Add 4-8 natural phrases people may search for, one at a time. These power the blog search and article topic data. Use specific phrases such as Modesto home selling tips rather than repeating single words."
+        field:
+          label: "Keyword or Search Phrase"
+          name: "keyword"
+          widget: "string"
 
       - label: "Author"
         name: "author"

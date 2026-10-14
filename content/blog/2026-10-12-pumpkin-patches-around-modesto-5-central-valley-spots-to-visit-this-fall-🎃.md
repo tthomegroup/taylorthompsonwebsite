@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Local Spotlight
+seoKeywords: ["Pumpkin Patches Around Modesto: 5 Central Valley Spots to Visit This Fall","5 Pumpkin Patches Around Modesto to Visit in 2026","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Turlock California","Turlock real estate"]
 excerpt: Looking for the perfect pumpkin, family photo spot, or fun fall outing?
   From Modesto and Turlock to Patterson, Lathrop, and Atwater, these five
   Central Valley pumpkin patches offer plenty of ways to enjoy the season.

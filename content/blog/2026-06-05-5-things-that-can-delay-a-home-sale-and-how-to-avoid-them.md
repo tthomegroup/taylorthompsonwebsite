@@ -7,6 +7,7 @@ scheduleHour: 11:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Seller Tips
+seoKeywords: ["5 Things That Can Delay a Home Sale and How to Avoid Them","Central Valley home selling tips","selling a home in California","Modesto California","Modesto real estate","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley"]
 excerpt: >-
   Selling a home is exciting, but even when you have a motivated buyer, there
   are several factors that can delay a transaction. The good news is that many

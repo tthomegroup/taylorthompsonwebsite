@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Mid Year Real Estate Recap: Thank You for an Incredible First Half of 2026","Central Valley local guide","living in California's Central Valley","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley housing market"]
 excerpt: >-
   As we reach the halfway point of 2026, I can't help but reflect on how
   grateful I am for every family, client, friend, and referral that has been

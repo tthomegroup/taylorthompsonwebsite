@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Seller Tips
+seoKeywords: ["5 Things Every Home Seller Should Do Before Listing Their House","Central Valley home selling tips","selling a home in California","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: Preparing your home before it hits the market can make a significant
   difference in how quickly it sells and how much buyers are willing to pay.
   Here are five simple steps that can help you maximize your home's value.

@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Buyer Tips
+seoKeywords: ["10 Mistakes First Time Home Buyers Make (And How to Avoid Them)","Central Valley home buying tips","buying a home in California","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley"]
 excerpt: Buying your first home is an exciting milestone, but it's also one of
   the biggest financial decisions you'll ever make. With so many moving parts,
   it's easy to make mistakes that could cost you time, money, or even your dream

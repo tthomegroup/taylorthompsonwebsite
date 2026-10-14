@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Buyer Tips
+seoKeywords: ["7 Things I’d Tell Myself Before Buying My First Home","Central Valley home buying tips","buying a home in California","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: If I could sit down with my 30 year old self before buying my first
   home, I’d have a LOT to say. From putting less money down to choosing the
   right location and budgeting for the things that inevitably break, these are

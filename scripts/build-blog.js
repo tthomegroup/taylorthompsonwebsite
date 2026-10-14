@@ -22,6 +22,7 @@ const CATEGORIES = {
   "first-time-buyers": "First-Time Buyers",
   investment: "Investment",
   "local-spotlight": "Local Spotlight",
+  "homeowner-tips": "Homeowner Tips",
 };
 
 const SITEMAP_EXCLUDED_FILES = new Set([
@@ -73,9 +74,13 @@ function parseValue(value) {
   }
   if (trimmed.startsWith("[") && trimmed.endsWith("]")) {
     try {
-      return JSON.parse(trimmed.replace(/'/g, '"'));
+      return JSON.parse(trimmed);
     } catch (error) {
-      return [];
+      try {
+        return JSON.parse(trimmed.replace(/'/g, '"'));
+      } catch (fallbackError) {
+        return [];
+      }
     }
   }
 
@@ -154,6 +159,29 @@ function parseFrontmatter(markdown) {
 function normalizeCategory(value) {
   const slug = slugify(value);
   return CATEGORIES[slug] || String(value || "").trim();
+}
+
+function normalizeKeywords(value) {
+  const source = Array.isArray(value)
+    ? value
+    : String(value || "")
+      .split(/[\n,;]+/);
+  const seen = new Set();
+
+  return source
+    .map((keyword) => {
+      if (keyword && typeof keyword === "object") return keyword.keyword || keyword.value || "";
+      return keyword;
+    })
+    .map((keyword) => String(keyword || "").trim())
+    .filter((keyword) => {
+      if (!keyword) return false;
+      const key = keyword.toLowerCase();
+      if (seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .slice(0, 12);
 }
 
 function normalizeFeatured(value) {
@@ -505,6 +533,7 @@ function readPosts() {
 
       const slug = slugify(data.slug || data.title || path.basename(file, ".md"));
       const category = normalizeCategory(data.category);
+      const seoKeywords = normalizeKeywords(data.seoKeywords || data.searchKeywords || data.keywords);
       const featured = normalizeFeatured(data.featured);
       const publish = publishDetails(data, file);
       const updatedAt = fileUpdatedAt(filePath);
@@ -537,6 +566,8 @@ function readPosts() {
         category,
         categories: category ? [category] : [],
         categorySlug: slugify(category),
+        seoKeywords,
+        keywords: seoKeywords,
         excerpt: data.excerpt || "",
         featuredImage: data.featuredImage || "",
         image: data.featuredImage || "",
@@ -609,8 +640,12 @@ function postPageHtml(post) {
       },
     },
     articleSection: post.category,
+    keywords: post.seoKeywords,
     url: canonicalUrl,
   };
+  const articleTags = post.seoKeywords
+    .map((keyword) => `<meta property="article:tag" content="${escapeHtml(keyword)}">`)
+    .join("\n  ");
 
   return `<!doctype html>
 <html lang="en">
@@ -632,6 +667,7 @@ function postPageHtml(post) {
   <meta property="article:published_time" content="${escapeHtml(post.datePublished)}">
   <meta property="article:modified_time" content="${escapeHtml(post.dateModified)}">
   <meta property="article:section" content="${escapeHtml(post.category)}">
+  ${articleTags}
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(post.title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">

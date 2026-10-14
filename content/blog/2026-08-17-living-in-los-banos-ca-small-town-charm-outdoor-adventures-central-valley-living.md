@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Living in Los Banos, CA: Small Town Charm, Outdoor Adventures & Central Valley Living","Central Valley local guide","living in California's Central Valley","Los Banos California","Los Banos real estate","moving to the Central Valley","Central Valley communities","Central Valley real estate"]
 excerpt: Thinking about living in Los Banos, CA? From its family friendly
   neighborhoods and historic downtown to parks, wildlife refuges, and easy
   access to major Central Valley and Bay Area routes, Los Banos offers a

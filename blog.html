@@ -86,6 +86,17 @@
       background: var(--tan);
     }
 
+    .featured-image-link,
+    .card-image-link {
+      display: block;
+    }
+
+    .featured-image-link:focus-visible,
+    .card-image-link:focus-visible {
+      outline: 3px solid var(--tan);
+      outline-offset: 4px;
+    }
+
     .eyebrow,
     .meta,
     .card-category {
@@ -468,7 +479,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     </header>
 
     <div class="blog-tools">
-      <input id="blog-search" type="search" placeholder="Search blog keywords">
+      <input id="blog-search" type="search" placeholder="Search titles, topics, cities, or keywords" aria-label="Search blog posts">
       <select id="blog-sort" aria-label="Sort blog posts">
         <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
@@ -483,6 +494,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       <button class="filter" type="button" data-category="First-Time Buyers">First-Time Buyers</button>
       <button class="filter" type="button" data-category="Investment">Investment</button>
       <button class="filter" type="button" data-category="Local Spotlight">Local Spotlight</button>
+      <button class="filter" type="button" data-category="Homeowner Tips">Homeowner Tips</button>
     </nav>
 
     <section class="grid" id="blog-grid" aria-live="polite"></section>
@@ -503,6 +515,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       "First-Time Buyers",
       "Investment",
       "Local Spotlight",
+      "Homeowner Tips",
     ];
     const postsPerPage = 9;
     let posts = [];
@@ -548,6 +561,12 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       return new Date(post.date || post.publishDate || 0).getTime();
     }
 
+    function postKeywords(post) {
+      const value = post.seoKeywords || post.searchKeywords || post.keywords || [];
+      if (Array.isArray(value)) return value.map((keyword) => String(keyword || "").trim()).filter(Boolean);
+      return String(value || "").split(/[\n,;]+/).map((keyword) => keyword.trim()).filter(Boolean);
+    }
+
     function isPostReady(post) {
       if (String(post.publishTiming || "").toLowerCase() !== "future") return true;
 
@@ -582,8 +601,9 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       }
 
       const image = featured.featuredImage || featured.image || "";
+      const url = postUrl(featured);
       container.innerHTML = `
-        <div>${image ? `<img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(featured.imageAlt || featured.title || "")}">` : ""}</div>
+        <div>${image ? `<a class="featured-image-link" href="${escapeHtml(url)}" aria-label="Read ${escapeHtml(featured.title || "")}"><img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(featured.imageAlt || featured.title || "")}" fetchpriority="high"></a>` : ""}</div>
         <div>
           <p class="eyebrow">Featured Blog</p>
           <h2>${escapeHtml(featured.title || "")}</h2>
@@ -592,20 +612,33 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
             <span>${escapeHtml(postCategory(featured))}</span>
             <span>${escapeHtml(featured.date || featured.publishDate || "")}</span>
           </div>
-          <a class="button" href="${escapeHtml(postUrl(featured))}">Read Full Blog</a>
+          <a class="button" href="${escapeHtml(url)}">Read Full Blog</a>
         </div>
       `;
       container.classList.add("is-visible");
     }
 
     function filteredPosts() {
-      const search = slugify(document.getElementById("blog-search").value);
+      const searchTerms = String(document.getElementById("blog-search").value || "")
+        .trim()
+        .split(/\s+/)
+        .map(slugify)
+        .filter(Boolean);
       const sort = document.getElementById("blog-sort").value;
 
       return posts
         .filter((post) => {
           const categoryMatch = activeCategory === "ALL" || slugify(postCategory(post)) === slugify(activeCategory);
-          const searchMatch = !search || slugify([post.title, post.excerpt, postCategory(post)].join(" ")).includes(search);
+          const searchText = slugify([
+            post.title,
+            post.seoTitle,
+            post.excerpt,
+            post.metaDescription,
+            postCategory(post),
+            postKeywords(post).join(" "),
+            post.body || post.content || "",
+          ].join(" "));
+          const searchMatch = searchTerms.length === 0 || searchTerms.every((term) => searchText.includes(term));
           return categoryMatch && searchMatch;
         })
         .sort((a, b) => sort === "oldest" ? postDate(a) - postDate(b) : postDate(b) - postDate(a));
@@ -626,14 +659,15 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
 
       grid.innerHTML = visiblePosts.map((post) => {
         const image = post.featuredImage || post.image || "";
+        const url = postUrl(post);
         return `
           <article class="card">
-            ${image ? `<img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(post.imageAlt || post.title || "")}">` : ""}
+            ${image ? `<a class="card-image-link" href="${escapeHtml(url)}" aria-label="Read ${escapeHtml(post.title || "")}"><img src="${escapeHtml(assetPath(image))}" alt="${escapeHtml(post.imageAlt || post.title || "")}" loading="lazy" decoding="async"></a>` : ""}
             <div class="card-body">
               <div class="card-category">${escapeHtml(postCategory(post))}</div>
               <h3>${escapeHtml(post.title || "")}</h3>
               <p>${escapeHtml(post.excerpt || "")}</p>
-              <a class="button" href="${escapeHtml(postUrl(post))}">Read Full Blog</a>
+              <a class="button" href="${escapeHtml(url)}">Read Full Blog</a>
             </div>
           </article>
         `;

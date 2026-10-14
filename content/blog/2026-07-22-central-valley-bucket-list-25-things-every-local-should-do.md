@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Local Spotlight
+seoKeywords: ["Central Valley Bucket List: 25 Things Every Local Should Do","Central Valley local guide","living in California's Central Valley","things to do in the Central Valley","Central Valley lifestyle guide","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Whether you've lived in the Central Valley for years or recently made
   it home, these 25 local experiences belong on your bucket list. From outdoor
   adventures to hometown traditions, here's how to experience the best of the

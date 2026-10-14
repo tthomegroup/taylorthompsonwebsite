@@ -4,6 +4,7 @@ title: "A Night of Big Dreams & Bold Intentions: Our Vision Board Party Recap"
 date: 2026-01-15
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["A Night of Big Dreams & Bold Intentions: Our Vision Board Party Recap","Central Valley local guide","living in California's Central Valley","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Sometimes all it takes is one night, the right people, and a little
   creativity to spark something powerful. On January 9, 2026, we gathered for
   our Vision Board Party, and it was truly an unforgettable evening filled with

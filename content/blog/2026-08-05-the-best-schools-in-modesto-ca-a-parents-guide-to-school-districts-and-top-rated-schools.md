@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["The Best Schools in Modesto, CA: A Parent's Guide to School Districts and Top Rated Schools","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","moving to the Central Valley","Central Valley communities","Modesto schools"]
 excerpt: One of the first questions families ask when moving to Modesto is, "How
   are the schools?" While every child has different needs, this guide highlights
   the top rated public schools and school districts in the Modesto area,

@@ -7,6 +7,7 @@ scheduleHour: 11:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Why So Many People Love Calling the Central Valley Home","Central Valley local guide","living in California's Central Valley","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley","Central Valley communities","Central Valley real estate"]
 excerpt: >-
   When people think of California, places like Los Angeles, San Francisco, and
   San Diego often come to mind first. But for many homeowners, the Central

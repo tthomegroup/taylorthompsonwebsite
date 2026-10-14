@@ -12,6 +12,10 @@ posts.forEach((post) => {
   if (!post.isReady) return;
   staticCount += 1;
 
+  if (!Array.isArray(post.seoKeywords) || post.seoKeywords.length < 4) {
+    errors.push(`${post.slug}: requires at least four SEO and search keyword phrases`);
+  }
+
   const pagePath = path.join(ROOT_DIR, "blog", post.slug, "index.html");
   if (!fs.existsSync(pagePath)) {
     errors.push(`${post.slug}: static page is missing`);
@@ -37,6 +41,9 @@ posts.forEach((post) => {
     try {
       const schema = JSON.parse(schemaMatch[1]);
       if (schema.headline !== post.title) errors.push(`${post.slug}: schema headline does not match the post title`);
+      if (!Array.isArray(schema.keywords) || schema.keywords.length !== post.seoKeywords.length) {
+        errors.push(`${post.slug}: schema keywords do not match the post keywords`);
+      }
     } catch (error) {
       errors.push(`${post.slug}: BlogPosting schema is not valid JSON`);
     }

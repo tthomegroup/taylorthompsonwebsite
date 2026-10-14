@@ -4,6 +4,7 @@ title: "Quarter One Review: Central Valley Real Estate Market Update"
 date: 2026-05-17
 readTime: 5 Min Read
 category: Market Updates
+seoKeywords: ["Quarter One Review: Central Valley Real Estate Market Update","Central Valley real estate market","California housing market update","Modesto California","Modesto real estate","Central Valley housing market","2026 real estate market update","Central Valley Realtor"]
 excerpt: The first quarter of the year is officially behind us, and we are
   feeling incredibly grateful for what it brought. From meaningful client
   relationships to strong results across Modesto and the Central Valley, this

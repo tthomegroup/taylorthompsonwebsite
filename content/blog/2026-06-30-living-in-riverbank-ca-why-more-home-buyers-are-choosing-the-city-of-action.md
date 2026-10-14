@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Living in Riverbank, CA: Why More Home Buyers Are Choosing the City of Action","Central Valley local guide","living in California's Central Valley","Riverbank California","Riverbank real estate","buying a home in the Central Valley","Central Valley home buyers","moving to the Central Valley"]
 excerpt: If you're looking for a place that offers a close knit community,
   convenient access to nearby cities, and a growing selection of homes,
   Riverbank, California deserves a closer look.

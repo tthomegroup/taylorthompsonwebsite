@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: First-Time Buyers
+seoKeywords: ["What Happens During Escrow? A Step by Step Guide","first-time home buyer tips","Central Valley first-time home buyers","California escrow process","what happens during escrow","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Escrow is one of the most important parts of a real estate transaction.
   It's the period between having your offer accepted and officially receiving
   the keys to your new home. During this time, a neutral third party, known as

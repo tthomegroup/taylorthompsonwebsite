@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: First-Time Buyers
+seoKeywords: ["Why So Many Bay Area Families Are Moving to California's Central Valley","first-time home buyer tips","Central Valley first-time home buyers","Modesto California","Modesto real estate","Turlock California","Turlock real estate","Manteca California"]
 excerpt: From more affordable homes to a better quality of life, discover why
   thousands of Bay Area families are choosing California's Central Valley and
   why communities like Modesto, Ripon, Turlock, and Manteca continue to grow.

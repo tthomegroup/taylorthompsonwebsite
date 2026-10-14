@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Seller Tips
+seoKeywords: ["Selling Your Current Home While Buying Your Next One: How to Make a Contingent Move Less Stressful","Central Valley home selling tips","selling a home in California","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: Selling your current home and buying your next one at the same time can
   feel like trying to solve two puzzles at once. The good news? You do not have
   to figure it out as you go. With the right timeline, financing strategy, and

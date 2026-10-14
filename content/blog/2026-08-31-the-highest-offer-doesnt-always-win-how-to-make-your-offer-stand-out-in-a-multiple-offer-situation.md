@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Seller Tips
+seoKeywords: ["The Highest Offer Doesn't Always Win: How to Make Your Offer Stand Out in a Multiple Offer Situation","Central Valley home selling tips","selling a home in California","multiple offer real estate strategy","competitive home offer tips","selling a home in the Central Valley","Central Valley home sellers","Central Valley real estate"]
 excerpt: Think you have to offer the most money to win your dream home? Not
   necessarily. In a multiple offer situation, price is only one piece of the
   puzzle. Your financing, terms, flexibility, and overall strategy can make your

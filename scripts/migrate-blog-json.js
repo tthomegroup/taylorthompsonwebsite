@@ -11,6 +11,7 @@ const CATEGORY_LABELS = {
   "first-time-buyers": "First-Time Buyers",
   investment: "Investment",
   "local-spotlight": "Local Spotlight",
+  "homeowner-tips": "Homeowner Tips",
 };
 
 function ensureDir(dir) {
@@ -80,6 +81,7 @@ title: ${yamlString(post.title || "")}
 date: ${yamlString(post.date || post.publishDate || "")}
 readTime: ${yamlString(post.readTime || "")}
 category: ${yamlString(category)}
+seoKeywords: ${yamlArray(post.seoKeywords || post.searchKeywords || post.keywords || [])}
 excerpt: ${yamlString(post.excerpt || "")}
 featuredImage: ${yamlString(post.featuredImage || post.image || "")}
 imageAlt: ${yamlString(post.imageAlt || "")}

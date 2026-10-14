@@ -5,7 +5,8 @@ publishTiming: now
 scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 3 Min Read
-category: Seller Tips
+category: Homeowner Tips
+seoKeywords: ["5 Fall Home Maintenance Tips to Get Your Home Ready for the Season","Central Valley homeowner tips","home maintenance tips","seasonal home maintenance checklist","home maintenance for Central Valley homeowners","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Fall is the perfect time to give your home a little extra attention
   before the colder months arrive. From checking your heating system to cleaning
   your gutters and sealing up drafts, these five simple maintenance tasks can

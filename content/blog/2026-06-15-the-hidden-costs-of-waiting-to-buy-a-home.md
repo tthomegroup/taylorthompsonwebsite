@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Buyer Tips
+seoKeywords: ["The Hidden Costs of Waiting to Buy a Home","Central Valley home buying tips","buying a home in California","home buying costs","mortgage payment planning","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: >-
   One of the most common things we hear from buyers is:
 

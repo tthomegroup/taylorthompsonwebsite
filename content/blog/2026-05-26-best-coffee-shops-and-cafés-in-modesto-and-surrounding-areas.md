@@ -4,6 +4,7 @@ title: Best Coffee Shops and Cafés in Modesto and Surrounding Areas
 date: 2026-03-19
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Best Coffee Shops and Cafés in Modesto and Surrounding Areas","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","things to do in the Central Valley","Central Valley lifestyle guide","Central Valley real estate"]
 excerpt: A cozy guide to local spots where mornings start slower, conversations
   last longer, and community comes first.
 featuredImage: /assets/images/uploads/website-new-blog-images-5-.jpg

@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Local Spotlight
+seoKeywords: ["Neighborhood Spotlight: Salida, CA Why More Home Buyers Are Discovering This Central Valley Community","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Salida California","Salida real estate","buying a home in the Central Valley"]
 excerpt: Conveniently located just north of Modesto, Salida offers affordable
   homes, commuter friendly access, and a welcoming neighborhood feel. Discover
   why this growing Central Valley community continues to attract home buyers.

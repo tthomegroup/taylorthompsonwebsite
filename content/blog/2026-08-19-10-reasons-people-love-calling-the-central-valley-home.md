@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Local Spotlight
+seoKeywords: ["10 Reasons People Love Calling the Central Valley Home","Central Valley local guide","living in California's Central Valley","moving to the Central Valley","Central Valley communities","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Thinking about making a move to California's Central Valley? From more
   space and a slower pace of life to local farms, outdoor adventures, family
   friendly communities, and easy access to some of California's best

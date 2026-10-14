@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Seller Tips
+seoKeywords: ["Should You Sell Now or Wait? The Hidden Cost of Holding Onto Your Home","Central Valley home selling tips","selling a home in California","home buying costs","mortgage payment planning","selling a home in the Central Valley","Central Valley home sellers","Central Valley real estate"]
 excerpt: Many homeowners wait for their home to increase in value before
   selling, hoping to maximize their return. But have you ever considered what
   it's costing you to wait? Here's how to evaluate appreciation, carrying costs,

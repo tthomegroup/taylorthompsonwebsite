@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Buyer Tips
+seoKeywords: ["A Buyer's Guide to Upfront Costs (From a Realtor Who Promises to Make It Make Sense)","Central Valley home buying tips","buying a home in California","home buying costs","mortgage payment planning","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley"]
 excerpt: Buying your first home doesn't have to be confusing. Learn what upfront
   costs to expect, from your down payment to closing costs, in this easy to
   understand guide that makes the home buying process simple.

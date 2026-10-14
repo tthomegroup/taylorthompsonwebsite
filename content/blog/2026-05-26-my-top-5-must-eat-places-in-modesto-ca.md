@@ -4,6 +4,7 @@ title: My Top 5 Must-Eat Places in Modesto, CA
 date: 2026-03-18
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["My Top 5 Must-Eat Places in Modesto, CA","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: >
   A local’s guide to my favorite spots to eat, drink, and explore the Modesto
   dining scene.

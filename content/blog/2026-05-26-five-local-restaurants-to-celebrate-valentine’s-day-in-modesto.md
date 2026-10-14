@@ -4,6 +4,7 @@ title: Five Local Restaurants to Celebrate Valentine’s Day in Modesto
 date: 2026-02-05
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Five Local Restaurants to Celebrate Valentine’s Day in Modesto","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","things to do in the Central Valley","Central Valley lifestyle guide","Central Valley real estate"]
 excerpt: If you are planning a Valentine’s date this year, here are five local
   favorites with their locations and contact details to help you plan ahead.
 featuredImage: /assets/images/uploads/website-new-blog-images-3-.jpg

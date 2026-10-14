@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Fourth of July Events Around the Central Valley 2026","Central Valley local guide","living in California's Central Valley","things to do in the Central Valley","Central Valley lifestyle guide","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: Looking for something fun to do this Fourth of July? Whether you're
   hoping to catch an incredible fireworks show, cheer on a hometown parade, or
   spend the day making memories with family and friends, there's no shortage of

@@ -4,6 +4,7 @@ title: Should You Buy First or Sell First? A Guide for Central Valley Homeowners
 date: 2026-06-03
 readTime: 5 Min Read
 category: Seller Tips
+seoKeywords: ["Should You Buy First or Sell First? A Guide for Central Valley Homeowners","Central Valley home selling tips","selling a home in California","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: >-
   One of the biggest questions homeowners face when planning a move is whether
   they should buy their next home first or sell their current home first.

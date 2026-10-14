@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Buyer Tips
+seoKeywords: ["Thinking About Moving to the Central Valley? Start With These 10 Questions","Central Valley home buying tips","buying a home in California","moving to the Central Valley","Central Valley communities","Modesto schools","homes near Modesto schools","Central Valley real estate"]
 excerpt: Thinking about moving to the Central Valley? Before you start scrolling
   through homes for sale, take a step back and think about what you actually
   want from your next community. From your budget and commute to neighborhood

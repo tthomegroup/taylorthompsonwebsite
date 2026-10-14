@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Market Updates
+seoKeywords: ["Q3 Is Officially in the Books... And WOW!","Q3 Real Estate Recap: 55 Families & 28.6M in Sales Volume","Central Valley real estate market","California housing market update","selling a home in the Central Valley","Central Valley home sellers","Central Valley housing market","2026 real estate market update"]
 excerpt: "Q3 is officially in the books, and we’re feeling incredibly grateful!
   With 55 families served and $28.6 million in year to date sales volume, we’re
   heading into Q4 with 12 active and coming soon listings and one big goal:

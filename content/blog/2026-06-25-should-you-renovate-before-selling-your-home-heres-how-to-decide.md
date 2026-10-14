@@ -7,6 +7,7 @@ scheduleHour: 10:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Seller Tips
+seoKeywords: ["Should You Renovate Before Selling Your Home? Here's How to Decide.","Central Valley home selling tips","selling a home in California","home improvements before selling","renovations that help home value","selling a home in the Central Valley","Central Valley home sellers","Central Valley real estate"]
 excerpt: One of the biggest questions homeowners ask before listing their home
   is whether they should renovate first. Should you remodel the kitchen? Replace
   the flooring? Paint the walls? Or is it better to sell your home as it is?

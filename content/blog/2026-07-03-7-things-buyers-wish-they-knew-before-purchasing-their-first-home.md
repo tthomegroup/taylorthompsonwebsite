@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Buyer Tips
+seoKeywords: ["7 Things Buyers Wish They Knew Before Purchasing Their First Home","Central Valley home buying tips","buying a home in California","first-time home buyer guide","buying your first home in the Central Valley","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate"]
 excerpt: Buying your first home is one of the most exciting milestones you'll
   ever experience. It's also one of the biggest financial decisions you'll make.
 featuredImage: /assets/images/uploads/blogimg.png

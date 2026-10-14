@@ -8,6 +8,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Local Spotlight
+seoKeywords: ["10 Central Valley Date Night Ideas That Don't Involve Driving to the Bay Area","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","Turlock California","Turlock real estate","things to do in the Central Valley"]
 excerpt: Who says you need to drive to San Francisco for a fun date night? From
   downtown Modesto dinners and live shows to mini golf, wine, art, and outdoor
   adventures, there are plenty of ways to have a great night right here in the

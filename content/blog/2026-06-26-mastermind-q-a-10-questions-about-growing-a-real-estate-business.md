@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Market Updates
+seoKeywords: ["Mastermind Q&A: 10 Questions About Growing a Real Estate Business","Central Valley real estate market","California housing market update","Central Valley Realtor","Taylor Thompson Home Group","Central Valley real estate"]
 excerpt: I recently had the opportunity to participate in a Mastermind Q&A where
   I was asked about growing a real estate business, building a team, generating
   leads, and creating systems that last.

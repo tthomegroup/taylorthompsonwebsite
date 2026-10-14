@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Local Spotlight
+seoKeywords: ["Family Friendly Things to Do Around Modesto This Month","Central Valley local guide","living in California's Central Valley","Modesto California","Modesto real estate","things to do in the Central Valley","Central Valley lifestyle guide","Central Valley real estate"]
 excerpt: Looking for fun ways to keep the kids entertained? From beautiful parks
   and splash pads to local events, museums, and nearby adventures, here are some
   of the best family friendly activities around Modesto this month.

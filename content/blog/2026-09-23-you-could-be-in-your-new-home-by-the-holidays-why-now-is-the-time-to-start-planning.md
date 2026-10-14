@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 5 Min Read
 category: Buyer Tips
+seoKeywords: ["You Could Be in Your New Home by the Holidays: Why Now Is the Time to Start Planning","Central Valley home buying tips","buying a home in California","buying a home in the Central Valley","Central Valley home buyers","Central Valley real estate","Taylor Thompson Home Group"]
 excerpt: You’re closer to homeownership than you might think. If buying a home
   has been sitting on your wish list, starting the process now could put you in
   a position to spend Thanksgiving or Christmas in a home of your own. From

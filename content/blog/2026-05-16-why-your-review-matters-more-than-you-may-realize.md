@@ -3,6 +3,7 @@ title: Why Your Review Matters More Than You May Realize
 date: 2026-05-15
 readTime: 5 Min Read
 category: LOCAL SPOTLIGHT
+seoKeywords: ["Why Your Review Matters More Than You May Realize","Central Valley local guide","living in California's Central Valley","Central Valley Realtor","Taylor Thompson Home Group","Central Valley real estate"]
 excerpt: If you have worked with us in the past or know us personally, this
   message is for you.
 featuredImage: /assets/images/uploads/new-blog-images-3-.jpg

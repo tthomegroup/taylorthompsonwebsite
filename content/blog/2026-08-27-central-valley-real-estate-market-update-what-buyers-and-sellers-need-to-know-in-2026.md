@@ -7,6 +7,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 10 Min Read
 category: Market Updates
+seoKeywords: ["Central Valley Real Estate Market Update: What Buyers and Sellers Need to Know in 2026","Central Valley real estate market","California housing market update","Modesto California","Modesto real estate","Turlock California","Turlock real estate","Ripon California"]
 excerpt: The Central Valley real estate market is shifting in 2026. Inventory
   has improved from the tightest years of the market, mortgage rates are still
   keeping buyers cautious, and home prices are showing much slower growth than

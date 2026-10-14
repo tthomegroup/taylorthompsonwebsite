@@ -6,6 +6,7 @@ scheduleHour: 09:00
 scheduleTimezone: America/Los_Angeles
 readTime: 7 Min Read
 category: Market Updates
+seoKeywords: ["10 Things Every Realtor Wishes Home Buyers and Sellers Knew","Central Valley real estate market","California housing market update","selling a home in the Central Valley","Central Valley home sellers","buying a home in the Central Valley","Central Valley home buyers","Central Valley Realtor"]
 excerpt: Buying or selling a home is exciting, but it can also be overwhelming.
   As Realtors, our job goes far beyond unlocking doors. Here are 10 things we
   wish every client knew before starting their real estate journey.
