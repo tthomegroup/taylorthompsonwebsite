@@ -491,8 +491,8 @@ collections:
         widget: "list"
         required: true
         min: 4
-        max: 8
-        hint: "Enter 4-8 natural search phrases in one box, separated by commas. Example: Modesto home selling tips, Central Valley real estate, preparing a home for sale."
+        max: 20
+        hint: "Enter 4-20 natural search phrases in one box, separated by commas. Example: Modesto home selling tips, Central Valley real estate, preparing a home for sale."
 
       - label: "Author"
         name: "author"

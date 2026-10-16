@@ -10,6 +10,7 @@ const keywordBlock = config.match(/- label: "SEO & Search Keywords"([\s\S]*?)(?=
 
 assert(keywordBlock, "SEO and Search Keywords field is missing");
 assert(/widget: "list"/.test(keywordBlock[1]), "SEO keywords must remain a list in saved content");
+assert(/max: 20/.test(keywordBlock[1]), "SEO keywords should allow up to 20 comma-separated phrases");
 assert(!/\n\s+field:/.test(keywordBlock[1]), "SEO keywords should use Decap's single comma-separated textbox");
 
 const storage = new Map();
