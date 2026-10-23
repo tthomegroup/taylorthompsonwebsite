@@ -1555,6 +1555,36 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
     color: var(--dark, #000);
     margin-bottom: 24px;
     font-style: italic;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7;
+    overflow: hidden;
+  }
+
+  .home-reviews-section .review-text.is-expanded {
+    display: block;
+    overflow: visible;
+  }
+
+  .home-reviews-section .review-more {
+    display: block;
+    border: 0;
+    padding: 0;
+    margin: -12px 0 24px;
+    background: transparent;
+    color: var(--tan, #a68068);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .home-reviews-section .review-more:hover {
+    text-decoration: underline;
+  }
+
+  .home-reviews-section .review-more[hidden] {
+    display: none;
   }
 
   .home-reviews-section .review-author {
@@ -1702,6 +1732,7 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
         <div class="review-card">
           <div class="review-stars">${stars}</div>
           <p class="review-text">&ldquo;${escapeReviewHtml(review.text)}&rdquo;</p>
+          <button class="review-more" type="button" data-review-toggle aria-expanded="false" hidden>See more</button>
           <div class="review-author">${escapeReviewHtml(review.author)}</div>
           <div class="review-detail">${escapeReviewHtml(review.detail)}</div>
           <span class="review-source" title="${escapeReviewHtml(review.source)} review">${sourceLogo}</span>
@@ -1754,9 +1785,28 @@ src="https://www.facebook.com/tr?id=4531065853843983&ev=PageView&noscript=1"
       const visibleReviews = homeReviews.slice(start, start + reviewsPerPage);
 
       container.innerHTML = visibleReviews.map(reviewCard).join("");
+      requestAnimationFrame(function () {
+        container.querySelectorAll(".review-text").forEach(function (reviewText) {
+          const toggle = reviewText.nextElementSibling;
+          if (toggle && !reviewText.classList.contains("is-expanded")) {
+            toggle.hidden = reviewText.scrollHeight <= reviewText.clientHeight + 1;
+          }
+        });
+      });
       prevButton.disabled = currentReviewPage === 1;
       nextButton.disabled = currentReviewPage === totalPages;
     }
+
+    document.getElementById("home-more-reviews").addEventListener("click", function (event) {
+      const toggle = event.target.closest("[data-review-toggle]");
+      if (!toggle) return;
+
+      const expanded = toggle.getAttribute("aria-expanded") === "true";
+      const reviewText = toggle.previousElementSibling;
+      reviewText.classList.toggle("is-expanded", !expanded);
+      toggle.setAttribute("aria-expanded", String(!expanded));
+      toggle.textContent = expanded ? "See more" : "See less";
+    });
 
     document.getElementById("home-review-prev").addEventListener("click", function () {
       if (currentReviewPage > 1) {
