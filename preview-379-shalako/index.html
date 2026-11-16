@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>379 Shalako Dr, Oakdale | Taylor Thompson Home Group</title>
+<!-- Link preview tags (filled per listing; price intentionally left out) -->
+<meta property="og:title" content="3 Bed Home in Oakdale | Taylor Thompson Home Group">
+<meta property="og:description" content="Renovated kitchen and bathrooms, new flooring, RV access.">
+<meta property="og:image" content="https://taylorthompsonhomegroup.com/preview-379-shalako/preview.jpg">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --taupe:#a68068; --mid:#b5927f; --light:#c2a894; --pale:#ddcebe;
+  --ink:#262524; --white:#ffffff; --cream:#f7f3ef; --line:#e8ded4;
+  --serif:'Cormorant Garamond', Georgia, serif; --sans:'Jost', Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);font-weight:400;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* Draft ribbon */
+.draft{background:var(--ink);color:var(--pale);text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px}
+
+/* Header (mirrors the live site) */
+header{background:var(--cream);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+.nav{max-width:1240px;margin:0 auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{text-decoration:none;line-height:1.1;white-space:nowrap}
+.logo .n{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--taupe)}
+.logo .k{font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-top:4px}
+.links{display:flex;gap:24px;white-space:nowrap;font-size:13px;letter-spacing:.16em;text-transform:uppercase;font-weight:500}
+.links a{text-decoration:none}
+.links a.on{color:var(--taupe)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--pale);color:var(--ink);border:0;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:16px 28px;cursor:pointer;transition:background .2s;white-space:nowrap;text-align:center}
+.btn:hover{background:var(--light)}
+.menu{display:none;background:none;border:0;cursor:pointer}
+
+/* Slideshow */
+.show{position:relative;background:var(--ink);overflow:hidden}
+.track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1)}
+.slide{min-width:100%;height:min(78vh,760px);position:relative;overflow:hidden}
+.ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.ph .tag{position:absolute;top:22px;left:24px;background:rgba(255,255,255,.88);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;font-weight:500}
+.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.blur{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(28px) brightness(.75);z-index:0}
+@media (min-width:761px){ .photo{object-fit:contain;z-index:1} }
+@media (max-width:760px){ .blur{display:none} }
+.fade{z-index:2}
+.hl{z-index:3 !important}
+.curb{background:linear-gradient(180deg,#9cc3e0 0%,#cfe2ef 55%,#b9c7a3 56%,#93a77a 100%)}
+.curb svg{width:min(70%,820px);height:auto;margin-top:6%}
+.room{background:linear-gradient(135deg,#efe6dc,#d8c6b4)}
+.room .lbl{font-family:var(--serif);font-size:clamp(28px,4vw,48px);color:#7d6352;font-style:italic;text-align:center;padding:0 24px}
+.pool{background:linear-gradient(180deg,#a9cfe6 0%,#d7e8f2 45%,#6fb4d6 46%,#3f8fbd 100%)}
+.pool .lbl{color:#fff}
+/* Slide 2: fade + highlights */
+.fade{z-index:1}
+.fade::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,18,17,.82) 0%,rgba(20,18,17,.55) 45%,rgba(20,18,17,.15) 100%)}
+.hl{position:absolute;z-index:2;left:clamp(24px,7vw,110px);top:50%;transform:translateY(-50%);color:#fff;max-width:520px}
+.hl .eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--pale);margin-bottom:14px}
+.hl h2{font-family:var(--serif);font-weight:400;font-size:clamp(34px,5vw,60px);line-height:1.05;margin-bottom:22px}
+.hl ul{list-style:none;display:grid;gap:10px}
+.hl li{font-size:clamp(17px,2vw,22px);font-weight:300;display:flex;align-items:center;gap:14px}
+.hl li::before{content:"";width:22px;height:1px;background:var(--pale);flex:none}
+/* Last slide */
+.more{background:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:18px}
+.more h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4vw,48px)}
+.more p{max-width:420px;color:#5d5650}
+.pair{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.pair .btn{min-width:210px}
+/* Controls */
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;border:0;background:rgba(255,255,255,.9);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5}
+.arrow{color:var(--taupe);transition:background .2s,color .2s;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.arrow:hover{background:var(--taupe);color:#fff}
+.prev{left:22px}.next{right:22px}
+.count{position:absolute;right:24px;bottom:22px;z-index:5;background:rgba(38,37,36,.75);color:#fff;font-size:12px;letter-spacing:.12em;padding:6px 12px}
+.dots{position:absolute;left:50%;bottom:24px;transform:translateX(-50%);display:flex;gap:8px;z-index:5}
+.dots button{width:8px;height:8px;border-radius:50%;border:0;background:rgba(255,255,255,.5);cursor:pointer;padding:0}
+.dots button.on{background:#fff;width:24px;border-radius:4px}
+
+/* Title block */
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+.title{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;padding:44px 0 36px;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:12px}
+.status i{width:8px;height:8px;border-radius:50%;background:#5f8f5a}
+.status.pending i{background:#c9962b}
+.status.sold i{background:#a14b3d}
+.title h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,4.6vw,54px);line-height:1.05}
+.title .city{font-size:15px;letter-spacing:.14em;text-transform:uppercase;color:#6d6560;margin-top:8px}
+.price{font-family:var(--serif);font-size:clamp(34px,4vw,46px);font-weight:500;line-height:1}
+.was:empty{display:none}
+.was{font-size:.6em;color:#8b827b;text-decoration:line-through;text-decoration-color:var(--taupe);text-decoration-thickness:2px;margin-right:14px;vertical-align:middle}
+.reduced{display:inline-block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;background:var(--pale);padding:4px 10px;margin-bottom:10px;font-weight:600}
+.right{text-align:right}
+.right .pair{margin-top:20px;justify-content:flex-end}
+
+/* Stats band */
+.stats{background:var(--taupe);color:#fff}
+.stats .wrap{display:grid;grid-template-columns:repeat(5,1fr)}
+.stat{padding:26px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.25)}
+.stat:last-child{border-right:0}
+.stat svg{width:26px;height:26px;margin:0 auto 8px;stroke:#fff;fill:none;stroke-width:1.4}
+.stat b{display:block;font-family:var(--serif);font-size:30px;font-weight:500;line-height:1.1}
+.stat span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.9}
+
+/* Main grid */
+.main{display:grid;grid-template-columns:minmax(0,1fr) 370px;gap:56px;padding:64px 0 80px}
+.eyebrow2{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--taupe);font-weight:600;margin-bottom:10px}
+h2.sec{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,40px);line-height:1.1;margin-bottom:20px}
+.about{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:40px;align-items:start}
+.desc p{margin-bottom:16px;font-weight:300;font-size:17px}
+.video{position:relative;aspect-ratio:9/16;background:linear-gradient(160deg,#3a3532,#1c1a19);overflow:hidden;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:14px}
+.video video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;cursor:pointer}
+.tapplay{position:absolute;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,.25);cursor:pointer}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video .play{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
+.video small{font-size:12px;letter-spacing:.1em;opacity:.8;line-height:1.5}
+.video .yt{position:absolute;top:14px;left:14px;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:rgba(255,255,255,.12);padding:4px 8px}
+.video .mute{position:absolute;bottom:14px;right:14px;font-size:11px;letter-spacing:.1em;background:rgba(0,0,0,.45);padding:6px 10px;display:flex;gap:6px;align-items:center}
+
+.loc{margin-top:64px;padding-top:56px;border-top:1px solid var(--line)}
+.locgrid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:32px;align-items:stretch}
+.map{min-height:320px;background:
+  linear-gradient(90deg,transparent 48%,#fff 48%,#fff 52%,transparent 52%),
+  linear-gradient(0deg,transparent 30%,#fff 30%,#fff 33%,transparent 33%),
+  linear-gradient(0deg,transparent 70%,#fff 70%,#fff 72%,transparent 72%),
+  linear-gradient(90deg,transparent 20%,#fff 20%,#fff 22%,transparent 22%),
+  #e9e3da;position:relative}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.pin{position:absolute;left:50%;top:50%;transform:translate(-50%,-100%)}
+.map .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.9);font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px}
+.drives{list-style:none;background:var(--cream);padding:28px 30px;display:flex;flex-direction:column;justify-content:center}
+.drives li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px}
+.drives li:last-child{border-bottom:0}
+.drives b{font-family:var(--serif);font-size:22px;font-weight:500;white-space:nowrap}
+.note{font-size:12px;color:#8b827b;margin-top:10px}
+
+/* Contact card */
+.card{position:sticky;top:110px;background:var(--cream);padding:32px 30px;border-top:4px solid var(--taupe)}
+.agent{display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.head{width:64px;height:64px;border-radius:50%;background:var(--light);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:24px;color:#fff;flex:none}
+.agent b{font-family:var(--serif);font-size:24px;font-weight:500;display:block;line-height:1.1}
+.agent span{font-size:13px;color:#6d6560}
+.agent a{display:block;font-size:15px;text-decoration:none;font-weight:500;margin-top:2px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:26px;margin-bottom:4px}
+.card p.sub{font-size:14px;color:#6d6560;margin-bottom:18px}
+form{display:grid;gap:12px}
+label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;display:grid;gap:6px}
+input,select,textarea{font-family:var(--sans);font-size:16px;padding:12px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--light);outline-offset:0}
+textarea{min-height:90px;resize:vertical}
+form .btn{width:100%;margin-top:6px}
+.thanks{display:none;text-align:center;padding:30px 0}
+.thanks b{font-family:var(--serif);font-size:28px;font-weight:500;display:block;margin-bottom:6px}
+
+/* Footer */
+footer{background:var(--ink);color:#d8d2cc;padding:48px 0 110px;font-size:13px}
+footer .wrap{display:grid;gap:16px}
+footer .fn{font-family:var(--serif);font-style:italic;font-size:26px;color:var(--pale)}
+footer .legal{font-size:11px;color:#9a928b;line-height:1.7;max-width:900px}
+
+/* Mobile action bar */
+.bar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px}
+.bar .btn{flex:1;padding:15px 10px;font-size:12px;white-space:normal}
+
+@media (max-width:1024px){
+  .main{grid-template-columns:1fr}
+  .card{position:static}
+  .links{display:none}
+  .menu{display:block}
+  .nav .btn{display:none}
+}
+@media (max-width:760px){
+  .slide{height:72vw;min-height:300px}
+  .arrow{width:34px;height:34px;top:auto;bottom:12px;transform:none;background:rgba(255,255,255,.85)}
+  .arrow svg{width:16px;height:16px}
+  .dots{bottom:25px}
+  .count{top:12px;bottom:auto;right:12px}
+  .prev{left:10px}.next{right:10px}
+  .ph .tag{top:12px;left:12px}
+  .hl{top:auto;bottom:58px;transform:none;right:60px}
+  .hl h2{margin-bottom:12px;font-size:30px}
+  .hl li{font-size:16px}
+  .hl ul{gap:6px}
+  .hl .eyebrow{margin-bottom:8px;font-size:10px}
+  .title{padding:28px 0 26px}
+  .right{text-align:left;width:100%}
+  .right .pair{justify-content:stretch}
+  .right .pair .btn{flex:1;min-width:0;padding:15px 10px;font-size:12px;white-space:normal}
+  .stats .wrap{grid-template-columns:repeat(3,1fr);padding:0}
+  .stat{padding:18px 6px;border-bottom:1px solid rgba(255,255,255,.25)}
+  .stat:nth-child(3){border-right:0}
+  .stat:nth-child(4),.stat:nth-child(5){border-bottom:0}
+  .stats .wrap{grid-template-columns:repeat(6,1fr)}
+  .stat{grid-column:span 2}
+  .stat:nth-child(4){grid-column:2 / span 2}
+  .stat:nth-child(5){grid-column:span 2;border-right:0}
+  .stat b{font-size:24px}
+  .stat span{font-size:10px;letter-spacing:.14em}
+  .main{padding:40px 0 56px;gap:48px}
+  .about{grid-template-columns:1fr;gap:28px}
+  .video{max-width:300px;width:100%;margin:0 auto;order:-1}
+  .locgrid{grid-template-columns:1fr}
+  .map{min-height:240px}
+  .bar{display:flex}
+  .logo .n{font-size:21px}
+}
+
+
+/* Contact form - matches the site's contact form */
+.card{background:#fff;border:1px solid var(--line);border-top:4px solid var(--taupe)}
+.card .eyebrow2{margin-bottom:6px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:32px;line-height:1.05;margin-bottom:10px}
+.card h3 em{display:block;font-style:italic;font-weight:400;color:var(--taupe)}
+.card p.sub{font-size:15px;color:#5d5650;margin-bottom:20px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card label{font-size:11px;letter-spacing:.18em;font-weight:600;color:#6e5646}
+.card input,.card textarea{background:#f5f0eb;border:1px solid #d9ccc0;font-size:15px;padding:13px 14px}
+.card select{background:#fff;border:1px solid #d9ccc0;font-size:15px;padding:12px 12px}
+.card input::placeholder,.card textarea::placeholder{color:#a69a90}
+.send{width:100%;margin-top:8px;background:var(--ink);color:#fff;border:0;font-family:var(--sans);font-weight:600;font-size:13px;letter-spacing:.2em;text-transform:uppercase;padding:18px;cursor:pointer;transition:background .2s}
+.send:hover{background:#3d3a38}
+@media (max-width:360px){ .row2{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<div class="draft">Team preview · not public</div>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="/"><div class="n">Taylor Thompson Home Group</div><div class="k">Keller Williams Realty</div></a>
+    <nav class="links"><a href="/">Home</a><a href="/about">About</a><a href="/buy">Buy</a><a href="/sell">Sell</a><a class="on" href="/listings">Listings</a><a href="/areas">Areas</a><a href="/contact">Contact</a><a href="/reviews">Reviews</a></nav>
+    <a class="btn" href="/sell">Free Home Value</a>
+    <button class="menu" aria-label="Menu"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#262524" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  </div>
+</header>
+
+<!-- ===== Slideshow ===== -->
+<section class="show" aria-label="Home photos">
+  <div class="track" id="track">
+    <div class="slide"><img class="photo" src="img/01-curbside.jpg" alt="Front of 379 Shalako Dr"></div>
+    <div class="slide"><img class="photo" src="img/01-curbside.jpg" alt="Front of 379 Shalako Dr"><div class="ph fade"></div>
+      <div class="hl"><div class="eyebrow">Home Highlights</div><h2 id="hlTitle"></h2><ul id="hlList"></ul></div>
+    </div>
+    <div class="slide"><img class="photo" src="img/02-kitchen.jpg" alt="Renovated kitchen" loading="lazy"></div>
+    <div class="slide"><img class="photo" src="img/03-bath.jpg" alt="Renovated bathroom" loading="lazy"></div>
+    <div class="slide"><img class="photo" src="img/04-bath.jpg" alt="Renovated bathroom" loading="lazy"></div>
+    <div class="slide"><img class="photo" src="img/05-backyard.jpg" alt="Backyard with raised garden" loading="lazy"></div>
+    <div class="slide"><img class="photo" src="img/06-living.jpg" alt="Living room with fireplace" loading="lazy"></div>
+    <!-- last: see all photos -->
+    <div class="slide"><div class="ph more">
+      <div class="eyebrow2">Want to see more?</div>
+      <h3>View All Photos</h3>
+      <p>See the complete photo gallery and full property details.</p>
+      <div class="pair"><a class="btn" id="idxLink" href="#">On Our Website</a><a class="btn" id="zLink" href="#">On Zillow</a></div>
+    </div></div>
+  </div>
+  <button class="arrow prev" id="prev" aria-label="Previous photo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+  <button class="arrow next" id="next" aria-label="Next photo"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  <div class="dots" id="dots"></div>
+  <div class="count" id="count"></div>
+</section>
+
+<!-- ===== Title ===== -->
+<div class="wrap">
+  <div class="title">
+    <div>
+      <div class="status" id="status"><i></i><span></span></div>
+      <h1 id="addr"></h1>
+      <div class="city" id="city"></div>
+    </div>
+    <div class="right">
+      <div id="reduced"></div>
+      <div class="price"><span class="was" id="was"></span><span id="price"></span></div>
+      <div class="pair"><a class="btn" href="#contact">Schedule a Showing</a><a class="btn" href="#video">Watch the Video</a></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Stats band ===== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat"><svg viewBox="0 0 24 24"><path d="M3 18v-6a2 2 0 012-2h14a2 2 0 012 2v6M3 18h18M3 21v-3M21 21v-3M6 10V6a1 1 0 011-1h10a1 1 0 011 1v4"/></svg><b id="sBeds"></b><span>Bedrooms</span></div>
+    <div class="stat"><svg viewBox="0 0 24 24"><path d="M4 12h16v3a4 4 0 01-4 4H8a4 4 0 01-4-4v-3zM6 12V5a2 2 0 014 0M7 19l-1 2M17 19l1 2"/></svg><b id="sBaths"></b><span>Bathrooms</span></div>
+    <div class="stat"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 9h5M15 20v-6h5"/></svg><b id="sSqft"></b><span>Square Feet</span></div>
+    <div class="stat"><svg viewBox="0 0 24 24"><path d="M3 20h18M5 20V9l7-5 7 5v11M3 20l2-2M21 20l-2-2"/></svg><b id="sLot"></b><span>Sq Ft Lot</span></div>
+    <div class="stat"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M3 10h18M8 3v4M16 3v4"/></svg><b id="sYear"></b><span>Year Built</span></div>
+  </div>
+</section>
+
+<!-- ===== Main ===== -->
+<div class="wrap">
+  <div class="main">
+    <div>
+      <div class="about">
+        <div class="desc">
+          <div class="eyebrow2">About This Home</div>
+          <h2 class="sec">Updated and Move-In Ready</h2>
+          <div id="desc"></div>
+        </div>
+        <!-- YouTube Short: muted autoplay, loops, suggestions limited to TTHG channel (rel=0).
+             Live version: <iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=VIDEO_ID&playsinline=1&rel=0&modestbranding=1" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+        <div class="video" id="video"></div>
+              </div>
+
+      <section class="loc">
+        <div class="eyebrow2">Location</div>
+        <h2 class="sec" id="locTitle"></h2>
+        <div class="locgrid">
+          <div class="map" id="map"></div>
+          <div>
+            <ul class="drives" id="drives"></ul>
+            <div class="note">Approximate drive times without traffic.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===== Contact card ===== -->
+    <aside id="contact">
+      <div class="card">
+        <div class="agent">
+          <div class="head">TT</div>
+          <div><b>Taylor Thompson</b><span>Taylor Thompson Home Group</span><a href="tel:+12094950317">(209) 495-0317</a></div>
+        </div>
+        <div class="eyebrow2">Interested in This Home?</div>
+        <h3>We'll Respond<em>Within 24 Hours</em></h3>
+        <p class="sub">Ask a question, request a showing, or talk through next steps.</p>
+        <form name="listing-inquiry" method="POST" data-netlify="true" id="form">
+          <input type="hidden" name="form-name" value="listing-inquiry">
+          <input type="hidden" name="property" id="propField">
+          <div class="row2">
+            <label>First Name<input name="first-name" placeholder="Jane" required autocomplete="given-name"></label>
+            <label>Last Name<input name="last-name" placeholder="Smith" required autocomplete="family-name"></label>
+          </div>
+          <label>Email<input type="email" name="email" placeholder="jane@email.com" required autocomplete="email"></label>
+          <label>Phone<input type="tel" name="phone" placeholder="(209) 000-0000" autocomplete="tel"></label>
+          <label>How Can We Help?
+            <select name="interest">
+              <option>Schedule a private tour of this home</option>
+              <option>I have a question about this home</option>
+              <option>I'm interested in making an offer</option>
+              <option>Show me similar homes</option>
+            </select>
+          </label>
+          <label>Message<textarea name="message" placeholder="Tell us what you'd like to know about this home."></textarea></label>
+          <button class="send" type="submit">Send Message</button>
+        </form>
+        <div class="thanks" id="thanks"><b>Thank you!</b>We'll be in touch soon.</div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="fn">Taylor Thompson Home Group</div>
+    <div>Keller Williams Realty · Modesto-based, serving Stanislaus, San Joaquin, and Merced Counties</div>
+    <div class="legal">Taylor Thompson DRE #XXXXXXXX · Equal Housing Opportunity. Information deemed reliable but not guaranteed. Listing data placeholder for MLS disclaimer. Each office is independently owned and operated.</div>
+  </div>
+</footer>
+
+<div class="bar"><a class="btn" href="tel:+12094950317">Call / Text</a><a class="btn" href="#contact">Schedule Showing</a></div>
+
+<script>
+/* ======================================================
+   LISTING INFO - the only part edited per listing.
+   status: "Active" | "Pending" | "Sold"
+   ====================================================== */
+const LISTING = {
+  status: "Active",
+  address: "379 Shalako Dr",
+  city: "Oakdale, CA 95361",
+  price: 450000,
+  previousPrice: 475000,        // original list price - shows "Price Improved"
+  beds: 3, baths: 2, sqft: 1274, lotSqft: 5959, yearBuilt: 1991,
+  highlights: ["Renovated Kitchen", "Renovated Bathrooms", "New Flooring", "Raised Garden", "RV Access"],
+  description: [
+    "<strong>AN OPPORTUNITY TO LOWER YOUR UPFRONT COSTS OR MONTHLY PAYMENT!</strong> Seller is open to offering a credit toward buyer closing costs and/or an interest rate buy down!",
+    "Beautifully updated and move-in ready, this single-story Oakdale home offers 3 bedrooms, 2 bathrooms, and 1,274 square feet of thoughtfully designed living space. With an updated kitchen, inviting open floor plan, and a backyard built for entertaining, this home checks all the boxes!",
+    "The updated kitchen is the standout, featuring granite counters, white cabinetry, stainless appliances, and a breakfast bar that opens right into the main living area. Vaulted ceilings and wood-look flooring run through the great room, where a stone fireplace anchors one end and a wide slider leads out to the backyard.",
+    "The primary suite offers a walk-in closet and a private updated bath, and the hall bath has been nicely updated as well. Outside, the fully fenced backyard is set up for entertaining with a patio and a built-in barbecue island.",
+    "A two-car garage and gated RV access provide plenty of room for parking and storage. Rooftop solar rounds out the package. Don't miss your opportunity to make this move-in ready home yours!"
+  ],
+  drives: [["Downtown Oakdale","5 min"],["Modesto","25 min"],["Sacramento","1 hr 30 min"],["San Jose","1 hr 40 min"]],
+  idxUrl: "#", zillowUrl: "#", youtubeId: "dS0nhAmpw34"
+};
+
+const $ = id => document.getElementById(id);
+const money = n => "$" + n.toLocaleString("en-US");
+$("addr").textContent = LISTING.address;
+$("city").textContent = LISTING.city;
+$("price").textContent = money(LISTING.price);
+if (LISTING.previousPrice){ $("was").textContent = money(LISTING.previousPrice); $("reduced").innerHTML = '<span class="reduced">Price Improved</span>'; }
+const st = $("status"); st.querySelector("span").textContent = LISTING.status; st.classList.add(LISTING.status.toLowerCase());
+$("sBeds").textContent = LISTING.beds; $("sBaths").textContent = LISTING.baths;
+$("sSqft").textContent = LISTING.sqft.toLocaleString("en-US"); $("sLot").textContent = LISTING.lotSqft.toLocaleString("en-US"); $("sYear").textContent = LISTING.yearBuilt;
+$("hlTitle").textContent = LISTING.address;
+$("hlList").innerHTML = LISTING.highlights.map(h => `<li>${h}</li>`).join("");
+$("desc").innerHTML = LISTING.description.map(p => `<p>${p}</p>`).join("");
+$("locTitle").textContent = "Life in " + LISTING.city.split(",")[0];
+$("drives").innerHTML = LISTING.drives.map(d => `<li><span>${d[0]}</span><b>${d[1]}</b></li>`).join("");
+$("idxLink").href = LISTING.idxUrl; $("zLink").href = LISTING.zillowUrl;
+$("propField").value = LISTING.address + ", " + LISTING.city;
+
+
+/* Slideshow */
+const track = $("track"), slides = track.children.length; let i = 0;
+$("dots").innerHTML = Array.from({length:slides},(_,k)=>`<button aria-label="Photo ${k+1}"></button>`).join("");
+const dots = $("dots").children;
+function go(n){ i = (n + slides) % slides; track.style.transform = `translateX(-${i*100}%)`;
+  [...dots].forEach((d,k)=>d.classList.toggle("on",k===i)); $("count").textContent = `${i+1} / ${slides}`; }
+$("prev").onclick = () => go(i-1); $("next").onclick = () => go(i+1);
+[...dots].forEach((d,k)=>d.onclick=()=>go(k));
+document.addEventListener("keydown", e => { if(e.key==="ArrowLeft") go(i-1); if(e.key==="ArrowRight") go(i+1); });
+let x0 = null;
+track.addEventListener("touchstart", e => x0 = e.touches[0].clientX, {passive:true});
+track.addEventListener("touchend", e => { if(x0===null) return; const dx = e.changedTouches[0].clientX - x0; if(Math.abs(dx)>40) go(i + (dx<0?1:-1)); x0 = null; });
+go(0);
+
+/* Desktop: show each whole photo, with a soft blurred copy filling the sides */
+document.querySelectorAll(".slide img.photo").forEach(im=>{ const b=document.createElement("div"); b.className="blur"; b.style.backgroundImage=`url(${im.src})`; im.before(b); });
+
+/* YouTube Short: loads when scrolled into view, muted, looping, suggestions limited to the TTHG channel */
+const vid = $("video");
+new IntersectionObserver((es,o)=>{ if(es[0].isIntersecting){ const id=LISTING.youtubeId;
+  vid.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&loop=1&playlist=${id}&playsinline=1&rel=0&modestbranding=1" title="Listing video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`; o.disconnect(); } },{rootMargin:"200px"}).observe(vid);
+/* Map */
+$("map").innerHTML = `<iframe loading="lazy" title="Map" src="https://www.google.com/maps?q=${encodeURIComponent(LISTING.address+", "+LISTING.city)}&output=embed"></iframe>`;
+
+/* Send to Netlify Forms and stay on the page */
+$("form").addEventListener("submit", e => { e.preventDefault(); const f=$("form");
+  fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body:new URLSearchParams(new FormData(f)).toString()})
+    .then(r => { if(!r.ok) throw 0; f.style.display="none"; $("thanks").style.display="block"; })
+    .catch(() => alert("Sorry, something went wrong. Please call or text (209) 495-0317."));
+});
+</script>
+</body>
+</html>
